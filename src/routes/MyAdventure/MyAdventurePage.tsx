@@ -1,10 +1,11 @@
-import { useState, ChangeEvent, useContext } from "react";
+import { useState, ChangeEvent, useContext, useEffect } from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import { PageLayout, PageTitle } from "../../components/PageLayout"
 import { ChapterSection, SearchInput } from './index';
 import EditIcon from '../../assets/icons/edit.svg';
 import { useApi } from "../../hooks/useApi";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
+import { ScreenLogManager } from "../../utils/class/LogManager";
 
 const MyAdventurePage = () => {
     const api = useApi();
@@ -87,6 +88,17 @@ const MyAdventurePage = () => {
             }, 1000)
         }
     }
+
+    useEffect(() => {
+        const log: ScreenLogManager = ScreenLogManager.getInstance();
+        const startDate = new Date();
+
+        return () => {
+            log.addLog({ screen: 'My_adventure', started: startDate, ended: new Date() })
+
+            console.log(log.getLogs())
+        }
+    }, [])
 
 
     return (
