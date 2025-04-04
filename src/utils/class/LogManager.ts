@@ -1,4 +1,4 @@
-import { TimeOnScreenLogType } from "../../types/logs/TimeOnScreenLogType";
+import { TimeOnScreenLogType } from "../../types/logs_type/TimeOnScreenLogType";
 
 export class ScreenLogManager {
 
