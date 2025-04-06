@@ -1,16 +1,19 @@
-import { useState, ChangeEvent, useContext } from "react";
+import { useState, ChangeEvent, useContext, useEffect } from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import { PageLayout, PageTitle } from "../../components/PageLayout"
 import { ChapterSection, SearchInput } from './index';
 import EditIcon from '../../assets/icons/edit.svg';
 import { useApi } from "../../hooks/useApi";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
+import { AdventureCardType } from "../../types/AdventureCardType";
 
 const MyAdventurePage = () => {
     const api = useApi();
     const adventureContext = useContext(AdventureContext);
 
     const [searchValue, setSearchValue] = useState('');
+    const [editMode, setEditMode] = useState(true);
+    const [adventureBeforeEdit, setAdventureBeforeEdit] = useState<AdventureCardType | null>(null);
 
     function handleSearchValue(event: ChangeEvent<HTMLInputElement>) {
         setSearchValue(event.target.value);
@@ -88,6 +91,28 @@ const MyAdventurePage = () => {
         }
     }
 
+    function startEditAdventure() {
+        if (adventureContext.adventure) {
+            setAdventureBeforeEdit(structuredClone(adventureContext.adventure));
+            setEditMode(true);
+        }
+    }
+
+    function restoreEdits() {
+        if (adventureBeforeEdit) {
+            adventureContext.setAdventure(structuredClone(adventureBeforeEdit));
+        }
+
+        setEditMode(false);
+    }
+
+    function saveEditMode() {
+        // chamar api para atualizar
+        // se for ok mantem do jeito que ta  e desliga edit mode
+        setEditMode(false);
+
+        //se der erro no update faz o rollback dos dados da aventura
+    }
 
     return (
         <PageLayout awaitAdventureLoad={true}>
@@ -104,14 +129,26 @@ const MyAdventurePage = () => {
                     </div>
 
                     <div className="min-w-[137px] text ">
-                        <ActionButton Icon={EditIcon} action={() => { }} label="Editar" style="bg-action-prev/11 border border-action-prev/89 gap-5 text-action-prev-content" />
+                        <ActionButton Icon={EditIcon} action={() => {
+                            if (editMode) {
+                                saveEditMode()
+                            } else {
+                                startEditAdventure()
+                            }
+                        }} label={`${editMode ? 'Salvar' : 'Editar'}`} style={`border gap-5 text-action-prev-content ${editMode ? 'bg-action-prev border-neutral/38' : 'bg-action-prev/11 border-action-prev/89'}`} />
                     </div>
+
+                    {
+                        editMode && <div className="min-w-[100px]">
+                            <ActionButton action={restoreEdits} label="Cancelar" style="bg-error/50 border border-error text-error-content" />
+                        </div>
+                    }
                 </div>
 
                 <div className="w-full mt-10 flex flex-col gap-10">
                     {
                         adventureContext.adventure && adventureContext.adventure.chapters.map((chapter, index) => {
-                            return <ChapterSection key={`chapter-${index}`} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+                            return <ChapterSection key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
                         })
                     }
                 </div>

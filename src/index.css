@@ -23,6 +23,8 @@
     --color-action-next-content: #FFFFFF;
     --color-action-prev: #23465D;
     --color-action-prev-content: #FFFFFF;
+    --color-error: #C30000;
+    --color-error-content: #FFFFFF;
 }
 
 @layer base {
