@@ -5,7 +5,9 @@ import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 import { AdventureTopic } from "../../../components/AdventureTopic";
 import { AdventureContext } from "../../../context/adventure/AdventureContext";
 import ActionButton from "../../../components/ActionButton/ActionButton";
-import AddIcon from "../../../assets/icons/add.svg";
+import { TopicType } from "../../../types/adventure/TopicType";
+import { ModifyChapterTopics } from "../../../types/adventure/ModifyChapterTopics";
+import { DeletedChapterTopic } from "../../../types/adventure/DeletedChapterTopic";
 
 interface Props {
     index: string
@@ -13,6 +15,14 @@ interface Props {
     handleExpand: (chapterId: string) => void
     handleChapterTopicCompleted: (chapterId: string, topicId: string, completed: boolean) => void
     editMode: boolean
+    modifiedTopicsList: ModifyChapterTopics[]
+    deletedTopicsList: DeletedChapterTopic[]
+    putInDeletedList?: (chapterId: string, topicId: string) => void
+    putInModifiedTopicsList?: (chapterId: string, topic: TopicType) => void
+    removeFromDeletedList?: (chapterId: string, topicId: string) => void
+    removeFromModifiedList?: (chapterId: string, topicId: string) => void
+    putInModifiedTitleList?: (chapterId: string, title: string) => void
+    removeFromModifiedTitleList?: (chapterId: string) => void
 }
 
 const ChapterSection = (props: Props) => {
@@ -20,6 +30,7 @@ const ChapterSection = (props: Props) => {
     const topicContainerRef = useRef<HTMLDivElement>(null);
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
     const [height, setHeight] = useState(0);
+    const [originalTitle, setOriginalTitle] = useState(props.chapter.title);
 
     function updateDivHeight() {
         if (props.chapter.expanded && topicContainerRef.current) {
@@ -30,6 +41,14 @@ const ChapterSection = (props: Props) => {
     }
 
     function handleTitleInput(event: ChangeEvent<HTMLInputElement>) {
+        if (props.putInModifiedTitleList && props.removeFromModifiedTitleList) {
+            if (originalTitle !== event.target.value) {
+                props.putInModifiedTitleList(props.chapter.id, event.target.value);
+            } else {
+                props.removeFromModifiedTitleList(props.chapter.id);
+            }
+        }
+
         adventureContext.setAdventure((prev) => {
             if (prev) {
                 return {
@@ -64,7 +83,7 @@ const ChapterSection = (props: Props) => {
                         props.editMode ?
                             <input onChange={handleTitleInput}
                                 onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }}
-                                className="border bg-base300/20 text-base-content/80 w-full py-1 z-30 border-neutral/30 rounded-[5px] px-5"
+                                className={`border bg-base300/20 text-base-content/80 w-full py-1 z-30 ${props.chapter.title !== originalTitle ? 'border-primary/50' : 'border-neutral/30'} rounded-[5px] px-5`}
                                 type="text"
                                 value={props.chapter.title}
                             />
@@ -86,7 +105,9 @@ const ChapterSection = (props: Props) => {
                 <div className="grid-cols-1 mt-5 grid md:grid-cols-2 gap-10">
                     <div className="flex flex-col gap-5">
                         {props.chapter.topics.map((topic) => {
-                            return <AdventureTopic editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />
+                            let modified = props.modifiedTopicsList.some((topicArr) => topicArr.topic.id === topic.id);
+                            let deleted = props.deletedTopicsList.some((topicArr) => topicArr.chapterId === props.chapter.id && topicArr.topicId === topic.id);
+                            return <AdventureTopic key={`topic-${topic.id}`} removeFromDeletedList={props.removeFromDeletedList} removeFromModifiedTopicsList={props.removeFromModifiedList} onDeleted={deleted} onModified={modified} putInDeletedList={props.putInDeletedList} putInModifiedTopicsList={props.putInModifiedTopicsList} editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />
                         })}
 
                         <div className="w-[200px] mt-5">

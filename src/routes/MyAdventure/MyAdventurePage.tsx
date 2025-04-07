@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useContext } from "react";
+import { useState, ChangeEvent, useContext, useEffect } from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import { PageLayout, PageTitle } from "../../components/PageLayout"
 import { ChapterSection, SearchInput } from './index';
@@ -6,8 +6,12 @@ import EditIcon from '../../assets/icons/edit.svg';
 import { useApi } from "../../hooks/useApi";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { AdventureCardType } from "../../types/AdventureCardType";
-import { normalizeString } from "../../utils/normalizeString";
 import { searchInString } from "../../utils/searchInString";
+import { TopicType } from "../../types/adventure/TopicType";
+import { ModifyChapterTitle } from "../../types/adventure/ModifyChapterTitle";
+import { ModifyChapterTopics } from "../../types/adventure/ModifyChapterTopics";
+import { DeletedChapterTopic } from "../../types/adventure/DeletedChapterTopic";
+import { EditAdventureType } from "../../types/adventure/EditAdventureType";
 
 const MyAdventurePage = () => {
     const api = useApi();
@@ -16,6 +20,10 @@ const MyAdventurePage = () => {
     const [searchValue, setSearchValue] = useState('');
     const [editMode, setEditMode] = useState(false);
     const [adventureBeforeEdit, setAdventureBeforeEdit] = useState<AdventureCardType | null>(null);
+
+    const [deletedTopicsList, setDeletedTopicsList] = useState<DeletedChapterTopic[]>([]);
+    const [modifiedTopicsList, setModifiedTopicsList] = useState<ModifyChapterTopics[]>([]);
+    const [modifiedTitleList, setModifiedTitleList] = useState<ModifyChapterTitle[]>([]);
 
     function handleSearchValue(event: ChangeEvent<HTMLInputElement>) {
         setSearchValue(event.target.value);
@@ -80,17 +88,96 @@ const MyAdventurePage = () => {
         if (adventureBeforeEdit) {
             adventureContext.setAdventure(structuredClone(adventureBeforeEdit));
         }
+        setModifiedTopicsList([]);
+        setDeletedTopicsList([]);
 
         setEditMode(false);
     }
 
     function saveEditMode() {
-        // chamar api para atualizar
-        // se for ok mantem do jeito que ta  e desliga edit mode
+        const filteredModifiedArray = modifiedTopicsList.filter(
+            (modifiedTopic) =>
+                !deletedTopicsList.some(
+                    (deleteItem) =>
+                        modifiedTopic.chapterId === deleteItem.chapterId && modifiedTopic.topicId === deleteItem.topicId
+                )
+        );
+
+        const editDTO: EditAdventureType = {
+            deletedChapters: [],
+            deletedTopics: deletedTopicsList,
+            modifiedTitles: modifiedTitleList,
+            modifiedTopics: filteredModifiedArray
+        }
+
         setEditMode(false);
 
         //se der erro no update faz o rollback dos dados da aventura
     }
+
+    function putInModifiedTitleList(chapterId: string, title: string) {
+        let updated = false
+        setModifiedTitleList((prev) => prev.map((current) => {
+            if (current.chapterId === chapterId) {
+                updated = true;
+                return { ...current, title: title }
+            }
+
+            return current
+        }))
+
+        if (!updated) {
+            setModifiedTitleList((prev) => [...prev, { chapterId: chapterId, title: title }]);
+        }
+    }
+
+    function removeFromModifiedTitleList(chapterId: string) {
+        let newArray = modifiedTitleList.filter((title) => title.chapterId !== chapterId);
+        setModifiedTitleList(newArray);
+    }
+
+    function putInDeletedList(chapterId: string, topicId: string) {
+        setDeletedTopicsList((prev) => [...prev, { chapterId: chapterId, topicId: topicId }]);
+    }
+
+    function removeFromDeletedList(chapterId: string, topicId: string) {
+        let newArray = deletedTopicsList.filter(
+            (deletedTopic) => !(deletedTopic.chapterId === chapterId && deletedTopic.topicId === topicId))
+        setDeletedTopicsList(newArray);
+    }
+
+    function putInModifiedTopicsList(chapterId: string, topic: TopicType) {
+        let updated = false
+        setModifiedTopicsList((prev) => prev.map((current) => {
+            if (current.chapterId === chapterId && current.topic.id === topic.id) {
+                updated = true;
+                return { ...current, topic: topic }
+            }
+
+            return current;
+        }))
+
+        if (!updated) {
+            setModifiedTopicsList((prev) => [...prev, { chapterId: chapterId, topic: topic }]);
+        }
+    }
+
+    function removeFromModifiedList(chapterId: string, topicId: string) {
+        let newArray = modifiedTopicsList.filter((topicArr) => topicArr.topic.id !== topicId && topicArr.chapterId !== chapterId);
+        setModifiedTopicsList(newArray);
+    }
+
+    useEffect(() => {
+
+        console.log("deleted:")
+        console.log(deletedTopicsList)
+
+        console.log("modified:")
+        console.log(modifiedTopicsList);
+
+        console.log("titleModified:")
+        console.log(modifiedTitleList)
+    }, [modifiedTitleList, modifiedTopicsList, deletedTopicsList])
 
     return (
         <PageLayout awaitAdventureLoad={true}>
@@ -145,7 +232,7 @@ const MyAdventurePage = () => {
                                 }
                             }
                             if (canShow) {
-                                return <ChapterSection key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+                                return <ChapterSection putInModifiedTitleList={putInModifiedTitleList} removeFromModifiedTitleList={removeFromModifiedTitleList} deletedTopicsList={deletedTopicsList} modifiedTopicsList={modifiedTopicsList} putInDeletedList={putInDeletedList} putInModifiedTopicsList={putInModifiedTopicsList} removeFromDeletedList={removeFromDeletedList} removeFromModifiedList={removeFromModifiedList} key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
                             }
                         })
                     }
