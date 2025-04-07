@@ -12,7 +12,7 @@ const MyAdventurePage = () => {
     const adventureContext = useContext(AdventureContext);
 
     const [searchValue, setSearchValue] = useState('');
-    const [editMode, setEditMode] = useState(true);
+    const [editMode, setEditMode] = useState(false);
     const [adventureBeforeEdit, setAdventureBeforeEdit] = useState<AdventureCardType | null>(null);
 
     function handleSearchValue(event: ChangeEvent<HTMLInputElement>) {
@@ -36,31 +36,7 @@ const MyAdventurePage = () => {
         }
     }
 
-
-
-    // function handleExpand(chapterId: string) {
-    //     adventureContext.setAdventure((prev) =>
-    //         prev.map((item) =>
-    //             item.id === chapterId ? { ...item, expanded: !item.expanded } : item
-    //         )
-    //     );
-    // }
-
     function changeTopicStatus(chapterId: string, topicId: string, completed: boolean) {
-        // setChapters((prev) =>
-        //     prev.map((item) =>
-        //         item.id === chapterId
-        //             ? {
-        //                 ...item,
-        //                 topics: item.topics.map((topic) =>
-        //                     topic.id === topicId
-        //                         ? { ...topic, completed: !topic.completed }
-        //                         : topic
-        //                 ),
-        //             }
-        //             : item
-        //     )
-        // );
 
         if (adventureContext.adventure) {
             adventureContext.setAdventure((prev) => {
@@ -119,30 +95,35 @@ const MyAdventurePage = () => {
             <div className="w-full">
                 <PageTitle title="Aventura" />
 
-                <div className="w-full flex gap-10">
-                    <div className="min-w-[137px]">
-                        <ActionButton action={() => { }} label="+ Capítulo" style="bg-primary text-primary-content text-[14px]" />
-                    </div>
+                <div className="w-full grid grid-cols-1 xl:grid-cols-2 place-items-end gap-6 md:gap-10">
 
-                    <div className="w-full h-[53px]">
+                    <div className="w-full h-[53px] xl:pe-15">
                         <SearchInput value={searchValue} handleInput={handleSearchValue} placeholder="Buscar capítulo..." />
                     </div>
 
-                    <div className="min-w-[137px] text ">
-                        <ActionButton Icon={EditIcon} action={() => {
-                            if (editMode) {
-                                saveEditMode()
-                            } else {
-                                startEditAdventure()
-                            }
-                        }} label={`${editMode ? 'Salvar' : 'Editar'}`} style={`border gap-5 text-action-prev-content ${editMode ? 'bg-action-prev border-neutral/38' : 'bg-action-prev/11 border-action-prev/89'}`} />
-                    </div>
-
-                    {
-                        editMode && <div className="min-w-[100px]">
-                            <ActionButton action={restoreEdits} label="Cancelar" style="bg-error/50 border border-error text-error-content" />
+                    <div className="w-full flex items-center justify-between xl:justify-end gap-3 md:gap-10">
+                        <div className="min-w-[100px] md:min-w-[137px]">
+                            <ActionButton action={() => { }} label="+ Capítulo" style="bg-primary text-primary-content text-[14px]" />
                         </div>
-                    }
+
+                        <div className="w-auto lg:w-auto flex items-center justify-end lg:justify-end gap-3 md:gap-10">
+                            <div className="min-w-[100px] md:min-w-[137px]">
+                                <ActionButton Icon={EditIcon} action={() => {
+                                    if (editMode) {
+                                        saveEditMode()
+                                    } else {
+                                        startEditAdventure()
+                                    }
+                                }} label={`${editMode ? 'Salvar' : 'Editar'}`} style={`border gap-5 text-action-prev-content ${editMode ? 'bg-action-prev border-neutral/38' : 'bg-action-prev/11 border-action-prev/89'}`} />
+                            </div>
+
+                            {
+                                editMode && <div className="min-w-[100px] md:min-w-[137px]">
+                                    <ActionButton action={restoreEdits} label="Cancelar" style="bg-error/50 border border-error text-error-content" />
+                                </div>
+                            }
+                        </div>
+                    </div>
                 </div>
 
                 <div className="w-full mt-10 flex flex-col gap-10">
@@ -152,8 +133,8 @@ const MyAdventurePage = () => {
                         })
                     }
                 </div>
-            </div>
-        </PageLayout>
+            </div >
+        </PageLayout >
     )
 }
 

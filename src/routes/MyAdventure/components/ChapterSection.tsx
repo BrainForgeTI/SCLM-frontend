@@ -1,7 +1,7 @@
 import { ChapterType } from "../../../types/adventure/ChapterType";
 import ArrowDownIcon from '../../../assets/icons/arrow_down.svg';
 import ArrowUpIcon from '../../../assets/icons/arrow_up.svg';
-import { ChangeEvent, MouseEventHandler, useContext, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 import { AdventureTopic } from "../../../components/AdventureTopic";
 import { AdventureContext } from "../../../context/adventure/AdventureContext";
 
@@ -56,7 +56,7 @@ const ChapterSection = (props: Props) => {
                         props.editMode ?
                             <input onChange={handleTitleInput} onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }} className="border bg-base300/20 text-base-content/80 w-full py-1 z-30 border-neutral/30 rounded-[10px] px-5" type="text" value={props.chapter.title}></input>
                             :
-                            <p>{props.chapter.title}</p>
+                            <p className="truncate">{props.chapter.title}</p>
                     }
                 </div>
                 {
@@ -67,8 +67,8 @@ const ChapterSection = (props: Props) => {
                 }
             </div>
 
-            <div ref={topicContainerRef} className={`ps-20 w-full mt-[63px] transition-all duration-300 overflow-y-hidden`} style={{ maxHeight: `${height}px` }}>
-                <div className="mt-5 grid grid-cols-2 gap-10">
+            <div ref={topicContainerRef} className={`px-5 lg:ps-20 w-full mt-[63px] transition-all duration-300 overflow-y-hidden`} style={{ maxHeight: `${height}px` }}>
+                <div className="grid-cols-1 mt-5 grid md:grid-cols-2 gap-10">
                     <div className="flex flex-col gap-5">
                         {props.chapter.topics.map((topic) => {
                             return <AdventureTopic editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />

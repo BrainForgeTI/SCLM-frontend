@@ -31,7 +31,10 @@ const AdventureTopic = (props: Props) => {
 
     return (
         <div className="w-full flex items-start gap-5 text-base-content">
-            <button onClick={() => { props.handleChapterTopicCompleted(props.chapterId, props.topic.id, !props.topic.completed) }} className={`w-[23px] h-[23px] rounded-[3px] cursor-pointer ${props.topic.completed ? 'bg-action-overview/28 border border-neutral/22' : 'bg-neutral/3 border border-neutral/22'}`}></button>
+            <button onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+                event.preventDefault();
+                props.handleChapterTopicCompleted(props.chapterId, props.topic.id, !props.topic.completed)
+            }} className={`w-[35px] h-[35px] lg:w-[27px] lg:h-[27px] shrink-0 rounded-[3px] cursor-pointer ${props.topic.completed ? 'bg-secondary/70 border border-neutral/22' : 'bg-neutral/3 border border-neutral/22'}`}></button>
             {
                 props.editMode ?
                     <input onChange={(event: ChangeEvent<HTMLInputElement>) => { handleStepInput(event, props.topic.id) }} onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }} className="border text-base-content/80 bg-base300/20 w-full py-1 z-30 border-neutral/30 rounded-[10px] px-5" type="text" value={props.topic.name} ></input>
