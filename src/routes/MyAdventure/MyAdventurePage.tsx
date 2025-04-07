@@ -142,6 +142,10 @@ const MyAdventurePage = () => {
                             }
                         })
                     }
+
+                    <div className="w-full">
+                        <ActionButton action={() => { }} label="+ Novo Capítulo" style="bg-secondary/25 text-secondary-content font-semibold py-5 border border-neutral/17 hover:border-neutral/50 hover:scale-[1.001]" disableDefaultHover={true} />
+                    </div>
                 </div>
             </div >
         </PageLayout >

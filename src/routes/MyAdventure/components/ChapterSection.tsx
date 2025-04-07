@@ -4,6 +4,8 @@ import ArrowUpIcon from '../../../assets/icons/arrow_up.svg';
 import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 import { AdventureTopic } from "../../../components/AdventureTopic";
 import { AdventureContext } from "../../../context/adventure/AdventureContext";
+import ActionButton from "../../../components/ActionButton/ActionButton";
+import AddIcon from "../../../assets/icons/add.svg";
 
 interface Props {
     index: string
@@ -86,6 +88,9 @@ const ChapterSection = (props: Props) => {
                     <div className="w-full border min-h-60 border-neutral/18 rounded-[10px]">
                         <textarea ref={textAreaRef} placeholder="Anotações..." className="resize-none p-6 text-base-content/70 outline-none w-full h-full text-[16px]"></textarea>
                     </div>
+                </div>
+                <div className="w-[200px]">
+                    <ActionButton action={() => { }} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content hover:scale-[1.006]" disableDefaultHover={true} />
                 </div>
             </div>
         </div>
