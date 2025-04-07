@@ -99,7 +99,7 @@ const MyAdventurePage = () => {
             (modifiedTopic) =>
                 !deletedTopicsList.some(
                     (deleteItem) =>
-                        modifiedTopic.chapterId === deleteItem.chapterId && modifiedTopic.topicId === deleteItem.topicId
+                        modifiedTopic.chapterId === deleteItem.chapterId && modifiedTopic.topic.id === deleteItem.topicId
                 )
         );
 
