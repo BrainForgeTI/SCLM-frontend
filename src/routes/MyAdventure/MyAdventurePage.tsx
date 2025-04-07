@@ -99,6 +99,8 @@ const MyAdventurePage = () => {
 
                 <div className="w-full grid grid-cols-1 xl:grid-cols-2 place-items-end gap-6 md:gap-10">
 
+
+                    {/* adionar checagem */}
                     <div className="w-full h-[53px] xl:pe-15">
                         <SearchInput value={searchValue} handleInput={handleSearchValue} placeholder="Buscar capítulo..." />
                     </div>
@@ -109,15 +111,20 @@ const MyAdventurePage = () => {
                         </div>
 
                         <div className="w-auto lg:w-auto flex items-center justify-end lg:justify-end gap-3 md:gap-10">
-                            <div className="min-w-[100px] md:min-w-[137px]">
-                                <ActionButton Icon={EditIcon} action={() => {
-                                    if (editMode) {
-                                        saveEditMode()
-                                    } else {
-                                        startEditAdventure()
-                                    }
-                                }} label={`${editMode ? 'Salvar' : 'Editar'}`} style={`border gap-5 text-action-prev-content ${editMode ? 'bg-action-prev border-neutral/38' : 'bg-action-prev/11 border-action-prev/89'}`} />
-                            </div>
+                            {
+                                adventureContext.adventure && adventureContext.adventure.chapters.length ?
+                                    <div className="min-w-[100px] md:min-w-[137px]">
+                                        <ActionButton Icon={EditIcon} action={() => {
+                                            if (editMode) {
+                                                saveEditMode()
+                                            } else {
+                                                startEditAdventure()
+                                            }
+                                        }} label={`${editMode ? 'Salvar' : 'Editar'}`} style={`border gap-5 text-action-prev-content ${editMode ? 'bg-action-prev border-neutral/38' : 'bg-action-prev/11 border-action-prev/89'}`} />
+                                    </div>
+                                    :
+                                    <></>
+                            }
 
                             {
                                 editMode && <div className="min-w-[100px] md:min-w-[137px]">
@@ -143,9 +150,14 @@ const MyAdventurePage = () => {
                         })
                     }
 
-                    <div className="w-full">
-                        <ActionButton action={() => { }} label="+ Novo Capítulo" style="bg-secondary/25 text-secondary-content font-semibold py-5 border border-neutral/17 hover:border-neutral/50 hover:scale-[1.001]" disableDefaultHover={true} />
-                    </div>
+                    {
+                        adventureContext.adventure && adventureContext.adventure.chapters.length > 0 ?
+                            <div className="w-full">
+                                <ActionButton action={() => { }} label="+ Novo Capítulo" style="bg-secondary/10 text-secondary-content font-semibold py-5 border border-neutral/17 hover:border-neutral/50 hover:scale-[1.001]" disableDefaultHover={true} />
+                            </div>
+                            :
+                            <></>
+                    }
                 </div>
             </div >
         </PageLayout >

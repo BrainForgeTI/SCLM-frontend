@@ -49,6 +49,10 @@ const ChapterSection = (props: Props) => {
         updateDivHeight();
     }, [props.chapter.expanded])
 
+    useEffect(() => {
+        updateDivHeight()
+    }, [props.editMode])
+
     return (
         <div className="w-full relative min-h-[63px] overflow-hidden">
             <div onClick={() => { props.handleExpand(props.chapter.id) }}
@@ -60,7 +64,7 @@ const ChapterSection = (props: Props) => {
                         props.editMode ?
                             <input onChange={handleTitleInput}
                                 onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }}
-                                className="border bg-base300/20 text-base-content/80 w-full py-1 z-30 border-neutral/30 rounded-[10px] px-5"
+                                className="border bg-base300/20 text-base-content/80 w-full py-1 z-30 border-neutral/30 rounded-[5px] px-5"
                                 type="text"
                                 value={props.chapter.title}
                             />
@@ -84,13 +88,14 @@ const ChapterSection = (props: Props) => {
                         {props.chapter.topics.map((topic) => {
                             return <AdventureTopic editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />
                         })}
+
+                        <div className="w-[200px] mt-5">
+                            <ActionButton action={() => { }} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content hover:scale-[1.006]" disableDefaultHover={true} />
+                        </div>
                     </div>
                     <div className="w-full border min-h-60 border-neutral/18 rounded-[10px]">
                         <textarea ref={textAreaRef} placeholder="Anotações..." className="resize-none p-6 text-base-content/70 outline-none w-full h-full text-[16px]"></textarea>
                     </div>
-                </div>
-                <div className="w-[200px]">
-                    <ActionButton action={() => { }} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content hover:scale-[1.006]" disableDefaultHover={true} />
                 </div>
             </div>
         </div>
