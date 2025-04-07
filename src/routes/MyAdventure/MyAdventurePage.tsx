@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useContext, useEffect } from "react";
+import { useState, ChangeEvent, useContext } from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import { PageLayout, PageTitle } from "../../components/PageLayout"
 import { ChapterSection, SearchInput } from './index';
@@ -6,6 +6,8 @@ import EditIcon from '../../assets/icons/edit.svg';
 import { useApi } from "../../hooks/useApi";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { AdventureCardType } from "../../types/AdventureCardType";
+import { normalizeString } from "../../utils/normalizeString";
+import { searchInString } from "../../utils/searchInString";
 
 const MyAdventurePage = () => {
     const api = useApi();
@@ -129,7 +131,15 @@ const MyAdventurePage = () => {
                 <div className="w-full mt-10 flex flex-col gap-10">
                     {
                         adventureContext.adventure && adventureContext.adventure.chapters.map((chapter, index) => {
-                            return <ChapterSection key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+                            let canShow = true
+                            if (searchValue.length > 0) {
+                                if (!searchInString(chapter.title, searchValue)) {
+                                    canShow = false
+                                }
+                            }
+                            if (canShow) {
+                                return <ChapterSection key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+                            }
                         })
                     }
                 </div>

@@ -49,23 +49,32 @@ const ChapterSection = (props: Props) => {
 
     return (
         <div className="w-full relative min-h-[63px] overflow-hidden">
-            <div onClick={() => { props.handleExpand(props.chapter.id) }} className="w-full z-20 absolute cursor-pointer hover:border-neutral/10 border border-transparent bg-neutral/5 font-bold text-[20px] text-neutral rounded-[10px] h-[63px] flex justify-between gap-10 items-center px-5">
-                <div className="w-full flex gap-5 items-center">
+            <div onClick={() => { props.handleExpand(props.chapter.id) }}
+                className="w-full z-20 absolute cursor-pointer hover:border-neutral/10 border border-transparent bg-neutral/5 font-bold text-[20px] text-neutral rounded-[10px] h-[63px] flex justify-between items-center px-5 overflow-hidden">
+
+                <div className="flex-1 min-w-0 flex gap-5 items-center">
                     <span>{`${props.index}.`}</span>
                     {
                         props.editMode ?
-                            <input onChange={handleTitleInput} onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }} className="border bg-base300/20 text-base-content/80 w-full py-1 z-30 border-neutral/30 rounded-[10px] px-5" type="text" value={props.chapter.title}></input>
+                            <input onChange={handleTitleInput}
+                                onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }}
+                                className="border bg-base300/20 text-base-content/80 w-full py-1 z-30 border-neutral/30 rounded-[10px] px-5"
+                                type="text"
+                                value={props.chapter.title}
+                            />
                             :
-                            <p className="truncate">{props.chapter.title}</p>
+                            <p className="truncate pe-2">{props.chapter.title}</p>
                     }
                 </div>
+
                 {
                     props.chapter.expanded ?
-                        <button><ArrowUpIcon /></button>
+                        <button className="shrink-0 px-2"><ArrowUpIcon /></button>
                         :
-                        <button><ArrowDownIcon /></button>
+                        <button className="shrink-0 px-2"><ArrowDownIcon /></button>
                 }
             </div>
+
 
             <div ref={topicContainerRef} className={`px-5 lg:ps-20 w-full mt-[63px] transition-all duration-300 overflow-y-hidden`} style={{ maxHeight: `${height}px` }}>
                 <div className="grid-cols-1 mt-5 grid md:grid-cols-2 gap-10">
