@@ -13,6 +13,7 @@ import { ModifyChapterTopics } from "../../types/adventure/ModifyChapterTopics";
 import { DeletedChapterTopic } from "../../types/adventure/DeletedChapterTopic";
 import { EditAdventureType } from "../../types/adventure/EditAdventureType";
 import { DeletedChapterType } from "../../types/adventure/DeletedChapterType";
+import { DeleteButton } from "../../components/DeleteButton";
 
 const MyAdventurePage = () => {
     const api = useApi();
@@ -252,7 +253,12 @@ const MyAdventurePage = () => {
                                 }
                             }
                             if (canShow) {
-                                return <ChapterSection putInModifiedTitleList={putInModifiedTitleList} removeFromModifiedTitleList={removeFromModifiedTitleList} deletedTopicsList={deletedTopicsList} modifiedTopicsList={modifiedTopicsList} putInDeletedList={putInDeletedList} putInModifiedTopicsList={putInModifiedTopicsList} removeFromDeletedList={removeFromDeletedList} removeFromModifiedList={removeFromModifiedList} key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+                                return <div className="flex flex-col">
+                                    {
+                                        editMode ? <DeleteButton action={() => { }} style={`bg-error ms-2`} /> : <></>
+                                    }
+                                    <ChapterSection putInModifiedTitleList={putInModifiedTitleList} removeFromModifiedTitleList={removeFromModifiedTitleList} deletedTopicsList={deletedTopicsList} modifiedTopicsList={modifiedTopicsList} putInDeletedList={putInDeletedList} putInModifiedTopicsList={putInModifiedTopicsList} removeFromDeletedList={removeFromDeletedList} removeFromModifiedList={removeFromModifiedList} key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+                                </div>
                             }
                         })
                     }
