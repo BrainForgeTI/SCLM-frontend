@@ -12,6 +12,7 @@ import { ModifyChapterTitle } from "../../types/adventure/ModifyChapterTitle";
 import { ModifyChapterTopics } from "../../types/adventure/ModifyChapterTopics";
 import { DeletedChapterTopic } from "../../types/adventure/DeletedChapterTopic";
 import { EditAdventureType } from "../../types/adventure/EditAdventureType";
+import { DeletedChapterType } from "../../types/adventure/DeletedChapterType";
 
 const MyAdventurePage = () => {
     const api = useApi();
@@ -22,6 +23,7 @@ const MyAdventurePage = () => {
     const [adventureBeforeEdit, setAdventureBeforeEdit] = useState<AdventureCardType | null>(null);
 
     const [deletedTopicsList, setDeletedTopicsList] = useState<DeletedChapterTopic[]>([]);
+    const [deletedChaptersList, setDeletedChaptersList] = useState<DeletedChapterType[]>([]);
     const [modifiedTopicsList, setModifiedTopicsList] = useState<ModifyChapterTopics[]>([]);
     const [modifiedTitleList, setModifiedTitleList] = useState<ModifyChapterTitle[]>([]);
 
@@ -95,22 +97,40 @@ const MyAdventurePage = () => {
     }
 
     function saveEditMode() {
+        const filteredDeletedTopics = deletedTopicsList.filter(
+            (deletedTopic) =>
+                !deletedChaptersList.some(
+                    (deletedChapter) =>
+                        deletedTopic.chapterId === deletedChapter.chapterId
+                )
+        )
+
         const filteredModifiedArray = modifiedTopicsList.filter(
             (modifiedTopic) =>
-                !deletedTopicsList.some(
+                !filteredDeletedTopics.some(
                     (deleteItem) =>
                         modifiedTopic.chapterId === deleteItem.chapterId && modifiedTopic.topic.id === deleteItem.topicId
                 )
         );
 
+        const filteredModifiedTitles = modifiedTitleList.filter(
+            (modifiedTitle) =>
+                !deletedChaptersList.some(
+                    (deletedChapter) =>
+                        modifiedTitle.chapterId === deletedChapter.chapterId
+                )
+        )
+
         const editDTO: EditAdventureType = {
-            deletedChapters: [],
-            deletedTopics: deletedTopicsList,
-            modifiedTitles: modifiedTitleList,
+            deletedChapters: deletedChaptersList,
+            deletedTopics: filteredDeletedTopics,
+            modifiedTitles: filteredModifiedTitles,
             modifiedTopics: filteredModifiedArray
         }
 
-        setEditMode(false);
+        console.log(editDTO)
+
+        // setEditMode(false);
 
         //se der erro no update faz o rollback dos dados da aventura
     }
@@ -163,21 +183,21 @@ const MyAdventurePage = () => {
     }
 
     function removeFromModifiedList(chapterId: string, topicId: string) {
-        let newArray = modifiedTopicsList.filter((topicArr) => topicArr.topic.id !== topicId && topicArr.chapterId !== chapterId);
+        let newArray = modifiedTopicsList.filter((topicArr) => !(topicArr.topic.id === topicId && topicArr.chapterId === chapterId));
         setModifiedTopicsList(newArray);
     }
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        console.log("deleted:")
-        console.log(deletedTopicsList)
+    //     console.log("deleted:")
+    //     console.log(deletedTopicsList)
 
-        console.log("modified:")
-        console.log(modifiedTopicsList);
+    //     console.log("modified:")
+    //     console.log(modifiedTopicsList);
 
-        console.log("titleModified:")
-        console.log(modifiedTitleList)
-    }, [modifiedTitleList, modifiedTopicsList, deletedTopicsList])
+    //     console.log("titleModified:")
+    //     console.log(modifiedTitleList)
+    // }, [modifiedTitleList, modifiedTopicsList, deletedTopicsList])
 
     return (
         <PageLayout awaitAdventureLoad={true}>
