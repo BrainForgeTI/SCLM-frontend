@@ -1,7 +1,6 @@
 import { TopicType } from "../../types/adventure/TopicType";
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
-import ErrorIcon from '../../assets/icons/error.svg';
 import { DeleteButton } from "../DeleteButton";
 
 interface Props {
@@ -33,7 +32,7 @@ const AdventureTopic = (props: Props) => {
         adventureContext.setAdventure((prev) => {
             if (prev) {
                 return {
-                    ...prev, // Mantém outras propriedades do estado
+                    ...prev,
                     chapters: prev.chapters.map(chapter =>
                         chapter.id === props.chapterId
                             ? { ...chapter, topics: chapter.topics.map((topic) => topic.id === topicId ? { ...topic, name: event.target.value } : topic) }
