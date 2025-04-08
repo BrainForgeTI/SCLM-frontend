@@ -105,9 +105,8 @@ const ChapterSection = (props: Props) => {
                 <div className="grid-cols-1 mt-5 grid md:grid-cols-2 gap-10">
                     <div className="flex flex-col gap-5">
                         {props.chapter.topics.map((topic) => {
-                            let modified = props.modifiedTopicsList.some((topicArr) => topicArr.topic.id === topic.id);
                             let deleted = props.deletedTopicsList.some((topicArr) => topicArr.chapterId === props.chapter.id && topicArr.topicId === topic.id);
-                            return <AdventureTopic key={`topic-${topic.id}`} removeFromDeletedList={props.removeFromDeletedList} removeFromModifiedTopicsList={props.removeFromModifiedList} onDeleted={deleted} onModified={modified} putInDeletedList={props.putInDeletedList} putInModifiedTopicsList={props.putInModifiedTopicsList} editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />
+                            return <AdventureTopic key={`topic-${topic.id}`} removeFromDeletedList={props.removeFromDeletedList} removeFromModifiedTopicsList={props.removeFromModifiedList} onDeleted={deleted} putInDeletedList={props.putInDeletedList} putInModifiedTopicsList={props.putInModifiedTopicsList} editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />
                         })}
 
                         <div className="w-[200px] mt-5">
