@@ -6,6 +6,7 @@ import { DeleteButton } from "../DeleteButton";
 interface Props {
     chapterId: string
     topic: TopicType
+    setTopic?: React.Dispatch<React.SetStateAction<TopicType>>
     handleChapterTopicCompleted: (chapterId: string, topicId: string, completed: boolean) => void
     editMode?: boolean
     onDeleted?: boolean
@@ -44,6 +45,12 @@ const AdventureTopic = (props: Props) => {
         });
     }
 
+    function handleInputValue(event: ChangeEvent<HTMLInputElement>) {
+        if (props.setTopic) {
+            props.setTopic((prev) => ({ ...prev, name: event.target.value }))
+        }
+    }
+
     function topicNameWasModified(name: string) {
         return name === originalText;
     }
@@ -80,7 +87,14 @@ const AdventureTopic = (props: Props) => {
             </div>
             {
                 props.editMode ?
-                    <input onChange={(event: ChangeEvent<HTMLInputElement>) => { handleStepInput(event, props.topic.id) }} onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }} className={`border text-base-content/80 bg-base300/20 w-full py-1 z-30 rounded-[5px] px-5 ${!topicNameWasModified(props.topic.name) ? 'border-primary/50' : 'border-neutral/30'}`} type="text" value={props.topic.name} ></input>
+                    <input onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                        if (props.setTopic) {
+                            handleInputValue(event)
+                        } else {
+                            handleStepInput(event, props.topic.id);
+                        }
+
+                    }} onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }} className={`border text-base-content/80 bg-base300/20 w-full py-1 z-30 rounded-[5px] px-5 ${!topicNameWasModified(props.topic.name) ? 'border-primary/50' : 'border-neutral/30'}`} type="text" value={props.topic.name} ></input>
                     :
                     <p className="text-base-content text-[16px]">{props.topic.name}</p>
 
