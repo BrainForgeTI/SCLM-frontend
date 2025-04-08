@@ -98,50 +98,53 @@ const MyAdventurePage = () => {
     }
 
     function saveEditMode() {
-        const filteredDeletedTopics = deletedTopicsList.filter(
-            (deletedTopic) =>
-                !deletedChaptersList.some(
-                    (deletedChapter) =>
-                        deletedTopic.chapterId === deletedChapter.chapterId
-                )
-        )
+        if (adventureContext.adventure && adventureContext.adventure.id) {
+            const filteredDeletedTopics = deletedTopicsList.filter(
+                (deletedTopic) =>
+                    !deletedChaptersList.some(
+                        (deletedChapter) =>
+                            deletedTopic.chapterId === deletedChapter.chapterId
+                    )
+            )
 
-        const filteredModifiedTopicWithDeletedTopics = modifiedTopicsList.filter(
-            (modifiedTopic) =>
-                !filteredDeletedTopics.some(
-                    (deleteItem) =>
-                        modifiedTopic.chapterId === deleteItem.chapterId && modifiedTopic.topic.id === deleteItem.topicId
-                )
-        );
+            const filteredModifiedTopicWithDeletedTopics = modifiedTopicsList.filter(
+                (modifiedTopic) =>
+                    !filteredDeletedTopics.some(
+                        (deleteItem) =>
+                            modifiedTopic.chapterId === deleteItem.chapterId && modifiedTopic.topic.id === deleteItem.topicId
+                    )
+            );
 
-        const filteredModifiedArray = filteredModifiedTopicWithDeletedTopics.filter(
-            (modifiedTopic) =>
-                !deletedChaptersList.some(
-                    (deletedChapter) =>
-                        modifiedTopic.chapterId === deletedChapter.chapterId
-                )
-        )
+            const filteredModifiedArray = filteredModifiedTopicWithDeletedTopics.filter(
+                (modifiedTopic) =>
+                    !deletedChaptersList.some(
+                        (deletedChapter) =>
+                            modifiedTopic.chapterId === deletedChapter.chapterId
+                    )
+            )
 
-        const filteredModifiedTitles = modifiedTitleList.filter(
-            (modifiedTitle) =>
-                !deletedChaptersList.some(
-                    (deletedChapter) =>
-                        modifiedTitle.chapterId === deletedChapter.chapterId
-                )
-        )
+            const filteredModifiedTitles = modifiedTitleList.filter(
+                (modifiedTitle) =>
+                    !deletedChaptersList.some(
+                        (deletedChapter) =>
+                            modifiedTitle.chapterId === deletedChapter.chapterId
+                    )
+            )
 
-        const editDTO: EditAdventureType = {
-            deletedChapters: deletedChaptersList,
-            deletedTopics: filteredDeletedTopics,
-            modifiedTitles: filteredModifiedTitles,
-            modifiedTopics: filteredModifiedArray
+            const editDTO: EditAdventureType = {
+                adventureId: adventureContext.adventure.id,
+                deletedChapters: deletedChaptersList,
+                deletedTopics: filteredDeletedTopics,
+                modifiedTitles: filteredModifiedTitles,
+                modifiedTopics: filteredModifiedArray
+            }
+
+            console.log(editDTO)
+
+            // setEditMode(false);
+
+            //se der erro no update faz o rollback dos dados da aventura
         }
-
-        console.log(editDTO)
-
-        // setEditMode(false);
-
-        //se der erro no update faz o rollback dos dados da aventura
     }
 
     function putInDeletedChaptersList(chapterId: string) {
