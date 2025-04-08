@@ -2,6 +2,7 @@ import { TopicType } from "../../types/adventure/TopicType";
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
 import ErrorIcon from '../../assets/icons/error.svg';
+import { DeleteButton } from "../DeleteButton";
 
 interface Props {
     chapterId: string
@@ -59,7 +60,7 @@ const AdventureTopic = (props: Props) => {
             <div className="flex gap-2">
                 {
                     props.editMode ?
-                        <button onClick={() => {
+                        <DeleteButton action={() => {
                             if (props.onDeleted) {
                                 if (props.removeFromDeletedList) {
                                     props.removeFromDeletedList(props.chapterId, props.topic.id);
@@ -69,9 +70,7 @@ const AdventureTopic = (props: Props) => {
                             if (props.putInDeletedList) {
                                 props.putInDeletedList(props.chapterId, props.topic.id)
                             }
-                        }} className={`w-[35px] text-error-content grid place-items-center h-[35px] lg:w-[27px] lg:h-[27px] shrink-0 rounded-[3px] cursor-pointer text-error-content ${props.onDeleted ? 'bg-error' : 'bg-error/20'}`}>
-                            <ErrorIcon />
-                        </button>
+                        }} style={`${props.onDeleted ? 'bg-error' : 'bg-error/20'}`} />
                         :
                         <></>
                 }
