@@ -106,13 +106,21 @@ const MyAdventurePage = () => {
                 )
         )
 
-        const filteredModifiedArray = modifiedTopicsList.filter(
+        const filteredModifiedTopicWithDeletedTopics = modifiedTopicsList.filter(
             (modifiedTopic) =>
                 !filteredDeletedTopics.some(
                     (deleteItem) =>
                         modifiedTopic.chapterId === deleteItem.chapterId && modifiedTopic.topic.id === deleteItem.topicId
                 )
         );
+
+        const filteredModifiedArray = filteredModifiedTopicWithDeletedTopics.filter(
+            (modifiedTopic) =>
+                !deletedChaptersList.some(
+                    (deletedChapter) =>
+                        modifiedTopic.chapterId === deletedChapter.chapterId
+                )
+        )
 
         const filteredModifiedTitles = modifiedTitleList.filter(
             (modifiedTitle) =>
@@ -134,6 +142,14 @@ const MyAdventurePage = () => {
         // setEditMode(false);
 
         //se der erro no update faz o rollback dos dados da aventura
+    }
+
+    function putInDeletedChaptersList(chapterId: string) {
+        setDeletedChaptersList((prev) => [...prev, { chapterId: chapterId }])
+    }
+
+    function removeFromDeletedChapterList(chapterId: string) {
+        setDeletedChaptersList((prev) => prev.filter((chapter) => chapter.chapterId !== chapterId));
     }
 
     function putInModifiedTitleList(chapterId: string, title: string) {
@@ -253,9 +269,16 @@ const MyAdventurePage = () => {
                                 }
                             }
                             if (canShow) {
+                                let deleted = deletedChaptersList.some((current) => current.chapterId === chapter.id);
                                 return <div className="flex flex-col">
                                     {
-                                        editMode ? <DeleteButton action={() => { }} style={`bg-error ms-2`} /> : <></>
+                                        editMode ? <DeleteButton action={() => {
+                                            if (deleted) {
+                                                removeFromDeletedChapterList(chapter.id);
+                                            } else {
+                                                putInDeletedChaptersList(chapter.id);
+                                            }
+                                        }} style={`${deleted ? 'bg-error' : 'bg-error/20'} ms-2`} /> : <></>
                                     }
                                     <ChapterSection putInModifiedTitleList={putInModifiedTitleList} removeFromModifiedTitleList={removeFromModifiedTitleList} deletedTopicsList={deletedTopicsList} modifiedTopicsList={modifiedTopicsList} putInDeletedList={putInDeletedList} putInModifiedTopicsList={putInModifiedTopicsList} removeFromDeletedList={removeFromDeletedList} removeFromModifiedList={removeFromModifiedList} key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
                                 </div>
