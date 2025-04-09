@@ -1,4 +1,6 @@
+import axios from "axios";
 import { AdventureCardType } from "../types/AdventureCardType"
+import { SignUpFormType } from "../types/auth_types/SignUpFormType";
 
 export const useApi = () => ({
     getUserAdventures: async (userId: string): Promise<AdventureCardType[]> => {
@@ -109,7 +111,6 @@ export const useApi = () => ({
     },
 
     createAdventure: async (userId: string, adventure: AdventureCardType) => {
-
         //mock
         let random = Math.floor(Math.random() * 10)
         let response;
@@ -262,5 +263,28 @@ export const useApi = () => ({
         }
 
         return response
+    },
+
+    signup: async (formData: SignUpFormType) => {
+        const res = await axios.post('http://127.0.0.1:3000/auth/signup', formData)
+
+        if (res.status !== 200) {
+            throw new Error('Error creating account')
+        }
+
+        return true;
+    },
+
+    validateEmail: async (email: string) => {
+        await axios.post('http://127.0.0.1:3000/auth/validate-email', { email })
+    },
+
+    validateToken: async (email: string, token: string) => {
+        const res = await axios.post('http://127.0.0.1:3000/auth/validate-token', { email, token });
+
+        if (res.status !== 200) {
+            return false;
+        }
+        return true;
     }
 })
