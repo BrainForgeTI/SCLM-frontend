@@ -116,7 +116,7 @@ const ChapterSection = (props: Props) => {
                         })}
 
                         <div className="w-[200px] mt-5">
-                            <ActionButton action={() => { }} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content hover:scale-[1.006]" disableDefaultHover={true} />
+                            <ActionButton action={() => { }} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content" disableDefaultHover={true} />
                         </div>
                     </div>
                     <div className="w-full border min-h-60 border-neutral/18 rounded-[10px]">
