@@ -30,7 +30,7 @@ const ChapterSection = (props: Props) => {
     const topicContainerRef = useRef<HTMLDivElement>(null);
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
     const [height, setHeight] = useState(0);
-    const [originalTitle, setOriginalTitle] = useState(props.chapter.title);
+    const [originalTitle, setOriginalTitle] = useState<string | null>(null);
 
     function updateDivHeight() {
         if (props.chapter.expanded && topicContainerRef.current) {
@@ -71,6 +71,12 @@ const ChapterSection = (props: Props) => {
     useEffect(() => {
         updateDivHeight()
     }, [props.editMode])
+
+    useEffect(() => {
+        if (originalTitle === null) {
+            setOriginalTitle(props.chapter.title);
+        }
+    }, [props.chapter.title])
 
     return (
         <div className="w-full relative min-h-[63px] overflow-hidden">
