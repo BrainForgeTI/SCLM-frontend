@@ -15,7 +15,7 @@ export const MissionCard = (props: Props)=>{
             setReveal1(!reveal1);
     }
     return (
-        <div className={`flex flex-col h-[350px] w-[350px] justify-center text-center py-[20px] px-[40px] justify-items-center items-center ${reveal1 ? `${props.textColor} `:"text-white" } bg-${props.bgColor}/[.40] rounded-[40px] gap-[10px]`}>
+        <div className={`flex flex-col h-[350px] w-[350px] justify-center text-center py-[20px] px-[40px] justify-items-center items-center ${reveal1 ? `${props.textColor} `:"text-white" } bg-${props.bgColor}/[.40] rounded-[40px] gap-[10px]`}  onClick={switchEstilo1} >
             <img className={`w-[200px] ${reveal1 ? "hidden":""}`} src={props.image} alt="" />
             <img className={`flex w-[45px] text-center ${reveal1 ? "":"hidden"}`} src={props.imageIcon} alt="" />
             <p className={reveal1 ? "":"hidden"}>{props.textMission}</p>
