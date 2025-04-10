@@ -17,12 +17,15 @@ interface Props {
     editMode: boolean
     modifiedTopicsList: ModifyChapterTopics[]
     deletedTopicsList: DeletedChapterTopic[]
+    newTopic?: TopicType | null
+    setNewTopic?: React.Dispatch<React.SetStateAction<TopicType | null>>
     putInDeletedList?: (chapterId: string, topicId: string) => void
     putInModifiedTopicsList?: (chapterId: string, topic: TopicType) => void
     removeFromDeletedList?: (chapterId: string, topicId: string) => void
     removeFromModifiedList?: (chapterId: string, topicId: string) => void
     putInModifiedTitleList?: (chapterId: string, title: string) => void
     removeFromModifiedTitleList?: (chapterId: string) => void
+    addTopicToAdventure?: (topic: TopicType, chapterId: string) => Promise<void>
 }
 
 const ChapterSection = (props: Props) => {
@@ -66,7 +69,7 @@ const ChapterSection = (props: Props) => {
 
     useEffect(() => {
         updateDivHeight();
-    }, [props.chapter.expanded])
+    }, [props.chapter.expanded, adventureContext.adventure])
 
     useEffect(() => {
         updateDivHeight()
@@ -112,12 +115,22 @@ const ChapterSection = (props: Props) => {
                     <div className="flex flex-col gap-5">
                         {props.chapter.topics.map((topic) => {
                             let deleted = props.deletedTopicsList.some((topicArr) => topicArr.chapterId === props.chapter.id && topicArr.topicId === topic.id);
-                            return <AdventureTopic key={`topic-${topic.id}`} removeFromDeletedList={props.removeFromDeletedList} removeFromModifiedTopicsList={props.removeFromModifiedList} onDeleted={deleted} putInDeletedList={props.putInDeletedList} putInModifiedTopicsList={props.putInModifiedTopicsList} editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />
+                            return <AdventureTopic key={`topic-${topic.id}`} addTopicToAdventure={props.addTopicToAdventure} removeFromDeletedList={props.removeFromDeletedList} removeFromModifiedTopicsList={props.removeFromModifiedList} onDeleted={deleted} putInDeletedList={props.putInDeletedList} putInModifiedTopicsList={props.putInModifiedTopicsList} editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />
                         })}
 
-                        <div className="w-[200px] mt-5">
-                            <ActionButton action={() => { }} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content" disableDefaultHover={true} />
-                        </div>
+                        {
+                            props.newTopic !== null && props.newTopic ?
+                                <AdventureTopic addTopicToAdventure={props.addTopicToAdventure} editMode={true} chapterId={props.chapter.id} topic={props.newTopic} setTopic={props.setNewTopic} />
+                                :
+                                <div className="w-[200px] mt-5">
+                                    <ActionButton action={() => {
+                                        if (props.setNewTopic) {
+                                            props.setNewTopic({ id: 'new-topic', completed: false, name: "Novo tópico" })
+                                        }
+                                        updateDivHeight()
+                                    }} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content" disableDefaultHover={true} />
+                                </div>
+                        }
                     </div>
                     <div className="w-full border min-h-60 border-neutral/18 rounded-[10px]">
                         <textarea ref={textAreaRef} placeholder="Anotações..." className="resize-none p-6 text-base-content/70 outline-none w-full h-full text-[16px]"></textarea>

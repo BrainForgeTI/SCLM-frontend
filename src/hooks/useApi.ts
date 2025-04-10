@@ -1,6 +1,8 @@
 import axios from "axios";
 import { AdventureCardType } from "../types/AdventureCardType"
 import { SignUpFormType } from "../types/auth_types/SignUpFormType";
+import { TopicType } from "../types/adventure/TopicType";
+import { CreateTopicType } from "../types/adventure/CreateTopicType";
 
 export const useApi = () => ({
     getUserAdventures: async (userId: string): Promise<AdventureCardType[]> => {
@@ -117,6 +119,19 @@ export const useApi = () => ({
 
         if (random > 4) {
             response = { status: 201, cardId: `fjmwpijg39j3r-${Math.random() * 50000}` }
+        } else {
+            response = { status: 500 }
+        }
+
+        return response;
+    },
+
+    createChapterTopic: async (createTopic: CreateTopicType) => {
+        let random = Math.floor(Math.random() * 10)
+        let response;
+
+        if (random > 4) {
+            response = { status: 201, topicId: `Mock-${Math.random() * 50000}` }
         } else {
             response = { status: 500 }
         }

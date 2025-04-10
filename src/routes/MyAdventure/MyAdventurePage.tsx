@@ -14,6 +14,7 @@ import { DeletedChapterTopic } from "../../types/adventure/DeletedChapterTopic";
 import { EditAdventureType } from "../../types/adventure/EditAdventureType";
 import { DeletedChapterType } from "../../types/adventure/DeletedChapterType";
 import { DeleteButton } from "../../components/DeleteButton";
+import { Validator } from "../../utils/validator";
 
 const MyAdventurePage = () => {
     const api = useApi();
@@ -27,6 +28,10 @@ const MyAdventurePage = () => {
     const [deletedChaptersList, setDeletedChaptersList] = useState<DeletedChapterType[]>([]);
     const [modifiedTopicsList, setModifiedTopicsList] = useState<ModifyChapterTopics[]>([]);
     const [modifiedTitleList, setModifiedTitleList] = useState<ModifyChapterTitle[]>([]);
+
+    const [newTopic, setNewTopic] = useState<TopicType | null>(null);
+
+    const validator = new Validator();
 
     function handleSearchValue(event: ChangeEvent<HTMLInputElement>) {
         setSearchValue(event.target.value);
@@ -85,6 +90,48 @@ const MyAdventurePage = () => {
             setAdventureBeforeEdit(structuredClone(adventureContext.adventure));
             setEditMode(true);
         }
+    }
+
+    async function addTopicToAdventure(topic: TopicType, chapterId: string) {
+        if (!validator.emptyString(topic.name)) {
+            if (adventureContext.adventure && adventureContext.adventure.id) {
+                let adventure = structuredClone(adventureContext.adventure);
+
+                adventure.chapters.map((chapter) => chapter.id == chapterId ? chapter.topics.push(topic) : chapter)
+
+                adventureContext.setAdventure(adventure);
+                resetAddTopic();
+
+                let response = await api.createChapterTopic({ adventureId: adventureContext.adventure.id, chapterId: chapterId, topic: topic })
+                setTimeout(() => {
+                    if (response.status !== 201) {
+                        adventure.chapters = adventure.chapters.map((chapter) => chapter.id === chapterId ? { ...chapter, topics: chapter.topics.filter((currentTopic) => currentTopic.id !== topic.id) } : chapter);
+                        adventureContext.setAdventure(adventure)
+                        setNewTopic(topic);
+                    } else {
+                        adventure.chapters = adventure.chapters.map((chapter) =>
+                            chapter.id === chapterId
+                                ? {
+                                    ...chapter,
+                                    topics: chapter.topics.map((currentTopic) =>
+                                        currentTopic.id === topic.id
+                                            ? { ...currentTopic, id: response.topicId! }
+                                            : currentTopic
+                                    ),
+                                }
+                                : chapter
+                        );
+
+                        adventureContext.setAdventure(adventure);
+                    }
+                }, 1000)
+            }
+        }
+
+    }
+
+    function resetAddTopic() {
+        setNewTopic(null)
     }
 
     function restoreEdits() {
@@ -283,7 +330,7 @@ const MyAdventurePage = () => {
                                             }
                                         }} style={`${deleted ? 'bg-error' : 'bg-error/20'} ms-2`} /> : <></>
                                     }
-                                    <ChapterSection putInModifiedTitleList={putInModifiedTitleList} removeFromModifiedTitleList={removeFromModifiedTitleList} deletedTopicsList={deletedTopicsList} modifiedTopicsList={modifiedTopicsList} putInDeletedList={putInDeletedList} putInModifiedTopicsList={putInModifiedTopicsList} removeFromDeletedList={removeFromDeletedList} removeFromModifiedList={removeFromModifiedList} key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+                                    <ChapterSection addTopicToAdventure={addTopicToAdventure} newTopic={newTopic} setNewTopic={setNewTopic} putInModifiedTitleList={putInModifiedTitleList} removeFromModifiedTitleList={removeFromModifiedTitleList} deletedTopicsList={deletedTopicsList} modifiedTopicsList={modifiedTopicsList} putInDeletedList={putInDeletedList} putInModifiedTopicsList={putInModifiedTopicsList} removeFromDeletedList={removeFromDeletedList} removeFromModifiedList={removeFromModifiedList} key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
                                 </div>
                             }
                         })
