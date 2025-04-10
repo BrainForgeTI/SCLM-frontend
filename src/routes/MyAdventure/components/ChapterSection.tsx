@@ -69,7 +69,7 @@ const ChapterSection = (props: Props) => {
 
     useEffect(() => {
         updateDivHeight();
-    }, [props.chapter.expanded, adventureContext.adventure])
+    }, [props.chapter.expanded, adventureContext.adventure, props.newTopic])
 
     useEffect(() => {
         updateDivHeight()
