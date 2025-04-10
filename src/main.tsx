@@ -6,11 +6,9 @@ import { BrowserRouter } from 'react-router'
 import { AdventureProvider } from './context/adventure/AdventureProvider.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <AdventureProvider>
-        <App />
-      </AdventureProvider>
-    </BrowserRouter>
-  </StrictMode>,
+  <BrowserRouter>
+    <AdventureProvider>
+      <App />
+    </AdventureProvider>
+  </BrowserRouter>
 )
