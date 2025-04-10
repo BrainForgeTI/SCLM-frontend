@@ -3,6 +3,7 @@ import { AdventureCardType } from "../types/AdventureCardType"
 import { SignUpFormType } from "../types/auth_types/SignUpFormType";
 import { TopicType } from "../types/adventure/TopicType";
 import { CreateTopicType } from "../types/adventure/CreateTopicType";
+import { CreateChapter } from "../types/adventure/CreateChapter";
 
 export const useApi = () => ({
     getUserAdventures: async (userId: string): Promise<AdventureCardType[]> => {
@@ -132,6 +133,19 @@ export const useApi = () => ({
 
         if (random > 4) {
             response = { status: 201, topicId: `Mock-${Math.random() * 50000}` }
+        } else {
+            response = { status: 500 }
+        }
+
+        return response;
+    },
+
+    createChapter: async (createChapter: CreateChapter) => {
+        let random = Math.floor(Math.random() * 10)
+        let response;
+
+        if (random > 4) {
+            response = { status: 201, chapterId: `Mock-${Math.random() * 50000}` }
         } else {
             response = { status: 500 }
         }

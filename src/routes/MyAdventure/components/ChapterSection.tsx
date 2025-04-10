@@ -13,10 +13,11 @@ interface Props {
     index: string
     chapter: ChapterType
     handleExpand: (chapterId: string) => void
-    handleChapterTopicCompleted: (chapterId: string, topicId: string, completed: boolean) => void
+    handleChapterTopicCompleted?: (chapterId: string, topicId: string, completed: boolean) => void
     editMode: boolean
-    modifiedTopicsList: ModifyChapterTopics[]
-    deletedTopicsList: DeletedChapterTopic[]
+    modifiedTopicsList?: ModifyChapterTopics[]
+    deletedTopicsList?: DeletedChapterTopic[]
+    setNewChapter?: React.Dispatch<React.SetStateAction<ChapterType | null>>
     newTopic?: TopicType | null
     setNewTopic?: React.Dispatch<React.SetStateAction<TopicType | null>>
     putInDeletedList?: (chapterId: string, topicId: string) => void
@@ -44,27 +45,31 @@ const ChapterSection = (props: Props) => {
     }
 
     function handleTitleInput(event: ChangeEvent<HTMLInputElement>) {
-        if (props.putInModifiedTitleList && props.removeFromModifiedTitleList) {
-            if (originalTitle !== event.target.value) {
-                props.putInModifiedTitleList(props.chapter.id, event.target.value);
-            } else {
-                props.removeFromModifiedTitleList(props.chapter.id);
+        if (props.setNewChapter) {
+            props.setNewChapter((prev) => prev ? ({ ...prev, title: event.target.value }) : prev);
+        } else {
+            if (props.putInModifiedTitleList && props.removeFromModifiedTitleList) {
+                if (originalTitle !== event.target.value) {
+                    props.putInModifiedTitleList(props.chapter.id, event.target.value);
+                } else {
+                    props.removeFromModifiedTitleList(props.chapter.id);
+                }
             }
-        }
 
-        adventureContext.setAdventure((prev) => {
-            if (prev) {
-                return {
-                    ...prev, // Mantém outras propriedades do estado
-                    chapters: prev.chapters.map(chapter =>
-                        chapter.id === props.chapter.id
-                            ? { ...chapter, title: event.target.value }
-                            : chapter
-                    )
-                };
-            }
-            return prev;
-        });
+            adventureContext.setAdventure((prev) => {
+                if (prev) {
+                    return {
+                        ...prev, // Mantém outras propriedades do estado
+                        chapters: prev.chapters.map(chapter =>
+                            chapter.id === props.chapter.id
+                                ? { ...chapter, title: event.target.value }
+                                : chapter
+                        )
+                    };
+                }
+                return prev;
+            });
+        }
     }
 
     useEffect(() => {
@@ -84,15 +89,15 @@ const ChapterSection = (props: Props) => {
     return (
         <div className="w-full relative min-h-[63px] overflow-hidden">
             <div onClick={() => { props.handleExpand(props.chapter.id) }}
-                className="w-full z-20 absolute cursor-pointer hover:border-neutral/10 border border-transparent bg-neutral/5 font-bold text-[20px] text-neutral rounded-[10px] h-[63px] flex justify-between items-center px-5 overflow-hidden">
+                className="w-full z-20 absolute cursor-pointer hover:border-neutral/10 border border-transparent bg-neutral/5 font-bold text-[20px] text-neutral rounded-[10px] h-[63px] flex justify-between items-center overflow-hidden">
 
-                <div className="flex-1 min-w-0 flex gap-5 items-center">
+                <div className="flex-1 min-w-0 flex gap-5 items-center px-2 ps-5">
                     <span>{`${props.index}.`}</span>
                     {
                         props.editMode ?
                             <input onChange={handleTitleInput}
                                 onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }}
-                                className={`border bg-base300/20 text-base-content/80 w-full py-1 z-30 ${props.chapter.title !== originalTitle ? 'border-primary/50' : 'border-neutral/30'} rounded-[5px] px-5`}
+                                className={`border bg-base300/20 text-base-content/80 w-full py-1 z-30 ${(props.chapter.title !== originalTitle) && props.chapter.id !== 'new-chapter' ? 'border-primary/50' : 'border-neutral/30'} rounded-[5px] px-5`}
                                 type="text"
                                 value={props.chapter.title}
                             />
@@ -102,10 +107,17 @@ const ChapterSection = (props: Props) => {
                 </div>
 
                 {
-                    props.chapter.expanded ?
-                        <button className="shrink-0 px-2"><ArrowUpIcon /></button>
+                    props.chapter.id !== 'new-chapter' ?
+                        <>
+                            {
+                                props.chapter.expanded ?
+                                    <button className="h-full cursor-pointer shrink-0 px-2 pe-5"><ArrowUpIcon /></button>
+                                    :
+                                    <button className="h-full cursor-pointer shrink-0 px-2 pe-5"><ArrowDownIcon /></button>
+                            }
+                        </>
                         :
-                        <button className="shrink-0 px-2"><ArrowDownIcon /></button>
+                        <></>
                 }
             </div>
 
@@ -114,7 +126,10 @@ const ChapterSection = (props: Props) => {
                 <div className="grid-cols-1 mt-5 grid md:grid-cols-2 gap-10">
                     <div className="flex flex-col gap-5">
                         {props.chapter.topics.map((topic) => {
-                            let deleted = props.deletedTopicsList.some((topicArr) => topicArr.chapterId === props.chapter.id && topicArr.topicId === topic.id);
+                            let deleted = false
+                            if (props.deletedTopicsList) {
+                                deleted = props.deletedTopicsList.some((topicArr) => topicArr.chapterId === props.chapter.id && topicArr.topicId === topic.id);
+                            }
                             return <AdventureTopic key={`topic-${topic.id}`} addTopicToAdventure={props.addTopicToAdventure} removeFromDeletedList={props.removeFromDeletedList} removeFromModifiedTopicsList={props.removeFromModifiedList} onDeleted={deleted} putInDeletedList={props.putInDeletedList} putInModifiedTopicsList={props.putInModifiedTopicsList} editMode={props.editMode} chapterId={props.chapter.id} handleChapterTopicCompleted={props.handleChapterTopicCompleted} topic={topic} />
                         })}
 

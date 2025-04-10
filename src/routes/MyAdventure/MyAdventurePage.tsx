@@ -15,6 +15,8 @@ import { EditAdventureType } from "../../types/adventure/EditAdventureType";
 import { DeletedChapterType } from "../../types/adventure/DeletedChapterType";
 import { DeleteButton } from "../../components/DeleteButton";
 import { Validator } from "../../utils/validator";
+import { ChapterType } from "../../types/adventure/ChapterType";
+import { ConfirmButton } from "../../components/ConfirmButton";
 
 const MyAdventurePage = () => {
     const api = useApi();
@@ -29,6 +31,7 @@ const MyAdventurePage = () => {
     const [modifiedTopicsList, setModifiedTopicsList] = useState<ModifyChapterTopics[]>([]);
     const [modifiedTitleList, setModifiedTitleList] = useState<ModifyChapterTitle[]>([]);
 
+    const [newChapter, setNewChapter] = useState<ChapterType | null>(null);
     const [newTopic, setNewTopic] = useState<TopicType | null>(null);
 
     const validator = new Validator();
@@ -38,6 +41,7 @@ const MyAdventurePage = () => {
     }
 
     function handleExpand(chapterId: string) {
+        console.log(chapterId)
         if (adventureContext.adventure) {
             adventureContext.setAdventure((prev) => {
                 if (!prev) return null;
@@ -89,6 +93,31 @@ const MyAdventurePage = () => {
         if (adventureContext.adventure) {
             setAdventureBeforeEdit(structuredClone(adventureContext.adventure));
             setEditMode(true);
+        }
+    }
+
+    async function addChapterToAdventure(chapter: ChapterType) {
+        if (!validator.emptyString(chapter.title)) {
+            if (adventureContext.adventure && adventureContext.adventure.id) {
+                let adventure = structuredClone(adventureContext.adventure);
+
+                adventure.chapters.push(chapter);
+                adventureContext.setAdventure(adventure);
+
+                setNewChapter(null)
+
+                let response = await api.createChapter({ adventureId: adventureContext.adventure.id, chapterTitle: chapter.title });
+                if (response.status !== 201) {
+                    adventure.chapters = adventure.chapters.filter((current) => current.id !== chapter.id)
+                    adventureContext.setAdventure(adventure);
+                    setNewChapter(chapter);
+                } else {
+                    adventure.chapters = adventure.chapters.map((current) => current.id === chapter.id ? { ...current, id: response.chapterId! } : current);
+                    adventureContext.setAdventure(adventure);
+                    console.log(adventure.chapters)
+                    setNewChapter(null)
+                }
+            }
         }
     }
 
@@ -286,7 +315,7 @@ const MyAdventurePage = () => {
 
                         <div className="w-auto lg:w-auto flex items-center justify-end lg:justify-end gap-3 md:gap-10">
                             {
-                                adventureContext.adventure && adventureContext.adventure.chapters.length ?
+                                adventureContext.adventure && adventureContext.adventure.chapters ?
                                     <div className="min-w-[100px] md:min-w-[137px]">
                                         <ActionButton Icon={EditIcon} action={() => {
                                             if (editMode) {
@@ -310,36 +339,60 @@ const MyAdventurePage = () => {
                 </div>
 
                 <div className="w-full mt-10 flex flex-col gap-10">
-                    {
-                        adventureContext.adventure && adventureContext.adventure.chapters.map((chapter, index) => {
-                            let canShow = true
-                            if (searchValue.length > 0) {
-                                if (!searchInString(chapter.title, searchValue)) {
-                                    canShow = false
-                                }
-                            }
-                            if (canShow) {
-                                let deleted = deletedChaptersList.some((current) => current.chapterId === chapter.id);
-                                return <div className="flex flex-col">
-                                    {
-                                        editMode ? <DeleteButton action={() => {
-                                            if (deleted) {
-                                                removeFromDeletedChapterList(chapter.id);
-                                            } else {
-                                                putInDeletedChaptersList(chapter.id);
-                                            }
-                                        }} style={`${deleted ? 'bg-error' : 'bg-error/20'} ms-2`} /> : <></>
+                    <>
+                        {
+                            adventureContext.adventure && adventureContext.adventure.chapters.length > 0 ?
+                                adventureContext.adventure.chapters.map((chapter, index) => {
+                                    let canShow = true
+                                    if (searchValue.length > 0) {
+                                        if (!searchInString(chapter.title, searchValue)) {
+                                            canShow = false
+                                        }
                                     }
-                                    <ChapterSection addTopicToAdventure={addTopicToAdventure} newTopic={newTopic} setNewTopic={setNewTopic} putInModifiedTitleList={putInModifiedTitleList} removeFromModifiedTitleList={removeFromModifiedTitleList} deletedTopicsList={deletedTopicsList} modifiedTopicsList={modifiedTopicsList} putInDeletedList={putInDeletedList} putInModifiedTopicsList={putInModifiedTopicsList} removeFromDeletedList={removeFromDeletedList} removeFromModifiedList={removeFromModifiedList} key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+                                    if (canShow) {
+                                        let deleted = deletedChaptersList.some((current) => current.chapterId === chapter.id);
+                                        return <div className="flex flex-col">
+                                            {
+                                                editMode ? <DeleteButton action={() => {
+                                                    if (deleted) {
+                                                        removeFromDeletedChapterList(chapter.id);
+                                                    } else {
+                                                        putInDeletedChaptersList(chapter.id);
+                                                    }
+                                                }} style={`${deleted ? 'bg-error' : 'bg-error/20'} ms-2 mb-2`} /> : <></>
+                                            }
+                                            <ChapterSection addTopicToAdventure={addTopicToAdventure} newTopic={newTopic} setNewTopic={setNewTopic} putInModifiedTitleList={putInModifiedTitleList} removeFromModifiedTitleList={removeFromModifiedTitleList} deletedTopicsList={deletedTopicsList} modifiedTopicsList={modifiedTopicsList} putInDeletedList={putInDeletedList} putInModifiedTopicsList={putInModifiedTopicsList} removeFromDeletedList={removeFromDeletedList} removeFromModifiedList={removeFromModifiedList} key={`chapter-${index}`} editMode={editMode} handleChapterTopicCompleted={handleChapterTopicCompleted} handleExpand={handleExpand} index={`${index + 1}`} chapter={chapter} />
+
+                                        </div>
+                                    }
+                                })
+                                :
+                                <></>
+                        }
+                        {
+                            newChapter !== null ?
+                                <div className="w-full flex flex-col">
+                                    <div className="flex gap-2 ms-2 mb-2">
+                                        <ConfirmButton action={() => {
+                                            addChapterToAdventure(newChapter)
+                                        }} style="bg-action-overview/20 text-action-overview-content" />
+                                        <DeleteButton action={() => {
+                                            setNewChapter(null)
+                                        }} style="bg-error/20" />
+                                    </div>
+                                    <ChapterSection chapter={newChapter} editMode={true} handleExpand={handleExpand} setNewChapter={setNewChapter} index={`${(adventureContext.adventure?.chapters.length || 0) + 1}`} />
                                 </div>
-                            }
-                        })
-                    }
+                                :
+                                <></>
+                        }
+                    </>
 
                     {
-                        adventureContext.adventure && adventureContext.adventure.chapters.length > 0 ?
+                        adventureContext.adventure && adventureContext.adventure.chapters.length > 0 && newChapter === null ?
                             <div className="w-full">
-                                <ActionButton action={() => { }} label="+ Novo Capítulo" style="bg-secondary/10 text-secondary-content font-semibold py-5 border border-neutral/17 hover:border-neutral/50 hover:scale-[1.001]" disableDefaultHover={true} />
+                                <ActionButton action={() => {
+                                    setNewChapter({ expanded: false, id: 'new-chapter', notes: '', title: 'Novo capítulo', topics: [] })
+                                }} label="+ Novo Capítulo" style="bg-secondary/10 text-secondary-content font-semibold py-5 border border-neutral/17 hover:border-neutral/50 hover:scale-[1.001]" disableDefaultHover={true} />
                             </div>
                             :
                             <></>
