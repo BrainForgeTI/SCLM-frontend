@@ -4,6 +4,8 @@ Implementamos o padrão singleton neste Frontend para monitorar quanto tempo o u
 
 # COMO VALIDAR?
 
+Antes de tudo, certifique-se de ter o Nodejs 22 ou superior instalado na máquina
+
 1. Colone o repositório
 2. Acesse a pasta clonada e abra com o CMD
 3. Mesmo que você clone a partir da branch correta, ainda será necessário trazê-la para o repositório local que foi clonado, com os seguintes passos:
