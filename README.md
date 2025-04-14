@@ -1,6 +1,6 @@
 # ENTREGA 4 - SINGLETON
 
-Implementamos o padrão singleton neste Frontend para monitorar quando tempo o usuário permanece em cada tela referente à aventura (trilha de estudos) em que ele está.
+Implementamos o padrão singleton neste Frontend para monitorar quanto tempo o usuário permanece em cada tela referente à aventura (trilha de estudos) em que ele está.
 
 # COMO VALIDAR?
 
