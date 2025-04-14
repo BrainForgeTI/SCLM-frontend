@@ -1,54 +1,35 @@
-# React + TypeScript + Vite
+# ENTREGA 4 - SINGLETON
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Implementamos o padrão singleton neste Frontend para monitorar quando tempo o usuário permanece em cada tela referente à aventura (trilha de estudos) em que ele está.
 
-Currently, two official plugins are available:
+# COMO VALIDAR?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Colone o repositório
+2. Acesse a pasta clonada e abra com o CMD
+3. Mesmo que você clone a partir da branch correta, ainda será necessário trazê-la para o repositório local que foi clonado, com os seguintes passos:
 
-## Expanding the ESLint configuration
+* Garanta que esteja na ``main`` com ``git status``
+* Traga a branch com a implementação do singleton com o comando `git checkout -b temp/logmanager origin/temp/logmanager`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Com isso, você estará na branch correta.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. Digite no cmd que foi aberto anteriormente o comando ``npm install`` e aguarde até instalar as dependências
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. Com as dependências instaladas, digite no cmd o comando `npm run dev` isso iniciará o sistema em modo de desenvolvimento. Eu removi o Strict Mode que fazia a tela renderizar duas vezes seguidas, então estará tudo certo.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+5. quando o sistema for iniciado, ele exibirá o link de acesso no cmd, mas deverá acessar o caminho ``localhost:3000/home`` em seu navegador.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+6. Abra as Dev tools no navegador (geralmente, basta pressionar f12). A home irá mostrar algumas aventuras (mock de aventuras). clique no botão de uma delas para entrar em uma.
+
+7. Assim que a aventura abrir, dois novos botões irão aparecer no menu lateral da esquerda. O singleton conta a permanencia somente nessas duas telas
+
+7. A partir desse momento o Singleton contador de permanencia já estará contando. Por padrão, você estará na tela `Home` da aventura. Assim que você clicar para navegar para qualquer outra tela, os logs do singleton deverão aprecer nas dev tools.
+
+
+# Como isso funciona no react?
+
+No react temos um hook (função) que é executado a partir de mudanças. Esse hook, chamado useEffect, está configurado para chamar o singleton ao iniciar a tela e gravar o log quando ela for fechada.
+
+A implementação do Singleton está na pasta src/utils/class/logManager.ts
+
+Em síntese, o Singleton é uma classe estática que tem uma única instância, dentro da própria classe no atributo estático `instance` que pode ser recuperado pelo método estático `getInstance`
