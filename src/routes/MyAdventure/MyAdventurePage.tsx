@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useContext, useEffect } from "react";
+import { useState, ChangeEvent, useContext, useEffect, useRef } from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import { PageLayout, PageTitle } from "../../components/PageLayout"
 import { ChapterSection, SearchInput } from './index';
@@ -38,6 +38,13 @@ const MyAdventurePage = () => {
 
     function handleSearchValue(event: ChangeEvent<HTMLInputElement>) {
         setSearchValue(event.target.value);
+    }
+
+
+    function startAddNewChapter() {
+        if (!newChapter) {
+            setNewChapter({ expanded: false, id: 'new-chapter', notes: '', title: 'Novo capítulo', topics: [] });
+        }
     }
 
     function handleExpand(chapterId: string) {
@@ -129,7 +136,7 @@ const MyAdventurePage = () => {
                 adventure.chapters.map((chapter) => chapter.id == chapterId ? chapter.topics.push(topic) : chapter)
 
                 adventureContext.setAdventure(adventure);
-                resetAddTopic();
+                setNewTopic(null)
 
                 let response = await api.createChapterTopic({ adventureId: adventureContext.adventure.id, chapterId: chapterId, topic: topic })
                 setTimeout(() => {
@@ -138,6 +145,7 @@ const MyAdventurePage = () => {
                         adventureContext.setAdventure(adventure)
                         setNewTopic(topic);
                     } else {
+                        setNewTopic(null)
                         adventure.chapters = adventure.chapters.map((chapter) =>
                             chapter.id === chapterId
                                 ? {
@@ -157,10 +165,6 @@ const MyAdventurePage = () => {
             }
         }
 
-    }
-
-    function resetAddTopic() {
-        setNewTopic(null)
     }
 
     function restoreEdits() {
@@ -283,18 +287,6 @@ const MyAdventurePage = () => {
         setModifiedTopicsList(newArray);
     }
 
-    // useEffect(() => {
-
-    //     console.log("deleted:")
-    //     console.log(deletedTopicsList)
-
-    //     console.log("modified:")
-    //     console.log(modifiedTopicsList);
-
-    //     console.log("titleModified:")
-    //     console.log(modifiedTitleList)
-    // }, [modifiedTitleList, modifiedTopicsList, deletedTopicsList])
-
     return (
         <PageLayout awaitAdventureLoad={true}>
             <div className="w-full">
@@ -310,7 +302,7 @@ const MyAdventurePage = () => {
 
                     <div className="w-full flex items-center justify-between xl:justify-end gap-3 md:gap-10">
                         <div className="min-w-[100px] md:min-w-[137px]">
-                            <ActionButton action={() => { }} label="+ Capítulo" style="bg-primary text-primary-content text-[14px]" />
+                            <ActionButton action={startAddNewChapter} label="+ Capítulo" style="bg-primary text-primary-content text-[14px]" />
                         </div>
 
                         <div className="w-auto lg:w-auto flex items-center justify-end lg:justify-end gap-3 md:gap-10">
@@ -389,7 +381,7 @@ const MyAdventurePage = () => {
 
                     {
                         adventureContext.adventure && adventureContext.adventure.chapters.length > 0 && newChapter === null ?
-                            <div className="w-full">
+                            <div className="w-full mb-10">
                                 <ActionButton action={() => {
                                     setNewChapter({ expanded: false, id: 'new-chapter', notes: '', title: 'Novo capítulo', topics: [] })
                                 }} label="+ Novo Capítulo" style="bg-secondary/10 text-secondary-content font-semibold py-5 border border-neutral/17 hover:border-neutral/50 hover:scale-[1.001]" disableDefaultHover={true} />

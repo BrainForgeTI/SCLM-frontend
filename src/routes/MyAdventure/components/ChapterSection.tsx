@@ -36,11 +36,27 @@ const ChapterSection = (props: Props) => {
     const [height, setHeight] = useState(0);
     const [originalTitle, setOriginalTitle] = useState<string | null>(null);
 
+    const titleRef = useRef<HTMLInputElement>(null);
+
     function updateDivHeight() {
         if (props.chapter.expanded && topicContainerRef.current) {
             setHeight(topicContainerRef.current.scrollHeight);
         } else {
             setHeight(0);
+        }
+    }
+
+    function startAddNewTopic() {
+        if (!props.newTopic && props.setNewTopic) {
+            props.setNewTopic({ id: 'new-topic', completed: false, name: "Novo tópico", chapterId: props.chapter.id })
+            updateDivHeight()
+        }
+    }
+
+    function cancelAddNewTopic() {
+
+        if (props.setNewTopic) {
+            props.setNewTopic(null);
         }
     }
 
@@ -86,18 +102,24 @@ const ChapterSection = (props: Props) => {
         }
     }, [props.chapter.title])
 
+    useEffect(() => {
+        if (titleRef.current) {
+            titleRef.current.focus();
+        }
+    }, [])
+
     return (
         <div className="w-full relative min-h-[63px] overflow-hidden">
             <div onClick={() => { props.handleExpand(props.chapter.id) }}
-                className="w-full z-20 absolute cursor-pointer hover:border-neutral/10 border border-transparent bg-neutral/5 font-bold text-[20px] text-neutral rounded-[10px] h-[63px] flex justify-between items-center overflow-hidden">
+                className={`w-full z-20 absolute cursor-pointer border border-transparent bg-neutral/5 font-bold text-[20px] text-neutral rounded-[5px] h-[63px] flex justify-between items-center overflow-hidden ${props.chapter.id == 'new-chapter' ? '' : 'hover:border-neutral/10'}`}>
 
                 <div className="flex-1 min-w-0 flex gap-5 items-center px-2 ps-5">
                     <span>{`${props.index}.`}</span>
                     {
                         props.editMode ?
-                            <input onChange={handleTitleInput}
+                            <input ref={titleRef} onChange={handleTitleInput}
                                 onClick={(event: React.MouseEvent<HTMLInputElement>) => { event.stopPropagation() }}
-                                className={`border bg-base300/20 text-base-content/80 w-full py-1 z-30 ${(props.chapter.title !== originalTitle) && props.chapter.id !== 'new-chapter' ? 'border-primary/50' : 'border-neutral/30'} rounded-[5px] px-5`}
+                                className={`border text-base-content/80 w-full py-1 z-30 ${(props.chapter.title !== originalTitle) && props.chapter.id !== 'new-chapter' ? 'border-primary/50' : 'border-neutral/20'} px-5`}
                                 type="text"
                                 value={props.chapter.title}
                             />
@@ -134,16 +156,11 @@ const ChapterSection = (props: Props) => {
                         })}
 
                         {
-                            props.newTopic !== null && props.newTopic ?
-                                <AdventureTopic addTopicToAdventure={props.addTopicToAdventure} editMode={true} chapterId={props.chapter.id} topic={props.newTopic} setTopic={props.setNewTopic} />
+                            props.newTopic !== null && props.newTopic && props.chapter.id === props.newTopic.chapterId ?
+                                <AdventureTopic cancelAddNewTopic={cancelAddNewTopic} addTopicToAdventure={props.addTopicToAdventure} editMode={true} chapterId={props.chapter.id} topic={props.newTopic} setTopic={props.setNewTopic} />
                                 :
                                 <div className="w-[200px] mt-5">
-                                    <ActionButton action={() => {
-                                        if (props.setNewTopic) {
-                                            props.setNewTopic({ id: 'new-topic', completed: false, name: "Novo tópico" })
-                                        }
-                                        updateDivHeight()
-                                    }} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content" disableDefaultHover={true} />
+                                    <ActionButton action={startAddNewTopic} label="+ Novo Tópico" style="bg-primary/29 border border-neutral/17 hover:border-neutral/50 text-primary-content" disableDefaultHover={true} />
                                 </div>
                         }
                     </div>

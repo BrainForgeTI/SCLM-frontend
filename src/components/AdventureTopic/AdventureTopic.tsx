@@ -17,12 +17,15 @@ interface Props {
     removeFromDeletedList?: (chapterId: string, topicId: string) => void
     removeFromModifiedTopicsList?: (chapterId: string, topic: string) => void
     addTopicToAdventure?: (topic: TopicType, chapterId: string) => Promise<void>
+    cancelAddNewTopic?: () => void
 }
 
 const AdventureTopic = (props: Props) => {
     const adventureContext = useContext(AdventureContext);
     const [originalText, setOriginalText] = useState<string | null>(null)
     const validator = new Validator();
+
+    const nameRef = useRef<HTMLInputElement>(null);
 
     function handleStepInput(event: ChangeEvent<HTMLInputElement>, topicId: string) {
         if (event.target.value !== originalText) {
@@ -65,6 +68,12 @@ const AdventureTopic = (props: Props) => {
         }
     }, [props.topic.name])
 
+    useEffect(() => {
+        if (nameRef.current) {
+            nameRef.current.focus();
+        }
+    })
+
     return (
         <div className={`w-full flex items-start gap-5 text-base-content ${props.setTopic ? 'flex-col' : ''} md:flex-row`}>
             <div className="flex gap-2 items-center">
@@ -82,8 +91,8 @@ const AdventureTopic = (props: Props) => {
                     {
                         props.editMode ?
                             <DeleteButton action={() => {
-                                if (props.setTopic) {
-                                    props.setTopic(null);
+                                if (props.cancelAddNewTopic) {
+                                    props.cancelAddNewTopic();
                                 }
                                 if (props.onDeleted) {
                                     if (props.removeFromDeletedList) {
@@ -108,17 +117,21 @@ const AdventureTopic = (props: Props) => {
             </div>
 
 
-            <input onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                if (props.setTopic) {
-                    handleInputValue(event)
-                } else {
-                    handleStepInput(event, props.topic.id);
-                }
+            {
+                props.editMode ?
+                    <input ref={nameRef} onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                        if (props.setTopic) {
+                            handleInputValue(event)
+                        } else {
+                            handleStepInput(event, props.topic.id);
+                        }
 
-            }} onClick={(event: React.MouseEvent<HTMLInputElement>) => {
-                event.stopPropagation()
-            }} className={`${props.editMode ? 'block' : 'hidden'} border mb-2 text-base-content/80 bg-base300/20 w-full py-1 rounded-[5px] px-5 ${!topicNameWasModified(props.topic.name) && props.setTopic === undefined ? 'border-primary/50' : 'border-neutral/30'}`} type="text" value={props.topic.name} ></input>
-            <p className={`${props.editMode ? 'hidden' : 'block'} text-base-content break-words overflow-hidden text-[16px]`}>{props.topic.name}</p>
+                    }} onClick={(event: React.MouseEvent<HTMLInputElement>) => {
+                        event.stopPropagation()
+                    }} className={`border mb-2 text-base-content/80 bg-base300/20 w-full py-1 rounded-[5px] px-5 ${!topicNameWasModified(props.topic.name) && props.setTopic === undefined ? 'border-primary/50' : 'border-neutral/30'}`} type="text" value={props.topic.name} ></input>
+                    :
+                    <p className={`text-base-content break-words overflow-hidden text-[16px]`}>{props.topic.name}</p>
+            }
 
         </div >
     )
