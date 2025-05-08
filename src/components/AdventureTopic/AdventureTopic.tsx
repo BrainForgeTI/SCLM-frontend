@@ -69,7 +69,7 @@ const AdventureTopic = (props: Props) => {
     }, [props.topic.name])
 
     useEffect(() => {
-        if (nameRef.current) {
+        if (nameRef.current && props.topic.id === 'new-topic') {
             nameRef.current.focus();
         }
     })

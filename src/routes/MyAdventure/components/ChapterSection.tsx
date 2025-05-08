@@ -103,7 +103,7 @@ const ChapterSection = (props: Props) => {
     }, [props.chapter.title])
 
     useEffect(() => {
-        if (titleRef.current) {
+        if (titleRef.current && props.chapter.id === 'new-chapter') {
             titleRef.current.focus();
         }
     }, [])
