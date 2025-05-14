@@ -315,5 +315,18 @@ export const useApi = () => ({
             return false;
         }
         return true;
+    },
+
+    saveDescription: async (adventureId: string, chapterId: string, description: string): Promise<any> => {
+        let random = Math.floor(Math.random() * 10)
+        let response;
+
+        if (random > 4) {
+            response = { status: 200 }
+        } else {
+            response = { status: 500 }
+        }
+
+        return response;
     }
 })

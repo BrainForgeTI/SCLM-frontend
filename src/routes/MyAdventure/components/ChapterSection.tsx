@@ -165,8 +165,8 @@ const ChapterSection = (props: Props) => {
                                 </div>
                         }
                     </div>
-                    <div className="w-full border min-h-60 border-neutral/18 rounded-[10px]">
-                        <ChapterDescription chapterId={props.chapter.id} />
+                    <div className="w-full min-h-60 mb-10">
+                        <ChapterDescription adventureId={adventureContext.adventure?.id} chapterId={props.chapter.id} />
                     </div>
                 </div>
             </div>
