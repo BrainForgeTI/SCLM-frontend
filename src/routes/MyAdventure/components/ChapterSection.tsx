@@ -33,7 +33,6 @@ interface Props {
 const ChapterSection = (props: Props) => {
     const adventureContext = useContext(AdventureContext);
     const topicContainerRef = useRef<HTMLDivElement>(null);
-    const textAreaRef = useRef<HTMLTextAreaElement>(null);
     const [height, setHeight] = useState(0);
     const [originalTitle, setOriginalTitle] = useState<string | null>(null);
 
@@ -165,8 +164,8 @@ const ChapterSection = (props: Props) => {
                                 </div>
                         }
                     </div>
-                    <div className="w-full min-h-60 mb-10">
-                        <ChapterDescription adventureId={adventureContext.adventure?.id} chapterId={props.chapter.id} />
+                    <div className="w-full h-[400px] mb-10">
+                        <ChapterDescription adventureId={adventureContext.adventure?.id!} chapterId={props.chapter.id} />
                     </div>
                 </div>
             </div>

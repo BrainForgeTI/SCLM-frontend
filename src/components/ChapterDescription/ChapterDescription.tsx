@@ -1,115 +1,53 @@
-import { ChangeEvent, JSX, ReactElement, useContext, useEffect, useRef, useState } from "react";
-import { ChapterDescriptionLocalStorage } from "../../types/adventure/ChapterDescriptionLocalStorag";
+import { ChangeEvent, useState } from "react";
 import { useApi } from "../../hooks/useApi";
+import ActionButton from "../ActionButton/ActionButton";
+import { ButtonStyleType } from "../ActionButton/enum/ButtonStyleType";
 
 interface Props {
-    adventureId: string | undefined
+    adventureId: string
     chapterId: string
+    text: string
 }
 
 const ChapterDescription = (props: Props) => {
 
-    const [descriptionText, setDescriptionText] = useState<string>('');
+    const [descriptionText, setDescriptionText] = useState<string>(props.text);
     const [savingMessage, setSavingMassage] = useState<string>('');
-    const [ableToSave, setAbleToSave] = useState<boolean>(true);
+    const [saved, setSaved] = useState<boolean>(true);
+    const [buttonStyle, setButtonStyle] = useState<ButtonStyleType>(ButtonStyleType.DISABLED)
     const api = useApi();
 
     function handlerDescriptionTextArea(event: ChangeEvent<HTMLTextAreaElement>) {
-        setAbleToSave(true);
-        setMessage("clear")
         setDescriptionText(event.target.value);
-    }
 
-    function setMessage(type: string,) {
-        switch (type) {
-            case "error":
-                setSavingMassage("Erro ao salvar")
-                break;
-            case "saving":
-                setSavingMassage("Salvando...")
-                break;
-            case "clear":
-                setSavingMassage("")
-                break;
-            case "saved":
-                setSavingMassage('Salvo!')
+        if (saved) {
+            setSaved(false)
+            setButtonStyle(ButtonStyleType.NORMAL)
         }
     }
 
-    // o que precisa ser refeito, é um localstorage que funcione como array para cachear esses itens
-    async function saveOnLocalStorage() {
-        const localStorge = window.localStorage;
-        let currentDescription = localStorge.getItem("chapterDescription");
-        console.log(localStorge)
-        if (!currentDescription) {
-            localStorge.setItem("chapterDescription", JSON.stringify({
-                updatedAt: new Date(), description: '', savedOnDB: false
+    async function saveChanges() {
+        setButtonStyle(ButtonStyleType.LOADING)
+        setTimeout(async () => {
+            const result = await api.saveDescription(props.adventureId, props.chapterId, descriptionText)
 
-            }))
-        }
-        if (currentDescription) {
-            let description: ChapterDescriptionLocalStorage = await JSON.parse(currentDescription);
-            description.description = descriptionText
-            description.updatedAt = new Date();
-            description.savedOnDb = false
-            const jsonDescription = JSON.stringify(description);
-            localStorge.setItem("chapterDescription", jsonDescription);
-        }
-    }
-
-    async function handleDatabaseSave() {
-        console.log("passou aqui")
-        const localStorage = window.localStorage
-        const currentDescription = window.localStorage.getItem("chapterDescription");
-        if (currentDescription) {
-            let description: ChapterDescriptionLocalStorage = await JSON.parse(currentDescription);
-            description.updatedAt = new Date(description.updatedAt);
-            let nowDate = new Date();
-            let diff = nowDate.getTime() - description.updatedAt.getTime();
-            console.log(diff)
-            if (diff >= 2000) {
-                if (props.adventureId && !description.savedOnDb) {
-                    setMessage("saving")
-                    const response = await api.saveDescription(props.adventureId, props.chapterId, description.description)
-                    if (response.status !== 200) {
-                        setMessage("error");
-                    } else {
-                        console.log(response)
-                        description.savedOnDb = true
-                        let jsonDescription = JSON.stringify(description)
-                        localStorage.setItem("chapterDescription", jsonDescription)
-                        setAbleToSave(false);
-                        setMessage("saved")
-                    }
-                } else {
-                    setAbleToSave(false)
-                }
+            if (result.status !== 200) {
+                setButtonStyle(ButtonStyleType.NORMAL);
+                setSaved(false);
             } else {
+                setButtonStyle(ButtonStyleType.DISABLED);
+                setSaved(true)
             }
-        }
+        }, 500)
     }
-
-    useEffect(() => {
-        saveOnLocalStorage();
-    }, [descriptionText])
-
-    useEffect(() => {
-        const saveInterval = setInterval(() => {
-            if (ableToSave) {
-                handleDatabaseSave();
-            }
-        }, 1000)
-
-        return () => {
-            clearInterval(saveInterval);
-        }
-    }, [])
-
 
     return (
-        <div className="w-full h-full">
+        <div className="w-full h-full flex flex-col">
             <div className="text-neutral/50 h-8 w-full flex justify-end">{savingMessage}</div>
-            <textarea value={descriptionText} onChange={handlerDescriptionTextArea} placeholder="Digite aqui..." className="resize-none p-6 text-base-content/70 border border-neutral/18 outline-none rounded-[10px] w-full h-full text-[16px]"></textarea>
+            <div className="w-full h-full flex flex-col gap-10 border border-neutral/18 p-4 rounded-[10px]">
+                <textarea value={descriptionText} onChange={handlerDescriptionTextArea} placeholder="Digite aqui..." className="resize-none p-6 text-base-content/70 outline-none h-full w-full text-[16px]"></textarea>
+                <ActionButton label={`${saved ? "Salvo!" : "Salvar"}`} buttonStyle={buttonStyle} action={saveChanges} style={`text-white border border-transparent hover:scale-[1] ${saved ? "bg-transparent border-white/20 text-white/20" : "bg-primary hover:border-white/70"}`} />
+            </div>
         </div >
     )
 }
