@@ -12,7 +12,6 @@ interface Props {
 const ChapterDescription = (props: Props) => {
 
     const [descriptionText, setDescriptionText] = useState<string>(props.text);
-    const [savingMessage, setSavingMassage] = useState<string>('');
     const [saved, setSaved] = useState<boolean>(true);
     const [buttonStyle, setButtonStyle] = useState<ButtonStyleType>(ButtonStyleType.DISABLED)
     const api = useApi();
@@ -43,7 +42,6 @@ const ChapterDescription = (props: Props) => {
 
     return (
         <div className="w-full h-full flex flex-col">
-            <div className="text-neutral/50 h-8 w-full flex justify-end">{savingMessage}</div>
             <div className="w-full h-full flex flex-col gap-10 border border-neutral/18 p-4 rounded-[10px]">
                 <textarea value={descriptionText} onChange={handlerDescriptionTextArea} placeholder="Digite aqui..." className="resize-none p-6 text-base-content/70 outline-none h-full w-full text-[16px]"></textarea>
                 <ActionButton label={`${saved ? "Salvo!" : "Salvar"}`} buttonStyle={buttonStyle} action={saveChanges} style={`text-white border border-transparent hover:scale-[1] ${saved ? "bg-transparent border-white/20 text-white/20" : "bg-primary hover:border-white/70"}`} />
