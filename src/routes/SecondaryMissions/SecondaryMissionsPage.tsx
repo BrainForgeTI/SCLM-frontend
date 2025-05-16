@@ -30,12 +30,12 @@ export const SecondaryMissionsPage = () => {
                         <ClockCard targetHour={16} targetMinute={0} targetSecond={0}></ClockCard>
                     </div>
                 </div>
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-[20px] justify-between w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   gap-[20px] justify-items-center w-full">
                     <MissionCard image={CoatArmsOneIcon} imageIcon={ExclamtionBlue} bgColor="[#082349]" textColor="text-[#0097E0]" textMission="Aleatoriadade" xpMission="10XP" coinMission="20$"></MissionCard>
                     <MissionCard image={CoatArmsTwoIcon} imageIcon={ExclamtionOrange} bgColor="[#b26e0f]" textColor="text-[#FF9701]" textMission="Aleatoriadade" xpMission="30XP" coinMission="60$"></MissionCard>
                     <MissionCard image={CoatArmsThreeIcon} imageIcon={ExclamtionPurple} bgColor="[#4f1a63]" textColor="text-[#C56EE3]" textMission="Aleatoriadade" xpMission="40XP" coinMission="80$"></MissionCard>
                 </div>
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 border border-neutral/40 justify-between place-items-center rounded-[20px]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  border border-neutral/40 justify-items-center place-items-center rounded-[20px] w-full">
                     <MetricsCard image={CoinsConquest} imageIcon={PackageMoney} bgColor="bg-[#FFD000]/[.18]" resultsMetrics="45" textMetrics="Moedas de ouro conquistadas hoje"></MetricsCard>
                     <MetricsCard image={QuestOk} imageIcon={Thophe} bgColor="bg-[#0066FF]/[.18]" resultsMetrics="0/3" textMetrics="Missões concluidas hoje"></MetricsCard>
                     <MetricsCard image={AmpulutaTime} imageIcon={Fire} bgColor="bg-[#FF0000]/[.18]" resultsMetrics="45" textMetrics="Dias consecutivas de conclusão"></MetricsCard>
