@@ -1,29 +1,56 @@
 import { useState } from "react";
 
 interface Props {
-    image: string;
-    imageIcon: string;
-    bgColor: string;
-    textColor:string;
-    textMission:string;
-    xpMission:String;
-    coinMission:String;
+  image: string;
+  imageIcon: string;
+  bgColor: string;
+  textColor: string;
+  textMission: string;
+  xpMission: string;
+  coinMission: string;
 }
-export const MissionCard = (props: Props)=>{
-    const [reveal1,setReveal1] = useState(false);
-    const switchEstilo1 = () =>{
-            setReveal1(!reveal1);
-    }
-    return (
-        <div className={`flex flex-col h-[320px] w-min-[200px] max-w-[320px] justify-center text-center py-[20px] px-[40px] justify-items-center items-center ${reveal1 ? `${props.textColor} rotate-y-[180deg]`:"text-white rotate-y-[-180deg]" } bg-${props.bgColor}/[.40] rounded-[40px] gap-[10px] transition-transform duration-1000 transform-style-preserve-3d `}  onClick={switchEstilo1} >
-            <img className={`w-[200px] min-w-[150px] ${reveal1 ? "hidden":""}`} src={props.image} alt="" />
-            <img className={`flex w-[45px] text-center ${reveal1 ? "rotate-y-[180deg]":"hidden"}`} src={props.imageIcon} alt="" />
-            <p className={reveal1 ? "rotate-y-[180deg]":"hidden"}>{props.textMission}</p>
-            <div className="flex justify-center gap-[10px] rotate-y-[180deg]    ">
-                <p className={`${reveal1 ? "":"hidden"} `}>{props.xpMission}</p>
-                <p className={`${reveal1 ? "":"hidden"} `}>{props.coinMission}</p>
-            </div>
-            <button onClick={switchEstilo1} className="text-white rotate-y-[180deg]">Clique para revelar</button>
+
+export const MissionCard = (props: Props) => {
+  const [reveal, setReveal] = useState(false);
+
+  return (
+    <div
+      className={`w-[300px] h-[300px] [perspective:1000px] cursor-pointer `}
+      onClick={() => setReveal(!reveal)}
+    >
+      <div
+        className={`relative max-w-[320px] h-full transition-transform duration-1000 rounded-[40px] ${
+          reveal ? "rotate-y-180" : ""
+        }`}
+        style={{ transformStyle: "preserve-3d" ,backgroundColor: props.bgColor}}
+      >
+        {/* Frente do card */}
+        <div
+          className={`absolute w-full h-full rounded-[40px] border border-neutral/40 bg-${props.bgColor}/40 text-white text-center flex flex-col items-center justify-center gap-[10px] py-[20px] px-[40px]`}
+          style={{
+            backfaceVisibility: "hidden",
+          }}
+        >
+          <img className="w-[200px] min-w-[150px]" src={props.image} alt="" />
+          <button className="text-white mt-2">Clique para revelar</button>
         </div>
-    )
-}
+
+        {/* Verso do card */}
+        <div
+          className={`absolute w-full h-full rounded-[40px] border border-neutral/40 bg-${props.bgColor}/40 text-${props.textColor} text-center flex flex-col items-center justify-center gap-[10px] py-[20px] px-[40px] transform rotate-y-180`}
+          style={{
+            backfaceVisibility: "hidden",
+          }}
+        >
+          <img className="w-[45px]" src={props.imageIcon} alt="" />
+          <p>{props.textMission}</p>
+          <div className="flex justify-center gap-[10px]">
+            <p>{props.xpMission}</p>
+            <p>{props.coinMission}</p>
+          </div>
+          <button className="text-white mt-2">Clique para voltar</button>
+        </div>
+      </div>
+    </div>
+  );
+};
