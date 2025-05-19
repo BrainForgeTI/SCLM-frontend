@@ -4,11 +4,11 @@ import TrashIcon from '../../assets/icons/trash.svg';
 import EditIcon from '../../assets/icons/edit.svg';
 import AddIcon from '../../assets/icons/add.svg';
 import LogoImg from '../../assets/images/logo_sm.png';
-import { getInvertedColorConstrast, getTextConstrastColorGradient } from '../../utils/getColorContrastGradient.ts';
+import { getTextConstrastColorGradient } from '../../utils/getColorContrastGradient.ts';
 import { AdventureCardType } from '../../types/AdventureCardType.ts';
 import { getDominantColorFromImage } from '../../utils/getDominantColorFromImage.ts';
 import { rgbToHex } from '../../utils/rgbToHex.ts';
-import { useNavigation } from 'react-router';
+
 
 interface Props {
     adventure: AdventureCardType;

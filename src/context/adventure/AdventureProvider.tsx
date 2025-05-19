@@ -15,17 +15,8 @@ export const AdventureProvider = ({ children }: { children: JSX.Element }) => {
 
     function joinAdventure(adventure: AdventureCardType) {
         setAdventure(adventure);
+        navigation(`/adventure/${adventure.id}`);
     }
-
-    useEffect(() => {
-        if (adventure) {
-            if (location.pathname.split('/').length > 2) {
-                navigation(location.pathname);
-                return
-            }
-            navigation(`/adventure/${adventure.id}`)
-        }
-    }, [adventure])
 
     return (
         <AdventureContext.Provider value={{ adventure, setAdventure, leaveAdventure, joinAdventure }}>
