@@ -75,7 +75,7 @@ const ChapterSection = (props: Props) => {
             adventureContext.setAdventure((prev) => {
                 if (prev) {
                     return {
-                        ...prev, // Mantém outras propriedades do estado
+                        ...prev, 
                         chapters: prev.chapters.map(chapter =>
                             chapter.id === props.chapter.id
                                 ? { ...chapter, title: event.target.value }

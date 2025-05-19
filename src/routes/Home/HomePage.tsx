@@ -16,7 +16,7 @@ export const HomePage = () => {
     const [addingNewAdventure, setAddingNewAdventure] = useState(false);
 
     async function getUserAdventures() {
-        const userAdventures = await api.getUserAdventures('');
+        const userAdventures = await api.getUserAdventures();
         setAdventures(userAdventures)
     }
 
