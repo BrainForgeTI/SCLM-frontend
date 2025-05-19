@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import FireIcon from '../../assets/icons/fire.svg';
 import TrashIcon from '../../assets/icons/trash.svg';
 import EditIcon from '../../assets/icons/edit.svg';
@@ -21,7 +21,17 @@ interface Props {
 }
 
 const AdventureCard = (props: Props) => {
+    const [preview, setPreview] = useState<string | null>(null);
 
+    useEffect(() => {
+        if (props.adventure.image instanceof File) {
+            setPreview(URL.createObjectURL(props.adventure.image));
+        } else if (typeof props.adventure.image === 'string') {
+            setPreview(props.adventure.image);
+        } else {
+            setPreview(LogoImg);
+        }
+    }, [props.adventure.image]);
     function handleNewAdventureTitleInput(event: ChangeEvent<HTMLInputElement>) {
         if (props.setNewAdventure) {
             props.setNewAdventure((prev) => ({
@@ -49,36 +59,34 @@ const AdventureCard = (props: Props) => {
     function handleInputImage(event: ChangeEvent<HTMLInputElement>) {
         const file = event.target.files?.[0];
 
-
         if (file) {
-            let imageUrl = URL.createObjectURL(file);
-            let image = new Image();
+            const imageUrl = URL.createObjectURL(file);
+            const image = new Image();
             image.src = imageUrl;
 
             image.onload = function () {
-                let color = getDominantColorFromImage(image);
-                if (props.setNewAdventure && color) {
-                    let colorHex = rgbToHex(color);
+                const color = getDominantColorFromImage(image);
+                if (props.setNewAdventure) {
                     props.setNewAdventure((prev) => ({
                         ...prev,
-                        image: image.src,
-                        colorFrom: colorHex,
-                        colorTo: colorHex
-                    }))
+                        image: imageUrl,
+                        imageFile: file,
+                        colorFrom: color ? rgbToHex(color) : prev.colorFrom,
+                        colorTo: color ? rgbToHex(color) : prev.colorTo
+                    }));
                 }
-            }
-
+            };
         }
     }
 
     function generateImgUrlToAdventure(image: File | string | null) {
         if (image instanceof File) {
-            return `url("${URL.createObjectURL(image)}")`
+            return URL.createObjectURL(image);
         } else if (typeof image === 'string') {
-            return `url("${image}"`
+            return image;
         }
 
-        return LogoImg
+        return LogoImg;
     }
 
     function getCardLabel() {
@@ -142,7 +150,7 @@ const AdventureCard = (props: Props) => {
                             {
                                 props.addingNewAdventure ?
                                     <>
-                                        <div className='relative w-[80px] h-[80px] rounded-[10px] border bg-cover bg-center' style={{ backgroundColor: getTextConstrastColorGradient(props.adventure.colorFrom, props.adventure.colorTo), backgroundImage: generateImgUrlToAdventure(props.adventure.image), borderColor: getTextConstrastColorGradient(props.adventure.colorFrom, props.adventure.colorTo) }}>
+                                        <div className='relative w-[80px] h-[80px] rounded-[10px] border bg-cover bg-center' style={{ backgroundColor: getTextConstrastColorGradient(props.adventure.colorFrom, props.adventure.colorTo), backgroundImage: preview ? `url("${preview}")` : 'none' , borderColor: getTextConstrastColorGradient(props.adventure.colorFrom, props.adventure.colorTo) }}>
                                             <div className='absolute bottom-[-10px] right-[-10px] w-[30px] h-[30px]'>
                                                 <label htmlFor='adventureimageinput' className='w-full h-full text-base-content bg-base300 border rounded-[5px] flex justify-center items-center cursor-pointer hover:scale-[1.1] transition duration-150' style={{ borderColor: getTextConstrastColorGradient(props.adventure.colorFrom, props.adventure.colorTo) }}>
                                                     <EditIcon />
@@ -165,7 +173,7 @@ const AdventureCard = (props: Props) => {
                                     </>
                                     :
                                     <>
-                                        <div className='w-[80px] h-[80px] bg-cover bg-center rounded-[10px]' style={{ backgroundImage: `url("${props.adventure.image}")` }}></div>
+                                        <div className='w-[80px] h-[80px] bg-cover bg-center rounded-[10px]' style={{ backgroundImage: `url("${generateImgUrlToAdventure(props.adventure.image)}")` }}></div>
                                         <span className={`font-bold pt-5`} style={{ color: getTextConstrastColorGradient(props.adventure.colorFrom, props.adventure.colorTo) }}>{props.adventure.title}</span>
                                     </>
                             }

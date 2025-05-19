@@ -32,29 +32,45 @@ export const HomePage = () => {
     }
 
     async function createAdventure() {
-        let newObjectAdventure = { ...newAdventure }
-        let adventuresTemp = adventures.slice();
-        adventuresTemp.push(newObjectAdventure);
-        setAdventures(adventuresTemp)
-
-        setAddingNewAdventure(false);
-        setNewAdventure({ id: 'newTemp', title: 'Nova Aventura', progress: 0, image: '', character: null, colorFrom: '#000000', colorTo: '#FFFFFF', chapters: [] })
-
-        const response = await api.createAdventure('j2f942', newObjectAdventure);
-
-        if (response.status !== 201) {
-            setTimeout(() => {
-                setAdventures((prev) => prev.slice(0, -1));
-                setAddingNewAdventure(true)
-                setNewAdventure(newObjectAdventure)
-            }, 1000)
-        } else {
-
-            setAdventures((prev) =>
-                prev.map((element, index) => index == prev.length - 1 ? { ...element, id: response.cardId } : element)
-            )
+        if (!newAdventure.imageFile || typeof newAdventure.imageFile === 'string') {
+            alert('Por favor, selecione uma imagem válida para a aventura');
+            return;
         }
 
+        const imagePreviewUrl = URL.createObjectURL(newAdventure.imageFile);
+        const tempId = crypto.randomUUID?.() || `temp-${Date.now()}`;
+        let newObjectAdventure = { ...newAdventure, image: imagePreviewUrl, id: tempId };
+
+        const updatedAdventures = [...adventures, newObjectAdventure];
+        setAdventures(updatedAdventures);
+        setAddingNewAdventure(false);
+        setNewAdventure({
+            id: 'newTemp',
+            title: 'Nova Aventura',
+            progress: 0,
+            image: null,
+            character: null,
+            colorFrom: '#000000',
+            colorTo: '#FFFFFF',
+            chapters: []
+        });
+
+        try {
+            const response = await api.createAdventure(newObjectAdventure, newAdventure.imageFile);
+            if (response.status !== 201) throw new Error('Erro na criação da aventura');
+            setAdventures((prev) =>
+                prev.map((element, index) =>
+                    index === prev.length - 1 ? { ...element, id: response.cardId } : element
+                )
+            );
+
+
+        } catch (error) {
+            console.error('Erro ao criar aventura:', error);
+            setAdventures((prev) => prev.slice(0, -1));
+            setAddingNewAdventure(true);
+            setNewAdventure(newObjectAdventure);
+        }
     }
 
     function cancelAddNewAdventure() {

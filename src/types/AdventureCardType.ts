@@ -6,6 +6,7 @@ export type AdventureCardType = {
     image: File | string | null
     colorFrom: string
     colorTo: string
+    imageFile?: File | null
     title: string
     character: Character | null
     progress: number

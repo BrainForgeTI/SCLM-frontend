@@ -16,6 +16,7 @@ export const useApi = () => ({
                 colorFrom: '#DE9673',
                 colorTo: '#E06527',
                 character: {
+                    id: '1',
                     imageUrl: 'https://media.discordapp.net/attachments/838520690726010993/1353736029655535646/WhatsApp_Image_2025-02-23_at_14.07.16__1_-removebg-preview_2_1.png?ex=67e2bc6c&is=67e16aec&hm=279c2a0a9952b1789ace57b5ccbd28aafb362a838bcfa4d8854f0b83a4d7c9e3&=&format=webp&quality=lossless&width=84&height=88',
                     name: 'Marcão',
                     level: 50
@@ -31,6 +32,7 @@ export const useApi = () => ({
                 colorFrom: '#86B8B9',
                 colorTo: '#26B6B8',
                 character: {
+                    id: '2',
                     imageUrl: 'https://media.discordapp.net/attachments/838520690726010993/1353736029655535646/WhatsApp_Image_2025-02-23_at_14.07.16__1_-removebg-preview_2_1.png?ex=67e2bc6c&is=67e16aec&hm=279c2a0a9952b1789ace57b5ccbd28aafb362a838bcfa4d8854f0b83a4d7c9e3&=&format=webp&quality=lossless&width=84&height=88',
                     name: 'Calabreso',
                     level: 157
@@ -45,6 +47,7 @@ export const useApi = () => ({
                 colorFrom: '#86B8B9',
                 colorTo: '#26B6B8',
                 character: {
+                    id: '3',
                     imageUrl: 'https://media.discordapp.net/attachments/838520690726010993/1353736029655535646/WhatsApp_Image_2025-02-23_at_14.07.16__1_-removebg-preview_2_1.png?ex=67e2bc6c&is=67e16aec&hm=279c2a0a9952b1789ace57b5ccbd28aafb362a838bcfa4d8854f0b83a4d7c9e3&=&format=webp&quality=lossless&width=84&height=88',
                     name: 'Calabreso',
                     level: 157
@@ -59,6 +62,7 @@ export const useApi = () => ({
                 colorFrom: '#86B8B9',
                 colorTo: '#26B6B8',
                 character: {
+                    id: '',
                     imageUrl: 'https://media.discordapp.net/attachments/838520690726010993/1353736029655535646/WhatsApp_Image_2025-02-23_at_14.07.16__1_-removebg-preview_2_1.png?ex=67e2bc6c&is=67e16aec&hm=279c2a0a9952b1789ace57b5ccbd28aafb362a838bcfa4d8854f0b83a4d7c9e3&=&format=webp&quality=lossless&width=84&height=88',
                     name: 'Calabreso',
                     level: 157
@@ -73,6 +77,7 @@ export const useApi = () => ({
                 colorFrom: '#86B8B9',
                 colorTo: '#26B6B8',
                 character: {
+                    id: '5',
                     imageUrl: 'https://media.discordapp.net/attachments/838520690726010993/1353736029655535646/WhatsApp_Image_2025-02-23_at_14.07.16__1_-removebg-preview_2_1.png?ex=67e2bc6c&is=67e16aec&hm=279c2a0a9952b1789ace57b5ccbd28aafb362a838bcfa4d8854f0b83a4d7c9e3&=&format=webp&quality=lossless&width=84&height=88',
                     name: 'Calabreso',
                     level: 157
@@ -87,6 +92,7 @@ export const useApi = () => ({
                 colorFrom: '#86B8B9',
                 colorTo: '#26B6B8',
                 character: {
+                    id: '',
                     imageUrl: 'https://media.discordapp.net/attachments/838520690726010993/1353736029655535646/WhatsApp_Image_2025-02-23_at_14.07.16__1_-removebg-preview_2_1.png?ex=67e2bc6c&is=67e16aec&hm=279c2a0a9952b1789ace57b5ccbd28aafb362a838bcfa4d8854f0b83a4d7c9e3&=&format=webp&quality=lossless&width=84&height=88',
                     name: 'Calabreso',
                     level: 157
@@ -101,6 +107,7 @@ export const useApi = () => ({
                 colorFrom: '#86B8B9',
                 colorTo: '#26B6B8',
                 character: {
+                    id: '3',
                     imageUrl: 'https://media.discordapp.net/attachments/838520690726010993/1353736029655535646/WhatsApp_Image_2025-02-23_at_14.07.16__1_-removebg-preview_2_1.png?ex=67e2bc6c&is=67e16aec&hm=279c2a0a9952b1789ace57b5ccbd28aafb362a838bcfa4d8854f0b83a4d7c9e3&=&format=webp&quality=lossless&width=84&height=88',
                     name: 'Calabreso',
                     level: 157
@@ -113,19 +120,29 @@ export const useApi = () => ({
         return response;
     },
 
-    createAdventure: async (userId: string, adventure: AdventureCardType) => {
-        //mock
-        let random = Math.floor(Math.random() * 10)
-        let response;
+    createAdventure: async (adventure: AdventureCardType, imageFile: File | null) => {
+    const formData = new FormData();
+    formData.append('bgPrimaryColor', adventure.colorFrom);
+    formData.append('bgSecundaryColor', adventure.colorTo);
+    formData.append('nameAdventure', adventure.title); 
+    formData.append('description', 'Aleatorio');  
 
-        if (random > 4) {
-            response = { status: 201, cardId: `fjmwpijg39j3r-${Math.random() * 50000}` }
-        } else {
-            response = { status: 500 }
+    if (adventure.character?.id) {
+        formData.append('characterId', adventure.character.id);
+    }
+
+    if (imageFile) {
+        formData.append('banner', imageFile);
+    }
+
+    const { data } = await axios.post('http://localhost:3001/adventure', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
         }
+    });
 
-        return response;
-    },
+    return data;
+},
 
     createChapterTopic: async (createTopic: CreateTopicType) => {
         let random = Math.floor(Math.random() * 10)
