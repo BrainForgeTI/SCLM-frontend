@@ -51,29 +51,44 @@ export const useApi = () => ({
     },
 
     createChapterTopic: async (createTopic: CreateTopicType) => {
-        let random = Math.floor(Math.random() * 10)
-        let response;
+        const payload = {
+            chapterId: createTopic.chapterId,
+            topic: createTopic.topic,
+        };
 
-        if (random > 4) {
-            response = { status: 201, topicId: `Mock-${Math.random() * 50000}` }
-        } else {
-            response = { status: 500 }
-        }
+        const url = `http://localhost:3001/adventure/${createTopic.adventureId}/content`;
 
-        return response;
+        const { data } = await axios.post(url, payload, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        return data;
     },
 
     createChapter: async (createChapter: CreateChapter) => {
-        let random = Math.floor(Math.random() * 10)
-        let response;
+        const payload = {
+            content: [
+                {
+                    title: createChapter.chapterTitle,
+                    isFinished: false,
+                    missions: []
+                }
+            ]
+        };
 
-        if (random > 4) {
-            response = { status: 201, chapterId: `Mock-${Math.random() * 50000}` }
-        } else {
-            response = { status: 500 }
-        }
+        const { data } = await axios.post(
+            `http://localhost:3001/adventure/${createChapter.adventureId}/content`,
+            payload,
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
 
-        return response;
+        return data;
     },
 
     getAdventure: async (adventureId: string) => {
@@ -91,7 +106,18 @@ export const useApi = () => ({
             title: item.nameAdventure ?? 'Sem título',
             character: item.character ?? null,
             progress: item.progress ?? 0,
-            chapters: []
+            chapters: item.chapters?.map((chapter: any) => ({
+                id: chapter.id,
+                title: chapter.title,
+                expanded: chapter.expanded ?? false,
+                notes: chapter.notes ?? '',
+                topics: chapter.topics?.map((topic: any) => ({
+                    id: topic.id,
+                    name: topic.name,
+                    completed: topic.completed,
+                    chapterId: topic.chapterId,
+                })) ?? []
+            })) ?? []
         };
 
         return formatted;
