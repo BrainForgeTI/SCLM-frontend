@@ -21,8 +21,6 @@ export const useApi = () => ({
             progress: 0,
             chapters: []
         }));
-        console.log(formatted)
-        console.log(adventures)
         return formatted;
     },
 
@@ -51,20 +49,13 @@ export const useApi = () => ({
     },
 
     createChapterTopic: async (createTopic: CreateTopicType) => {
-        const payload = {
-            chapterId: createTopic.chapterId,
-            topic: createTopic.topic,
+        // mockkk
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        return {
+            status: 200,
+            message: 'Topic created successfully!',
+            topicId: 'mocked-topic-id-123', 
         };
-
-        const url = `http://localhost:3001/adventure/${createTopic.adventureId}/content`;
-
-        const { data } = await axios.post(url, payload, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-
-        return data;
     },
 
     createChapter: async (createChapter: CreateChapter) => {
