@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useContext, useEffect, useRef } from "react";
+import { useState, ChangeEvent, useContext} from "react";
 import ActionButton from "../../components/ActionButton/ActionButton";
 import { PageLayout, PageTitle } from "../../components/PageLayout"
 import { ChapterSection, SearchInput } from './index';
@@ -114,7 +114,7 @@ const MyAdventurePage = () => {
                 setNewChapter(null)
 
                 let response = await api.createChapter({ adventureId: adventureContext.adventure.id, chapterTitle: chapter.title });
-                if (response.status !== 201) {
+                if (response.status !== 200) {
                     adventure.chapters = adventure.chapters.filter((current) => current.id !== chapter.id)
                     adventureContext.setAdventure(adventure);
                     setNewChapter(chapter);
@@ -140,7 +140,7 @@ const MyAdventurePage = () => {
 
                 let response = await api.createChapterTopic({ adventureId: adventureContext.adventure.id, chapterId: chapterId, topic: topic })
                 setTimeout(() => {
-                    if (response.status !== 201) {
+                    if (response.status !== 200) {
                         adventure.chapters = adventure.chapters.map((chapter) => chapter.id === chapterId ? { ...chapter, topics: chapter.topics.filter((currentTopic) => currentTopic.id !== topic.id) } : chapter);
                         adventureContext.setAdventure(adventure)
                         setNewTopic(topic);
