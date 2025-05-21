@@ -28,24 +28,24 @@ export const SideMenu = () => {
     
     
     
-    const exists = globalRoutes.routes.some(route => route.label === 'Trocar de trilha');
-    if (location.pathname === '/tasks') {
+    // <const exists = globalRoutes.routes.some(route => route.label === 'Trocar de trilha');
+    // if (location.pathname === '/tasks') {
         
-        if (!exists) {
-            globalRoutes.routes.push({
-                path: '/home',
-                label: 'Trocar de trilha',
-                icon: SwitchIcon,
-            });
-        }
-    } else {
+    //     if (!exists) {
+    //         globalRoutes.routes.push({
+    //             path: '/home',
+    //             label: 'Trocar de trilha',
+    //             icon: SwitchIcon,
+    //         });
+    //     }
+    // } else {
         
-        if (exists) {
-            globalRoutes.routes = globalRoutes.routes.filter(
-                route => route.label !== 'Trocar de trilha'
-            );
-        }
-    }
+    //     if (exists) {
+    //         globalRoutes.routes = globalRoutes.routes.filter(
+    //             route => route.label !== 'Trocar de trilha'
+    //         );
+    //     }
+    // }>
     
 
 

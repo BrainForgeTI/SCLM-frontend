@@ -3,6 +3,7 @@ import DailyTasksIcon from "../../assets/icons/daily_task.svg";
 import ProgressIcon from "../../assets/icons/progress.svg";
 import StudyIcon from "../../assets/icons/study.svg";
 import CharacterIcon from "../../assets/icons/character.svg";
+import SwitchIcon from "../../assets/icons/switch.svg";
 
 interface ISideMenuRoutes {
     label: string
@@ -29,5 +30,6 @@ export const sideMenuAdventureRoutes: ISideMenuRoutes = {
     label: 'Esta Aventura',
     routes:
         [
+            {path: '/home',label: 'Trocar de trilha', icon: SwitchIcon}
         ]
 }
