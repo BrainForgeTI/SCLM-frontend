@@ -5,6 +5,7 @@ import LogoSM from "../../assets/images/logo_sm.png";
 import MenuIcon from "../../assets/icons/menu.svg";
 import GoldImg from "../../assets/images/gold.png";
 import { useEffect, useState } from "react";
+import SwitchIcon from "../../assets/icons/switch.svg";
 
 export const SideMenu = () => {
     const globalRoutes = sideMenuGlobalRoutes;
@@ -24,6 +25,29 @@ export const SideMenu = () => {
             html.style.overflowY = 'auto';
         }
     }, [menuActive])
+    
+    
+    
+    const exists = globalRoutes.routes.some(route => route.label === 'Trocar de trilha');
+    if (location.pathname === '/tasks') {
+        
+        if (!exists) {
+            globalRoutes.routes.push({
+                path: '/home',
+                label: 'Trocar de trilha',
+                icon: SwitchIcon,
+            });
+        }
+    } else {
+        
+        if (exists) {
+            globalRoutes.routes = globalRoutes.routes.filter(
+                route => route.label !== 'Trocar de trilha'
+            );
+        }
+    }
+    
+
 
     return (
         <aside className={`fixed lg:static h-full flex gap-[15px] z-50 transition-all duration-350 ${menuActive ? 'left-[0px]' : 'md:left-[-350px] left-[-300px]'}`}>
