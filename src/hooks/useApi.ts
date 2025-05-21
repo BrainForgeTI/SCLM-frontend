@@ -317,6 +317,11 @@ export const useApi = () => ({
         return true;
     },
 
+    signIn: (email: string, password: string) => {
+        //rota para LOGIN
+        // retrnar o user
+    },
+
     saveDescription: async (adventureId: string, chapterId: string, description: string): Promise<any> => {
         let random = Math.floor(Math.random() * 10)
         let response;

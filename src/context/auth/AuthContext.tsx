@@ -1,0 +1,10 @@
+import { createContext } from "react";
+import { UserType } from "../../types/user/UserType";
+
+export type AuthContextType = {
+    user: UserType | null;
+    signin: (email: string, password: string) => Promise<boolean>;
+    signout: () => void;
+}
+
+export const AuthContext = createContext<AuthContextType>(null!);
