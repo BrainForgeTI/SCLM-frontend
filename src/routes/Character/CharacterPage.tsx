@@ -1,10 +1,10 @@
-import { PageLayout } from "../../components/PageLayout"
+import { PageLayout, PageTitle } from "../../components/PageLayout"
 
 export const CharacterPage = () => {
 
     return (
         <PageLayout>
-            <div>oi</div>
+            <PageTitle title="Meus personagens" />
         </PageLayout>
     )
 }
