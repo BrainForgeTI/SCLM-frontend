@@ -61,6 +61,24 @@ export const SideMenu = () => {
                         <img src={LogoSM}></img>
                         <span className="uppercase">Scholarium</span>
                     </div>
+
+                    <div className="w-full flex flex-col items-center mt-10 bg-red-600/10 gap-3">
+                        {
+                            adventureContext.adventure ?
+                            <>
+                                <div className={`w-24 h-24 bg-cover bg-center`} style={{backgroundImage:`url('${adventureContext.adventure.image}')`}}></div>
+                                
+                                <span>{adventureContext.adventure.title}</span>
+                                <span>{adventureContext.adventure.progress}</span>
+                                <div className="w-full flex flex-col">
+
+                                </div>
+                            </>
+                            :
+                            <></>
+                        }
+                    </div>
+
                     <nav className="w-full pt-10 flex flex-col gap-6">
                         {
                             id ?
