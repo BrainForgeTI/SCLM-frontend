@@ -7,6 +7,8 @@ import GoldImg from "../../assets/images/gold.png";
 import { useContext, useEffect, useState } from "react";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { SideMenuRoutes } from "../../types/side_menu/SideMenuRoutes";
+import AdventureProgress from "../AdventureProgress/AdventureProgress";
+import FireIcon from "../../assets/icons/fire.svg"
 
 export const SideMenu = () => {
     const globalRoutes = sideMenuGlobalRoutes;
@@ -62,17 +64,21 @@ export const SideMenu = () => {
                         <span className="uppercase">Scholarium</span>
                     </div>
 
-                    <div className="w-full flex flex-col items-center mt-10 bg-red-600/10 gap-3">
+                    <div className="w-full flex flex-col items-center mt-10 gap-2">
                         {
                             adventureContext.adventure ?
                             <>
-                                <div className={`w-24 h-24 bg-cover bg-center`} style={{backgroundImage:`url('${adventureContext.adventure.image}')`}}></div>
+                                <div className={`w-24 h-24 bg-cover bg-center rounded-[10px] border-solid border-white`} style={{backgroundImage:`url('${adventureContext.adventure.image}')`}}></div>
                                 
-                                <span>{adventureContext.adventure.title}</span>
-                                <span>{adventureContext.adventure.progress}</span>
-                                <div className="w-full flex flex-col">
-
+                                <span className="text-white">{adventureContext.adventure.title}</span>
+                                <div className="flex flex-col justify-center">
+                                    <div className="flex items-center justify-center gap-[5px] text-white">
+                                        <div className="text-[#FFB60B]"><FireIcon></FireIcon></div>
+                                        <div>{adventureContext.adventure.progress}</div> 
+                                    </div>
+                                    {<AdventureProgress progress="80"></AdventureProgress>}
                                 </div>
+                               
                             </>
                             :
                             <></>
