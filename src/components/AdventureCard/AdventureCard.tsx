@@ -217,3 +217,4 @@ const AdventureCard = (props: Props) => {
 }
 
 export default AdventureCard;
+
