@@ -8,6 +8,8 @@ import SwitchIcon from "../../assets/icons/switch.svg";
 import { useContext, useEffect, useState } from "react";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { SideMenuRoutes } from "../../types/side_menu/SideMenuRoutes";
+import AdventureProgress from "../AdventureProgress/AdventureProgress";
+import FireIcon from "../../assets/icons/fire.svg"
 
 export const SideMenu = () => {
     const globalRoutes = sideMenuGlobalRoutes;
@@ -85,6 +87,28 @@ export const SideMenu = () => {
                         <img src={LogoSM}></img>
                         <span className="uppercase">Scholarium</span>
                     </div>
+
+                    <div className="w-full flex flex-col items-center mt-10 gap-2">
+                        {
+                            adventureContext.adventure ?
+                            <>
+                                <div className={`w-24 h-24 bg-cover bg-center rounded-[10px] border-solid border-white`} style={{backgroundImage:`url('${adventureContext.adventure.image}')`}}></div>
+                                
+                                <span className="text-white">{adventureContext.adventure.title}</span>
+                                <div className="flex flex-col justify-center">
+                                    <div className="flex items-center justify-center gap-[5px] text-white">
+                                        <div className="text-[#FFB60B]"><FireIcon></FireIcon></div>
+                                        <div>{adventureContext.adventure.progress}</div> 
+                                    </div>
+                                    {<AdventureProgress progress="80"></AdventureProgress>}
+                                </div>
+                               
+                            </>
+                            :
+                            <></>
+                        }
+                    </div>
+
                     <nav className="w-full pt-10 flex flex-col gap-6">
                         {
                             id ?
