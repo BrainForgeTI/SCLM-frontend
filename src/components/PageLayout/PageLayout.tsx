@@ -1,12 +1,16 @@
-import { JSX } from "react"
+import { JSX, useContext, useEffect } from "react"
 import { SideMenu } from "../SideMenu";
 import { LayoutHeader, MainContent } from "../PageLayout";
+import { AdventureContext } from "../../context/adventure/AdventureContext";
 
 interface Props {
     children: JSX.Element;
+    awaitAdventureLoad?: boolean
 }
 
 const PageLayout = (props: Props) => {
+    const adventureContext = useContext(AdventureContext);
+
     return (
         <div className="md:h-screen w-screen min-h-dvh font-poppins bg-base100 flex">
             <div className="h-full">
@@ -17,8 +21,14 @@ const PageLayout = (props: Props) => {
                     <LayoutHeader />
                 </div>
                 <div className="h-[63px]"></div>
+
                 <MainContent>
-                    {props.children}
+                    {
+                        props.awaitAdventureLoad && !adventureContext.adventure ?
+                            <div>Esperando carregar aventura</div>
+                            :
+                            props.children
+                    }
                 </MainContent>
             </div>
         </div>

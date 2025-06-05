@@ -1,3 +1,4 @@
+import { ChapterType } from "./adventure/ChapterType"
 import { Character } from "./CharacterType"
 
 export type AdventureCardType = {
@@ -6,6 +7,7 @@ export type AdventureCardType = {
     colorFrom: string
     colorTo: string
     title: string
-    character?: Character
+    character: Character | null
     progress: number
+    chapters: ChapterType[]
 }

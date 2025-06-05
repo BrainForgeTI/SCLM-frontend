@@ -7,7 +7,7 @@ const LayoutHeader = () => {
             <div className='w-full h-full flex justify-end px-8'>
                 <ul className='flex items-center gap-10'>
                     <li className='lg:flex hidden items-center gap-4'>
-                        <span className='font-semibold text-[18px] text-base-content'>500</span>
+                        <span className='font-semibold text-[16px] text-base-content'>500</span>
                         <img src={GoldImg}></img>
                     </li>
 
@@ -16,9 +16,9 @@ const LayoutHeader = () => {
                     </li>
 
                     <li className='lg:flex gap-4 hidden'>
-                        <div className='flex flex-col text-base-content'>
-                            <span className='text-end text-[11px]'>Bem-vindo</span>
-                            <span className='font-semibold text-[16px]'>Emerson Tanno</span>
+                        <div className='flex flex-col text-base-content justify-between'>
+                            <span className='text-end text-[10px]'>Bem-vindo</span>
+                            <span className='font-semibold text-[13px]'>Emerson Tanno</span>
                         </div>
                         <div className='w-[43px] h-[43px] bg-neutral/20 rounded-[10px] bg-cover bg-center' style={{ backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3UJfPCCe0kUhLbGxfOhzwHpPspsSnvALTA&s")' }}>
 
