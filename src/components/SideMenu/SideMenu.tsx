@@ -4,6 +4,7 @@ import { sideMenuGlobalRoutes, sideMenuAdventureRoutes } from "./SideMenuConfig"
 import LogoSM from "../../assets/images/logo_sm.png";
 import MenuIcon from "../../assets/icons/menu.svg";
 import GoldImg from "../../assets/images/gold.png";
+import SwitchIcon from "../../assets/icons/switch.svg";
 import { useContext, useEffect, useState } from "react";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { SideMenuRoutes } from "../../types/side_menu/SideMenuRoutes";
@@ -54,6 +55,29 @@ export const SideMenu = () => {
             html.style.overflowY = 'auto';
         }
     }, [menuActive])
+
+
+
+    // <const exists = globalRoutes.routes.some(route => route.label === 'Trocar de trilha');
+    // if (location.pathname === '/tasks') {
+
+    //     if (!exists) {
+    //         globalRoutes.routes.push({
+    //             path: '/home',
+    //             label: 'Trocar de trilha',
+    //             icon: SwitchIcon,
+    //         });
+    //     }
+    // } else {
+
+    //     if (exists) {
+    //         globalRoutes.routes = globalRoutes.routes.filter(
+    //             route => route.label !== 'Trocar de trilha'
+    //         );
+    //     }
+    // }>
+
+
 
     return (
         <>
