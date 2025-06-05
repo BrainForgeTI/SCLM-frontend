@@ -8,9 +8,11 @@ import { getInvertedColorConstrast, getTextConstrastColorGradient } from '../../
 import { AdventureCardType } from '../../types/AdventureCardType.ts';
 import { getDominantColorFromImage } from '../../utils/getDominantColorFromImage.ts';
 import { rgbToHex } from '../../utils/rgbToHex.ts';
+import { useNavigation } from 'react-router';
 
 interface Props {
     adventure: AdventureCardType;
+    joinAdventure?: (adventure: AdventureCardType) => void
     setAdventures?: React.Dispatch<React.SetStateAction<AdventureCardType[]>>;
     setNewAdventure?: React.Dispatch<React.SetStateAction<AdventureCardType>>;
     addingNewAdventure?: boolean;
@@ -203,6 +205,10 @@ const AdventureCard = (props: Props) => {
                 <button onClick={() => {
                     if (props.addingNewAdventure && props.createAdventure) {
                         props.createAdventure();
+                    }
+
+                    if (props.joinAdventure) {
+                        props.joinAdventure(props.adventure);
                     }
                 }} className='cursor-pointer hover:scale-[1.01] transiion-all duration-150 w-[188px] h-[43px] text-[12px] font-semibold rounded-[10px] mt-6 text-[13px]' style={{ backgroundImage: `linear-gradient(to right, ${props.adventure.colorFrom}, ${props.adventure.colorTo})`, color: getTextConstrastColorGradient(props.adventure.colorFrom, props.adventure.colorTo) }}>{getCardLabel()}</button>
             </div >

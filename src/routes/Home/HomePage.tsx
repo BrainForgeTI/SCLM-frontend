@@ -1,14 +1,18 @@
 import { PageLayout, PageTitle } from "../../components/PageLayout";
 import { AdventureCard, adventureCardConfig } from "../../components/AdventureCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AdventureCardType } from "../../types/AdventureCardType";
 import { useApi } from "../../hooks/useApi";
 import { NewAdventureCard } from "../../components/NewAdventureCard";
+import { AdventureContext } from "../../context/adventure/AdventureContext";
 
 export const HomePage = () => {
     const api = useApi();
+
+    const adventureContext = useContext(AdventureContext);
+
     const [adventures, setAdventures] = useState<AdventureCardType[]>([]);
-    const [newAdventure, setNewAdventure] = useState<AdventureCardType>({ id: 'newTemp', title: 'Nova Aventura', progress: 0, image: null, colorFrom: '#000000', colorTo: '#FFFFFF' });
+    const [newAdventure, setNewAdventure] = useState<AdventureCardType>({ id: 'newTemp', title: 'Nova Aventura', progress: 0, character: null, image: null, colorFrom: '#000000', colorTo: '#FFFFFF', chapters: [] });
     const [addingNewAdventure, setAddingNewAdventure] = useState(false);
 
     async function getUserAdventures() {
@@ -29,13 +33,12 @@ export const HomePage = () => {
 
     async function createAdventure() {
         let newObjectAdventure = { ...newAdventure }
-        console.log(newObjectAdventure)
         let adventuresTemp = adventures.slice();
         adventuresTemp.push(newObjectAdventure);
         setAdventures(adventuresTemp)
 
         setAddingNewAdventure(false);
-        setNewAdventure({ id: 'newTemp', title: 'Nova Aventura', progress: 0, image: '', colorFrom: '#000000', colorTo: '#FFFFFF' })
+        setNewAdventure({ id: 'newTemp', title: 'Nova Aventura', progress: 0, image: '', character: null, colorFrom: '#000000', colorTo: '#FFFFFF', chapters: [] })
 
         const response = await api.createAdventure('j2f942', newObjectAdventure);
 
@@ -57,7 +60,7 @@ export const HomePage = () => {
     function cancelAddNewAdventure() {
         console.log('chamou')
         setAddingNewAdventure(false);
-        setNewAdventure({ title: 'Nova Aventura', progress: 0, image: '', colorFrom: '#000000', colorTo: '#FFFFFF' });
+        setNewAdventure({ title: 'Nova Aventura', progress: 0, image: '', character: null, colorFrom: '#000000', colorTo: '#FFFFFF', chapters: [] });
     }
 
     useEffect(() => {
@@ -74,7 +77,7 @@ export const HomePage = () => {
                             {adventures.map((adventure) => {
                                 return (
                                     <li key={adventure.id} className="">
-                                        <AdventureCard adventure={adventure} setAdventures={setAdventures} />
+                                        <AdventureCard adventure={adventure} setAdventures={setAdventures} joinAdventure={adventureContext.joinAdventure} />
                                     </li>
                                 )
                             })}
