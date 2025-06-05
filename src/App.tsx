@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router"
 import { HomePage } from "./routes/Home/HomePage"
 import { SignUpPage } from "./routes/SignUp/SignUpPage"
 import { SignInPage } from "./routes/SignIn/SignInPage"
+import { SecondaryMissionsPage } from "./routes/SecondaryMissions/SecondaryMissionsPage"
 import { AdventurePage } from "./routes/Adventure"
 import { AdventureAuth } from "./context/adventure/AdventureAuth"
 import { MyAdventurePage } from "./routes/MyAdventure"
@@ -12,6 +13,9 @@ function App() {
     <Routes>
       <Route path="/home" element={<HomePage />} />,
       <Route path="/signup" element={<SignUpPage />} />,
+      <Route path="/signin" element={<SignInPage />} />,
+      <Route path="/tasks" element={<SecondaryMissionsPage />} />,
+
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/character" element={<CharacterPage />}></Route>
