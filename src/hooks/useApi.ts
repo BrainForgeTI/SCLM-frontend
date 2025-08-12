@@ -115,7 +115,7 @@ export const useApi = () => ({
 
     createAdventure: async (userId: string, adventure: AdventureCardType) => {
         //mock
-        let random = Math.floor(Math.random() * 10)
+        const random = Math.floor(Math.random() * 10)
         let response;
 
         if (random > 4) {
@@ -128,7 +128,7 @@ export const useApi = () => ({
     },
 
     createChapterTopic: async (createTopic: CreateTopicType) => {
-        let random = Math.floor(Math.random() * 10)
+        const random = Math.floor(Math.random() * 10)
         let response;
 
         if (random > 4) {
@@ -141,7 +141,7 @@ export const useApi = () => ({
     },
 
     createChapter: async (createChapter: CreateChapter) => {
-        let random = Math.floor(Math.random() * 10)
+        const random = Math.floor(Math.random() * 10)
         let response;
 
         if (random > 4) {
@@ -282,7 +282,7 @@ export const useApi = () => ({
     },
 
     changeChapterTopicCompleted: async () => {
-        let random = Math.floor(Math.random() * 10)
+        const random = Math.floor(Math.random() * 10)
         let response;
 
         if (random > 4) {
@@ -318,7 +318,7 @@ export const useApi = () => ({
     },
 
     saveDescription: async (adventureId: string, chapterId: string, description: string): Promise<any> => {
-        let random = Math.floor(Math.random() * 10)
+        const random = Math.floor(Math.random() * 10)
         let response;
 
         if (random > 4) {
@@ -328,5 +328,15 @@ export const useApi = () => ({
         }
 
         return response;
+    },
+
+    signIn: async (email: string, password: string) => {
+        const res = await axios.post('http://127.0.0.1:3000/auth/login', { email, password })
+        return res
+    },
+
+    refreshToken: async () => {
+        const res = await axios.get('http://127.0.0.1:3000/auth/refresh-token', { withCredentials: true })
+        return res
     }
 })

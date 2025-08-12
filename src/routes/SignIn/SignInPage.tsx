@@ -1,16 +1,20 @@
 import { AuthFormsBox, AuthFormsInput, PagelayoutAuth } from "../../components/PagelayoutAuth";
 import Castle from "../../assets/images/castle.png";
 import { useEffect, useState } from "react";
-import { AuthStepFields } from "../../types/auth_types/AuthStepField";
 import { ChangeEvent } from "react"
-import { Link } from "react-router";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
+import { useApi } from "../../hooks/useApi";
+import { useSessionStore } from "../../store/session-store";
 
 export const SignInPage = () => {
     const [loginForm,setLoginForm] = useState({
         email:"",
         password:""
     })
+
+    const api = useApi()
+    const navigate = useNavigate()
+    const sessionStore = useSessionStore()
 
     function handleInputValue(event:ChangeEvent<HTMLInputElement>,fieldId:string){
 
@@ -19,7 +23,8 @@ export const SignInPage = () => {
             [fieldId]:event.target.value
         }))
     }
-    const [emailValue,setEmailValue] = useState<AuthStepFields>(
+
+    const emailValue =
         {
             fieldId:"email",
             fieldLabel:"Email",
@@ -27,9 +32,8 @@ export const SignInPage = () => {
             fieldType:"email",
             fieldValidator:()=>{return true}
         }
-    )
 
-    const [senhaValue,setSenhaValue] = useState<AuthStepFields>(
+    const senhaValue = 
         {
             fieldId:"password",
             fieldLabel:"Senha",
@@ -37,7 +41,16 @@ export const SignInPage = () => {
             fieldType:"password",
             fieldValidator:()=>{return true}
         }
-    )
+
+    const handleLogin = async () => {
+        const result = await api.signIn(loginForm.email, loginForm.password)
+        if (result.status === 200) {
+            const firstName = result.data.first_name
+            sessionStore.setSession(firstName, '', '')
+            navigate('/home')
+        }
+    }
+
     useEffect(()=>{
         console.log(loginForm)
     },[loginForm])
@@ -51,7 +64,7 @@ export const SignInPage = () => {
                             <div className="w-full flex flex-col gap-5">
                                 <AuthFormsInput type={emailValue.fieldType} id={emailValue.fieldId} label={emailValue.fieldLabel} placeholder={emailValue.fieldPlaceholder} value={loginForm.email} handleInputValue={handleInputValue}></AuthFormsInput>
                                 <AuthFormsInput type={senhaValue.fieldType} id={senhaValue.fieldId} label={senhaValue.fieldLabel} placeholder={senhaValue.fieldPlaceholder} value={loginForm.password} handleInputValue={handleInputValue}></AuthFormsInput>
-                                <button className="text-white w-full p-[10px] bg-primary rounded-lg cursor-pointer">Entrar</button>
+                                <button onClick={handleLogin} type="button" className="text-white w-full p-[10px] bg-primary rounded-lg cursor-pointer">Entrar</button>
                                 <p className="flex justify-center w-full text-white text-[12px]">Esqueceu a senha?<a className="flex ml-2 text-blue-400 underline" href="">clique aqui</a></p>
                             </div>
                             
