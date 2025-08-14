@@ -32,8 +32,8 @@ export const HomePage = () => {
     }
 
     async function createAdventure() {
-        let newObjectAdventure = { ...newAdventure }
-        let adventuresTemp = adventures.slice();
+        const newObjectAdventure = { ...newAdventure }
+        const adventuresTemp = adventures.slice();
         adventuresTemp.push(newObjectAdventure);
         setAdventures(adventuresTemp)
 
