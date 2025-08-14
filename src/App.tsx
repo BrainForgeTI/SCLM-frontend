@@ -7,21 +7,24 @@ import { AdventurePage } from "./routes/Adventure"
 import { AdventureAuth } from "./context/adventure/AdventureAuth"
 import { MyAdventurePage } from "./routes/MyAdventure"
 import { CharacterPage } from "./routes/Character/CharacterPage"
+import { Providers } from "./components/V2/providers"
 
 function App() {
   return (
-    <Routes>
-      <Route path="/home" element={<HomePage />} />,
-      <Route path="/signup" element={<SignUpPage />} />,
-      <Route path="/signin" element={<SignInPage />} />,
-      <Route path="/tasks" element={<SecondaryMissionsPage />} />,
+    <Providers>
+      <Routes>
+        <Route path="/home" element={<HomePage />} />,
+        <Route path="/signup" element={<SignUpPage />} />,
+        <Route path="/signin" element={<SignInPage />} />,
+        <Route path="/tasks" element={<SecondaryMissionsPage />} />,
 
-      <Route path="/signin" element={<SignInPage />} />
-      <Route path="/signup" element={<SignUpPage />} />
-      <Route path="/character" element={<CharacterPage />}></Route>
-      <Route path="/adventure/:id" element={<AdventureAuth><AdventurePage /></AdventureAuth>} />
-      <Route path="/my_adventure/:id" element={<AdventureAuth><MyAdventurePage /></AdventureAuth>} />
-    </Routes>
+        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/character" element={<CharacterPage />}></Route>
+        <Route path="/adventure/:id" element={<AdventureAuth><AdventurePage /></AdventureAuth>} />
+        <Route path="/my_adventure/:id" element={<AdventureAuth><MyAdventurePage /></AdventureAuth>} />
+      </Routes>
+    </Providers>
   )
 }
 
