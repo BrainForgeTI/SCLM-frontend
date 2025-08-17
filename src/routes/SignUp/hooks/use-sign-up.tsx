@@ -10,6 +10,11 @@ export const useSignUp = () => {
     resolver: zodResolver(SignUpSchema),
     mode: 'onChange',
     reValidateMode: 'onChange',
+    defaultValues: {
+      secondStep: {
+        gender: ''
+      }
+    }
   })
 
   const handleFirstStep = async () => {

@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { NavLink } from "react-router";
 import { SignUpFirstStep } from "./steps/sign-up-first-step";
 import { useSignUp } from "./hooks/use-sign-up";
+import { SignUpSecondStep } from "./steps/sign-up-second-step";
 
 export const SignUpPage = () => {
   const { states: { form, step }, actions: { handleSubmit } } = useSignUp()
@@ -12,6 +13,15 @@ export const SignUpPage = () => {
     if (step == 1) {
       return (
         <SignUpFirstStep
+          handleSubmit={handleSubmit}
+          form={form}
+        />
+      )
+    }
+
+    if ((step == 2)) {
+      return (
+        <SignUpSecondStep
           handleSubmit={handleSubmit}
           form={form}
         />
