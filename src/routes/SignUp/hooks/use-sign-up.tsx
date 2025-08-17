@@ -48,7 +48,7 @@ export const useSignUp = () => {
   }
 
   const handleThirdStep = async () => {
-    const validSteps = await form.trigger(["firstStep", "secondStep", "thirdStep"])
+    const validSteps = await form.trigger("thirdStep")
     if (validSteps) {
       handleEmailValidation()
     }
