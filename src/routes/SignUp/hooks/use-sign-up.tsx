@@ -6,9 +6,17 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation } from "@tanstack/react-query"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router"
 
 export const useSignUp = () => {
   const [step, setStep] = useState(1)
+  const navigate = useNavigate()
+
+  const handleBackStep = () => {
+    if (step < 4 && step > 1) {
+      setStep(step - 1)
+    }
+  }
 
   const form = useForm({
     resolver: zodResolver(SignUpSchema),
@@ -75,9 +83,13 @@ export const useSignUp = () => {
     onSuccess: () => mutateCreateUser(form.getValues())
   })
 
+  const goToHome = () => {
+    navigate('/home')
+  }
+
   const { mutate: mutateCreateUser } = useMutation({
     mutationFn: (data: SignUpType) => signUp(data),
-    onSuccess: () => console.log("Criado com sucesso")
+    onSuccess: () => goToHome()
   })
 
   return {
@@ -93,6 +105,7 @@ export const useSignUp = () => {
       handleSubmit,
       mutateValidateEmail,
       mutateValidateSignUpToken,
+      handleBackStep
     }
   }
 }

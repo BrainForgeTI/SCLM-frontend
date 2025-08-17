@@ -32,7 +32,7 @@ export const DatePicker = ({ onChange, value, placeholder, error }: DatePickerPr
               error && "border !border-destructive"
             )}
           >
-            {date ? date.toLocaleDateString() : placeholder}
+            {value ? value.toLocaleDateString() : placeholder}
             < ChevronDownIcon />
           </Button>
         </PopoverTrigger>

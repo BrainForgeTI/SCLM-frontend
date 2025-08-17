@@ -6,18 +6,23 @@ import { ProfileImageInput } from "@/components/V2/inputs/profile-image-input"
 import { Gender } from "@/enums/gender"
 import { SignUpType } from "@/schemas/sign-up-schema"
 import { Controller, UseFormReturn } from "react-hook-form"
+import BackStepButton from "../components/BackStepButton"
 
 interface SignUpSecondStepProps {
   form: UseFormReturn<SignUpType>
   handleSubmit: () => void
+  backStep: () => void
 }
 
-export const SignUpSecondStep = ({ form, handleSubmit }: SignUpSecondStepProps) => {
+export const SignUpSecondStep = ({ form, handleSubmit, backStep }: SignUpSecondStepProps) => {
 
   const { formState: { errors } } = form
 
   return (
     <Card>
+      <div className="px-10">
+        <BackStepButton action={backStep} />
+      </div>
       <CardContent className="py-5 px-10">
         <div className="w-full flex flex-col gap-5">
           <Controller

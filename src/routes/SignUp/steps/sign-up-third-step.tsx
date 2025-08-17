@@ -5,18 +5,23 @@ import { Input } from "@/components/ui/input"
 import { SignUpType } from "@/schemas/sign-up-schema"
 import { Controller, UseFormReturn } from "react-hook-form"
 import { Link } from "react-router"
+import BackStepButton from "../components/BackStepButton"
 
 interface SignUpThirdStepProps {
   form: UseFormReturn<SignUpType>
   handleSubmit: () => void
   isPendingValidate?: boolean
+  backStep: () => void
 }
 
-export const SignUpThirdStep = ({ form, handleSubmit, isPendingValidate }: SignUpThirdStepProps) => {
+export const SignUpThirdStep = ({ form, handleSubmit, backStep, isPendingValidate }: SignUpThirdStepProps) => {
   const { register, formState: { errors } } = form
 
   return (
     <Card>
+      <div className="px-10">
+        <BackStepButton action={backStep} />
+      </div>
       <CardContent className="py-5 px-10">
         <div className="w-full flex flex-col gap-5">
           <Input
