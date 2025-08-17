@@ -9,9 +9,10 @@ import { Link } from "react-router"
 interface SignUpThirdStepProps {
   form: UseFormReturn<SignUpType>
   handleSubmit: () => void
+  isPendingValidate?: boolean
 }
 
-export const SignUpThirdStep = ({ form, handleSubmit }: SignUpThirdStepProps) => {
+export const SignUpThirdStep = ({ form, handleSubmit, isPendingValidate }: SignUpThirdStepProps) => {
   const { register, formState: { errors } } = form
 
   return (
@@ -52,7 +53,7 @@ export const SignUpThirdStep = ({ form, handleSubmit }: SignUpThirdStepProps) =>
               </div>
             }
           />
-          <Button onClick={handleSubmit} type="button" className="p-5 cursor-pointer">Próximo</Button>
+          <Button isLoading={isPendingValidate} onClick={handleSubmit} type="button" className="p-5 cursor-pointer">Próximo</Button>
         </div>
       </CardContent>
     </Card>

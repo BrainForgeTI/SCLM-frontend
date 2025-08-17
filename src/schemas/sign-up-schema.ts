@@ -36,7 +36,10 @@ export const SignUpSchema = z.object({
     .refine(data => data.password === data.confirmPassword, {
       message: "As senhas não coincidem",
       path: ["confirmPassword"]
-    })
+    }),
+  fourthStep: z.object({
+    code: z.string("Preencha todos os valores").min(4, "Preencha todos os valores")
+  })
 })
 
 export type SignUpType = z.infer<typeof SignUpSchema>

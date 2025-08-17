@@ -6,9 +6,10 @@ import { SignUpFirstStep } from "./steps/sign-up-first-step";
 import { useSignUp } from "./hooks/use-sign-up";
 import { SignUpSecondStep } from "./steps/sign-up-second-step";
 import { SignUpThirdStep } from "./steps/sign-up-third-step";
+import { SignUpFourthStep } from "./steps/sign-up-fourth";
 
 export const SignUpPage = () => {
-  const { states: { form, step }, actions: { handleSubmit } } = useSignUp()
+  const { states: { form, step, isPendingValidateEmail }, actions: { handleSubmit } } = useSignUp()
 
   const renderStep = (step: number) => {
     if (step == 1) {
@@ -33,7 +34,17 @@ export const SignUpPage = () => {
       return (
         <SignUpThirdStep
           handleSubmit={handleSubmit}
+          isPendingValidate={isPendingValidateEmail}
           form={form}
+        />
+      )
+    }
+
+    if (step === 4) {
+      return (
+        <SignUpFourthStep
+          form={form}
+          handleSubmit={handleSubmit}
         />
       )
     }
