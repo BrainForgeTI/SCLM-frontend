@@ -9,7 +9,7 @@ import { SignUpThirdStep } from "./steps/sign-up-third-step";
 import { SignUpFourthStep } from "./steps/sign-up-fourth";
 
 export const SignUpPage = () => {
-  const { states: { form, step, isPendingValidateEmail }, actions: { handleSubmit } } = useSignUp()
+  const { states: { form, step, isPendingValidateEmail, isErrorSignUpToken, isPendingTokenValidation, isSuccessTokenValidation }, actions: { handleSubmit, mutateValidateEmail } } = useSignUp()
 
   const renderStep = (step: number) => {
     if (step == 1) {
@@ -45,6 +45,10 @@ export const SignUpPage = () => {
         <SignUpFourthStep
           form={form}
           handleSubmit={handleSubmit}
+          handleResend={mutateValidateEmail}
+          tokenError={isErrorSignUpToken}
+          isPendingTokenValidation={isPendingTokenValidation}
+          isSuccessTokenValidation={isSuccessTokenValidation}
         />
       )
     }

@@ -8,18 +8,23 @@ import { Controller, UseFormReturn } from "react-hook-form"
 interface SignUpFourthStepProps {
   form: UseFormReturn<SignUpType>
   handleSubmit: () => void
+  handleResend: (email: string) => void
+  tokenError?: boolean
+  isPendingTokenValidation?: boolean
+  isSuccessTokenValidation?: boolean
 }
 
 
-export const SignUpFourthStep = ({ form, handleSubmit }: SignUpFourthStepProps) => {
+export const SignUpFourthStep = ({ form, handleSubmit, handleResend, tokenError, isPendingTokenValidation, isSuccessTokenValidation }: SignUpFourthStepProps) => {
   const [counter, setCounter] = useState(60)
   const [disabledResend, setDisabledResend] = useState(true)
 
   const { formState: { errors } } = form
 
-  const handleResend = () => {
+  const handleResendEmail = () => {
     setCounter(60)
     setDisabledResend(true)
+    handleResend(form.getValues("thirdStep.email"))
   }
 
   useEffect(() => {
@@ -59,11 +64,12 @@ export const SignUpFourthStep = ({ form, handleSubmit }: SignUpFourthStepProps) 
               </InputOTP>
             }
           />
-          <p className="text-destructive text-center">{errors.fourthStep?.code?.message}</p>
+          {!tokenError && <p className="text-destructive text-center">{errors.fourthStep?.code?.message}</p>}
+          {tokenError && <p className="text-destructive text-center">Código inválido</p>}
         </div>
         <div className="w-full flex flex-col gap-3">
-          <Button onClick={handleSubmit} type="button" className="p-5 cursor-pointer w-full cursor-pointer">Próximo</Button>
-          <Button variant={'outline'} disabled={disabledResend} onClick={handleResend} className="w-full">
+          <Button disabled={isSuccessTokenValidation || isPendingTokenValidation} onClick={handleSubmit} type="button" className="p-5 cursor-pointer w-full cursor-pointer">Confirmar</Button>
+          <Button variant={'outline'} disabled={disabledResend} onClick={handleResendEmail} className="w-full">
             Enviar outro código {counter}s
           </Button>
         </div>

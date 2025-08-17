@@ -27,7 +27,9 @@ export const SignUpSchema = z.object({
       .refine((val) => /[A-Z]/.test(val), { message: "Pelo menos uma letra maiúscula", })
       .refine((val) => /[a-z]/.test(val), { message: "Pelo menos uma letra minúscula", })
       .refine((val) => /[0-9]/.test(val), { message: "Pelo menos um número", })
-      .refine((val) => /[^A-Za-z0-9]/.test(val), { message: "Pelo menos um carácter especial", }),
+      .refine((val) => /[@$!%*?&]/.test(val), {
+        message: "Pelo menos um carácter especial (@$!%*?&)",
+      }),
     confirmPassword: z.string().nonempty("Repita a senha"),
     acceptedTerms: z.boolean("Deve aceitar para criar uma conta").refine((data) => data === true, {
       message: "Deve aceitar para criar uma conta",

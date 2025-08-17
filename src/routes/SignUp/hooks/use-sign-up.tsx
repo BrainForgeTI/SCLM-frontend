@@ -1,5 +1,7 @@
-import { SignUpSchema } from "@/schemas/sign-up-schema"
+import { SignUpSchema, SignUpType } from "@/schemas/sign-up-schema"
+import { signUp } from "@/services/sin-up"
 import { validateEmail } from "@/services/validate-email"
+import { validateSignUpToken } from "@/services/validate-sign-up-token"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation } from "@tanstack/react-query"
 import { useState } from "react"
@@ -33,15 +35,19 @@ export const useSignUp = () => {
     }
   }
 
+  const handleEmailValidation = () => {
+    mutateValidateEmail(form.getValues("thirdStep.email"))
+  }
+
   const handleThirdStep = async () => {
     const validSteps = await form.trigger(["firstStep", "secondStep", "thirdStep"])
     if (validSteps) {
-      mutateValidateEmail(form.getValues("thirdStep.email"))
+      handleEmailValidation()
     }
   }
 
   const handleFourthStep = form.handleSubmit((data) => {
-    console.log(data)
+    mutateValidateSignUpToken({ email: data.thirdStep.email, token: data.fourthStep.code })
   })
 
   const stepsAction = {
@@ -64,14 +70,29 @@ export const useSignUp = () => {
     onSuccess: handleValidateEmailSuccess
   })
 
+  const { mutate: mutateValidateSignUpToken, isError: isErrorSignUpToken, isPending: isPendingTokenValidation, isSuccess: isSuccessTokenValidation } = useMutation({
+    mutationFn: (data: { email: string, token: string }) => validateSignUpToken(data.email, data.token),
+    onSuccess: () => mutateCreateUser(form.getValues())
+  })
+
+  const { mutate: mutateCreateUser } = useMutation({
+    mutationFn: (data: SignUpType) => signUp(data),
+    onSuccess: () => console.log("Criado com sucesso")
+  })
+
   return {
     states: {
       form,
       step,
-      isPendingValidateEmail
+      isPendingValidateEmail,
+      isErrorSignUpToken,
+      isPendingTokenValidation,
+      isSuccessTokenValidation,
     },
     actions: {
-      handleSubmit
+      handleSubmit,
+      mutateValidateEmail,
+      mutateValidateSignUpToken,
     }
   }
 }
