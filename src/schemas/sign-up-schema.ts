@@ -1,4 +1,3 @@
-import { Gender } from "@/enums/gender";
 import z from "zod";
 
 const MAX_UPLOAD_SIZE = 1024 * 1024 * 10 // 10mb - confirmar com pedro
@@ -23,23 +22,21 @@ export const SignUpSchema = z.object({
   }),
   thirdStep: z.object({
     email: z.email("Preencha um e-mail válido"),
-    password: z.string(),
-    confirmPassword: z.string()
+    password: z.string().nonempty("Digite uma senha")
+      .refine((val) => val.length >= 8, { message: "Mínimo de 8 caracteres", })
+      .refine((val) => /[A-Z]/.test(val), { message: "Pelo menos uma letra maiúscula", })
+      .refine((val) => /[a-z]/.test(val), { message: "Pelo menos uma letra minúscula", })
+      .refine((val) => /[0-9]/.test(val), { message: "Pelo menos um número", })
+      .refine((val) => /[^A-Za-z0-9]/.test(val), { message: "Pelo menos um carácter especial", }),
+    confirmPassword: z.string().nonempty("Repita a senha"),
+    acceptedTerms: z.boolean("Deve aceitar para criar uma conta").refine((data) => data === true, {
+      message: "Deve aceitar para criar uma conta",
+    })
   })
+    .refine(data => data.password === data.confirmPassword, {
+      message: "As senhas não coincidem",
+      path: ["confirmPassword"]
+    })
 })
-  .superRefine(({ thirdStep }, ctx) => {
-    if (thirdStep.password !== thirdStep.confirmPassword) {
-      ctx.addIssue({
-        code: "custom",
-        message: "As senhas não coincidem",
-        path: ["thirdStep", "password"],
-      })
-      ctx.addIssue({
-        code: "custom",
-        message: "As senhas não coincidem",
-        path: ["thirdStep", "confirmPassword"],
-      })
-    }
-  })
 
 export type SignUpType = z.infer<typeof SignUpSchema>

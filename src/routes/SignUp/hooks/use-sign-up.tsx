@@ -4,11 +4,11 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 
 export const useSignUp = () => {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(3)
 
   const form = useForm({
     resolver: zodResolver(SignUpSchema),
-    mode: 'onChange',
+    mode: 'onSubmit',
     reValidateMode: 'onChange',
     defaultValues: {
       secondStep: {
@@ -31,14 +31,9 @@ export const useSignUp = () => {
     }
   }
 
-  const handleThirdStep = async () => {
-    const validStep = await form.trigger('thirdStep')
-    if (validStep) {
-      form.handleSubmit((data) => {
-        console.log(data)
-      })()
-    }
-  }
+  const handleThirdStep = form.handleSubmit((data) => {
+    console.log(data)
+  })
 
   const stepsAction = {
     "1": handleFirstStep,

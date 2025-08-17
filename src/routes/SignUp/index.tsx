@@ -5,6 +5,7 @@ import { NavLink } from "react-router";
 import { SignUpFirstStep } from "./steps/sign-up-first-step";
 import { useSignUp } from "./hooks/use-sign-up";
 import { SignUpSecondStep } from "./steps/sign-up-second-step";
+import { SignUpThirdStep } from "./steps/sign-up-third-step";
 
 export const SignUpPage = () => {
   const { states: { form, step }, actions: { handleSubmit } } = useSignUp()
@@ -19,9 +20,18 @@ export const SignUpPage = () => {
       )
     }
 
-    if ((step == 2)) {
+    if (step == 2) {
       return (
         <SignUpSecondStep
+          handleSubmit={handleSubmit}
+          form={form}
+        />
+      )
+    }
+
+    if (step === 3) {
+      return (
+        <SignUpThirdStep
           handleSubmit={handleSubmit}
           form={form}
         />
@@ -47,7 +57,7 @@ export const SignUpPage = () => {
     >
       <div className="w-[320px] lg:w-[384px] flex lg:block justify-center">
         <div className="w-full">
-          <form noValidate={true} className="w-full flex justify-center lg:justify-end">
+          <form noValidate={true} onSubmit={handleSubmit} className="w-full flex justify-center lg:justify-end">
             <div className="w-[320px] lg:w-[384px] lg:block justify-center">
               <p className="flex justify-center w-full p-[20px] text-foreground text-[20px]">Crie sua conta</p>
               {renderStep(step)}
