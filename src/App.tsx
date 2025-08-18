@@ -1,20 +1,19 @@
 import { Route, Routes } from "react-router"
 import { HomePage } from "./routes/Home/HomePage"
-import { SignUpPage } from "./routes/SignUp/SignUpPage"
-import { SignInPage } from "./routes/SignIn/SignInPage"
+import { SignInPage } from "./routes/SignIn"
 import { SecondaryMissionsPage } from "./routes/SecondaryMissions/SecondaryMissionsPage"
 import { AdventurePage } from "./routes/Adventure"
 import { AdventureAuth } from "./context/adventure/AdventureAuth"
 import { MyAdventurePage } from "./routes/MyAdventure"
 import { CharacterPage } from "./routes/Character/CharacterPage"
 import { Providers } from "./components/V2/providers"
+import { SignUpPage } from "./routes/SignUp"
 
 function App() {
   return (
     <Providers>
       <Routes>
         <Route path="/home" element={<HomePage />} />,
-        <Route path="/signup" element={<SignUpPage />} />,
         <Route path="/signin" element={<SignInPage />} />,
         <Route path="/tasks" element={<SecondaryMissionsPage />} />,
 
