@@ -6,7 +6,7 @@ interface Props {
 
 const MainContent = (props: Props) => {
     return (
-        <main className="md:px-8 md:overflow-y-auto md:overflow-x-hidden w-full h-[calc(100%-60px)] px-4 py-4">
+        <main className="md:px-8 bg-backgroud md:overflow-y-auto md:overflow-x-hidden w-full h-[calc(100%-60px)] px-4 py-4">
             {props.children}
         </main>
     )

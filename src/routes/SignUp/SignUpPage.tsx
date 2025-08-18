@@ -2,7 +2,7 @@ import { AuthFormsBox, PagelayoutAuth } from "../../components/PagelayoutAuth";
 import TreeTravaller from "../../assets/images/treeTravallers.png";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { SignUpFormType } from "../../types/auth_types/SignUpFormType";
-import { BackStepButton, AuthSubmitButton, AuthChooseInput, AuthPasswordStatus, AuthAcceptTermsInput, AuthCodeInput } from "./index";
+import { BackStepButton, AuthSubmitButton, AuthChooseInput, AuthPasswordStatus, AuthAcceptTermsInput, AuthCodeInput } from "./index-imports]";
 import { AuthStepType } from "../../types/auth_types/AuthStepType";
 import { Validator } from "../../utils/validator";
 import { PasswordStatus } from "../../types/auth_types/PasswordStatus";
