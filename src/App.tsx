@@ -7,12 +7,11 @@ import { AdventurePage } from "./routes/Adventure"
 import { AdventureAuth } from "./context/adventure/AdventureAuth"
 import { MyAdventurePage } from "./routes/MyAdventure"
 import { CharacterPage } from "./routes/Character/CharacterPage"
-import { AuthSession } from "./components/V2/auth-session"
 
 function App() {
   return (
     <Routes>
-      <Route path="/home" element={<AuthSession><HomePage /></AuthSession>} />,
+      <Route path="/home" element={<HomePage />} />,
       <Route path="/signup" element={<SignUpPage />} />,
       <Route path="/signin" element={<SignInPage />} />,
       <Route path="/tasks" element={<SecondaryMissionsPage />} />,
