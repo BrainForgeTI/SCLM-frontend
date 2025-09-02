@@ -8,6 +8,7 @@ import { MyAdventurePage } from "./routes/MyAdventure"
 import { CharacterPage } from "./routes/Character/CharacterPage"
 import { Providers } from "./components/V2/providers"
 import { SignUpPage } from "./routes/SignUp"
+import { CreateCharacterPage } from "./routes/v2/CreateCharacter"
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/character" element={<CharacterPage />}></Route>
         <Route path="/adventure/:id" element={<AdventureAuth><AdventurePage /></AdventureAuth>} />
         <Route path="/my_adventure/:id" element={<AdventureAuth><MyAdventurePage /></AdventureAuth>} />
+
+        <Route path="/create-character" element={<CreateCharacterPage />} />
       </Routes>
     </Providers>
   )
