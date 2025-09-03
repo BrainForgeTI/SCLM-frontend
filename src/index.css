@@ -159,6 +159,8 @@
    --sidebar-accent-foreground: oklch(0.985 0 0);
    --sidebar-border: oklch(1 0 0 / 10%);
    --sidebar-ring: oklch(0.541 0.281 293.009);
+
+   --brand-pink: oklch(0.7965 0.142 318.45)
  }
 
 @layer base {

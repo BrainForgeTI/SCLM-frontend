@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import LogoSm from "../../../assets/images/logo_sm.png";
 
 const Menu = () => {
@@ -8,11 +9,11 @@ const Menu = () => {
         <p>Scholarium</p>
       </div>
       <div className="hidden lg:flex gap-[10px]">
-        <a href="" target="_blank" rel="noopener noreferrer">Por que nós?</a>
-        <a href="" target="_blank" rel="noopener noreferrer">Gamificação</a>
-        <a href="" target="_blank" rel="noopener noreferrer">Planos</a>
+        <NavLink className={"underline"} to={"/landing"}>Por que nós?</NavLink>
+        <NavLink className={"underline"} to={"/signin"}>Gamificação</NavLink>
+        <NavLink className={"underline"} to={"/signin"}>Planos</NavLink>
       </div>
-      <button className="p-[10px] rounded-[15px] w-[150px]">Cadastrar</button>
+      <NavLink className="flex justify-center p-[10px] rounded-[15px] w-[150px] border-[3px] [border-image:linear-gradient(to_right,var(--primary),var(--brand-pink))_1]" to={"/signup"}>Cadastrar</NavLink>
     </div>
   );
 }
