@@ -331,12 +331,12 @@ export const useApi = () => ({
     },
 
     signIn: async (email: string, password: string) => {
-        const res = await axios.post('http://127.0.0.1:3000/auth/login', { email, password })
+        const res = await axios.post('http://localhost:3000/auth/login', { email, password }, { withCredentials: true })
         return res
     },
 
     refreshToken: async () => {
-        const res = await axios.get('http://127.0.0.1:3000/auth/refresh-token', { withCredentials: true })
+        const res = await axios.get('http://localhost:3000/auth/refresh-token', { withCredentials: true })
         return res
     }
 })
