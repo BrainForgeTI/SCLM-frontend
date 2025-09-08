@@ -51,14 +51,14 @@ const character = [
 ];
 
 export const CreateCharacterPage = () => {
-  const [gender, setGender] = useState<"male" | "female">("male");
+  const [gender, setGender] = useState<"male" | "female">("female");
 
   return (
     <PageLayout>
       <div className="w-full">
         <PageTitle title="Criação de Personagem" />
         <div className="w-full flex gap-5 border border-red-600 py-10">
-          <div className="flex flex-col gap-5 items-center w-1/2">
+          <div className="flex flex-col gap-5 items-center w-2/5">
             <div className="w-70">
               <Carousel>
                 <CarouselContent>
@@ -116,9 +116,29 @@ export const CreateCharacterPage = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/2 flex justify-center">
-            <Card className="w-90 flex flex-col items-center">
-              <Wizard gender={gender} level={0} className="w-40 h-40" />
+          <div className="w-3/5 flex justify-center">
+            <Card className="w-full flex flex-col items-center">
+              <div className="w-full flex gap-5">
+                <div className="w-full flex flex-col items-center">
+                  <div className="w-40">
+                    <Carousel>
+                      <CarouselContent>
+                        <CarouselItem>
+                          <Card className=" flex justify-center items-center">
+                            <CardContent className="flex flex-col gap-5 items-center justify-center">
+                            </CardContent>
+                          </Card>
+                        </CarouselItem>
+                      </CarouselContent>
+                      <CarouselPrevious />
+                      <CarouselNext />
+                    </Carousel>
+                  </div>
+                </div>
+                <div className="w-full flex justify-center">
+                  <Wizard gender={gender} level={0} className="w-40 h-40" />
+                </div>
+              </div>
             </Card>
           </div>
         </div>
