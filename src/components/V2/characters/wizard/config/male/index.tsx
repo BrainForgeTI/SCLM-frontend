@@ -6,7 +6,7 @@ import Clothe15Male from "@/assets/characters/wizard/male/evolution/Sprite_Mascu
 import Clothe20Male from "@/assets/characters/wizard/male/evolution/Sprite_Masculino_Wizard_Class_Lvl20.png";
 import Eye0Male from "@/assets/characters/generics/male/eye/Sprite_Masculino_Eyes.png";
 import { CharacterSprite } from "@/types/character/character-sprite";
-import { Hair0 } from "@/assets/characters/generics/female/hair/Hair0";
+
 
 export const MaleSprite: CharacterSprite = {
   base: BaseMaleImage,
@@ -31,6 +31,9 @@ export const MaleSprite: CharacterSprite = {
     0: Eye0Male,
   },
   hair: {
-    0: Hair0
+    0: 'Hair0',
+    1: '',
+    2: '',
+    3: '',
   }
 };

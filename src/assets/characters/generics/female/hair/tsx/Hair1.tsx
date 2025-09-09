@@ -4,7 +4,7 @@ interface Hair1Props {
 
 export const Hair1 = ({ className }: Hair1Props) => {
   return (
-    <svg className={className} version="1.1" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+    <svg className={className} version="1.1" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" style={{ shapeRendering: 'crispEdges' }}>
       <rect x="110" y="40" width="1" height="1" fill="#000000" />
       <rect x="111" y="40" width="1" height="1" fill="#000000" />
       <rect x="112" y="40" width="1" height="1" fill="#000000" />

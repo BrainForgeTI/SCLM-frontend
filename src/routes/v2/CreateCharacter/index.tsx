@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PageLayout, PageTitle } from "@/components/PageLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -21,7 +22,16 @@ import {
 import { Button } from "@/components/ui/button";
 import { SelectValue } from "@radix-ui/react-select";
 import { Wizard } from "@/components/V2/characters/wizard";
-import { useState } from "react";
+import { PropsWithChildren, useState } from "react";
+import { ColorPicker } from "@/components/V2/inputs/color-picker";
+import { InView } from "react-intersection-observer";
+import { femaleHair } from "@/components/V2/characters/generic-character/config/female";
+import useDebounce from "@/hooks/use-debounce";
+
+const hairConfig = {
+  female: femaleHair,
+  male: []
+}
 
 const character = [
   {
@@ -50,14 +60,34 @@ const character = [
   },
 ];
 
+interface CarouselItemProps extends PropsWithChildren {
+  onInView: () => void
+}
+
+const CarouselView = ({ children, onInView }: CarouselItemProps) => (
+  <InView
+    as="div"
+    onChange={(inView) => inView && onInView()}
+    threshold={0.95}
+  >
+    {children}
+  </InView>
+);
+
 export const CreateCharacterPage = () => {
   const [gender, setGender] = useState<"male" | "female">("female");
+
+  const [hairColor, setHairColor] = useState("#ffffff")
+  const [currentHair, setCurrentHair] = useState(0)
+  const debouncedHair = useDebounce(currentHair, 200)
+
+  const hair = hairConfig[gender]
 
   return (
     <PageLayout>
       <div className="w-full">
         <PageTitle title="Criação de Personagem" />
-        <div className="w-full flex gap-5 border border-red-600 py-10">
+        <div className="w-full flex gap-5 py-10">
           <div className="flex flex-col gap-5 items-center w-2/5">
             <div className="w-70">
               <Carousel>
@@ -65,14 +95,16 @@ export const CreateCharacterPage = () => {
                   {character.map((character, index) => (
                     <CarouselItem key={index}>
                       <Card className="h-60 flex justify-center items-center">
-                        <CardContent className="flex flex-col gap-5 items-center justify-center">
-                          <div className="w-25 h-25">
-                            <img src={character.icon} />
-                          </div>
-                          <p className="text-2xl uppercase font-semibold text-center">
-                            {character.label}
-                          </p>
-                        </CardContent>
+                        <CarouselView onInView={() => { }}>
+                          <CardContent className="flex flex-col gap-5 items-center justify-center">
+                            <div className="w-25 h-25">
+                              <img src={character.icon} />
+                            </div>
+                            <p className="text-2xl uppercase font-semibold text-center">
+                              {character.label}
+                            </p>
+                          </CardContent>
+                        </CarouselView>
                       </Card>
                     </CarouselItem>
                   ))}
@@ -121,28 +153,49 @@ export const CreateCharacterPage = () => {
               <div className="w-full flex gap-5">
                 <div className="w-full flex flex-col items-center">
                   <div className="w-40">
-                    <Carousel>
-                      <CarouselContent>
-                        <CarouselItem>
-                          <Card className=" flex justify-center items-center">
-                            <CardContent className="flex flex-col gap-5 items-center justify-center">
-                            </CardContent>
-                          </Card>
-                        </CarouselItem>
-                      </CarouselContent>
-                      <CarouselPrevious />
-                      <CarouselNext />
-                    </Carousel>
+                    <div className="flex flex-col gap-3">
+                      <Carousel>
+                        <CarouselContent>
+                          {hair.map((current, index) => {
+                            const HairImage = current.image
+                            return (
+                              <CarouselItem>
+                                <CarouselView onInView={() => {
+                                  setTimeout(() => {
+                                    setCurrentHair(index)
+                                  }, 200)
+                                }}>
+                                  <Card className="flex justify-center items-center select-none">
+                                    <CardContent className="flex flex-col gap-5 items-center justify-center">
+                                      <img src={HairImage} />
+                                    </CardContent>
+                                  </Card>
+                                </CarouselView>
+                              </CarouselItem>
+                            )
+                          })}
+                        </CarouselContent>
+                        <CarouselPrevious />
+                        <CarouselNext />
+                      </Carousel>
+                    </div>
+
                   </div>
+                  <Card className="w-60 py-5 mt-5">
+                    <CardContent className="flex flex-col gap-3">
+                      <ColorPicker label="Cor do cabelo" id="hair-color" value={hairColor} onChange={setHairColor} />
+                      <ColorPicker label="Cor dos Olhos" id="eye-color" value={hairColor} onChange={setHairColor} />
+                    </CardContent>
+                  </Card>
                 </div>
                 <div className="w-full flex justify-center">
-                  <Wizard gender={gender} level={0} className="w-40 h-40" />
+                  <Wizard hair={debouncedHair} hairColor={hairColor} gender={gender} level={0} className="w-40 h-40" />
                 </div>
               </div>
             </Card>
           </div>
         </div>
-      </div>
-    </PageLayout>
+      </div >
+    </PageLayout >
   );
 };

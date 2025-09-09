@@ -6,8 +6,10 @@ import Clothe15 from "@/assets/characters/wizard/female/evolution/Sprite_Feminin
 import Clothe20 from "@/assets/characters/wizard/female/evolution/Sprite_Feminino_Wizard_Class_Lvl20.png";
 import Eye0 from "@/assets/characters/generics/male/eye/Sprite_Masculino_Eyes.png";
 import { CharacterSprite } from "@/types/character/character-sprite";
-import { Hair0 } from "@/assets/characters/generics/female/hair/Hair0";
-import { Hair1 } from "@/assets/characters/generics/female/hair/Hair1";
+import { Hair0 } from "@/assets/characters/generics/female/hair/tsx/Hair0";
+import { Hair1 } from "@/assets/characters/generics/female/hair/tsx/Hair1";
+import { Hair2 } from "@/assets/characters/generics/female/hair/tsx/Hair2";
+import { Hair3 } from "@/assets/characters/generics/female/hair/tsx/Hair3";
 
 export const FemaleSprite: CharacterSprite = {
   base: BaseImage,
@@ -33,6 +35,8 @@ export const FemaleSprite: CharacterSprite = {
   },
   hair: {
     0: Hair0,
-    1: Hair1
+    1: Hair1,
+    2: Hair2,
+    3: Hair3
   }
 };
