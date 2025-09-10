@@ -14,11 +14,11 @@ export const femaleHair = [
     image: Hair1Image
   },
   {
-    id: 1,
+    id: 2,
     image: Hair2Image
   },
   {
-    id: 1,
+    id: 3,
     image: Hair3Image
   },
 ]

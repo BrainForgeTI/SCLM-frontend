@@ -1,9 +1,9 @@
 import BaseMaleImage from "@/assets/characters/generics/male/base/Sprite_Masculino_Base.png";
-import Clothe0Male from "@/assets/characters/wizard/male/evolution/Sprite_Masculino_Wizard_Class_Base.png";
-import Clothe5Male from "@/assets/characters/wizard/male/evolution/Sprite_Masculino_Wizard_Class_Lvl5.png";
-import Clothe10Male from "@/assets/characters/wizard/male/evolution/Sprite_Masculino_Wizard_Class_Lvl10.png";
-import Clothe15Male from "@/assets/characters/wizard/male/evolution/Sprite_Masculino_Wizard_Class_Lvl15.png";
-import Clothe20Male from "@/assets/characters/wizard/male/evolution/Sprite_Masculino_Wizard_Class_Lvl20.png";
+import Clothe0Male from "@/assets/characters/Martial-Artist/male/evolution/Sprite_Masculino_Martial-Artist_Class_Base.png";
+import Clothe5Male from "@/assets/characters/Martial-Artist/male/evolution/Sprite_Masculino_Martial-Artist_Class_Lvl5.png";
+import Clothe10Male from "@/assets/characters/Martial-Artist/male/evolution/Sprite_Masculino_Martial-Artist_Class_Lvl10.png";
+import Clothe15Male from "@/assets/characters/Martial-Artist/male/evolution/Sprite_Masculino_Martial-Artist_Class_Lvl15.png";
+import Clothe20Male from "@/assets/characters/Martial-Artist/male/evolution/Sprite_Masculino_Martial-Artist_Class_Lvl20.png";
 import Eye0Male from "@/assets/characters/generics/male/eye/Sprite_Masculino_Eyes.png";
 import { CharacterSprite } from "@/types/character/character-sprite";
 import { Hair0 } from "@/assets/characters/generics/male/hair/tsx/hair0";
