@@ -4,13 +4,13 @@ import ArrowUpIcon from "../../../assets/icons/arrow_up.svg";
 import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 import { AdventureTopic } from "../../../components/AdventureTopic";
 import { AdventureContext } from "../../../context/adventure/AdventureContext";
-import ActionButton from "../../../components/ActionButton/ActionButton";
 import { TopicType } from "../../../types/adventure/TopicType";
 import { ModifyChapterTopics } from "../../../types/adventure/ModifyChapterTopics";
 import { DeletedChapterTopic } from "../../../types/adventure/DeletedChapterTopic";
 import { ChapterDescription } from "../../../components/ChapterDescription";
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
+import { useMyAdventure } from "../hooks/use-my-adventure";
 
 interface Props {
   index: string;
@@ -20,6 +20,7 @@ interface Props {
     chapterId: string,
     topicId: string,
     completed: boolean,
+    success: boolean,
   ) => void;
   editMode: boolean;
   modifiedTopicsList?: ModifyChapterTopics[];
@@ -42,8 +43,11 @@ const ChapterSection = (props: Props) => {
   const [height, setHeight] = useState(0);
   const [originalTitle, setOriginalTitle] = useState<string | null>(null);
 
-  const titleRef = useRef<HTMLInputElement>(null);
+  const {
+    actions: { mutateChallenge },
+  } = useMyAdventure();
 
+  const titleRef = useRef<HTMLInputElement>(null);
   // variável do botão novo
   const allCompleted =
     props.chapter.topics.length > 0 &&
@@ -229,8 +233,7 @@ const ChapterSection = (props: Props) => {
                   "bg-transparent": !allCompleted,
                 })}
                 onClick={() => {
-                  if (!allCompleted) return;
-                  alert(`Botão novo do capítulo ${props.chapter.title}`);
+                  mutateChallenge();
                 }}
               >
                 Gerar Desafio
