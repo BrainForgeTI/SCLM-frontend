@@ -18,6 +18,7 @@ import { Validator } from "../../utils/validator";
 import { ChapterType } from "../../types/adventure/ChapterType";
 import { ConfirmButton } from "../../components/ConfirmButton";
 import { Button } from "@/components/ui/button";
+import { useMyAdventure } from "./hooks/use-my-adventure";
 
 const MyAdventurePage = () => {
   const api = useApi();
@@ -46,8 +47,13 @@ const MyAdventurePage = () => {
 
   const validator = new Validator();
 
+  const {
+    actions: { mutateFinalProject },
+  } = useMyAdventure();
+
   //variável do botão
   const canGenerateFinalProject = true;
+  const adventureId = adventureContext.adventure?.id;
 
   function handleSearchValue(event: ChangeEvent<HTMLInputElement>) {
     setSearchValue(event.target.value);
@@ -522,7 +528,7 @@ const MyAdventurePage = () => {
               <Button
                 className="w-full bg-green-800 border-2 hover:bg-green-800"
                 onClick={() => {
-                  alert("Gerar Desafio Final");
+                  mutateFinalProject(adventureId);
                 }}
               >
                 Gerar Projeto Final
