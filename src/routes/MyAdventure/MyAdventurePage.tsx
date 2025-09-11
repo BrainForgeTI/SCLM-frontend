@@ -526,7 +526,7 @@ const MyAdventurePage = () => {
           {canGenerateFinalProject && (
             <div className="flex">
               <Button
-                className="w-full bg-green-800 border-2 hover:bg-green-800"
+                variant={"project"}
                 onClick={() => {
                   mutateFinalProject(adventureId);
                 }}
