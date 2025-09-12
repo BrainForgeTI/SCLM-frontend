@@ -49,6 +49,7 @@ const MyAdventurePage = () => {
 
   const {
     actions: { mutateFinalProject },
+    state: { isFinalProjectPending },
   } = useMyAdventure();
 
   //variável do botão
@@ -527,15 +528,17 @@ const MyAdventurePage = () => {
             <div className="flex">
               <Button
                 variant={"project"}
+                disabled={isFinalProjectPending}
                 onClick={() => {
                   mutateFinalProject(adventureId);
                 }}
               >
-                Gerar Projeto Final
+                {isFinalProjectPending
+                  ? "Gerando seu projeto final..."
+                  : "Gerar Projeto Final"}
               </Button>
             </div>
           )}
-
           {/* Novo Botão */}
 
           {adventureContext.adventure &&
