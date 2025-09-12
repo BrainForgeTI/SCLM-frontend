@@ -45,6 +45,7 @@ const ChapterSection = (props: Props) => {
 
   const {
     actions: { mutateChallenge },
+    state: { isChallengePending },
   } = useMyAdventure();
 
   const titleRef = useRef<HTMLInputElement>(null);
@@ -232,11 +233,12 @@ const ChapterSection = (props: Props) => {
                 className={clsx({
                   "bg-transparent": !allCompleted,
                 })}
+                disabled={isChallengePending} // desabilita enquanto carrega
                 onClick={() => {
                   mutateChallenge();
                 }}
               >
-                Gerar Desafio
+                {isChallengePending ? "Gerando desafio..." : "Gerar Desafio"}
               </Button>
             </div>
             {/* botão novo */}
