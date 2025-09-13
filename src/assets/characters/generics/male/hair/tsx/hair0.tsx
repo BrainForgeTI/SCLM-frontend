@@ -1,10 +1,16 @@
 interface Hair0pProps {
-  className?: string
+  className?: string;
 }
 
 export const Hair0 = ({ className }: Hair0pProps) => {
   return (
-    <svg className={className} version="1.1" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" style={{ shapeRendering: 'crispEdges' }}>
+    <svg
+      className={className}
+      version="1.1"
+      viewBox="0 0 320 320"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ shapeRendering: "crispEdges" }}
+    >
       <rect x="100" y="40" width="1" height="1" fill="#000000" />
       <rect x="101" y="40" width="1" height="1" fill="#000000" />
       <rect x="102" y="40" width="1" height="1" fill="#000000" />
@@ -10906,5 +10912,5 @@ export const Hair0 = ({ className }: Hair0pProps) => {
       <rect x="208" y="139" width="1" height="1" fill="#000000" />
       <rect x="209" y="139" width="1" height="1" fill="#000000" />
     </svg>
-  )
-}
+  );
+};

@@ -37,6 +37,6 @@ export const FemaleSprite: CharacterSprite = {
     0: Hair0,
     1: Hair1,
     2: Hair2,
-    3: Hair3
-  }
+    3: Hair3,
+  },
 };

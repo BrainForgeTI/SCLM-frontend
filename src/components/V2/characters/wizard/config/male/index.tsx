@@ -13,7 +13,6 @@ import { Hair3 } from "@/assets/characters/generics/male/hair/tsx/hair3";
 import { Hair4 } from "@/assets/characters/generics/male/hair/tsx/hair4";
 import { Hair5 } from "@/assets/characters/generics/male/hair/tsx/hair5";
 
-
 export const MaleSprite: CharacterSprite = {
   base: BaseMaleImage,
   evolutions: {
@@ -42,6 +41,6 @@ export const MaleSprite: CharacterSprite = {
     2: Hair2,
     3: Hair3,
     4: Hair4,
-    5: Hair5
-  }
+    5: Hair5,
+  },
 };
