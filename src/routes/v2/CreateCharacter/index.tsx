@@ -21,18 +21,19 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { SelectValue } from "@radix-ui/react-select";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { PropsWithChildren } from "react";
 import { ColorPicker } from "@/components/V2/inputs/color-picker";
 import { InView } from "react-intersection-observer";
 import { femaleHair } from "@/components/V2/characters/generic-character/config/female";
-import useDebounce from "@/hooks/use-debounce";
 import { maleHair } from "@/components/V2/characters/generic-character/config/male";
-import { Character } from "@/components/V2/characters/character";
 import { useCreateCharacter } from "./hooks/use-create-character";
 import { Controller } from "react-hook-form";
+import { CharacterGender } from "@/enums/character-gender";
+import { CharacterClass } from "@/enums/class";
+import { Character } from "@/components/V2/characters/character";
 
-interface CharacterClass {
-  characterId: "warrior" | "wizard" | "rogue" | "martial-artist";
+interface CharacterClasses {
+  characterId: CharacterClass;
   label: string;
   icon: string;
   description: string;
@@ -52,9 +53,9 @@ interface CharacterClass {
   };
 }
 
-const character: CharacterClass[] = [
+const character: CharacterClasses[] = [
   {
-    characterId: "warrior",
+    characterId: CharacterClass.WARRIOR,
     label: "Guerreiro",
     icon: WarriorImage,
     description:
@@ -69,7 +70,7 @@ const character: CharacterClass[] = [
     },
   },
   {
-    characterId: "wizard",
+    characterId: CharacterClass.WIZARD,
     label: "Mago",
     icon: WizardImage,
     description:
@@ -84,7 +85,7 @@ const character: CharacterClass[] = [
     },
   },
   {
-    characterId: "rogue",
+    characterId: CharacterClass.ROGUE,
     label: "Ladino",
     icon: RogueImage,
     description:
@@ -99,7 +100,7 @@ const character: CharacterClass[] = [
     },
   },
   {
-    characterId: "martial-artist",
+    characterId: CharacterClass.MARTIAL_ARTIST,
     label: "Artista Marcial",
     icon: MartialArtistImage,
     description:
@@ -128,33 +129,23 @@ const CarouselView = ({ children, onInView }: CarouselItemProps) => (
 export const CreateCharacterPage = () => {
   const {
     states: { control, errors },
-    actions: { register },
+    actions: { register, watch },
   } = useCreateCharacter();
 
-  const [gender, setGender] = useState<"male" | "female">("female");
-  const [currentClass, setCurrentClass] = useState<CharacterClass>(
-    character[0],
-  );
-  const debouncedClass = useDebounce(currentClass, 300);
-  const [debouncedCl, setDebouncedCl] = useState<CharacterClass>(character[0]);
+  const gender = watch('gender') || CharacterGender.MALE
+  const characterClass = watch('characterClass') || CharacterClass.WARRIOR
+  const characterHair = watch('hairIndex') || 0
 
-  const [hairColor, setHairColor] = useState("#ffffff");
-  const [currentHair, setCurrentHair] = useState(0);
-  const debouncedHair = useDebounce(currentHair, 200);
-
-  const hair = debouncedCl?.genders[gender].hair;
-
-  useEffect(() => {
-    setDebouncedCl(debouncedClass);
-  }, [debouncedClass]);
+  const hairColor = watch('hairColor')
+  const availableHair = character.find((char) => char.characterId === 'warrior')?.genders[gender]?.hair || []
 
   return (
     <PageLayout>
       <div className="w-full">
         <PageTitle title="Criação de Personagem" />
-        <form className="w-full flex gap-5 py-10">
+        <form className="w-full flex flex-col-reverse items-center gap-5 py-10 2xl:flex-row 2xl:items-start">
           <div className="flex flex-col gap-5 items-center w-2/5">
-            <div className="w-70">
+            <div className="w-60 md:w-70">
               <Controller
                 name={"characterClass"}
                 control={control}
@@ -165,7 +156,7 @@ export const CreateCharacterPage = () => {
                         <CarouselItem key={index}>
                           <Card className="h-60 flex justify-center items-center">
                             <CarouselView
-                              onInView={() => field.onChange(character[index])}
+                              onInView={() => field.onChange(character[index].characterId)}
                             >
                               <CardContent className="flex flex-col gap-5 items-center justify-center">
                                 <div className="w-25 h-25">
@@ -186,7 +177,7 @@ export const CreateCharacterPage = () => {
                 )}
               />
             </div>
-            <div className="w-70 flex flex-col gap-5">
+            <div className="w-60 md:w-70 flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <Input
                   error={errors.characterName}
@@ -240,60 +231,75 @@ export const CreateCharacterPage = () => {
               </div>
             </div>
           </div>
-          <div className="w-3/5 flex justify-center">
-            <Card className="w-full flex flex-col items-center">
-              <div className="w-full flex gap-5">
+          <div className="w-60 md:w-3/5 flex justify-center">
+            <Card className="w-full flex-grow== flex flex-col items-center">
+              <div className="w-full flex flex-col gap-5 2xl:flex-row">
                 <div className="w-full flex flex-col items-center">
-                  <div className="w-40">
+                  <div className="w-30 md:w-40">
                     <div className="flex flex-col gap-3">
-                      <Carousel>
-                        <CarouselContent>
-                          {hair.map((current, index) => {
-                            const HairImage = current.image;
-                            return (
-                              <CarouselItem>
-                                <CarouselView
-                                  onInView={() => setCurrentHair(index)}
-                                >
-                                  <Card className="flex justify-center items-center select-none">
-                                    <CardContent className="flex flex-col gap-5 items-center justify-center">
-                                      <img src={HairImage} />
-                                    </CardContent>
-                                  </Card>
-                                </CarouselView>
-                              </CarouselItem>
-                            );
-                          })}
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                      </Carousel>
+                      <Controller
+                        name="hairIndex"
+                        control={control}
+                        render={({ field }) => (
+                          <Carousel>
+                            <CarouselContent>
+                              {availableHair.map((current, index) => {
+                                const HairImage = current.image;
+                                return (
+                                  <CarouselItem key={index}>
+                                    <CarouselView
+                                      onInView={() => field.onChange(index)}
+                                    >
+                                      <Card className="flex justify-center items-center select-none">
+                                        <CardContent className="flex flex-col gap-5 items-center justify-center">
+                                          <img src={HairImage} />
+                                        </CardContent>
+                                      </Card>
+                                    </CarouselView>
+                                  </CarouselItem>
+                                );
+                              })}
+                            </CarouselContent>
+                            <CarouselPrevious type="button" />
+                            <CarouselNext type="button" />
+                          </Carousel>
+                        )}
+                      />
                     </div>
                   </div>
-                  <Card className="w-60 py-5 mt-5">
+                  <Card className="w-53 md:w-60 py-5 mt-5">
                     <CardContent className="flex flex-col gap-3">
-                      <ColorPicker
-                        label="Cor do cabelo"
-                        id="hair-color"
-                        value={hairColor}
-                        onChange={setHairColor}
+                      <Controller
+                        name="hairColor"
+                        control={control}
+                        render={({ field }) => (
+                          <ColorPicker
+                            label="Cor do cabelo"
+                            id="hair-color"
+                            value={field.value}
+                            onChange={field.onChange}
+                          />
+                        )}
                       />
-                      <ColorPicker
-                        label="Cor dos Olhos"
-                        id="eye-color"
-                        value={hairColor}
-                        onChange={setHairColor}
-                      />
+                      <Controller name="eyeColor" control={control} render={({ field }) => (
+                        <ColorPicker
+                          label="Cor dos Olhos"
+                          id="eye-color"
+                          value={field.value}
+                          onChange={field.onChange}
+                        />
+                      )} />
                     </CardContent>
                   </Card>
                 </div>
                 <div className="w-full flex justify-center">
                   <Character
-                    character={debouncedCl?.characterId}
+                    character={characterClass}
                     gender={gender}
-                    hair={hair[debouncedHair].id}
+                    hair={availableHair[characterHair].id}
                     hairColor={hairColor}
                     level={0}
+                    className="w-50 h-50  2xl:w-[320px] 2xl:h-[320px]"
                   />
                 </div>
               </div>
