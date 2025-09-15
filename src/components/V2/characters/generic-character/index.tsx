@@ -7,6 +7,8 @@ interface GenericCharacterProps {
   className?: string;
   hairColor: string;
   hair: number;
+  eyeIris: number;
+  eyeIrisColor: string;
 }
 
 export const GenericCharacter = ({
@@ -15,12 +17,16 @@ export const GenericCharacter = ({
   className,
   hairColor,
   hair,
+  eyeIris,
+  eyeIrisColor,
 }: GenericCharacterProps) => {
   const sprite = sprites.evolutions[characterLevel];
   const Hair = sprites.hair[hair];
+  const EyeIris = sprites.eyeIris[eyeIris];
+
   return (
     <div className={cn("w-[320px] h-[320px] relative", className)}>
-      <div className="absolute w-full h-full z-30" style={{ color: hairColor }}>
+      <div className="absolute w-full h-full z-60" style={{ color: hairColor }}>
         <Hair />
       </div>
 
@@ -28,11 +34,18 @@ export const GenericCharacter = ({
         <img src={sprites.base} />
       </div>
 
-      <div className="absolute w-full h-full z-20">
+      <div
+        className="absolute w-full h-full z-40"
+        style={{ color: eyeIrisColor }}
+      >
+        <EyeIris />
+      </div>
+
+      <div className="absolute w-full h-full z-30">
         <img src={sprites.eyes[0]} />
       </div>
 
-      <div className="absolute w-full h-full z-40">
+      <div className="absolute w-full h-full z-50">
         <img src={sprite.clothe} />
       </div>
     </div>

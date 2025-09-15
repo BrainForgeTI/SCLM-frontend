@@ -7,8 +7,10 @@ interface RogueProps {
   gender: "female" | "male";
   level: number;
   className?: string;
-  hairColor: string
-  hair: number
+  hairColor: string;
+  hair: number;
+  eyeIris: number;
+  eyeIrisColor: string;
 }
 
 const variants: Record<string, CharacterSprite> = {
@@ -16,7 +18,15 @@ const variants: Record<string, CharacterSprite> = {
   male: MaleSprite,
 };
 
-export const Rogue = ({ gender, level, className, hairColor, hair }: RogueProps) => {
+export const Rogue = ({
+  gender,
+  level,
+  className,
+  hairColor,
+  hair,
+  eyeIris,
+  eyeIrisColor,
+}: RogueProps) => {
   const sprite = variants[gender];
   return (
     <GenericCharacter
@@ -25,6 +35,8 @@ export const Rogue = ({ gender, level, className, hairColor, hair }: RogueProps)
       characterLevel={level}
       className={className}
       hairColor={hairColor}
+      eyeIris={eyeIris}
+      eyeIrisColor={eyeIrisColor}
     />
   );
 };

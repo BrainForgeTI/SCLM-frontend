@@ -1,7 +1,12 @@
 import { CharacterGender } from "@/enums/character-gender";
 import { CharacterClass } from "@/enums/class";
-import { createCharacterSchema } from "@/schemas/create-character-schema";
+import {
+  CreateCharacterFormType,
+  createCharacterSchema,
+} from "@/schemas/create-character-schema";
+import { createCharacter } from "@/services/create-character";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 
 export const useCreateCharacter = () => {
@@ -9,20 +14,27 @@ export const useCreateCharacter = () => {
     register,
     control,
     formState: { errors },
-    watch
+    watch,
+    handleSubmit,
   } = useForm({
     resolver: zodResolver(createCharacterSchema),
     defaultValues: {
-      adventure: '',
+      adventure: "",
       characterClass: CharacterClass.WARRIOR,
-      characterName: '',
-      eyeColor: '#000000',
-      eyeIndex: 0,
+      characterName: "",
+      eyeIrisColor: "#000000",
+      eyeIrisIndex: 0,
       gender: CharacterGender.MALE,
-      hairColor: '#ffffff',
-      hairIndex: 0
-    }
+      hairColor: "#ffffff",
+      hairIndex: 0,
+    },
   });
+
+  const { mutate } = useMutation({
+    mutationFn: (data: CreateCharacterFormType) => createCharacter(data),
+  });
+
+  const handleSubmitForm = handleSubmit((data) => mutate(data));
 
   return {
     states: {
@@ -31,7 +43,8 @@ export const useCreateCharacter = () => {
     },
     actions: {
       register,
-      watch
+      watch,
+      handleSubmitForm,
     },
   };
 };

@@ -7,8 +7,10 @@ interface WarriorProps {
   gender: "female" | "male";
   level: number;
   className?: string;
-  hairColor: string
-  hair: number
+  hairColor: string;
+  hair: number;
+  eyeIris: number;
+  eyeIrisColor: string;
 }
 
 const variants: Record<string, CharacterSprite> = {
@@ -16,7 +18,15 @@ const variants: Record<string, CharacterSprite> = {
   male: MaleSprite,
 };
 
-export const Warrior = ({ gender, level, className, hairColor, hair }: WarriorProps) => {
+export const Warrior = ({
+  gender,
+  level,
+  className,
+  hairColor,
+  hair,
+  eyeIris,
+  eyeIrisColor,
+}: WarriorProps) => {
   const sprite = variants[gender];
   return (
     <GenericCharacter
@@ -25,6 +35,8 @@ export const Warrior = ({ gender, level, className, hairColor, hair }: WarriorPr
       characterLevel={level}
       className={className}
       hairColor={hairColor}
+      eyeIris={eyeIris}
+      eyeIrisColor={eyeIrisColor}
     />
   );
 };

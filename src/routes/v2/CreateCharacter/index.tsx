@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { SelectValue } from "@radix-ui/react-select";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect } from "react";
 import { ColorPicker } from "@/components/V2/inputs/color-picker";
 import { InView } from "react-intersection-observer";
 import { femaleHair } from "@/components/V2/characters/generic-character/config/female";
@@ -129,22 +129,34 @@ const CarouselView = ({ children, onInView }: CarouselItemProps) => (
 export const CreateCharacterPage = () => {
   const {
     states: { control, errors },
-    actions: { register, watch },
+    actions: { register, watch, handleSubmitForm },
   } = useCreateCharacter();
 
-  const gender = watch('gender') || CharacterGender.MALE
-  const characterClass = watch('characterClass') || CharacterClass.WARRIOR
-  const characterHair = watch('hairIndex') || 0
+  const gender = watch("gender") || CharacterGender.MALE;
+  const characterClass = watch("characterClass") || CharacterClass.WARRIOR;
+  const characterHair = watch("hairIndex") || 0;
 
-  const hairColor = watch('hairColor')
-  const availableHair = character.find((char) => char.characterId === 'warrior')?.genders[gender]?.hair || []
+  const hairColor = watch("hairColor");
+  const currentCharacter = character.find(
+    (char) => char.characterId === characterClass,
+  );
+  const availableHair = currentCharacter?.genders[gender]?.hair || [];
+  const eyeIris = watch("eyeIrisIndex");
+  const eyeIrisColor = watch("eyeIrisColor");
+
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
 
   return (
     <PageLayout>
-      <div className="w-full">
+      <div className="w-full min-h-full">
         <PageTitle title="Criação de Personagem" />
-        <form className="w-full flex flex-col-reverse items-center gap-5 py-10 2xl:flex-row 2xl:items-start">
-          <div className="flex flex-col gap-5 items-center w-2/5">
+        <form
+          onSubmit={handleSubmitForm}
+          className="w-full 2xl:h-160 flex flex-col-reverse items-center gap-10 py-10 2xl:flex-row 2xl:items-start"
+        >
+          <div className="flex min-h-full flex-col gap-5 items-center w-2/6 justify-between">
             <div className="w-60 md:w-70">
               <Controller
                 name={"characterClass"}
@@ -156,7 +168,9 @@ export const CreateCharacterPage = () => {
                         <CarouselItem key={index}>
                           <Card className="h-60 flex justify-center items-center">
                             <CarouselView
-                              onInView={() => field.onChange(character[index].characterId)}
+                              onInView={() =>
+                                field.onChange(character[index].characterId)
+                              }
                             >
                               <CardContent className="flex flex-col gap-5 items-center justify-center">
                                 <div className="w-25 h-25">
@@ -180,7 +194,6 @@ export const CreateCharacterPage = () => {
             <div className="w-60 md:w-70 flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <Input
-                  error={errors.characterName}
                   placeholder="Nome do personagem"
                   {...register("characterName")}
                 />
@@ -231,8 +244,8 @@ export const CreateCharacterPage = () => {
               </div>
             </div>
           </div>
-          <div className="w-60 md:w-3/5 flex justify-center">
-            <Card className="w-full flex-grow== flex flex-col items-center">
+          <div className="w-60 md:w-3/5 min-h-full gap-10 flex flex-col justify-center">
+            <Card className="w-full flex flex-col items-center">
               <div className="w-full flex flex-col gap-5 2xl:flex-row">
                 <div className="w-full flex flex-col items-center">
                   <div className="w-30 md:w-40">
@@ -281,14 +294,18 @@ export const CreateCharacterPage = () => {
                           />
                         )}
                       />
-                      <Controller name="eyeColor" control={control} render={({ field }) => (
-                        <ColorPicker
-                          label="Cor dos Olhos"
-                          id="eye-color"
-                          value={field.value}
-                          onChange={field.onChange}
-                        />
-                      )} />
+                      <Controller
+                        name="eyeIrisColor"
+                        control={control}
+                        render={({ field }) => (
+                          <ColorPicker
+                            label="Cor dos Olhos"
+                            id="eye-color"
+                            value={field.value}
+                            onChange={field.onChange}
+                          />
+                        )}
+                      />
                     </CardContent>
                   </Card>
                 </div>
@@ -298,11 +315,18 @@ export const CreateCharacterPage = () => {
                     gender={gender}
                     hair={availableHair[characterHair].id}
                     hairColor={hairColor}
+                    eyeIris={eyeIris}
                     level={0}
-                    className="w-50 h-50  2xl:w-[320px] 2xl:h-[320px]"
+                    eyeIrisColor={eyeIrisColor}
+                    className="w-50 h-50  2xl:w-60 2xl:h-60"
                   />
                 </div>
               </div>
+            </Card>
+            <Card className="h-full flex-grow">
+              <CardContent className="text-center text-muted-foreground">
+                <p>{currentCharacter?.description}</p>
+              </CardContent>
             </Card>
           </div>
         </form>

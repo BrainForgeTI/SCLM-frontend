@@ -7,8 +7,10 @@ interface WizardProps {
   gender: "female" | "male";
   level: number;
   className?: string;
-  hairColor: string
-  hair: number
+  hairColor: string;
+  hair: number;
+  eyeIris: number;
+  eyeIrisColor: string;
 }
 
 const variants: Record<string, CharacterSprite> = {
@@ -16,7 +18,15 @@ const variants: Record<string, CharacterSprite> = {
   male: MaleSprite,
 };
 
-export const Wizard = ({ gender, level, className, hairColor, hair }: WizardProps) => {
+export const Wizard = ({
+  gender,
+  level,
+  className,
+  hairColor,
+  hair,
+  eyeIris,
+  eyeIrisColor,
+}: WizardProps) => {
   const sprite = variants[gender];
   return (
     <GenericCharacter
@@ -25,6 +35,8 @@ export const Wizard = ({ gender, level, className, hairColor, hair }: WizardProp
       characterLevel={level}
       className={className}
       hairColor={hairColor}
+      eyeIris={eyeIris}
+      eyeIrisColor={eyeIrisColor}
     />
   );
 };

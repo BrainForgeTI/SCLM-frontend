@@ -5,6 +5,7 @@ import Clothe10 from "@/assets/characters/Martial-Artist/female/evolution/Sprite
 import Clothe15 from "@/assets/characters/Martial-Artist/female/evolution/Sprite_Feminino_Martial-Artist_Class_Lvl15.png";
 import Clothe20 from "@/assets/characters/Martial-Artist/female/evolution/Sprite_Feminino_Martial-Artist_Class_Lvl20.png";
 import Eye0 from "@/assets/characters/generics/male/eye/Sprite_Masculino_Eyes.png";
+import { EyeIris0 } from "@/assets/characters/generics/female/eye/EyeIris0";
 import { CharacterSprite } from "@/types/character/character-sprite";
 import { Hair0 } from "@/assets/characters/generics/female/hair/tsx/Hair0";
 import { Hair1 } from "@/assets/characters/generics/female/hair/tsx/Hair1";
@@ -33,10 +34,13 @@ export const FemaleSprite: CharacterSprite = {
   eyes: {
     0: Eye0,
   },
+  eyeIris: {
+    0: EyeIris0,
+  },
   hair: {
     0: Hair0,
     1: Hair1,
     2: Hair2,
-    3: Hair3
-  }
+    3: Hair3,
+  },
 };

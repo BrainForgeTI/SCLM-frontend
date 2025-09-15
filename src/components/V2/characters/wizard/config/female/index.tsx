@@ -10,6 +10,7 @@ import { Hair0 } from "@/assets/characters/generics/female/hair/tsx/Hair0";
 import { Hair1 } from "@/assets/characters/generics/female/hair/tsx/Hair1";
 import { Hair2 } from "@/assets/characters/generics/female/hair/tsx/Hair2";
 import { Hair3 } from "@/assets/characters/generics/female/hair/tsx/Hair3";
+import { EyeIris0 } from "@/assets/characters/generics/female/eye/EyeIris0";
 
 export const FemaleSprite: CharacterSprite = {
   base: BaseImage,
@@ -32,6 +33,9 @@ export const FemaleSprite: CharacterSprite = {
   },
   eyes: {
     0: Eye0,
+  },
+  eyeIris: {
+    0: EyeIris0,
   },
   hair: {
     0: Hair0,
