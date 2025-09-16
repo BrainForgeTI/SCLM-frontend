@@ -4,7 +4,8 @@ import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { DeleteButton } from "../DeleteButton";
 import ConfirmButton from "../ConfirmButton/ConfirmButton";
 import { Validator } from "../../utils/validator";
-
+import { useNavigate } from "react-router";
+import {Dialog,DialogContent,DialogDescription,DialogHeader,DialogTitle,DialogTrigger} from "@/components/ui/dialog"
 interface Props {
   chapterId: string
   topic: TopicType
@@ -26,6 +27,9 @@ const AdventureTopic = (props: Props) => {
   const validator = new Validator();
 
   const nameRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+  const [openDialog,setOpenDialog] = useState(false)
+  const [statusDialog,setStatusDialog] = useState("Verificando disponibilidade da missão...")
 
   function handleStepInput(event: ChangeEvent<HTMLInputElement>, topicId: string) {
     if (event.target.value !== originalText) {
@@ -60,6 +64,22 @@ const AdventureTopic = (props: Props) => {
 
   function topicNameWasModified(name: string) {
     return name === originalText;
+  }
+
+  async function setCreateNotebook(missionId:string){
+    console.log(missionId)
+    //chama a api caso a geração do caderno for um sucesso redireciona ele apara a pagina
+    setOpenDialog(true)
+    setTimeout(() => {
+      if(true === true){ //substituir pelo resultado da api
+        setOpenDialog(false)
+        navigate(`/notebook/${missionId}`)
+      }else{
+        setStatusDialog("Ocorreu um erro ao acessar a missão")
+      }
+  
+    }, 3000)
+    
   }
 
   useEffect(() => {
@@ -130,9 +150,17 @@ const AdventureTopic = (props: Props) => {
             event.stopPropagation()
           }} className={`border mb-2 text-base-content/80 bg-base300/20 w-full py-1 rounded-[5px] px-5 ${!topicNameWasModified(props.topic.name) && props.setTopic === undefined ? 'border-primary/50' : 'border-neutral/30'}`} type="text" value={props.topic.name} ></input>
           :
-          <p className={`text-base-content break-words overflow-hidden text-[16px]`}>{props.topic.name}</p>
+          <p className={`text-base-content break-words overflow-hidden text-[16px]`} onClick={()=> setCreateNotebook(props.topic.id)}>{props.topic.name}</p>
+          
       }
-
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Aguarde</DialogTitle>
+          </DialogHeader>
+          <p>{statusDialog}</p>
+        </DialogContent>
+      </Dialog>
     </div >
   )
 }
