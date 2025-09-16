@@ -52,7 +52,6 @@ const MyAdventurePage = () => {
     state: { isFinalProjectPending },
   } = useMyAdventure();
 
-  //variável do botão
   const canGenerateFinalProject = true;
   const adventureId = adventureContext.adventure?.id;
 
@@ -522,8 +521,6 @@ const MyAdventurePage = () => {
               <></>
             )}
           </>
-
-          {/* Novo Botão */}
           {canGenerateFinalProject && (
             <div className="flex">
               <Button
@@ -539,7 +536,6 @@ const MyAdventurePage = () => {
               </Button>
             </div>
           )}
-          {/* Novo Botão */}
 
           {adventureContext.adventure &&
           adventureContext.adventure.chapters.length > 0 &&
