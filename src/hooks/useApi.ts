@@ -4,6 +4,7 @@ import { SignUpFormType } from "../types/auth_types/SignUpFormType";
 import { TopicType } from "../types/adventure/TopicType";
 import { CreateTopicType } from "../types/adventure/CreateTopicType";
 import { CreateChapter } from "../types/adventure/CreateChapter";
+import { useMutation } from "@tanstack/react-query";
 
 export const useApi = () => ({
   getUserAdventures: async (userId: string): Promise<AdventureCardType[]> => {
@@ -368,6 +369,12 @@ export const useApi = () => ({
     return res;
   },
 
+  generateChapterChallenge: async (chapterId: string) => {
+    return await axios.post(
+      `http://127.0.0.1:3000/adventure/gen-challenge/${chapterId}`,
+    );
+  },
+
   generateFinalProject: async (adventureId?: string) => {
     return await axios.get(
       `http://127.0.0.1:3000/adventure/gen-project/${adventureId}`,
@@ -375,5 +382,11 @@ export const useApi = () => ({
         withCredentials: true,
       },
     );
+  },
+
+  changeChapterMissionCompleted: async () => {
+    return await axios.post(`http://127.0.0.1:3000/adventure/gen-challenge`, {
+      withCredentials: true,
+    });
   },
 });

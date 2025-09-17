@@ -17,8 +17,9 @@ import { DeleteButton } from "../../components/DeleteButton";
 import { Validator } from "../../utils/validator";
 import { ChapterType } from "../../types/adventure/ChapterType";
 import { ConfirmButton } from "../../components/ConfirmButton";
-import { Button } from "@/components/ui/button";
 import { useMyAdventure } from "./hooks/use-my-adventure";
+import { useMutation } from "@tanstack/react-query";
+import { Button } from "@/components/ui/button";
 
 const MyAdventurePage = () => {
   const api = useApi();
@@ -521,6 +522,7 @@ const MyAdventurePage = () => {
               <></>
             )}
           </>
+
           {canGenerateFinalProject && (
             <div className="flex">
               <Button
