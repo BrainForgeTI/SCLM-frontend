@@ -23,6 +23,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         challenge:
           "bg-[var(--brand-challenge-green)] border border-muted mb-10",
+        project:
+          "bg-[var(--brand-challenge-green)] border border-muted mb-10 w-full",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

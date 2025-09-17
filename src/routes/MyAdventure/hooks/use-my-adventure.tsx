@@ -13,14 +13,22 @@ export const useMyAdventure = () => {
     mutationFn: () => api.changeChapterMissionCompleted(),
   });
 
+  const { mutate: mutateFinalProject, isPending: isFinalProjectPending } =
+    useMutation({
+      mutationFn: (adventureId?: string) =>
+        api.generateFinalProject(adventureId),
+    });
+
   return {
     actions: {
       mutateChallenge,
       mutateMission,
+      mutateFinalProject,
     },
     state: {
       isChallengePending,
       isMissionPending,
+      isFinalProjectPending,
     },
   };
 };

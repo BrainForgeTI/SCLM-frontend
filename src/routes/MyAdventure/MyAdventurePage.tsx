@@ -19,6 +19,7 @@ import { ChapterType } from "../../types/adventure/ChapterType";
 import { ConfirmButton } from "../../components/ConfirmButton";
 import { useMyAdventure } from "./hooks/use-my-adventure";
 import { useMutation } from "@tanstack/react-query";
+import { Button } from "@/components/ui/button";
 
 const MyAdventurePage = () => {
   const api = useApi();
@@ -46,6 +47,14 @@ const MyAdventurePage = () => {
   const [newTopic, setNewTopic] = useState<TopicType | null>(null);
 
   const validator = new Validator();
+
+  const {
+    actions: { mutateFinalProject },
+    state: { isFinalProjectPending },
+  } = useMyAdventure();
+
+  const canGenerateFinalProject = true;
+  const adventureId = adventureContext.adventure?.id;
 
   function handleSearchValue(event: ChangeEvent<HTMLInputElement>) {
     setSearchValue(event.target.value);
@@ -113,16 +122,15 @@ const MyAdventurePage = () => {
     chapterId: string,
     topicId: string,
     completed: boolean,
-    success: boolean,
   ) {
-    //changeTopicStatus(chapterId, topicId, completed);
+    changeTopicStatus(chapterId, topicId, completed);
 
-    if (success) {
-      console.log("Success");
-      changeTopicStatus(chapterId, topicId, completed);
-    } else {
-      console.log("Error");
-      changeTopicStatus(chapterId, topicId, !completed);
+    const response = await api.changeChapterTopicCompleted();
+
+    if (response.status !== 200) {
+      setTimeout(() => {
+        changeTopicStatus(chapterId, topicId, !completed);
+      }, 1000);
     }
   }
 
@@ -514,6 +522,22 @@ const MyAdventurePage = () => {
               <></>
             )}
           </>
+
+          {canGenerateFinalProject && (
+            <div className="flex">
+              <Button
+                variant={"project"}
+                disabled={isFinalProjectPending}
+                onClick={() => {
+                  mutateFinalProject(adventureId);
+                }}
+              >
+                {isFinalProjectPending
+                  ? "Gerando seu projeto final..."
+                  : "Gerar Projeto Final"}
+              </Button>
+            </div>
+          )}
 
           {adventureContext.adventure &&
           adventureContext.adventure.chapters.length > 0 &&

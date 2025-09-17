@@ -298,6 +298,19 @@ export const useApi = () => ({
     };
   },
 
+  changeChapterTopicCompleted: async () => {
+    const random = Math.floor(Math.random() * 10);
+    let response;
+
+    if (random > 4) {
+      response = { status: 200 };
+    } else {
+      response = { status: 500 };
+    }
+
+    return response;
+  },
+
   signup: async (formData: SignUpFormType) => {
     const res = await axios.post("http://127.0.0.1:3000/auth/signup", formData);
 
@@ -359,6 +372,12 @@ export const useApi = () => ({
   generateChapterChallenge: async (chapterId: string) => {
     return await axios.post(
       `http://127.0.0.1:3000/adventure/gen-challenge/${chapterId}`,
+    );
+  },
+
+  generateFinalProject: async (adventureId?: string) => {
+    return await axios.get(
+      `http://127.0.0.1:3000/adventure/gen-project/${adventureId}`,
       {
         withCredentials: true,
       },

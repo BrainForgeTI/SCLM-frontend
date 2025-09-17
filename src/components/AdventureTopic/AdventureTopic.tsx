@@ -4,10 +4,15 @@ import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { DeleteButton } from "../DeleteButton";
 import ConfirmButton from "../ConfirmButton/ConfirmButton";
 import { Validator } from "../../utils/validator";
-import { useMutation } from "@tanstack/react-query";
-import { useApi } from "@/hooks/useApi";
-import { success } from "zod";
-
+import { useNavigate } from "react-router";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 interface Props {
   chapterId: string;
   topic: TopicType;
@@ -16,7 +21,6 @@ interface Props {
     chapterId: string,
     topicId: string,
     completed: boolean,
-    success: boolean,
   ) => void;
   editMode?: boolean;
   onDeleted?: boolean;
@@ -29,31 +33,16 @@ interface Props {
 }
 
 const AdventureTopic = (props: Props) => {
-  const api = useApi();
   const adventureContext = useContext(AdventureContext);
   const [originalText, setOriginalText] = useState<string | null>(null);
-  const { mutate: mutateMission } = useMutation({
-    mutationFn: () => {
-      props.handleChapterTopicCompleted?.(
-        props.chapterId,
-        props.topic.id,
-        !props.topic.completed,
-        true,
-      );
-      return api.changeChapterMissionCompleted();
-    },
-    onError: () => {
-      props.handleChapterTopicCompleted?.(
-        props.chapterId,
-        props.topic.id,
-        !props.topic.completed,
-        false,
-      );
-    },
-  });
   const validator = new Validator();
 
   const nameRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+  const [openDialog, setOpenDialog] = useState(false);
+  const [statusDialog, setStatusDialog] = useState(
+    "Verificando disponibilidade da missão...",
+  );
 
   function handleStepInput(
     event: ChangeEvent<HTMLInputElement>,
@@ -104,6 +93,21 @@ const AdventureTopic = (props: Props) => {
 
   function topicNameWasModified(name: string) {
     return name === originalText;
+  }
+
+  async function setCreateNotebook(missionId: string) {
+    console.log(missionId);
+    //chama a api caso a geração do caderno for um sucesso redireciona ele apara a pagina
+    setOpenDialog(true);
+    setTimeout(() => {
+      if (true === true) {
+        //substituir pelo resultado da api
+        setOpenDialog(false);
+        navigate(`/notebook/${missionId}`);
+      } else {
+        setStatusDialog("Ocorreu um erro ao acessar a missão");
+      }
+    }, 3000);
   }
 
   useEffect(() => {
@@ -164,8 +168,13 @@ const AdventureTopic = (props: Props) => {
         <button
           onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
             event.preventDefault();
-            console.log("Here");
-            mutateMission();
+            if (props.handleChapterTopicCompleted) {
+              props.handleChapterTopicCompleted(
+                props.chapterId,
+                props.topic.id,
+                !props.topic.completed,
+              );
+            }
           }}
           className={`${props.editMode ? "hidden" : "block"} w-[35px] h-[35px] lg:w-[27px] lg:h-[27px] shrink-0 rounded-[3px] cursor-pointer ${props.topic.completed ? "bg-primary border border-neutral/22" : "bg-secondary border border-neutral/22"}`}
         ></button>
@@ -191,10 +200,19 @@ const AdventureTopic = (props: Props) => {
       ) : (
         <p
           className={`text-base-content break-words overflow-hidden text-[16px]`}
+          onClick={() => setCreateNotebook(props.topic.id)}
         >
           {props.topic.name}
         </p>
       )}
+      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Aguarde</DialogTitle>
+          </DialogHeader>
+          <p>{statusDialog}</p>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
