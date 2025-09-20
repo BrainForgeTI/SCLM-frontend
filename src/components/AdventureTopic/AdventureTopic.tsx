@@ -21,6 +21,7 @@ interface Props {
     chapterId: string,
     topicId: string,
     completed: boolean,
+    success: boolean,
   ) => void;
   editMode?: boolean;
   onDeleted?: boolean;
@@ -173,6 +174,7 @@ const AdventureTopic = (props: Props) => {
                 props.chapterId,
                 props.topic.id,
                 !props.topic.completed,
+                props.topic.completed
               );
             }
           }}
