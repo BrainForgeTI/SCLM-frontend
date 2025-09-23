@@ -9,6 +9,7 @@ import { CharacterPage } from "./routes/Character/CharacterPage"
 import { Providers } from "./components/V2/providers"
 import { SignUpPage } from "./routes/SignUp"
 import { CreateCharacterPage } from "./routes/v2/CreateCharacter"
+import { NotebookPage } from "./routes/Notebook/NotebookPage"
 
 function App() {
   return (
@@ -25,8 +26,9 @@ function App() {
         <Route path="/my_adventure/:id" element={<AdventureAuth><MyAdventurePage /></AdventureAuth>} />
 
         <Route path="/create-character" element={<CreateCharacterPage />} />
-      </Routes>
-    </Providers>
+        <Route path="/notebook/:id" element={<NotebookPage></NotebookPage>} />
+      </Routes >
+    </Providers >
   )
 }
 
