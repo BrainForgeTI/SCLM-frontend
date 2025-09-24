@@ -5,6 +5,7 @@ import { AdventureCardType } from "../../types/AdventureCardType";
 import { useApi } from "../../hooks/useApi";
 import { NewAdventureCard } from "../../components/NewAdventureCard";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
+import { CreateAdventureDialog } from "@/components/V2/dialogs/create-adventure-dialog";
 
 export const HomePage = () => {
   const api = useApi();
@@ -95,6 +96,8 @@ export const HomePage = () => {
                   </li>
 
               }
+
+              <CreateAdventureDialog />
             </ul>
           </div>
         </div>
