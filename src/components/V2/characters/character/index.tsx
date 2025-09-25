@@ -5,6 +5,7 @@ import { Warrior } from "../warrior";
 import { Wizard } from "../wizard";
 import { CharacterGender } from "@/enums/character-gender";
 import useDebounce from "@/hooks/use-debounce";
+import React from "react";
 
 const characters = {
   rogue: Rogue,
@@ -24,7 +25,7 @@ interface CharacterProps {
   eyeIrisColor: string;
 }
 
-export const Character = ({
+export const CharacterComponent = ({
   character,
   gender,
   hair,
@@ -53,3 +54,19 @@ export const Character = ({
     />
   );
 };
+
+export const Character = React.memo(
+  CharacterComponent,
+  (prevProps, nextProps) => {
+    return (
+      prevProps.character === nextProps.character &&
+      prevProps.gender === nextProps.gender &&
+      prevProps.hair === nextProps.hair &&
+      prevProps.hairColor === nextProps.hairColor &&
+      prevProps.level === nextProps.level &&
+      prevProps.eyeIris === nextProps.eyeIris &&
+      prevProps.eyeIrisColor === nextProps.eyeIrisColor &&
+      prevProps.className === nextProps.className
+    );
+  },
+);
