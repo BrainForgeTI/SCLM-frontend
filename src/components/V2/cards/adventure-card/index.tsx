@@ -1,15 +1,15 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { AdventurePicture } from "./components/adventure-picture";
 import { Character } from "../../characters/character";
 import { CharacterClass } from "@/enums/class";
 import { CharacterGender } from "@/enums/character-gender";
 import { ColorPicker } from "../../inputs/color-picker";
 import { Controller, UseFormReturn, useWatch } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { RefreshCcw } from "lucide-react";
+import { Play, PlayCircle, PlaySquare, RefreshCcw } from "lucide-react";
 import Color from "color";
 import { cn } from "@/lib/utils";
 import { useMemo } from "react";
+import AdventureBackgroundImage from "@/assets/images/adventure-background.jpg";
 
 const defaultColors = [
   {
@@ -39,6 +39,7 @@ interface AdventureCardProps {
   bgPrimary?: string;
   bgSecondary?: string;
   name?: string;
+  className?: string;
 }
 
 export const AdventureCard = ({
@@ -46,6 +47,7 @@ export const AdventureCard = ({
   bgPrimary,
   bgSecondary,
   name,
+  className,
 }: AdventureCardProps) => {
   const randomColor = () => {
     const randomColor =
@@ -54,10 +56,10 @@ export const AdventureCard = ({
     form?.setValue?.("bgSecundaryColor" as any, randomColor.secondary);
   };
 
-  const [nameAdventure] =
+  const [nameAdventure, description] =
     useWatch({
       control: form?.control,
-      name: ["nameAdventure"],
+      name: ["nameAdventure", "description"],
     }) ?? [];
 
   const nameColor = useMemo(() => {
@@ -65,73 +67,102 @@ export const AdventureCard = ({
   }, [bgPrimary]);
 
   return (
-    <Card className="w-70 p-0 bg-card">
-      <CardHeader className="px-0">
+    <Card className={cn("relative w-70 p-0 bg-card gap-0", className)}>
+      <CardHeader className="relative rounded-t-xl px-0 overflow-hidden">
         <div
-          className="relative w-full rounded-t-xl flex justify-center py-7 flex-col items-center gap-5"
-          style={{
-            background: `linear-gradient(45deg, ${bgPrimary}, ${bgSecondary})`,
-          }}
+          className="absolute w-60 h-60 -top-20 -right-20 bg-center rounded-full"
+          style={{ backgroundImage: `url(${AdventureBackgroundImage})` }}
         >
-          <AdventurePicture />
+          <div
+            className="w-full rounded-full h-full flex justify-center py-2 flex-col items-center gap-5"
+            style={{
+              background: `linear-gradient(45deg, ${(bgPrimary ?? "#ffffff") + "E6"}, ${(bgSecondary ?? "#ffffff") + "E6"})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="w-full h-full py-5 flex justify-center items-center">
+          <Character
+            character={CharacterClass.MARTIAL_ARTIST}
+            gender={CharacterGender.MALE}
+            hair={0}
+            hairColor={"#ffffff"}
+            eyeIris={0}
+            level={0}
+            eyeIrisColor={"#000000"}
+            className="w-30 h-30"
+          />
+        </div>
+      </CardHeader>
+      <CardContent className="py-6 mx-2 flex flex-col items-center justify-center gap-10">
+        <div className="flex flex-col items-center gap-3">
           <p
             className={cn(
-              "px-3 line-clamp-2 text-center text-black font-medium text-xl min-h-[1.5rem]",
+              "px-3 line-clamp-2 text-center font-bold uppercase text-card-foreground min-h-[1.5rem]",
             )}
-            style={{ color: nameColor }}
           >
             {nameAdventure ?? name} {"\u00A0"}
           </p>
-
-          <div className="absolute flex gap-2 flex-col right-[-50px]">
-            <Controller
-              control={form?.control}
-              name={"bgPrimaryColor"}
-              render={({ field }) => (
-                <ColorPicker
-                  id="bg-primary"
-                  value={field.value}
-                  onChange={field.onChange}
-                  className="w-8 h-8 rounded-sm border"
-                />
-              )}
-            />
-
-            <Controller
-              control={form?.control}
-              name={"bgSecundaryColor"}
-              render={({ field }) => (
-                <ColorPicker
-                  id="bg-secondary"
-                  value={field.value}
-                  onChange={field.onChange}
-                  className="w-8 h-8 rounded-sm border"
-                />
-              )}
-            />
-
-            <Button
-              onClick={() => randomColor()}
-              type="button"
-              className="w-8 h-8 rounded-sm"
-            >
-              <RefreshCcw />
-            </Button>
-          </div>
+          {description.trim() !== "" && (
+            <div
+              className="w-30 h-[1px] bg-pink-600"
+              style={{ background: bgPrimary }}
+            ></div>
+          )}
+          <p className="text-xs text-center">{description}</p>
         </div>
-      </CardHeader>
-      <CardContent className="pb-5 flex flex-col items-center justify-center">
-        <Character
-          character={CharacterClass.MARTIAL_ARTIST}
-          gender={CharacterGender.MALE}
-          hair={0}
-          hairColor={"#ffffff"}
-          eyeIris={0}
-          level={0}
-          eyeIrisColor={"#000000"}
-          className="w-40 h-40"
-        />
+        <div
+          className="w-full p-[2px] bg-pink-600 rounded-lg"
+          style={{
+            background: `linear-gradient(45deg, ${(bgPrimary ?? "#ffffff") + "E6"}, ${(bgSecondary ?? "#ffffff") + "E6"})`,
+          }}
+        >
+          <Button
+            type="button"
+            variant={"secondary"}
+            className="w-full cursor-pointer"
+          >
+            <Play />
+          </Button>
+        </div>
       </CardContent>
+
+      <div className="absolute flex gap-2 flex-col right-[-50px]">
+        <Controller
+          control={form?.control}
+          name={"bgPrimaryColor"}
+          render={({ field }) => (
+            <ColorPicker
+              id="bg-primary"
+              value={field.value}
+              onChange={field.onChange}
+              className="w-8 h-8 rounded-sm border"
+            />
+          )}
+        />
+
+        <Controller
+          control={form?.control}
+          name={"bgSecundaryColor"}
+          render={({ field }) => (
+            <ColorPicker
+              id="bg-secondary"
+              value={field.value}
+              onChange={field.onChange}
+              className="w-8 h-8 rounded-sm border"
+            />
+          )}
+        />
+
+        <Button
+          onClick={() => randomColor()}
+          type="button"
+          className="w-8 h-8 rounded-sm cursor-pointer"
+          variant={"outline"}
+        >
+          <RefreshCcw />
+        </Button>
+      </div>
     </Card>
   );
 };
