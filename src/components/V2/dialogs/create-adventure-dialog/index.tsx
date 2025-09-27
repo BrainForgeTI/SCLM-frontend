@@ -46,7 +46,7 @@ export const CreateAdventureDialog = () => {
         <DialogTrigger asChild>
           <Button variant="outline">Open Dialog</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[800px] p-0">
+        <DialogContent onOpenAutoFocus={(e) => e.preventDefault()} className="sm:max-w-[800px] h-[calc(100dvh-100px)] lg:h-auto p-0 overflow-y-scroll scrollbar-none">
           <form
             onSubmit={forms.handleSubmit((data: CreateAdventureFormType) => {
               console.log(data);
@@ -55,11 +55,12 @@ export const CreateAdventureDialog = () => {
             <DialogHeader className="bg-background border-b rounded-t-md h-12 flex items-center justify-center">
               <DialogTitle>Criar uma nova Aventura</DialogTitle>
             </DialogHeader>
-            <div className="px-10 py-10 grid grid-cols-2 gap-15 content-center">
+            <div className="px-8 py-10 grid grid-cols-1 lg:grid-cols-2 gap-15 content-center place-items-center lg:place-items-start">
               <AdventureCard
                 form={forms}
                 bgPrimary={forms.watch("bgPrimaryColor")}
                 bgSecondary={forms.watch("bgSecundaryColor")}
+                className="mt-10 lg:mt-0"
               />
               <div className="w-full flex flex-col gap-3">
                 <FormField
@@ -129,7 +130,7 @@ export const CreateAdventureDialog = () => {
                 />
               </div>
             </div>
-            <DialogFooter className="pb-5 px-10">
+            <DialogFooter className="pb-5 px-8">
               <DialogClose asChild>
                 <Button variant="outline">Cancelar</Button>
               </DialogClose>

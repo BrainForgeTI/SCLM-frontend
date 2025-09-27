@@ -40,6 +40,8 @@ interface AdventureCardProps {
   bgSecondary?: string;
   name?: string;
   className?: string;
+  onPlayClick?: () => void
+  playDisabled?: boolean
 }
 
 export const AdventureCard = ({
@@ -48,6 +50,8 @@ export const AdventureCard = ({
   bgSecondary,
   name,
   className,
+  onPlayClick,
+  playDisabled
 }: AdventureCardProps) => {
   const randomColor = () => {
     const randomColor =
@@ -61,10 +65,6 @@ export const AdventureCard = ({
       control: form?.control,
       name: ["nameAdventure", "description"],
     }) ?? [];
-
-  const nameColor = useMemo(() => {
-    return Color(bgPrimary).isLight() ? "#000000" : "#ffffff";
-  }, [bgPrimary]);
 
   return (
     <Card className={cn("relative w-70 p-0 bg-card gap-0", className)}>
@@ -120,14 +120,16 @@ export const AdventureCard = ({
           <Button
             type="button"
             variant={"secondary"}
+            disabled={!onPlayClick || playDisabled}
             className="w-full cursor-pointer"
+            onClick={onPlayClick}
           >
             <Play />
           </Button>
         </div>
       </CardContent>
 
-      <div className="absolute flex gap-2 flex-col right-[-50px]">
+      <div className="absolute flex gap-2 flex-row top-[-50px] lg:top-0 lg:right-[-50px] lg:flex-col">
         <Controller
           control={form?.control}
           name={"bgPrimaryColor"}

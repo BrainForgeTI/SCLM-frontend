@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 export const useCreateAdventureDialog = () => {
   const forms = useForm({
     defaultValues: {
-      bgPrimaryColor: "#ffffff",
-      bgSecundaryColor: "#ffffff",
+      bgPrimaryColor: "#EC4899",
+      bgSecundaryColor: "#8B5CF6",
       characterId: "",
       description: "",
       nameAdventure: "Nova Aventura",
