@@ -30,7 +30,7 @@ export const useSessionStore = create<TypeSessionStore>()(
     }),
     {
       name: 'athenium-user-auth-session',
-      partialize: (state) => ({ id: state.id, firstName: state.firstName, access_token: state.accessToken })
+      partialize: (state) => ({ id: state.id, firstName: state.firstName, accessToken: state.accessToken })
     },
   ),
 )

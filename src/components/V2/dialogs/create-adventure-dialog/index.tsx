@@ -26,21 +26,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CreateAdventureFormType } from "@/schemas/create-adventure-schema";
 import { Textarea } from "@/components/ui/textarea";
 
 export const CreateAdventureDialog = () => {
   const {
-    states: { forms },
+    states: { forms, modalOpen },
+    actions: { handleModal, handleSubmit }
   } = useCreateAdventureDialog();
 
   return (
     <Dialog
-      onOpenChange={(isOpen) => {
-        if (isOpen) {
-          forms.clearErrors();
-        }
-      }}
+      onOpenChange={handleModal}
+      open={modalOpen}
     >
       <Form {...forms}>
         <DialogTrigger asChild>
@@ -48,9 +45,7 @@ export const CreateAdventureDialog = () => {
         </DialogTrigger>
         <DialogContent onOpenAutoFocus={(e) => e.preventDefault()} className="sm:max-w-[800px] h-[calc(100dvh-100px)] lg:h-auto p-0 overflow-y-scroll scrollbar-none">
           <form
-            onSubmit={forms.handleSubmit((data: CreateAdventureFormType) => {
-              console.log(data);
-            })}
+            onSubmit={handleSubmit}
           >
             <DialogHeader className="bg-background border-b rounded-t-md h-12 flex items-center justify-center">
               <DialogTitle>Criar uma nova Aventura</DialogTitle>
