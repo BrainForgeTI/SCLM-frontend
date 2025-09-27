@@ -5,10 +5,8 @@ import { CharacterGender } from "@/enums/character-gender";
 import { ColorPicker } from "../../inputs/color-picker";
 import { Controller, UseFormReturn, useWatch } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { Play, PlayCircle, PlaySquare, RefreshCcw } from "lucide-react";
-import Color from "color";
+import { Play, RefreshCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useMemo } from "react";
 import AdventureBackgroundImage from "@/assets/images/adventure-background.jpg";
 
 const defaultColors = [
