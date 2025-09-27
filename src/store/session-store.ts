@@ -6,7 +6,7 @@ type TypeSessionStore = {
   accessToken: string | null
   firstName: string | null
   setSession: (
-    userName: string,
+    firstName: string,
     accessToken: string,
     id: string,
   ) => void
@@ -19,17 +19,18 @@ export const useSessionStore = create<TypeSessionStore>()(
       id: null,
       accessToken: null,
       firstName: null,
-      setSession: (firstName, id, accessToken) =>
-        set({ firstName, accessToken, id, }),
+      setSession: (firstName, accessToken, id) =>
+        set({ firstName, accessToken, id }),
       clearSession: () =>
         set({
           firstName: null,
           id: null,
+          accessToken: null
         }),
     }),
     {
-      name: 'auth-token',
-      partialize: (state) => ({ id: state.id, firstName: state.firstName })
+      name: 'athenium-user-auth-session',
+      partialize: (state) => ({ id: state.id, firstName: state.firstName, access_token: state.accessToken })
     },
   ),
 )
