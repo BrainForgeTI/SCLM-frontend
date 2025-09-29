@@ -1,10 +1,9 @@
 import { PageLayout } from "@/components/PageLayout"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { ModeloAnotacoes } from "./components/ModeloAnotacoes"
 import ReactMarkdown from 'react-markdown';
 import { useApi } from "@/hooks/useApi";
-import { string } from "zod";
+import { createNotebook } from "@/services/adventure/create-notebook";
 
 
 export const NotebookPage = () => {
@@ -15,7 +14,7 @@ export const NotebookPage = () => {
     useEffect(() => {
         const apiNotebook = async () => {
             if(numNotebook){
-                const resultado = await api.generateNotebook(numNotebook)
+                const resultado = await createNotebook(numNotebook)
                 const resultadoMarkdown = resultado.data.data[0] 
                 if(resultadoMarkdown){ 
                     setResulMarkDown(resultadoMarkdown)
