@@ -27,8 +27,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { PropsWithChildren } from "react";
 
-export const CreateAdventureDialog = () => {
+interface CreateAdventureDialogProps extends PropsWithChildren { }
+
+export const CreateAdventureDialog = ({ children }: CreateAdventureDialogProps) => {
   const {
     states: { forms, modalOpen },
     actions: { handleModal, handleSubmit }
@@ -41,7 +44,7 @@ export const CreateAdventureDialog = () => {
     >
       <Form {...forms}>
         <DialogTrigger asChild>
-          <Button variant="outline">Open Dialog</Button>
+          {children}
         </DialogTrigger>
         <DialogContent onOpenAutoFocus={(e) => e.preventDefault()} className="sm:max-w-[800px] h-[calc(100dvh-100px)] lg:h-auto p-0 overflow-y-scroll scrollbar-none">
           <form

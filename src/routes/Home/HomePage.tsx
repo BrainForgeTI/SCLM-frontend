@@ -83,21 +83,10 @@ export const HomePage = () => {
                 )
               })}
 
-              {
-                addingNewAdventure
-                  ?
-                  <li key={'addingadventurecard'} className="md:mt-0 mt-10">
-                    <AdventureCard createAdventure={createAdventure} setNewAdventure={setNewAdventure} cancelAddNewAdventure={cancelAddNewAdventure} addingNewAdventure={addingNewAdventure} adventure={newAdventure} />
-                  </li>
-                  :
+              <CreateAdventureDialog>
+                <button type="button"><NewAdventureCard /></button>
+              </CreateAdventureDialog>
 
-                  <li key={'newadventurecard'} className="">
-                    <NewAdventureCard createNewAdventure={createNewAdventure} />
-                  </li>
-
-              }
-
-              <CreateAdventureDialog />
             </ul>
           </div>
         </div>
