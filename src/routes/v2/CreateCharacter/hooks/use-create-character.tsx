@@ -4,7 +4,7 @@ import {
   CreateCharacterFormType,
   createCharacterSchema,
 } from "@/schemas/create-character-schema";
-import { createCharacter } from "@/services/create-character";
+import { createCharacter } from "@/services/character/create-character";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
