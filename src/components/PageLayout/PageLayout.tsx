@@ -1,9 +1,9 @@
-import { JSX, useContext, useEffect } from "react";
+import { JSX, PropsWithChildren, useContext, useEffect } from "react";
 import { SideMenu } from "../SideMenu";
 import { LayoutHeader, MainContent } from "../PageLayout";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
 
-interface Props {
+interface Props extends PropsWithChildren {
   children: JSX.Element;
   awaitAdventureLoad?: boolean;
 }

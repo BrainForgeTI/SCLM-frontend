@@ -1,10 +1,8 @@
 import axios from "axios";
 import { AdventureCardType } from "../types/AdventureCardType";
 import { SignUpFormType } from "../types/auth_types/SignUpFormType";
-import { TopicType } from "../types/adventure/TopicType";
 import { CreateTopicType } from "../types/adventure/CreateTopicType";
 import { CreateChapter } from "../types/adventure/CreateChapter";
-import { useMutation } from "@tanstack/react-query";
 
 export const useApi = () => ({
   getUserAdventures: async (userId: string): Promise<AdventureCardType[]> => {

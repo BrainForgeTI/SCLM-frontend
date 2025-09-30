@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query"
 import { signInService } from "@/services/sign-in-service"
 import { QUERIES } from "@/constants/queries"
 import { useNavigate } from "react-router"
+import { useSessionStore } from "@/store/session-store"
 
 export const useSignIn = () => {
   const navigate = useNavigate()
@@ -22,7 +23,9 @@ export const useSignIn = () => {
     mutate(data)
   })
 
-  const handleSuccessSignIn = () => {
+  const handleSuccessSignIn = (data: any) => {
+    const { setSession } = useSessionStore.getState()
+    setSession(data.first_name, data.access_token, data.slug)
     navigateToHome()
   }
 
