@@ -16,6 +16,7 @@ export const useCreateCharacter = () => {
     formState: { errors },
     watch,
     handleSubmit,
+    setValue,
   } = useForm({
     resolver: zodResolver(createCharacterSchema),
     defaultValues: {
@@ -45,6 +46,7 @@ export const useCreateCharacter = () => {
       register,
       watch,
       handleSubmitForm,
+      setValue,
     },
   };
 };

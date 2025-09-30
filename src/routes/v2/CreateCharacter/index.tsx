@@ -129,7 +129,7 @@ const CarouselView = ({ children, onInView }: CarouselItemProps) => (
 export const CreateCharacterPage = () => {
   const {
     states: { control, errors },
-    actions: { register, watch, handleSubmitForm },
+    actions: { register, watch, handleSubmitForm, setValue },
   } = useCreateCharacter();
 
   const gender = watch("gender") || CharacterGender.MALE;
@@ -217,7 +217,7 @@ export const CreateCharacterPage = () => {
                   name="gender"
                   control={control}
                   render={({ field }) => (
-                    <Select onValueChange={field.onChange} value={field.value}>
+                    <Select onValueChange={(value) => {field.onChange(value); setValue("hairIndex", 0); }} value={field.value}>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Selecione um Estilo"></SelectValue>
                       </SelectTrigger>
