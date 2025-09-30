@@ -1,9 +1,9 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Character } from "../../characters/character";
 import { CharacterClass } from "@/enums/class";
 import { CharacterGender } from "@/enums/character-gender";
 import { ColorPicker } from "../../inputs/color-picker";
-import { Controller, UseFormReturn, useWatch } from "react-hook-form";
+import { Controller, UseFormReturn } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Play, RefreshCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -36,7 +36,8 @@ interface AdventureCardProps {
   form?: UseFormReturn<any>;
   bgPrimary?: string;
   bgSecondary?: string;
-  name?: string;
+  nameAdventure?: string;
+  description?: string
   className?: string;
   onPlayClick?: () => void
   playDisabled?: boolean
@@ -46,7 +47,8 @@ export const AdventureCard = ({
   form,
   bgPrimary,
   bgSecondary,
-  name,
+  nameAdventure,
+  description,
   className,
   onPlayClick,
   playDisabled
@@ -57,12 +59,6 @@ export const AdventureCard = ({
     form?.setValue?.("bgPrimaryColor" as any, randomColor.primary);
     form?.setValue?.("bgSecundaryColor" as any, randomColor.secondary);
   };
-
-  const [nameAdventure, description] =
-    useWatch({
-      control: form?.control,
-      name: ["nameAdventure", "description"],
-    }) ?? [];
 
   return (
     <Card className={cn("relative w-70 p-0 bg-card gap-0", className)}>
@@ -99,9 +95,9 @@ export const AdventureCard = ({
               "px-3 line-clamp-2 text-center font-bold uppercase text-card-foreground min-h-[1.5rem]",
             )}
           >
-            {nameAdventure ?? name} {"\u00A0"}
+            {nameAdventure} {"\u00A0"}
           </p>
-          {description.trim() !== "" && (
+          {description?.trim() !== "" && (
             <div
               className="w-30 h-[1px] bg-pink-600"
               style={{ background: bgPrimary }}
@@ -109,8 +105,52 @@ export const AdventureCard = ({
           )}
           <p className="text-xs text-center">{description}</p>
         </div>
+
+        <div className="absolute flex gap-2 flex-row top-[-50px] lg:top-0 lg:right-[-50px] lg:flex-col">
+          {
+            form && <>
+              <Controller
+                control={form?.control}
+                name={"bgPrimaryColor"}
+                render={({ field }) => (
+                  <ColorPicker
+                    id="bg-primary"
+                    value={field.value}
+                    onChange={field.onChange}
+                    className="w-8 h-8 rounded-sm border"
+                  />
+                )}
+              />
+
+              <Controller
+                control={form?.control}
+                name={"bgSecundaryColor"}
+                render={({ field }) => (
+                  <ColorPicker
+                    id="bg-secondary"
+                    value={field.value}
+                    onChange={field.onChange}
+                    className="w-8 h-8 rounded-sm border"
+                  />
+                )}
+              />
+
+              <Button
+                onClick={() => randomColor()}
+                type="button"
+                className="w-8 h-8 rounded-sm cursor-pointer"
+                variant={"outline"}
+              >
+                <RefreshCcw />
+              </Button>
+            </>
+          }
+        </div>
+      </CardContent>
+
+      <CardFooter className="flex-1 flex items-end pb-6">
         <div
-          className="w-full p-[2px] bg-pink-600 rounded-lg"
+          className="w-full p-[2px] rounded-lg"
           style={{
             background: `linear-gradient(45deg, ${(bgPrimary ?? "#ffffff") + "E6"}, ${(bgSecondary ?? "#ffffff") + "E6"})`,
           }}
@@ -125,44 +165,9 @@ export const AdventureCard = ({
             <Play />
           </Button>
         </div>
-      </CardContent>
+      </CardFooter>
 
-      <div className="absolute flex gap-2 flex-row top-[-50px] lg:top-0 lg:right-[-50px] lg:flex-col">
-        <Controller
-          control={form?.control}
-          name={"bgPrimaryColor"}
-          render={({ field }) => (
-            <ColorPicker
-              id="bg-primary"
-              value={field.value}
-              onChange={field.onChange}
-              className="w-8 h-8 rounded-sm border"
-            />
-          )}
-        />
 
-        <Controller
-          control={form?.control}
-          name={"bgSecundaryColor"}
-          render={({ field }) => (
-            <ColorPicker
-              id="bg-secondary"
-              value={field.value}
-              onChange={field.onChange}
-              className="w-8 h-8 rounded-sm border"
-            />
-          )}
-        />
-
-        <Button
-          onClick={() => randomColor()}
-          type="button"
-          className="w-8 h-8 rounded-sm cursor-pointer"
-          variant={"outline"}
-        >
-          <RefreshCcw />
-        </Button>
-      </div>
     </Card>
   );
 };

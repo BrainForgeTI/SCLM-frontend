@@ -28,14 +28,21 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { PropsWithChildren } from "react";
+import { useWatch } from "react-hook-form";
 
 interface CreateAdventureDialogProps extends PropsWithChildren { }
 
 export const CreateAdventureDialog = ({ children }: CreateAdventureDialogProps) => {
   const {
-    states: { forms, modalOpen },
+    states: { forms, modalOpen, isPending },
     actions: { handleModal, handleSubmit }
   } = useCreateAdventureDialog();
+
+  const [nameAdventure, description] =
+    useWatch({
+      control: forms.control,
+      name: ["nameAdventure", "description"],
+    }) ?? [];
 
   return (
     <Dialog
@@ -46,7 +53,7 @@ export const CreateAdventureDialog = ({ children }: CreateAdventureDialogProps) 
         <DialogTrigger asChild>
           {children}
         </DialogTrigger>
-        <DialogContent onOpenAutoFocus={(e) => e.preventDefault()} className="sm:max-w-[800px] h-[calc(100dvh-100px)] lg:h-auto p-0 overflow-y-scroll scrollbar-none">
+        <DialogContent onOpenAutoFocus={(e) => e.preventDefault()} className="z-90 sm:max-w-[800px] h-[calc(100dvh-100px)] lg:h-auto p-0 overflow-y-scroll scrollbar-none">
           <form
             onSubmit={handleSubmit}
           >
@@ -59,6 +66,8 @@ export const CreateAdventureDialog = ({ children }: CreateAdventureDialogProps) 
                 bgPrimary={forms.watch("bgPrimaryColor")}
                 bgSecondary={forms.watch("bgSecundaryColor")}
                 className="mt-10 lg:mt-0"
+                nameAdventure={nameAdventure}
+                description={description}
               />
               <div className="w-full flex flex-col gap-3">
                 <FormField
@@ -132,7 +141,7 @@ export const CreateAdventureDialog = ({ children }: CreateAdventureDialogProps) 
               <DialogClose asChild>
                 <Button variant="outline">Cancelar</Button>
               </DialogClose>
-              <Button type="submit">Criar</Button>
+              <Button type="submit" disabled={isPending}>Criar</Button>
             </DialogFooter>
           </form>
         </DialogContent>

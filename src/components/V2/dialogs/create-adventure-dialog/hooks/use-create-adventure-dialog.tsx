@@ -19,7 +19,7 @@ export const useCreateAdventureDialog = () => {
     resolver: zodResolver(createAdventureSchema),
   });
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: createAdventureService,
     onSuccess: () => {
       setModalOpen(false)
@@ -40,7 +40,8 @@ export const useCreateAdventureDialog = () => {
   return {
     states: {
       forms,
-      modalOpen
+      modalOpen,
+      isPending
     },
     actions: {
       handleModal,
