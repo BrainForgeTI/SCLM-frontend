@@ -13,6 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useApi } from "@/hooks/useApi";
 interface Props {
   chapterId: string;
   topic: TopicType;
@@ -43,6 +44,7 @@ const AdventureTopic = (props: Props) => {
   const [statusDialog, setStatusDialog] = useState(
     "Verificando disponibilidade da missão...",
   );
+  const api = useApi();
 
   function handleStepInput(
     event: ChangeEvent<HTMLInputElement>,
@@ -99,9 +101,10 @@ const AdventureTopic = (props: Props) => {
     console.log(missionId);
     //chama a api caso a geração do caderno for um sucesso redireciona ele apara a pagina
     setOpenDialog(true);
+    const resultadoApi = await api.generateNotebook(missionId)
     setTimeout(() => {
-      if (true === true) {
-        //substituir pelo resultado da api
+      if (resultadoApi) {
+    
         setOpenDialog(false);
         navigate(`/notebook/${missionId}`);
       } else {

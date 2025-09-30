@@ -1,29 +1,31 @@
 import { PageLayout } from "@/components/PageLayout"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { ModeloAnotacoes } from "./components/ModeloAnotacoes"
 import ReactMarkdown from 'react-markdown';
+import { useApi } from "@/hooks/useApi";
+import { createNotebook } from "@/services/adventure/create-notebook";
 
-const api = {data : {
-    "status": 200,
-    "message": "Operation carried out successfully",
-    "data": "# Caderno de Estudo: Aprendendo a ser mais feliz 2\n\n## Introdução\n- Definição de felicidade\n `Código embutido` com acentos graves\n Citação em bloco \n- Importância do autoconhecimento\n\n## Estratégias para aumentar a felicidade\n1. Prática da gratidão\n2. Mindfulness e meditação\n3. Exercícios físicos regulares\n4. Conexões sociais significativas\n\n## Hábitos positivos\n- Estabelecer metas realistas\n- Celebrar pequenas vitórias\n- Praticar autocuidado\n\n## Lidando com pensamentos negativos\n- Identificação de padrões de pensamento\n- Técnicas de reestruturação cognitiva\n- Afirmações positivas\n\n## Resiliência emocional\n- Desenvolvimento de habilidades de enfrentamento\n- Aceitação e adaptação à mudança\n\n## Atividades práticas\n1. Diário de gratidão\n2. Meditação guiada diária\n3. Atos de bondade aleatórios\n\n## Recursos adicionais\n- Livros recomendados\n- Aplicativos de bem-estar\n- Podcasts sobre felicidade e crescimento pessoal"
-}}
+
 export const NotebookPage = () => {
-    const {id} = useParams<{ id: string }>()
-    const numNotebook = String(id)
+    const api = useApi()
+    const {id} = useParams<{ id: string | undefined}>()
     const [resulMarkDown, setResulMarkDown] = useState("")
-    
+    const numNotebook = String(id)
     useEffect(() => {
         const apiNotebook = async () => {
-            // const resultado = await api.getGerateMission(numNotebook)
-            const resultadoMarkdown = api.data.data //resultado.data
-            if(resultadoMarkdown){ // if(resultado)
-                setResulMarkDown(api.data.data)
+            if(numNotebook){
+                const resultado = await createNotebook(numNotebook)
+                const resultadoMarkdown = resultado.data.data[0] 
+                if(resultadoMarkdown){ 
+                    setResulMarkDown(resultadoMarkdown)
+                }else{
+                    
+                    setResulMarkDown("Não foi possível carregar o conteúdo do caderno. Tente novamente.")
+                }
             }else{
-                
-                setResulMarkDown("Não foi possível carregar o conteúdo do caderno. Tente novamente.")
+                setResulMarkDown("Não foi encontrado a missão")
             }
+            
         }
         apiNotebook()
 

@@ -387,4 +387,13 @@ export const useApi = () => ({
       withCredentials: true,
     });
   },
+
+  generateNotebook: async (missionId: string) => {
+    return await axios.post(`http://127.0.0.1:3000/adventure/gen-notebook/${missionId}`);
+    // return {data: {
+    // status: 200,
+    // message: "Operation carried out successfully",
+    // data: ["# Caderno de Estudo: Aprendendo a ser mais feliz 2\n\n## Introdução\n- Definição de felicidade\n- Importância do autoconhecimento\n\n## Estratégias para aumentar a felicidade\n1. Prática da gratidão\n2. Mindfulness e meditação\n3. Exercícios físicos regulares\n4. Conexões sociais significativas\n\n## Hábitos positivos\n- Estabelecer metas realistas\n- Celebrar pequenas vitórias\n- Praticar autocuidado\n\n## Lidando com pensamentos negativos\n- Identificação de padrões de pensamento\n- Técnicas de reestruturação cognitiva\n- Afirmações positivas\n\n## Resiliência emocional\n- Desenvolvimento de habilidades de enfrentamento\n- Aceitação e adaptação à mudança\n\n## Atividades práticas\n1. Diário de gratidão\n2. Meditação guiada diária\n3. Atos de bondade aleatórios\n\n## Recursos adicionais\n- Livros recomendados\n- Aplicativos de bem-estar\n- Podcasts sobre felicidade e crescimento pessoal"]
+    // }}
+  },
 });
