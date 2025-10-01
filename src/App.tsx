@@ -4,12 +4,12 @@ import { SignInPage } from "./routes/SignIn";
 import { SecondaryMissionsPage } from "./routes/SecondaryMissions/SecondaryMissionsPage";
 import { AdventurePage } from "./routes/Adventure";
 import { AdventureAuth } from "./context/adventure/AdventureAuth";
-import { MyAdventurePage } from "./routes/MyAdventure";
 import { CharacterPage } from "./routes/Character/CharacterPage";
 import { Providers } from "./components/V2/providers";
 import { SignUpPage } from "./routes/SignUp";
 import { CreateCharacterPage } from "./routes/v2/CreateCharacter";
 import { NotebookPage } from "./routes/Notebook/NotebookPage";
+import { MyAdventurePage } from "./routes/MyAdventure";
 
 function App() {
   return (

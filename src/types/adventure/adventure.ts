@@ -1,5 +1,5 @@
 export interface Adventure {
-  _id: string
+  id: string
   owner: string
   nameAdventure: string
   bgPrimaryColor: string
