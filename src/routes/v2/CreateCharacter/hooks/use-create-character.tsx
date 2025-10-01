@@ -4,12 +4,17 @@ import {
   CreateCharacterFormType,
   createCharacterSchema,
 } from "@/schemas/create-character-schema";
+import { getAllAdventure } from "@/services/adventure/get-all-adventures-service";
 import { createCharacter } from "@/services/character/create-character";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 
 export const useCreateCharacter = () => {
+  const navigate = useNavigate()
+  const [open, setOpen] = useState(false)
   const {
     register,
     control,
@@ -31,22 +36,35 @@ export const useCreateCharacter = () => {
     },
   });
 
-  const { mutate } = useMutation({
-    mutationFn: (data: CreateCharacterFormType) => createCharacter(data),
+  const { mutate, isPending } = useMutation({
+    mutationFn: (data: CreateCharacterFormType) => createCharacter(data) ,
+    onSuccess: (data) => {
+      navigate("character")
+    },
+    onError: () => {
+      setOpen(true)
+    }
   });
-
+  const { data: adventures} = useQuery({
+    queryKey: ['aaa'],
+    queryFn: getAllAdventure
+  }) 
   const handleSubmitForm = handleSubmit((data) => mutate(data));
-
+  
   return {
     states: {
       control,
       errors,
+      isPending,
+      open,
+      adventures,
     },
     actions: {
       register,
       watch,
       handleSubmitForm,
       setValue,
+      setOpen,
     },
   };
 };
