@@ -20,7 +20,7 @@ export const CharacterPage = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3  w-full justify-items-center gap-10 mt-10">
+                <div className="grid  w-full justify-items-center gap-10 mt-10" style={{gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",}}>
                     {characters?.map((character) => (
                         <CharacterCard
                             key={character.id}
