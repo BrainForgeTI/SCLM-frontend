@@ -10,7 +10,7 @@ export const CharacterPage = () => {
     console.log(characters)
     return (
         <PageLayout>
-            <div className="w-full">
+            <div className="flex flex-col w-full">
                 <PageTitle title="Meus personagens" />
                 <div className="w-full mt-10 flex justify-end">
                     <div className="w-[100px] md:min-w-[137px]">
@@ -20,12 +20,13 @@ export const CharacterPage = () => {
                     </div>
                 </div>
 
-                <div className="w-full flex justify-between mt-10">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3  w-full justify-items-center gap-10 mt-10">
                     {characters?.map((character) => (
                         <CharacterCard
                             key={character.id}
                             characterClass={character.characterClass}
                             characterName={character.characterName}
+                            adventure={character.adventure}
                             eyeIrisColor={character.eyeIrisColor}
                             eyeIrisIndex={character.eyeIrisIndex}
                             gender={character.gender}
