@@ -62,7 +62,7 @@ export const CharacterCard = (props: Props) => {
                     hair={props.hairIndex}
                     hairColor={props.hairColor}
                     eyeIris={props.eyeIrisIndex}
-                    level={props.level}
+                    level={props.level ?? 0}
                     eyeIrisColor={props.eyeIrisColor}
                     className="w-50 h-50  2xl:w-60 2xl:h-60"
                 />
