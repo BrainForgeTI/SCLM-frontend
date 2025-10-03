@@ -47,6 +47,21 @@ export async function getAllCharactersInfo (){
             experience: 1200,
             currentExperience: 400,
             maxExperience: 500,},
+        {
+            id: "4",
+            owner: "player1",
+            characterName: "Arthas",
+            characterClass: "rogue", 
+            gender: "female",             
+            hairColor: "#a52a2a",
+            hairIndex: 0,
+            eyeIrisColor: "#00ff00",
+            eyeIrisIndex: 0,
+            adventure: "Dragon Quest",
+            level: 20,
+            experience: 1200,
+            currentExperience: 400,
+            maxExperience: 500,}
             
         ] as  CharacterInfo[]
 }

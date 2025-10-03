@@ -215,26 +215,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="30" width="1" height="1" fill="#000000" />
       <rect x="148" y="30" width="1" height="1" fill="#000000" />
       <rect x="149" y="30" width="1" height="1" fill="#000000" />
-      <rect x="150" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="30" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="30" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="30" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="30" width="1" height="1" fill="currentColor" />
       <rect x="170" y="30" width="1" height="1" fill="#000000" />
       <rect x="171" y="30" width="1" height="1" fill="#000000" />
       <rect x="172" y="30" width="1" height="1" fill="#000000" />
@@ -255,26 +255,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="31" width="1" height="1" fill="#000000" />
       <rect x="148" y="31" width="1" height="1" fill="#000000" />
       <rect x="149" y="31" width="1" height="1" fill="#000000" />
-      <rect x="150" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="31" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="31" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="31" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="31" width="1" height="1" fill="currentColor" />
       <rect x="170" y="31" width="1" height="1" fill="#000000" />
       <rect x="171" y="31" width="1" height="1" fill="#000000" />
       <rect x="172" y="31" width="1" height="1" fill="#000000" />
@@ -295,26 +295,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="32" width="1" height="1" fill="#000000" />
       <rect x="148" y="32" width="1" height="1" fill="#000000" />
       <rect x="149" y="32" width="1" height="1" fill="#000000" />
-      <rect x="150" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="32" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="32" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="32" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="32" width="1" height="1" fill="currentColor" />
       <rect x="170" y="32" width="1" height="1" fill="#000000" />
       <rect x="171" y="32" width="1" height="1" fill="#000000" />
       <rect x="172" y="32" width="1" height="1" fill="#000000" />
@@ -335,26 +335,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="33" width="1" height="1" fill="#000000" />
       <rect x="148" y="33" width="1" height="1" fill="#000000" />
       <rect x="149" y="33" width="1" height="1" fill="#000000" />
-      <rect x="150" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="33" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="33" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="33" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="33" width="1" height="1" fill="currentColor" />
       <rect x="170" y="33" width="1" height="1" fill="#000000" />
       <rect x="171" y="33" width="1" height="1" fill="#000000" />
       <rect x="172" y="33" width="1" height="1" fill="#000000" />
@@ -375,26 +375,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="34" width="1" height="1" fill="#000000" />
       <rect x="148" y="34" width="1" height="1" fill="#000000" />
       <rect x="149" y="34" width="1" height="1" fill="#000000" />
-      <rect x="150" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="34" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="34" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="34" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="34" width="1" height="1" fill="currentColor" />
       <rect x="170" y="34" width="1" height="1" fill="#000000" />
       <rect x="171" y="34" width="1" height="1" fill="#000000" />
       <rect x="172" y="34" width="1" height="1" fill="#000000" />
@@ -415,26 +415,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="35" width="1" height="1" fill="#000000" />
       <rect x="148" y="35" width="1" height="1" fill="#000000" />
       <rect x="149" y="35" width="1" height="1" fill="#000000" />
-      <rect x="150" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="35" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="35" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="35" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="35" width="1" height="1" fill="currentColor" />
       <rect x="170" y="35" width="1" height="1" fill="#000000" />
       <rect x="171" y="35" width="1" height="1" fill="#000000" />
       <rect x="172" y="35" width="1" height="1" fill="#000000" />
@@ -455,26 +455,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="36" width="1" height="1" fill="#000000" />
       <rect x="148" y="36" width="1" height="1" fill="#000000" />
       <rect x="149" y="36" width="1" height="1" fill="#000000" />
-      <rect x="150" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="36" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="36" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="36" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="36" width="1" height="1" fill="currentColor" />
       <rect x="170" y="36" width="1" height="1" fill="#000000" />
       <rect x="171" y="36" width="1" height="1" fill="#000000" />
       <rect x="172" y="36" width="1" height="1" fill="#000000" />
@@ -495,26 +495,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="37" width="1" height="1" fill="#000000" />
       <rect x="148" y="37" width="1" height="1" fill="#000000" />
       <rect x="149" y="37" width="1" height="1" fill="#000000" />
-      <rect x="150" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="37" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="37" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="37" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="37" width="1" height="1" fill="currentColor" />
       <rect x="170" y="37" width="1" height="1" fill="#000000" />
       <rect x="171" y="37" width="1" height="1" fill="#000000" />
       <rect x="172" y="37" width="1" height="1" fill="#000000" />
@@ -535,26 +535,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="38" width="1" height="1" fill="#000000" />
       <rect x="148" y="38" width="1" height="1" fill="#000000" />
       <rect x="149" y="38" width="1" height="1" fill="#000000" />
-      <rect x="150" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="38" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="38" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="38" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="38" width="1" height="1" fill="currentColor" />
       <rect x="170" y="38" width="1" height="1" fill="#000000" />
       <rect x="171" y="38" width="1" height="1" fill="#000000" />
       <rect x="172" y="38" width="1" height="1" fill="#000000" />
@@ -575,26 +575,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="39" width="1" height="1" fill="#000000" />
       <rect x="148" y="39" width="1" height="1" fill="#000000" />
       <rect x="149" y="39" width="1" height="1" fill="#000000" />
-      <rect x="150" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="39" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="39" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="39" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="39" width="1" height="1" fill="currentColor" />
       <rect x="170" y="39" width="1" height="1" fill="#000000" />
       <rect x="171" y="39" width="1" height="1" fill="#000000" />
       <rect x="172" y="39" width="1" height="1" fill="#000000" />
@@ -615,26 +615,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="40" width="1" height="1" fill="#000000" />
       <rect x="148" y="40" width="1" height="1" fill="#000000" />
       <rect x="149" y="40" width="1" height="1" fill="#000000" />
-      <rect x="150" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="40" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="40" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="40" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="40" width="1" height="1" fill="currentColor" />
       <rect x="170" y="40" width="1" height="1" fill="#000000" />
       <rect x="171" y="40" width="1" height="1" fill="#000000" />
       <rect x="172" y="40" width="1" height="1" fill="#000000" />
@@ -655,26 +655,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="41" width="1" height="1" fill="#000000" />
       <rect x="148" y="41" width="1" height="1" fill="#000000" />
       <rect x="149" y="41" width="1" height="1" fill="#000000" />
-      <rect x="150" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="41" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="41" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="41" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="41" width="1" height="1" fill="currentColor" />
       <rect x="170" y="41" width="1" height="1" fill="#000000" />
       <rect x="171" y="41" width="1" height="1" fill="#000000" />
       <rect x="172" y="41" width="1" height="1" fill="#000000" />
@@ -695,26 +695,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="42" width="1" height="1" fill="#000000" />
       <rect x="148" y="42" width="1" height="1" fill="#000000" />
       <rect x="149" y="42" width="1" height="1" fill="#000000" />
-      <rect x="150" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="42" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="42" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="42" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="42" width="1" height="1" fill="currentColor" />
       <rect x="170" y="42" width="1" height="1" fill="#000000" />
       <rect x="171" y="42" width="1" height="1" fill="#000000" />
       <rect x="172" y="42" width="1" height="1" fill="#000000" />
@@ -735,26 +735,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="43" width="1" height="1" fill="#000000" />
       <rect x="148" y="43" width="1" height="1" fill="#000000" />
       <rect x="149" y="43" width="1" height="1" fill="#000000" />
-      <rect x="150" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="43" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="43" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="43" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="43" width="1" height="1" fill="currentColor" />
       <rect x="170" y="43" width="1" height="1" fill="#000000" />
       <rect x="171" y="43" width="1" height="1" fill="#000000" />
       <rect x="172" y="43" width="1" height="1" fill="#000000" />
@@ -775,26 +775,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="44" width="1" height="1" fill="#000000" />
       <rect x="148" y="44" width="1" height="1" fill="#000000" />
       <rect x="149" y="44" width="1" height="1" fill="#000000" />
-      <rect x="150" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="44" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="44" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="44" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="44" width="1" height="1" fill="currentColor" />
       <rect x="170" y="44" width="1" height="1" fill="#000000" />
       <rect x="171" y="44" width="1" height="1" fill="#000000" />
       <rect x="172" y="44" width="1" height="1" fill="#000000" />
@@ -815,26 +815,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="45" width="1" height="1" fill="#000000" />
       <rect x="148" y="45" width="1" height="1" fill="#000000" />
       <rect x="149" y="45" width="1" height="1" fill="#000000" />
-      <rect x="150" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="45" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="45" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="45" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="45" width="1" height="1" fill="currentColor" />
       <rect x="170" y="45" width="1" height="1" fill="#000000" />
       <rect x="171" y="45" width="1" height="1" fill="#000000" />
       <rect x="172" y="45" width="1" height="1" fill="#000000" />
@@ -855,26 +855,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="46" width="1" height="1" fill="#000000" />
       <rect x="148" y="46" width="1" height="1" fill="#000000" />
       <rect x="149" y="46" width="1" height="1" fill="#000000" />
-      <rect x="150" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="46" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="46" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="46" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="46" width="1" height="1" fill="currentColor" />
       <rect x="170" y="46" width="1" height="1" fill="#000000" />
       <rect x="171" y="46" width="1" height="1" fill="#000000" />
       <rect x="172" y="46" width="1" height="1" fill="#000000" />
@@ -895,26 +895,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="47" width="1" height="1" fill="#000000" />
       <rect x="148" y="47" width="1" height="1" fill="#000000" />
       <rect x="149" y="47" width="1" height="1" fill="#000000" />
-      <rect x="150" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="47" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="47" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="47" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="47" width="1" height="1" fill="currentColor" />
       <rect x="170" y="47" width="1" height="1" fill="#000000" />
       <rect x="171" y="47" width="1" height="1" fill="#000000" />
       <rect x="172" y="47" width="1" height="1" fill="#000000" />
@@ -935,26 +935,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="48" width="1" height="1" fill="#000000" />
       <rect x="148" y="48" width="1" height="1" fill="#000000" />
       <rect x="149" y="48" width="1" height="1" fill="#000000" />
-      <rect x="150" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="48" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="48" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="48" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="48" width="1" height="1" fill="currentColor" />
       <rect x="170" y="48" width="1" height="1" fill="#000000" />
       <rect x="171" y="48" width="1" height="1" fill="#000000" />
       <rect x="172" y="48" width="1" height="1" fill="#000000" />
@@ -975,26 +975,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="49" width="1" height="1" fill="#000000" />
       <rect x="148" y="49" width="1" height="1" fill="#000000" />
       <rect x="149" y="49" width="1" height="1" fill="#000000" />
-      <rect x="150" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="49" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="49" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="49" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="49" width="1" height="1" fill="currentColor" />
       <rect x="170" y="49" width="1" height="1" fill="#000000" />
       <rect x="171" y="49" width="1" height="1" fill="#000000" />
       <rect x="172" y="49" width="1" height="1" fill="#000000" />
@@ -1015,26 +1015,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="50" width="1" height="1" fill="#000000" />
       <rect x="148" y="50" width="1" height="1" fill="#000000" />
       <rect x="149" y="50" width="1" height="1" fill="#000000" />
-      <rect x="150" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="50" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="50" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="50" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="50" width="1" height="1" fill="currentColor" />
       <rect x="170" y="50" width="1" height="1" fill="#000000" />
       <rect x="171" y="50" width="1" height="1" fill="#000000" />
       <rect x="172" y="50" width="1" height="1" fill="#000000" />
@@ -1055,26 +1055,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="51" width="1" height="1" fill="#000000" />
       <rect x="148" y="51" width="1" height="1" fill="#000000" />
       <rect x="149" y="51" width="1" height="1" fill="#000000" />
-      <rect x="150" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="51" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="51" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="51" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="51" width="1" height="1" fill="currentColor" />
       <rect x="170" y="51" width="1" height="1" fill="#000000" />
       <rect x="171" y="51" width="1" height="1" fill="#000000" />
       <rect x="172" y="51" width="1" height="1" fill="#000000" />
@@ -1095,26 +1095,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="52" width="1" height="1" fill="#000000" />
       <rect x="148" y="52" width="1" height="1" fill="#000000" />
       <rect x="149" y="52" width="1" height="1" fill="#000000" />
-      <rect x="150" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="52" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="52" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="52" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="52" width="1" height="1" fill="currentColor" />
       <rect x="170" y="52" width="1" height="1" fill="#000000" />
       <rect x="171" y="52" width="1" height="1" fill="#000000" />
       <rect x="172" y="52" width="1" height="1" fill="#000000" />
@@ -1135,26 +1135,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="53" width="1" height="1" fill="#000000" />
       <rect x="148" y="53" width="1" height="1" fill="#000000" />
       <rect x="149" y="53" width="1" height="1" fill="#000000" />
-      <rect x="150" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="53" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="53" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="53" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="53" width="1" height="1" fill="currentColor" />
       <rect x="170" y="53" width="1" height="1" fill="#000000" />
       <rect x="171" y="53" width="1" height="1" fill="#000000" />
       <rect x="172" y="53" width="1" height="1" fill="#000000" />
@@ -1175,26 +1175,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="54" width="1" height="1" fill="#000000" />
       <rect x="148" y="54" width="1" height="1" fill="#000000" />
       <rect x="149" y="54" width="1" height="1" fill="#000000" />
-      <rect x="150" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="54" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="54" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="54" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="54" width="1" height="1" fill="currentColor" />
       <rect x="170" y="54" width="1" height="1" fill="#000000" />
       <rect x="171" y="54" width="1" height="1" fill="#000000" />
       <rect x="172" y="54" width="1" height="1" fill="#000000" />
@@ -1215,26 +1215,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="55" width="1" height="1" fill="#000000" />
       <rect x="148" y="55" width="1" height="1" fill="#000000" />
       <rect x="149" y="55" width="1" height="1" fill="#000000" />
-      <rect x="150" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="55" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="55" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="55" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="55" width="1" height="1" fill="currentColor" />
       <rect x="170" y="55" width="1" height="1" fill="#000000" />
       <rect x="171" y="55" width="1" height="1" fill="#000000" />
       <rect x="172" y="55" width="1" height="1" fill="#000000" />
@@ -1255,26 +1255,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="56" width="1" height="1" fill="#000000" />
       <rect x="148" y="56" width="1" height="1" fill="#000000" />
       <rect x="149" y="56" width="1" height="1" fill="#000000" />
-      <rect x="150" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="56" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="56" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="56" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="56" width="1" height="1" fill="currentColor" />
       <rect x="170" y="56" width="1" height="1" fill="#000000" />
       <rect x="171" y="56" width="1" height="1" fill="#000000" />
       <rect x="172" y="56" width="1" height="1" fill="#000000" />
@@ -1295,26 +1295,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="57" width="1" height="1" fill="#000000" />
       <rect x="148" y="57" width="1" height="1" fill="#000000" />
       <rect x="149" y="57" width="1" height="1" fill="#000000" />
-      <rect x="150" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="57" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="57" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="57" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="57" width="1" height="1" fill="currentColor" />
       <rect x="170" y="57" width="1" height="1" fill="#000000" />
       <rect x="171" y="57" width="1" height="1" fill="#000000" />
       <rect x="172" y="57" width="1" height="1" fill="#000000" />
@@ -1335,26 +1335,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="58" width="1" height="1" fill="#000000" />
       <rect x="148" y="58" width="1" height="1" fill="#000000" />
       <rect x="149" y="58" width="1" height="1" fill="#000000" />
-      <rect x="150" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="58" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="58" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="58" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="58" width="1" height="1" fill="currentColor" />
       <rect x="170" y="58" width="1" height="1" fill="#000000" />
       <rect x="171" y="58" width="1" height="1" fill="#000000" />
       <rect x="172" y="58" width="1" height="1" fill="#000000" />
@@ -1375,26 +1375,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="59" width="1" height="1" fill="#000000" />
       <rect x="148" y="59" width="1" height="1" fill="#000000" />
       <rect x="149" y="59" width="1" height="1" fill="#000000" />
-      <rect x="150" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="59" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="59" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="59" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="59" width="1" height="1" fill="currentColor" />
       <rect x="170" y="59" width="1" height="1" fill="#000000" />
       <rect x="171" y="59" width="1" height="1" fill="#000000" />
       <rect x="172" y="59" width="1" height="1" fill="#000000" />
@@ -1415,26 +1415,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="60" width="1" height="1" fill="#000000" />
       <rect x="148" y="60" width="1" height="1" fill="#000000" />
       <rect x="149" y="60" width="1" height="1" fill="#000000" />
-      <rect x="150" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="60" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="60" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="60" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="60" width="1" height="1" fill="currentColor" />
       <rect x="170" y="60" width="1" height="1" fill="#000000" />
       <rect x="171" y="60" width="1" height="1" fill="#000000" />
       <rect x="172" y="60" width="1" height="1" fill="#000000" />
@@ -1455,26 +1455,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="61" width="1" height="1" fill="#000000" />
       <rect x="148" y="61" width="1" height="1" fill="#000000" />
       <rect x="149" y="61" width="1" height="1" fill="#000000" />
-      <rect x="150" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="61" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="61" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="61" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="61" width="1" height="1" fill="currentColor" />
       <rect x="170" y="61" width="1" height="1" fill="#000000" />
       <rect x="171" y="61" width="1" height="1" fill="#000000" />
       <rect x="172" y="61" width="1" height="1" fill="#000000" />
@@ -1495,26 +1495,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="62" width="1" height="1" fill="#000000" />
       <rect x="148" y="62" width="1" height="1" fill="#000000" />
       <rect x="149" y="62" width="1" height="1" fill="#000000" />
-      <rect x="150" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="62" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="62" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="62" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="62" width="1" height="1" fill="currentColor" />
       <rect x="170" y="62" width="1" height="1" fill="#000000" />
       <rect x="171" y="62" width="1" height="1" fill="#000000" />
       <rect x="172" y="62" width="1" height="1" fill="#000000" />
@@ -1535,26 +1535,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="63" width="1" height="1" fill="#000000" />
       <rect x="148" y="63" width="1" height="1" fill="#000000" />
       <rect x="149" y="63" width="1" height="1" fill="#000000" />
-      <rect x="150" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="63" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="63" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="63" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="63" width="1" height="1" fill="currentColor" />
       <rect x="170" y="63" width="1" height="1" fill="#000000" />
       <rect x="171" y="63" width="1" height="1" fill="#000000" />
       <rect x="172" y="63" width="1" height="1" fill="#000000" />
@@ -1575,26 +1575,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="64" width="1" height="1" fill="#000000" />
       <rect x="148" y="64" width="1" height="1" fill="#000000" />
       <rect x="149" y="64" width="1" height="1" fill="#000000" />
-      <rect x="150" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="64" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="64" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="64" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="64" width="1" height="1" fill="currentColor" />
       <rect x="170" y="64" width="1" height="1" fill="#000000" />
       <rect x="171" y="64" width="1" height="1" fill="#000000" />
       <rect x="172" y="64" width="1" height="1" fill="#000000" />
@@ -1615,26 +1615,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="65" width="1" height="1" fill="#000000" />
       <rect x="148" y="65" width="1" height="1" fill="#000000" />
       <rect x="149" y="65" width="1" height="1" fill="#000000" />
-      <rect x="150" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="65" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="65" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="65" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="65" width="1" height="1" fill="currentColor" />
       <rect x="170" y="65" width="1" height="1" fill="#000000" />
       <rect x="171" y="65" width="1" height="1" fill="#000000" />
       <rect x="172" y="65" width="1" height="1" fill="#000000" />
@@ -1655,26 +1655,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="66" width="1" height="1" fill="#000000" />
       <rect x="148" y="66" width="1" height="1" fill="#000000" />
       <rect x="149" y="66" width="1" height="1" fill="#000000" />
-      <rect x="150" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="66" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="66" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="66" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="66" width="1" height="1" fill="currentColor" />
       <rect x="170" y="66" width="1" height="1" fill="#000000" />
       <rect x="171" y="66" width="1" height="1" fill="#000000" />
       <rect x="172" y="66" width="1" height="1" fill="#000000" />
@@ -1695,26 +1695,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="67" width="1" height="1" fill="#000000" />
       <rect x="148" y="67" width="1" height="1" fill="#000000" />
       <rect x="149" y="67" width="1" height="1" fill="#000000" />
-      <rect x="150" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="67" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="67" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="67" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="67" width="1" height="1" fill="currentColor" />
       <rect x="170" y="67" width="1" height="1" fill="#000000" />
       <rect x="171" y="67" width="1" height="1" fill="#000000" />
       <rect x="172" y="67" width="1" height="1" fill="#000000" />
@@ -1735,26 +1735,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="68" width="1" height="1" fill="#000000" />
       <rect x="148" y="68" width="1" height="1" fill="#000000" />
       <rect x="149" y="68" width="1" height="1" fill="#000000" />
-      <rect x="150" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="68" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="68" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="68" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="68" width="1" height="1" fill="currentColor" />
       <rect x="170" y="68" width="1" height="1" fill="#000000" />
       <rect x="171" y="68" width="1" height="1" fill="#000000" />
       <rect x="172" y="68" width="1" height="1" fill="#000000" />
@@ -1775,26 +1775,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="69" width="1" height="1" fill="#000000" />
       <rect x="148" y="69" width="1" height="1" fill="#000000" />
       <rect x="149" y="69" width="1" height="1" fill="#000000" />
-      <rect x="150" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="69" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="69" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="69" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="69" width="1" height="1" fill="currentColor" />
       <rect x="170" y="69" width="1" height="1" fill="#000000" />
       <rect x="171" y="69" width="1" height="1" fill="#000000" />
       <rect x="172" y="69" width="1" height="1" fill="#000000" />
@@ -1815,26 +1815,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="70" width="1" height="1" fill="#000000" />
       <rect x="148" y="70" width="1" height="1" fill="#000000" />
       <rect x="149" y="70" width="1" height="1" fill="#000000" />
-      <rect x="150" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="70" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="70" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="70" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="70" width="1" height="1" fill="currentColor" />
       <rect x="170" y="70" width="1" height="1" fill="#000000" />
       <rect x="171" y="70" width="1" height="1" fill="#000000" />
       <rect x="172" y="70" width="1" height="1" fill="#000000" />
@@ -1855,26 +1855,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="71" width="1" height="1" fill="#000000" />
       <rect x="148" y="71" width="1" height="1" fill="#000000" />
       <rect x="149" y="71" width="1" height="1" fill="#000000" />
-      <rect x="150" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="71" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="71" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="71" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="71" width="1" height="1" fill="currentColor" />
       <rect x="170" y="71" width="1" height="1" fill="#000000" />
       <rect x="171" y="71" width="1" height="1" fill="#000000" />
       <rect x="172" y="71" width="1" height="1" fill="#000000" />
@@ -1895,26 +1895,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="72" width="1" height="1" fill="#000000" />
       <rect x="148" y="72" width="1" height="1" fill="#000000" />
       <rect x="149" y="72" width="1" height="1" fill="#000000" />
-      <rect x="150" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="72" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="72" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="72" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="72" width="1" height="1" fill="currentColor" />
       <rect x="170" y="72" width="1" height="1" fill="#000000" />
       <rect x="171" y="72" width="1" height="1" fill="#000000" />
       <rect x="172" y="72" width="1" height="1" fill="#000000" />
@@ -1935,26 +1935,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="73" width="1" height="1" fill="#000000" />
       <rect x="148" y="73" width="1" height="1" fill="#000000" />
       <rect x="149" y="73" width="1" height="1" fill="#000000" />
-      <rect x="150" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="73" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="73" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="73" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="73" width="1" height="1" fill="currentColor" />
       <rect x="170" y="73" width="1" height="1" fill="#000000" />
       <rect x="171" y="73" width="1" height="1" fill="#000000" />
       <rect x="172" y="73" width="1" height="1" fill="#000000" />
@@ -1975,26 +1975,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="74" width="1" height="1" fill="#000000" />
       <rect x="148" y="74" width="1" height="1" fill="#000000" />
       <rect x="149" y="74" width="1" height="1" fill="#000000" />
-      <rect x="150" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="74" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="74" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="74" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="74" width="1" height="1" fill="currentColor" />
       <rect x="170" y="74" width="1" height="1" fill="#000000" />
       <rect x="171" y="74" width="1" height="1" fill="#000000" />
       <rect x="172" y="74" width="1" height="1" fill="#000000" />
@@ -2015,26 +2015,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="75" width="1" height="1" fill="#000000" />
       <rect x="148" y="75" width="1" height="1" fill="#000000" />
       <rect x="149" y="75" width="1" height="1" fill="#000000" />
-      <rect x="150" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="75" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="75" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="75" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="75" width="1" height="1" fill="currentColor" />
       <rect x="170" y="75" width="1" height="1" fill="#000000" />
       <rect x="171" y="75" width="1" height="1" fill="#000000" />
       <rect x="172" y="75" width="1" height="1" fill="#000000" />
@@ -2055,26 +2055,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="76" width="1" height="1" fill="#000000" />
       <rect x="148" y="76" width="1" height="1" fill="#000000" />
       <rect x="149" y="76" width="1" height="1" fill="#000000" />
-      <rect x="150" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="76" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="76" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="76" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="76" width="1" height="1" fill="currentColor" />
       <rect x="170" y="76" width="1" height="1" fill="#000000" />
       <rect x="171" y="76" width="1" height="1" fill="#000000" />
       <rect x="172" y="76" width="1" height="1" fill="#000000" />
@@ -2095,26 +2095,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="77" width="1" height="1" fill="#000000" />
       <rect x="148" y="77" width="1" height="1" fill="#000000" />
       <rect x="149" y="77" width="1" height="1" fill="#000000" />
-      <rect x="150" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="77" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="77" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="77" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="77" width="1" height="1" fill="currentColor" />
       <rect x="170" y="77" width="1" height="1" fill="#000000" />
       <rect x="171" y="77" width="1" height="1" fill="#000000" />
       <rect x="172" y="77" width="1" height="1" fill="#000000" />
@@ -2135,26 +2135,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="78" width="1" height="1" fill="#000000" />
       <rect x="148" y="78" width="1" height="1" fill="#000000" />
       <rect x="149" y="78" width="1" height="1" fill="#000000" />
-      <rect x="150" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="78" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="78" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="78" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="78" width="1" height="1" fill="currentColor" />
       <rect x="170" y="78" width="1" height="1" fill="#000000" />
       <rect x="171" y="78" width="1" height="1" fill="#000000" />
       <rect x="172" y="78" width="1" height="1" fill="#000000" />
@@ -2175,26 +2175,26 @@ export const Hair2 = ({ className }: Hair2Props) => {
       <rect x="147" y="79" width="1" height="1" fill="#000000" />
       <rect x="148" y="79" width="1" height="1" fill="#000000" />
       <rect x="149" y="79" width="1" height="1" fill="#000000" />
-      <rect x="150" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="151" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="152" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="153" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="154" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="155" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="156" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="157" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="158" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="159" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="160" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="161" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="162" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="163" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="164" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="165" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="166" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="167" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="168" y="79" width="1" height="1" fill="#FFFFFF" />
-      <rect x="169" y="79" width="1" height="1" fill="#FFFFFF" />
+      <rect x="150" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="151" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="152" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="153" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="154" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="155" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="156" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="157" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="158" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="159" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="160" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="161" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="162" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="163" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="164" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="165" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="166" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="167" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="168" y="79" width="1" height="1" fill="currentColor" />
+      <rect x="169" y="79" width="1" height="1" fill="currentColor" />
       <rect x="170" y="79" width="1" height="1" fill="#000000" />
       <rect x="171" y="79" width="1" height="1" fill="#000000" />
       <rect x="172" y="79" width="1" height="1" fill="#000000" />
