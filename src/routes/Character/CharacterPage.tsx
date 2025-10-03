@@ -13,6 +13,7 @@ import { CharacterGender } from "@/enums/character-gender"
 import { CharacterClass } from "@/enums/class"
 import { femaleHair } from "@/components/V2/characters/generic-character/config/female"
 import { maleHair } from "@/components/V2/characters/generic-character/config/male"
+import { ColorPicker } from "@/components/V2/inputs/color-picker"
 
 export const CharacterPage = () => {
     const { states: { characters , isLoading, isError} , 
@@ -130,35 +131,28 @@ export const CharacterPage = () => {
                                     })}
                                 </div>
 
-                                <div className="flex flex-col h-[100px] justify-center items-center rounded-sm border border-white/20">
-                                    <div className="flex h-[40px] gap-2 items-center  items-center justify-center">
-                                    <label>Cor dos Olhos:</label>
-                                    <input
-                                        type="color"
-                                        className="cursor-pointer"
-                                        defaultValue={selectedCharacter?.eyeIrisColor ?? "#0000ff"}
-                                        onChange={(e) => {
-                                            setEyeIrisColor(e.target.value)
-                                            setValue("eyeIrisColor", e.target.value)
-                                        }}
-                                        
-                                    />
-                                    </div>
+                                 <div className="flex flex-col h-[100px] justify-center items-center rounded-sm border border-white/20">
+                                <ColorPicker
+                                    id="eyeIrisColor"
+                                    label="Cor dos Olhos"
+                                    value={eyeIrisColor}
+                                    onChange={(val) => {
+                                    setEyeIrisColor(val);   // atualiza o estado local
+                                    setValue("eyeIrisColor", val); // atualiza o form
+                                    }}
+                                />
 
-        
-                                    <div className="flex h-[40px] gap-2 items-center  items-center justify-center">
-                                        <label>Cor do Cabelo:</label>
-                                        <input
-                                            type="color"
-                                            className="cursor-pointer"
-                                            defaultValue={selectedCharacter?.hairColor ?? "#000000"}
-                                            onChange={(e) => {
-                                                setHairColor(e.target.value)
-                                                setValue("hairColor", e.target.value)
-                                            }}
-                                        />
-                                    </div>
-                                </div>    
+                                <ColorPicker
+                                    id="hairColor"
+                                    label="Cor do Cabelo"
+                                    value={hairColor}
+                                    onChange={(val) => {
+                                    setHairColor(val);
+                                    setValue("hairColor", val);
+                                    }}
+                                />
+                                </div>
+  
                             </div>
                         </div> 
                         <DialogFooter className="flex flex-row mt-12 mr-6 items-center justify-end">
