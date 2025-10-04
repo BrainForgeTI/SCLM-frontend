@@ -14,6 +14,5 @@ export interface CharacterInfo {
     adventure?: string,
     level: number,
     experience?: number,
-    currentExperience?:number,
-    maxExperience?:number,
+    xpToNextLvl?:number,
 }

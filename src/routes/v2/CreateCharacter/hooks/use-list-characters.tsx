@@ -9,10 +9,14 @@ import { useForm } from "react-hook-form";
 export const useListInfoCharacter = () => {
     const queryClient = useQueryClient()
 
-    const { register, handleSubmit, setValue } = useForm({
+    const { register, handleSubmit, setValue, control, watch ,reset, formState:{errors}, trigger} = useForm({
     resolver: zodResolver(updateCharacterSchema),
     defaultValues: {
       eyeIrisIndex: 0,
+      characterName: "",
+      eyeIrisColor: "#ffffff",
+      hairColor: "#ffffff",
+      hairIndex: 0,
       },
     });
 
@@ -29,18 +33,21 @@ export const useListInfoCharacter = () => {
         console.log(data)
       }    });
 
-    const handleSubmitForm = handleSubmit((data) => mutate(data));
+    const handleSubmitForm = handleSubmit((data) => {mutate(data)})
     return {
     states: {
       characters,
       isLoading,
       isError,
+      control,
     },
     actions: {
       register,
       handleSubmitForm,
       setValue,
       updateCharacter: mutate,
+      watch,
+      reset,
     },
   };
 }

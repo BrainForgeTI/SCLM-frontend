@@ -14,9 +14,8 @@ export async function getAllCharactersInfo (){
             eyeIrisIndex: 0,
             adventure: "Dragon Quest",
             level: 5,
-            experience: 1200,
-            currentExperience: 400,
-            maxExperience: 500,},
+            experience: 350,
+            xpToNextLvl: 500,},
         {
             id: "2",
             owner: "player1",
@@ -29,9 +28,8 @@ export async function getAllCharactersInfo (){
             eyeIrisIndex: 0,
             adventure: "Dragon Quest",
             level: 20,
-            experience: 1200,
-            currentExperience: 400,
-            maxExperience: 500,},
+            experience: 350,
+            xpToNextLvl: 500,},
         {
             id: "3",
             owner: "player1",
@@ -44,9 +42,8 @@ export async function getAllCharactersInfo (){
             eyeIrisIndex: 0,
             adventure: "Dragon Quest",
             level: 20,
-            experience: 1200,
-            currentExperience: 400,
-            maxExperience: 500,},
+            experience: 350,
+            xpToNextLvl: 500,},
         {
             id: "4",
             owner: "player1",
@@ -59,9 +56,8 @@ export async function getAllCharactersInfo (){
             eyeIrisIndex: 0,
             adventure: "Dragon Quest",
             level: 20,
-            experience: 1200,
-            currentExperience: 400,
-            maxExperience: 500,}
+            experience: 350,
+            xpToNextLvl: 500,}
             
         ] as  CharacterInfo[]
 }

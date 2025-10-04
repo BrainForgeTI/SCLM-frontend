@@ -33,7 +33,7 @@ export const CharacterCard = (props: Props) => {
     const percent = (atualExp / maxExp) * 100
 
     return (
-        <div className="grid grid-rows-2 w-[350px] max-w-[400px] h-[450px] bg-neutral/5 rounded-xl   border border-white/15 items-center relative font-poppis">
+        <div className="grid grid-rows-2 w-[350px] max-w-[375px] h-[450px] bg-neutral/5 rounded-xl   border border-white/15 items-center relative font-poppis">
             <div className="flex flex-col  w-full h-full items-center justify-center gap-3 ">
                 <div className="flex text-center text-[20px] text-white w-[150px] justify-center font-medium">{props.characterName ?? "-"}</div>
                 <div className="flex items-center justify-center w-[150px]">

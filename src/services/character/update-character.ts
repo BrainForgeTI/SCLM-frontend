@@ -3,7 +3,7 @@ import { CharacterInfoUptade } from "@/types/character/character-update";
 
 export async function updateCharacter (data: CharacterInfoUptade){
 
-    // return (await apiCharacter.patch(`characters/${data.id}`,{
+    // return (await apiCharacter.put(`characters/${data.id}`,{
     //     characterName:data.characterName,
     //     hairColor:data.hairColor,
     //     hairIndex:data.hairIndex,

@@ -14,32 +14,34 @@ import { CharacterClass } from "@/enums/class"
 import { femaleHair } from "@/components/V2/characters/generic-character/config/female"
 import { maleHair } from "@/components/V2/characters/generic-character/config/male"
 import { ColorPicker } from "@/components/V2/inputs/color-picker"
+import { Controller } from "react-hook-form"
+import { Input } from "@/components/ui/input"
 
 export const CharacterPage = () => {
-    const { states: { characters , isLoading, isError} , 
-    actions: { register, handleSubmitForm, setValue}} = useListInfoCharacter();
+    const { states: { characters , isLoading, isError, control} , 
+    actions: { register, handleSubmitForm, setValue, watch, reset}} = useListInfoCharacter();
 
     const [selectedCharacter, setSelectedCharacter] = useState<CharacterInfo>();
-    const [hairIndex, setHairIndex] = useState(0);
-    const [hairColor, setHairColor] = useState("#000000");
-    const [eyeIrisColor, setEyeIrisColor] = useState("#0000ff");
-    const [nome, setNome] = useState(selectedCharacter?.characterName)
     const listHairFemale = femaleHair
     const listHairMale = maleHair
     
     
     useEffect(() => {
         if (selectedCharacter) {
-            setNome(selectedCharacter.characterName ?? "");
-            setHairIndex(selectedCharacter.hairIndex ?? 0);
-            setHairColor(selectedCharacter.hairColor ?? "#000000");
-            setEyeIrisColor(selectedCharacter.eyeIrisColor ?? "#0000ff");
+            reset({
+                characterName:selectedCharacter.characterName,
+                hairColor:selectedCharacter.hairColor,
+                hairIndex:selectedCharacter.hairIndex,
+                eyeIrisColor:selectedCharacter.eyeIrisColor,
+                id: selectedCharacter.id,
+                eyeIrisIndex: selectedCharacter.eyeIrisIndex
+            })
         }
-    }, [selectedCharacter]);
+    }, [selectedCharacter, reset]);
 
     return (
         <PageLayout>
-            <div className="flex flex-col w-full font-poppis" >
+            <div className="flex flex-col w-full font-poppis justify-center" >
                 <PageTitle title="Meus personagens" />
                 <div className="w-full mt-10 flex justify-end">
                     <div className="w-[100px] md:min-w-[137px]">
@@ -54,8 +56,8 @@ export const CharacterPage = () => {
                 </div>
 
                 <div
-                    className="grid w-full justify-items-center gap-10 mt-10"
-                    style={{ gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))" }}
+                    className="grid w-full justify-center justify-items-center gap-10 mt-10"
+                    style={{ gridTemplateColumns: "repeat(auto-fit, minmax(375px, 1fr))" }}
                 >
                     {characters?.map((character) => (
                         <CharacterCard
@@ -70,8 +72,8 @@ export const CharacterPage = () => {
                             hairIndex={character.hairIndex}
                             id={character.id}
                             level={character.level}
-                            currentExperience={character.currentExperience}
-                            maxExperience={character.maxExperience}
+                            currentExperience={character.experience}
+                            maxExperience={character.xpToNextLvl}
                             onEdit={() => setSelectedCharacter(character)}
                         />
                     ))}
@@ -81,75 +83,85 @@ export const CharacterPage = () => {
                     <DialogContent className="w-[500px] h-[450px] z-100 font-poppis">
                         <DialogHeader className="m-0">
                             <DialogTitle className="text-[24px] m-0 p-0">Editar personagem</DialogTitle>
-                            <DialogDescription className="m-0 p-0">{selectedCharacter?.gender == "male" ? "Mr. " : "Mrs. " }{nome}</DialogDescription>
+                            <DialogDescription className="m-0 p-0 w-50 truncate">{selectedCharacter?.gender == "male" ? "Mr. " : "Mrs. " }{watch("characterName")}</DialogDescription>
                         </DialogHeader>
-                        <form  onSubmit={handleSubmitForm} className="">
+                        <form  onSubmit={(e) => {
+                            e.preventDefault()
+                            handleSubmitForm()
+                            }} className="">
                             <div className="grid grid-cols-2 items-center justify-items-center">
                             <div className="flex flex-col items-center justify-center gap-5">
-                                <input type="hidden" value={selectedCharacter?.id} {...register("id")} />
+                         
                                 <div className="flex w-[150px] h-[150px]"> 
 
                                 {selectedCharacter && (
                                     <Character
                                         character={selectedCharacter?.characterClass ?? CharacterClass.MARTIAL_ARTIST}
                                         gender={selectedCharacter?.gender ?? CharacterGender.MALE}
-                                        hair={hairIndex} 
-                                        hairColor={hairColor} 
+                                        hair={watch("hairIndex")} 
+                                        hairColor={watch("hairColor")} 
                                         eyeIris={selectedCharacter?.eyeIrisIndex ?? 0}
                                         level={selectedCharacter?.level ?? 0}
-                                        eyeIrisColor={eyeIrisColor} 
+                                        eyeIrisColor={watch("eyeIrisColor")} 
                                         className="w-[150px] h-[150px]"
                                     />
                                 )}
                                 </div>
-                                <input type="text" defaultValue={selectedCharacter?.characterName}  onChange={(e) => {
-                                   setValue("characterName", e.target.value)
-                                   setNome(e.target.value)
-                                }} className="flex p-4 h-[20px] w-full rounded-sm border border-white/20 text-start justify-start"/>
+                                <Input 
+                                    {...register("characterName")}
+                                />
+                                
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                
-                                <div className="grid grid-cols-4 h-[100px] justify-items-center gap-2">
-                                    {(selectedCharacter?.gender === CharacterGender.FEMALE ? listHairFemale : listHairMale).map((hair, index) => {
-                                        return (
-                                            <button type="button"
-                                                key={index}
-                                                className={`flex w-[40px] h-[40px] rounded-sm border 
-                                                ${hairIndex === index ? "border-blue-500" : "border-white/20"} 
-                                                items-center justify-center cursor-pointer`}
-                                                onClick={() => {
-                                                    setHairIndex(index);  
-                                                    setValue("hairIndex", index); 
-                                                }}
-                                            >
-                                                <img src={hair.image} alt="cabelo" />
-                                                
-                                            </button>
-                                            
-                                        )
-                                    })}
-                                </div>
-
-                                 <div className="flex flex-col h-[100px] justify-center items-center rounded-sm border border-white/20">
-                                <ColorPicker
-                                    id="eyeIrisColor"
-                                    label="Cor dos Olhos"
-                                    value={eyeIrisColor}
-                                    onChange={(val) => {
-                                    setEyeIrisColor(val);   // atualiza o estado local
-                                    setValue("eyeIrisColor", val); // atualiza o form
-                                    }}
+                                <Controller 
+                                    name="hairIndex"
+                                    control={control}
+                                    render={({field}) => (
+                                        <div className="grid grid-cols-4 h-[100px] justify-items-center gap-2">
+                                            {(selectedCharacter?.gender === CharacterGender.FEMALE ? listHairFemale : listHairMale).map((hair, index) => {
+                                                return (
+                                                    <button type="button"
+                                                        key={index}
+                                                        className={`flex w-[40px] h-[40px] rounded-sm border 
+                                                        ${field.value === index ? "border-blue-500" : "border-white/20"} 
+                                                        items-center justify-center cursor-pointer`}
+                                                        onClick={() => field.onChange(index)}
+                                                    >
+                                                        <img src={hair.image} alt="cabelo" />
+                                                        
+                                                    </button>
+                                                    
+                                                )
+                                            })}
+                                        </div>
+                                    )}
                                 />
 
-                                <ColorPicker
-                                    id="hairColor"
-                                    label="Cor do Cabelo"
-                                    value={hairColor}
-                                    onChange={(val) => {
-                                    setHairColor(val);
-                                    setValue("hairColor", val);
-                                    }}
+                                 <div className="flex flex-col h-[100px] justify-center items-center rounded-sm border border-white/20">
+                                <Controller
+                                    name="eyeIrisColor"
+                                    control={control}
+                                    render={({ field }) => ( 
+                                    <ColorPicker
+                                        id="eyeIrisColor"
+                                        label="Cor dos Olhos"
+                                        value={field.value}
+                                        onChange={field.onChange}
+                                    />
+                                )}
+                                />
+                                <Controller
+                                    name="hairColor"
+                                    control={control}
+                                    render={({ field }) => ( 
+                                    <ColorPicker
+                                        id="hairColor"
+                                        label="Cor do Cabelo"
+                                        value={field.value}
+                                        onChange={field.onChange}
+                                />
+                                )}
                                 />
                                 </div>
   
