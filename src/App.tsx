@@ -9,7 +9,7 @@ import { Providers } from "./components/V2/providers";
 import { SignUpPage } from "./routes/SignUp";
 import { CreateCharacterPage } from "./routes/v2/CreateCharacter";
 import { NotebookPage } from "./routes/Notebook/NotebookPage";
-import { MyAdventurePage } from "./routes/MyAdventure";
+import { MyAdventurePage } from "./routes/v2/adventure/my-adventure";
 
 function App() {
   return (
