@@ -22,17 +22,19 @@ import {
 
 export const CreateChapter = () => {
   const {
-    states: { fieldArray, form, isPending },
-    actions: { handleSubmit, addField, removeField },
+    states: { fieldArray, form, isPending, open },
+    actions: { handleSubmit, addField, removeField, setOpen },
   } = useCreateChapter();
 
   return (
     <Dialog
+      open={open}
       onOpenChange={(open) => {
         if (!open) {
           form.reset();
           form.clearErrors();
         }
+        setOpen(open);
       }}
     >
       <DialogTrigger asChild>

@@ -5,10 +5,13 @@ import {
 import { createChapterService } from "@/services/adventure/create-chapter-service";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { useParams } from "react-router";
 
 export const useCreateChapter = () => {
+  const [open, setOpen] = useState(false);
+
   const { id } = useParams();
 
   const form = useForm({
@@ -26,8 +29,11 @@ export const useCreateChapter = () => {
 
   const { mutate, isPending } = useMutation({
     mutationFn: (data: CreateChapterType) => {
-      console.log("oi");
       return createChapterService(data, id);
+    },
+    onSuccess: () => {
+      setOpen(false);
+      form.reset();
     },
   });
 
@@ -48,11 +54,13 @@ export const useCreateChapter = () => {
       form,
       fieldArray,
       isPending,
+      open,
     },
     actions: {
       handleSubmit,
       addField,
       removeField,
+      setOpen,
     },
   };
 };
