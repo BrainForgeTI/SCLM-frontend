@@ -24,6 +24,7 @@ interface Props {
         currentExperience?: number,
         maxExperience?:number,
         onEdit: () => void;
+        onDelete: () => void;
 }
 
 export const CharacterCard = (props: Props) => {
@@ -90,7 +91,7 @@ export const CharacterCard = (props: Props) => {
                 </div>
                 <div className="flex flex-col gap-2 absolute top-3 right-3">
                 <button className="flex w-[30px] h-[30px] rounded-[5px] bg-primary border rounded-sm border-white/20 justify-center items-center hover:bg-background cursor-pointer" onClick={() => props.onEdit()}><EditIcon></EditIcon></button>
-                <button className="flex w-[30px] h-[30px] rounded-[5px] bg-background border rounded-sm border-white/20 justify-center items-center hover:bg-red-500 cursor-pointer"><TrashIcon></TrashIcon></button>
+                <button className="flex w-[30px] h-[30px] rounded-[5px] bg-background border rounded-sm border-white/20 justify-center items-center hover:bg-red-500 cursor-pointer" onClick={() => props.onDelete()}><TrashIcon></TrashIcon></button>
             </div>
             </div>
         </div>

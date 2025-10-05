@@ -16,12 +16,14 @@ import { maleHair } from "@/components/V2/characters/generic-character/config/ma
 import { ColorPicker } from "@/components/V2/inputs/color-picker"
 import { Controller } from "react-hook-form"
 import { Input } from "@/components/ui/input"
+import { CharacterDelete } from "@/types/character/character-delete"
 
 export const CharacterPage = () => {
     const { states: { characters , isLoading, isError, control} , 
-    actions: { register, handleSubmitForm, setValue, watch, reset}} = useListInfoCharacter();
+    actions: { register, handleSubmitForm, setValue, watch, reset, deleteCharacterMutate}} = useListInfoCharacter();
 
     const [selectedCharacter, setSelectedCharacter] = useState<CharacterInfo>();
+    const [selectedCharacterDelete, setSelectedCharacterDelete] = useState<CharacterInfo>();
     const listHairFemale = femaleHair
     const listHairMale = maleHair
     
@@ -75,21 +77,22 @@ export const CharacterPage = () => {
                             currentExperience={character.experience}
                             maxExperience={character.xpToNextLvl}
                             onEdit={() => setSelectedCharacter(character)}
+                            onDelete={() => setSelectedCharacterDelete(character)}
                         />
                     ))}
                 </div>
 
                 <Dialog open={!!selectedCharacter} onOpenChange={(open) => !open && setSelectedCharacter(undefined)}>
-                    <DialogContent className="w-[500px] h-[450px] z-100 font-poppis">
-                        <DialogHeader className="m-0">
-                            <DialogTitle className="text-[24px] m-0 p-0">Editar personagem</DialogTitle>
-                            <DialogDescription className="m-0 p-0 w-50 truncate">{selectedCharacter?.gender == "male" ? "Mr. " : "Mrs. " }{watch("characterName")}</DialogDescription>
+                    <DialogContent className="w-[375px] md:w-[500px] h-[450px] z-100 font-poppis">
+                        <DialogHeader className="m-0 ">
+                            <DialogTitle className="text-[24px] text-start m-0 p-0">Editar personagem</DialogTitle>
+                            <DialogDescription className=" text-[18px] text-start m-0 p-0 w-50 truncate">{selectedCharacter?.gender == "male" ? "Mr. " : "Mrs. " }{watch("characterName")}</DialogDescription>
                         </DialogHeader>
                         <form  onSubmit={(e) => {
                             e.preventDefault()
                             handleSubmitForm()
                             }} className="">
-                            <div className="grid grid-cols-2 items-center justify-items-center">
+                            <div className="grid grid-cols-2 items-center justify-items-center gap-4">
                             <div className="flex flex-col items-center justify-center gap-5">
                          
                                 <div className="flex w-[150px] h-[150px]"> 
@@ -118,7 +121,7 @@ export const CharacterPage = () => {
                                     name="hairIndex"
                                     control={control}
                                     render={({field}) => (
-                                        <div className="grid grid-cols-4 h-[100px] justify-items-center gap-2">
+                                        <div className="grid grid-cols-3 md:grid-cols-4 h-[100px] justify-items-center gap-2">
                                             {(selectedCharacter?.gender === CharacterGender.FEMALE ? listHairFemale : listHairMale).map((hair, index) => {
                                                 return (
                                                     <button type="button"
@@ -138,7 +141,7 @@ export const CharacterPage = () => {
                                     )}
                                 />
 
-                                 <div className="flex flex-col h-[100px] justify-center items-center rounded-sm border border-white/20">
+                                 <div className="flex flex-col h-[100px] justify-center items-center p-2 rounded-sm border border-white/20 text-[12px] md:text-[16px] gap-2">
                                 <Controller
                                     name="eyeIrisColor"
                                     control={control}
@@ -167,7 +170,7 @@ export const CharacterPage = () => {
   
                             </div>
                         </div> 
-                        <DialogFooter className="flex flex-row mt-12 mr-6 items-center justify-end">
+                        <DialogFooter className="flex flex-row mt-12 mr-0 md:mr-6 items-center justify-end">
                             <DialogClose asChild>
                                 <Button variant="outline" className="cursor-pointer">Cancelar</Button>
                             </DialogClose>
@@ -175,6 +178,21 @@ export const CharacterPage = () => {
                         </DialogFooter>
                     </form>    
                     </DialogContent>
+                </Dialog>
+                <Dialog open={!!selectedCharacterDelete} onOpenChange={(open) => !open && setSelectedCharacterDelete(undefined)}>
+                  <DialogContent className="w-[500px] h-[450px] z-100 font-poppis">
+                      <DialogTitle>Deseja Excluir o personagem <strong>{selectedCharacterDelete?.characterName}?</strong> </DialogTitle>
+                    <form onSubmit={(e) => {
+                        e.preventDefault();
+                        deleteCharacterMutate({id: selectedCharacterDelete?.id} as CharacterDelete)}}>
+                    <DialogFooter>
+                        <DialogClose asChild>
+                            <Button variant="outline" className="cursor-pointer">Cancelar</Button>
+                        </DialogClose>
+                        <Button type="submit">Excluir</Button>
+                    </DialogFooter>
+                    </form>
+                  </DialogContent>
                 </Dialog>
             </div>
         </PageLayout>
