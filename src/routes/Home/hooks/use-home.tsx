@@ -1,25 +1,29 @@
-import { getAllAdventure } from "@/services/adventure/get-all-adventures-service"
-import { useQuery } from "@tanstack/react-query"
-import { useNavigate } from "react-router"
+import { getAllAdventure } from "@/services/adventure/get-all-adventures-service";
+import { useAdventureStore } from "@/store/adventure-store";
+import { Adventure } from "@/types/adventure/adventure";
+import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router";
 
 export const useHome = () => {
-  const navigate = useNavigate()
+  const { setAdventure } = useAdventureStore();
+  const navigate = useNavigate();
 
-  function goToAdventure(adventureId: string) {
-    navigate(`/adventure/${adventureId}`)
-  }
+  const startAdventure = (adventure: Adventure) => {
+    setAdventure(adventure);
+    navigate(`/adventure/${adventure.id}/home`);
+  };
 
   const { data: adventures } = useQuery({
-    queryKey: ['aaa'],
-    queryFn: getAllAdventure
-  })
+    queryKey: ["aaa"],
+    queryFn: getAllAdventure,
+  });
 
   return {
     states: {
-      adventures
+      adventures,
     },
     actions: {
-      goToAdventure
-    }
-  }
-}
+      startAdventure,
+    },
+  };
+};

@@ -22,7 +22,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/character" element={<CharacterPage />}></Route>
         <Route
-          path="/adventure/:id"
+          path="/adventure/:id/home"
           element={
             <AdventureAuth>
               <AdventurePage />
@@ -30,7 +30,7 @@ function App() {
           }
         />
         <Route
-          path="/my_adventure/:id"
+          path="/adventure/:id/content"
           element={
             <AdventureAuth>
               <MyAdventurePage />
