@@ -3,7 +3,7 @@ import { CharacterInfo } from "@/types/character/character-info";
 
 export async function getAllCharactersInfo (){
     // return (await apiCharacter.get("/characters")).data.data as CharacterInfo[]
-    return [{id: "1",
+    return [{id: "2#5",
             owner: "player1",
             characterName: "Arthas",
             characterClass: "warrior", 
@@ -17,7 +17,7 @@ export async function getAllCharactersInfo (){
             experience: 350,
             xpToNextLvl: 500,},
         {
-            id: "2",
+            id: "3#5",
             owner: "player1",
             characterName: "Arthas",
             characterClass: "rogue", 
@@ -31,7 +31,7 @@ export async function getAllCharactersInfo (){
             experience: 350,
             xpToNextLvl: 500,},
         {
-            id: "3",
+            id: "4#5",
             owner: "player1",
             characterName: "Arthas",
             characterClass: "rogue", 
@@ -45,7 +45,7 @@ export async function getAllCharactersInfo (){
             experience: 350,
             xpToNextLvl: 500,},
         {
-            id: "4",
+            id: "5#5",
             owner: "player1",
             characterName: "Arthas",
             characterClass: "rogue", 

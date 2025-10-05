@@ -37,8 +37,9 @@ export const useListInfoCharacter = () => {
     
       const { mutate: deleteCharacterMutate } = useMutation({
         mutationFn: (data: CharacterDelete) => deleteCharacter(data),
-        onSuccess: () => {
-          return console.log("Seu personagem foi deleteado.")
+        onSuccess: (data) => {
+          queryClient.invalidateQueries({ queryKey:['characters']})
+          return console.log(data)
         }
       }) 
 

@@ -174,14 +174,14 @@ export const CharacterPage = () => {
                             <DialogClose asChild>
                                 <Button variant="outline" className="cursor-pointer">Cancelar</Button>
                             </DialogClose>
-                            <Button type="submit" className="cursor-pointer" isLoading={isLoading}>Atualizar mudanças</Button>
+                            <Button type="submit" className="cursor-pointer" disabled={isLoading}>Atualizar mudanças</Button>
                         </DialogFooter>
                     </form>    
                     </DialogContent>
                 </Dialog>
                 <Dialog open={!!selectedCharacterDelete} onOpenChange={(open) => !open && setSelectedCharacterDelete(undefined)}>
-                  <DialogContent className="w-[500px] h-[450px] z-100 font-poppis">
-                      <DialogTitle>Deseja Excluir o personagem <strong>{selectedCharacterDelete?.characterName}?</strong> </DialogTitle>
+                  <DialogContent className="w-[375px] md:w-[500px] h-[200px] md:h-[120px]  z-100 font-poppis">
+                      <DialogTitle className="leading-snug">Deseja Excluir o personagem <strong>{selectedCharacterDelete?.characterName}?</strong> </DialogTitle>
                     <form onSubmit={(e) => {
                         e.preventDefault();
                         deleteCharacterMutate({id: selectedCharacterDelete?.id} as CharacterDelete)}}>
@@ -189,7 +189,7 @@ export const CharacterPage = () => {
                         <DialogClose asChild>
                             <Button variant="outline" className="cursor-pointer">Cancelar</Button>
                         </DialogClose>
-                        <Button type="submit">Excluir</Button>
+                        <Button type="submit" disabled={isLoading} className="cursor-pointer border hover:bg-red-500 hover:border-red-500">Excluir</Button>
                     </DialogFooter>
                     </form>
                   </DialogContent>
