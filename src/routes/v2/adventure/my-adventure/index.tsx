@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Plus, Search } from "lucide-react";
 import { Chapter } from "@/components/V2/adventure/chapter";
+import { CreateChapter } from "@/components/V2/adventure/create-chapter";
 
 export const MyAdventurePage = () => {
   useMyAdventure();
@@ -18,9 +19,7 @@ export const MyAdventurePage = () => {
               <Search />
             </Button>
           </div>
-          <Button className="cursor-pointer">
-            <Plus /> Criar Capítulo
-          </Button>
+          <CreateChapter />
         </div>
         <div className="w-full mt-5">
           <Chapter></Chapter>
