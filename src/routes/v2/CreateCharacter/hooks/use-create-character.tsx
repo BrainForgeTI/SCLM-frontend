@@ -13,8 +13,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 
 export const useCreateCharacter = () => {
-  const navigate = useNavigate()
-  const [open, setOpen] = useState(false)
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
   const {
     register,
     control,
@@ -37,20 +37,20 @@ export const useCreateCharacter = () => {
   });
 
   const { mutate, isPending } = useMutation({
-    mutationFn: (data: CreateCharacterFormType) => createCharacter(data) ,
-    onSuccess: (data) => {
-      navigate("character")
+    mutationFn: (data: CreateCharacterFormType) => createCharacter(data),
+    onSuccess: () => {
+      navigate("/character");
     },
     onError: () => {
-      setOpen(true)
-    }
+      setOpen(true);
+    },
   });
-  const { data: adventures} = useQuery({
-    queryKey: ['aaa'],
-    queryFn: getAllAdventure
-  }) 
+  const { data: adventures } = useQuery({
+    queryKey: ["aaa"],
+    queryFn: getAllAdventure,
+  });
   const handleSubmitForm = handleSubmit((data) => mutate(data));
-  
+
   return {
     states: {
       control,
