@@ -3,6 +3,7 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -46,7 +47,10 @@ export const CreateChapter = () => {
         <Form {...form}>
           <form onSubmit={handleSubmit}>
             <DialogHeader>
-              <DialogTitle>Criar Novo Capítulo</DialogTitle>
+              <DialogTitle>Criar capítulo</DialogTitle>
+              <DialogDescription>
+                Crie um novo capítulo e adicione até 15 missões
+              </DialogDescription>
             </DialogHeader>
             <div className="w-full py-8">
               <FormField
@@ -56,7 +60,7 @@ export const CreateChapter = () => {
                   <FormItem>
                     <FormLabel>Título do Capítulo</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Título" />
+                      <Input {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -64,33 +68,37 @@ export const CreateChapter = () => {
               />
 
               <div className="w-full">
-                <div className="py-3">
+                <p className="mb-3 mt-5 text-md font-semibold">Missões</p>
+                <div className="py-3 flex flex-col gap-2">
                   {fieldArray.fields.map((missionField, index) => (
-                    <div className="flex gap-3">
+                    <div>
                       <FormField
                         key={missionField.id}
                         control={form.control}
                         name={`missions.${index}.title`}
                         render={({ field }) => (
                           <FormItem className="flex-1">
+                            <FormLabel>Título</FormLabel>
                             <FormControl>
-                              <Input
-                                placeholder="Título da missão"
-                                className=""
-                                {...field}
-                              />
+                              <div className="flex gap-3">
+                                <div className="flex-1">
+                                  <Input className="" {...field} />
+                                </div>
+                                <Button
+                                  type="button"
+                                  variant={"secondary"}
+                                  onClick={() => removeField(index)}
+                                  disabled={fieldArray.fields.length === 1}
+                                  className="cursor-pointer"
+                                >
+                                  <Trash className="text-muted-foreground" />
+                                </Button>
+                              </div>
                             </FormControl>
                             <FormMessage />
                           </FormItem>
                         )}
                       />
-                      <Button
-                        type="button"
-                        variant={"secondary"}
-                        onClick={() => removeField(index)}
-                      >
-                        <Trash className="text-muted-foreground" />
-                      </Button>
                     </div>
                   ))}
                 </div>
@@ -100,6 +108,7 @@ export const CreateChapter = () => {
                   disabled={isPending}
                   variant={"outline"}
                   onClick={addField}
+                  className="cursor-pointer"
                 >
                   <Plus />
                   <p>Criar Missão</p>

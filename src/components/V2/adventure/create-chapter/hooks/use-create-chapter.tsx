@@ -17,8 +17,12 @@ export const useCreateChapter = () => {
   const form = useForm({
     resolver: zodResolver(createChapterSchema),
     defaultValues: {
-      title: "",
-      missions: [],
+      title: "Novo Capítulo",
+      missions: [
+        {
+          title: "Nova Missão",
+        },
+      ],
     },
   });
 
@@ -46,7 +50,9 @@ export const useCreateChapter = () => {
   };
 
   const removeField = (index: number) => {
-    fieldArray.remove(index);
+    if (fieldArray.fields.length > 1) {
+      fieldArray.remove(index);
+    }
   };
 
   return {
