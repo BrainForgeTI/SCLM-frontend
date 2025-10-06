@@ -196,3 +196,14 @@
     background-position: 0% 50%;
   }
 }
+
+@media (min-width: 768px) {
+  .scrollbar-none {
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: block;
+  }
+}

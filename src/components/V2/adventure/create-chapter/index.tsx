@@ -43,7 +43,10 @@ export const CreateChapter = () => {
           <Plus /> Criar Capítulo
         </Button>
       </DialogTrigger>
-      <DialogContent aria-describedby="Criar capítulo">
+      <DialogContent
+        aria-describedby="Criar capítulo"
+        className="max-h-[calc(100dvh-150px)] overflow-y-auto scrollbar-none"
+      >
         <Form {...form}>
           <form onSubmit={handleSubmit}>
             <DialogHeader>
