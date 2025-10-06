@@ -1,15 +1,18 @@
+import { ChapterType } from "@/types/adventure/chapter";
 import { create } from "zustand";
 
 type TypeAdventureStore = {
-  id: string | null;
-  owner: string | null;
-  nameAdventure: string | null;
-  description: string | null;
-  characterId: string | null;
-  bgPrimaryColor: string | null;
-  bgSecundaryColor: string | null;
-  chapters: string[] | null;
-  projectId: string | null;
+  adventure: {
+    id: string | null;
+    owner: string | null;
+    nameAdventure: string | null;
+    description: string | null;
+    characterId: string | null;
+    bgPrimaryColor: string | null;
+    bgSecundaryColor: string | null;
+    chapters: ChapterType[] | null;
+    projectId: string | null;
+  };
   setAdventure: (adventure: {
     id: string;
     owner: string;
@@ -18,22 +21,24 @@ type TypeAdventureStore = {
     characterId: string;
     bgPrimaryColor: string;
     bgSecundaryColor: string;
-    chapters: string[];
+    chapters: ChapterType[];
     projectId: string;
   }) => void;
   clearAdventure: () => void;
 };
 
 export const useAdventureStore = create<TypeAdventureStore>((set) => ({
-  id: null,
-  owner: null,
-  nameAdventure: null,
-  description: null,
-  characterId: null,
-  bgPrimaryColor: null,
-  bgSecundaryColor: null,
-  chapters: null,
-  projectId: null,
+  adventure: {
+    id: null,
+    owner: null,
+    nameAdventure: null,
+    description: null,
+    characterId: null,
+    bgPrimaryColor: null,
+    bgSecundaryColor: null,
+    chapters: null,
+    projectId: null,
+  },
   setAdventure: ({
     id,
     owner,
@@ -46,26 +51,30 @@ export const useAdventureStore = create<TypeAdventureStore>((set) => ({
     projectId,
   }) =>
     set({
-      id,
-      owner,
-      nameAdventure,
-      description,
-      characterId,
-      bgPrimaryColor,
-      bgSecundaryColor,
-      chapters,
-      projectId,
+      adventure: {
+        id,
+        owner,
+        nameAdventure,
+        description,
+        characterId,
+        bgPrimaryColor,
+        bgSecundaryColor,
+        chapters,
+        projectId,
+      },
     }),
   clearAdventure: () =>
     set({
-      id: null,
-      owner: null,
-      nameAdventure: null,
-      description: null,
-      characterId: null,
-      bgPrimaryColor: null,
-      bgSecundaryColor: null,
-      chapters: null,
-      projectId: null,
+      adventure: {
+        id: null,
+        owner: null,
+        nameAdventure: null,
+        description: null,
+        characterId: null,
+        bgPrimaryColor: null,
+        bgSecundaryColor: null,
+        chapters: null,
+        projectId: null,
+      },
     }),
 }));

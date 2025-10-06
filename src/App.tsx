@@ -3,13 +3,13 @@ import { HomePage } from "./routes/Home/HomePage";
 import { SignInPage } from "./routes/SignIn";
 import { SecondaryMissionsPage } from "./routes/SecondaryMissions/SecondaryMissionsPage";
 import { AdventurePage } from "./routes/Adventure";
-import { AdventureAuth } from "./context/adventure/AdventureAuth";
 import { CharacterPage } from "./routes/Character/CharacterPage";
 import { Providers } from "./components/V2/providers";
 import { SignUpPage } from "./routes/SignUp";
 import { CreateCharacterPage } from "./routes/v2/CreateCharacter";
 import { NotebookPage } from "./routes/Notebook/NotebookPage";
 import { MyAdventurePage } from "./routes/v2/adventure/my-adventure";
+import { AdventureWrapper } from "./components/V2/adventure/adventure-wrapper";
 
 function App() {
   return (
@@ -24,17 +24,17 @@ function App() {
         <Route
           path="/adventure/:id/home"
           element={
-            <AdventureAuth>
+            <AdventureWrapper>
               <AdventurePage />
-            </AdventureAuth>
+            </AdventureWrapper>
           }
         />
         <Route
           path="/adventure/:id/content"
           element={
-            <AdventureAuth>
+            <AdventureWrapper>
               <MyAdventurePage />
-            </AdventureAuth>
+            </AdventureWrapper>
           }
         />
         <Route path="/create-character" element={<CreateCharacterPage />} />

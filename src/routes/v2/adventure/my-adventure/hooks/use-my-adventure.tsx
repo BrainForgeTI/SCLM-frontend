@@ -1,7 +1,7 @@
-import { getAdventureById } from "@/services/adventure/get-adventure-by-id-service";
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router";
+import { useAdventureStore } from "@/store/adventure-store";
 
 export const useMyAdventure = () => {
-  const { id } = useParams();
+  const adventure = useAdventureStore((state) => state.adventure);
+
+  return { states: { adventure } };
 };

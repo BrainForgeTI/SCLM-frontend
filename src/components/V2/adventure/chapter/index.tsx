@@ -1,11 +1,17 @@
 import { Card } from "@/components/ui/card";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Collapse } from "react-collapse";
 import { MissionCheck } from "../../inputs/mission-check";
 import clsx from "clsx";
+import { ChapterType } from "@/types/adventure/chapter";
 
-export const Chapter = () => {
+interface ChapterProps {
+  chapter: ChapterType;
+  number?: number;
+}
+
+export const Chapter = ({ chapter, number }: ChapterProps) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -16,9 +22,7 @@ export const Chapter = () => {
       >
         <Card className="px-4 py-4 cursor-pointer">
           <div className="flex items-center">
-            <p className="font-bold text-lg truncate flex-1">
-              1. Estudar conceitos básicos sobre react hooks
-            </p>
+            <p className="font-bold text-lg truncate flex-1">{`${number ? number + ". " : ""}${chapter.title}`}</p>
             <div className="w-10 flex justify-center transition-all">
               <ChevronDown
                 className={clsx(

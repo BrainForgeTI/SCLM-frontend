@@ -71,7 +71,7 @@ export const CreateChapter = () => {
                 <p className="mb-3 mt-5 text-md font-semibold">Missões</p>
                 <div className="py-3 flex flex-col gap-2">
                   {fieldArray.fields.map((missionField, index) => (
-                    <div>
+                    <div key={index}>
                       <FormField
                         key={missionField.id}
                         control={form.control}

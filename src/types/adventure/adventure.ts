@@ -1,3 +1,5 @@
+import { ChapterType } from "./chapter";
+
 export interface Adventure {
   id: string;
   owner: string;
@@ -6,6 +8,6 @@ export interface Adventure {
   bgSecundaryColor: string;
   characterId: string;
   description: string;
-  chapters: [];
+  chapters: ChapterType[];
   projectId: string;
 }
