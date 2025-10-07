@@ -80,7 +80,7 @@ export const CreateMission = () => {
                 </Button>
               </DialogClose>
               <Button type="submit" isLoading={false}>
-                Criar Capítulo
+                Criar Missão
               </Button>
             </DialogFooter>
           </form>
