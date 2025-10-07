@@ -19,9 +19,14 @@ export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
     <PageLayout isLoadingContent={isLoading}>
       <div className="w-full">
         <PageTitle title={adventure.nameAdventure ?? ""} />
-        <div className="w-full flex gap-10 justify-between">
-          <div className="flex gap-3">
-            <Input className="w-80" placeholder="Pesquisar Capítulo" />
+        <div className="w-full flex flex-col sm:flex-row gap-2 sm:gap-10 justify-between">
+          <div className="flex gap-4">
+            <div className="flex-1">
+              <Input
+                className="w-full sm:w-80"
+                placeholder="Pesquisar Capítulo"
+              />
+            </div>
             <Button variant={"outline"} className="cursor-pointer">
               <Search />
             </Button>

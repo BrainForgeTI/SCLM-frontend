@@ -1,9 +1,9 @@
-import { Mission } from "./mission";
+import { MissionType } from "./mission";
 
 export interface ChapterType {
-  id: string;
+  _id: string;
   owner: string;
   title: string;
   isFinished: boolean;
-  missions: Mission[];
+  missions: MissionType[];
 }

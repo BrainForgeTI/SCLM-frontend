@@ -49,7 +49,7 @@ export const Chapter = ({ chapter, number }: ChapterProps) => {
         <Card>
           <CardContent className="flex flex-col gap-2">
             {chapter.missions.map((mission) => (
-              <Mission mission={mission} />
+              <Mission chapterId={chapter._id} mission={mission} />
             ))}
             <CreateMission />
           </CardContent>
