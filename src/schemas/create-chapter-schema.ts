@@ -1,8 +1,5 @@
 import z from "zod";
-
-export const createMissionSchema = z.object({
-  title: z.string().min(1, "O título é obrigatório"),
-});
+import { createMissionSchema } from "./create-mission-schema";
 
 export const createChapterSchema = z.object({
   title: z.string().min(1, "O título é obrigatório"),
@@ -12,4 +9,3 @@ export const createChapterSchema = z.object({
 });
 
 export type CreateChapterType = z.infer<typeof createChapterSchema>;
-export type CreateMissionType = z.infer<typeof createMissionSchema>;

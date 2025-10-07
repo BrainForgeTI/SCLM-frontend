@@ -5,13 +5,14 @@ import {
 import { createChapterService } from "@/services/adventure/create-chapter-service";
 import { getAdventureById } from "@/services/adventure/get-adventure-by-id-service";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { useParams } from "react-router";
 
 export const useCreateChapter = () => {
   const [open, setOpen] = useState(false);
+  const queryClient = useQueryClient();
 
   const { id } = useParams();
 
@@ -39,6 +40,7 @@ export const useCreateChapter = () => {
     onSuccess: () => {
       setOpen(false);
       form.reset();
+      queryClient.invalidateQueries({ queryKey: ["QUERY_GET_CHAPTERS"] });
     },
   });
 

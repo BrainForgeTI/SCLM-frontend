@@ -16,7 +16,7 @@ export const AdventureWrapper = ({ children }: AdventureWrapperProps) => {
   const setAdventure = useAdventureStore((state) => state.setAdventure);
   const { id } = useParams();
   const { data, isLoading } = useQuery({
-    queryKey: ["aasdsf"],
+    queryKey: ["QUERY_GET_CHAPTERS"],
     queryFn: () => getAdventureById(id),
   });
 

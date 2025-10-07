@@ -1,10 +1,11 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Collapse } from "react-collapse";
-import { MissionCheck } from "../../inputs/mission-check";
 import clsx from "clsx";
 import { ChapterType } from "@/types/adventure/chapter";
+import { Mission } from "../mission";
+import { CreateMission } from "../create-mission";
 
 interface ChapterProps {
   chapter: ChapterType;
@@ -45,10 +46,13 @@ export const Chapter = ({ chapter, number }: ChapterProps) => {
           collapse: "transiton-all duration-200",
         }}
       >
-        <Card className="px-4">
-          <div className="w-full h-full">
-            <MissionCheck checked={false} name="Estudar os conceitos" />
-          </div>
+        <Card>
+          <CardContent className="flex flex-col gap-2">
+            {chapter.missions.map((mission) => (
+              <Mission mission={mission} />
+            ))}
+            <CreateMission />
+          </CardContent>
         </Card>
       </Collapse>
     </div>
