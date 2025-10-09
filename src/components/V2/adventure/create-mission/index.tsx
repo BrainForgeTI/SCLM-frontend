@@ -42,7 +42,7 @@ export const CreateMission = () => {
         <Button
           type="button"
           variant={"secondary"}
-          className="w-36 mt-5 cursor-pointer"
+          className="w-36 cursor-pointer"
         >
           <Plus /> Nova Missão
         </Button>

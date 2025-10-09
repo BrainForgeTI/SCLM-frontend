@@ -1,7 +1,6 @@
 import { MissionCheck } from "../../inputs/mission-check";
 import { MissionType } from "@/types/adventure/mission";
 import { useMission } from "./hooks/use-mission";
-import { useEffect } from "react";
 
 interface MissionProps {
   chapterId: string;
@@ -10,21 +9,17 @@ interface MissionProps {
 
 export const Mission = ({ mission, chapterId }: MissionProps) => {
   const {
-    states: { checked, isPending },
+    states: { checked, isPendingMissionStatus },
     actions: { handleCheckMission },
   } = useMission({ chapterId, mission });
-
-  useEffect(() => {
-    console.log(mission);
-  }, []);
 
   return (
     <div className="w-full h-full">
       <MissionCheck
-        disabled={isPending}
+        disabled={isPendingMissionStatus}
         onChange={handleCheckMission}
+        mission={mission}
         checked={checked}
-        name={mission.title}
       />
     </div>
   );

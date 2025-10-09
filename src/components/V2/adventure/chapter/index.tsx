@@ -1,11 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Collapse } from "react-collapse";
 import clsx from "clsx";
 import { ChapterType } from "@/types/adventure/chapter";
 import { Mission } from "../mission";
 import { CreateMission } from "../create-mission";
+import { Button } from "@/components/ui/button";
+import { useChapter } from "./hooks/use-chapter";
+import { MISSION_TYPE } from "@/constants/mission-type";
 
 interface ChapterProps {
   chapter: ChapterType;
@@ -13,7 +16,31 @@ interface ChapterProps {
 }
 
 export const Chapter = ({ chapter, number }: ChapterProps) => {
+  const {
+    states: { mutateChallenge, isPendingChallenge },
+  } = useChapter();
+
   const [expanded, setExpanded] = useState(false);
+  const [allMissionsCompleted, setAllMissionsCompleted] = useState(false);
+
+  function handleMissionsCompleted() {
+    if (
+      !chapter.missions.find((mission) => mission.isFinished === false) &&
+      !chapter.missions.find(
+        (mission) => mission.type === MISSION_TYPE.CHALLENGE,
+      )
+    ) {
+      setAllMissionsCompleted(true);
+    } else {
+      setAllMissionsCompleted(false);
+    }
+  }
+
+  useEffect(() => {
+    if (chapter.missions) {
+      handleMissionsCompleted();
+    }
+  }, [chapter.missions]);
 
   return (
     <div className="w-full flex gap-2 flex-col">
@@ -49,9 +76,25 @@ export const Chapter = ({ chapter, number }: ChapterProps) => {
         <Card>
           <CardContent className="flex flex-col gap-2">
             {chapter.missions.map((mission) => (
-              <Mission chapterId={chapter._id} mission={mission} />
+              <Mission
+                key={mission.id}
+                chapterId={chapter.id}
+                mission={mission}
+              />
             ))}
-            <CreateMission />
+            <div className="flex mt-5 gap-2">
+              <CreateMission />
+              {allMissionsCompleted && (
+                <Button
+                  onClick={() => mutateChallenge(chapter.id)}
+                  variant={"challenge"}
+                  className="w-36 cursor-pointer"
+                  isLoading={isPendingChallenge}
+                >
+                  Desafio
+                </Button>
+              )}
+            </div>
           </CardContent>
         </Card>
       </Collapse>

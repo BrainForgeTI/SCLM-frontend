@@ -10,4 +10,5 @@ export interface Adventure {
   description: string;
   chapters: ChapterType[];
   projectId: string;
+  progress: number;
 }

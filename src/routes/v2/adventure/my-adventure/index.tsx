@@ -12,7 +12,8 @@ interface MyAdventurePageProps {
 
 export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
   const {
-    states: { adventure },
+    states: { adventure, allAdventureCompleted, isPendingFinalChallenge },
+    actions: { mutateFinalChallenge },
   } = useMyAdventure();
 
   return (
@@ -37,6 +38,17 @@ export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
           {adventure?.chapters?.map((chapter, index) => (
             <Chapter key={index} chapter={chapter} number={index + 1}></Chapter>
           ))}
+
+          {allAdventureCompleted && (
+            <Button
+              onClick={() => mutateFinalChallenge()}
+              variant={"challenge"}
+              className="cursor-pointer"
+              isLoading={isPendingFinalChallenge}
+            >
+              Desafio Final
+            </Button>
+          )}
         </div>
       </div>
     </PageLayout>

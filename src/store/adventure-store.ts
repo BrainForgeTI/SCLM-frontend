@@ -12,6 +12,7 @@ type TypeAdventureStore = {
     bgSecundaryColor: string | null;
     chapters: ChapterType[] | null;
     projectId: string | null;
+    progress: number | null;
   };
   setAdventure: (adventure: {
     id: string;
@@ -23,6 +24,7 @@ type TypeAdventureStore = {
     bgSecundaryColor: string;
     chapters: ChapterType[];
     projectId: string;
+    progress: number;
   }) => void;
   clearAdventure: () => void;
 };
@@ -38,6 +40,7 @@ export const useAdventureStore = create<TypeAdventureStore>((set) => ({
     bgSecundaryColor: null,
     chapters: null,
     projectId: null,
+    progress: null,
   },
   setAdventure: ({
     id,
@@ -49,6 +52,7 @@ export const useAdventureStore = create<TypeAdventureStore>((set) => ({
     bgSecundaryColor,
     chapters,
     projectId,
+    progress,
   }) =>
     set({
       adventure: {
@@ -61,6 +65,7 @@ export const useAdventureStore = create<TypeAdventureStore>((set) => ({
         bgSecundaryColor,
         chapters,
         projectId,
+        progress,
       },
     }),
   clearAdventure: () =>
@@ -75,6 +80,7 @@ export const useAdventureStore = create<TypeAdventureStore>((set) => ({
         bgSecundaryColor: null,
         chapters: null,
         projectId: null,
+        progress: null,
       },
     }),
 }));
