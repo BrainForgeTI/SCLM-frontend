@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useAdventureStore } from "@/store/adventure-store";
 import { MissionType } from "@/types/adventure/mission";
 import { useNavigate } from "react-router";
 
@@ -17,10 +17,11 @@ export const MissionCheck = ({
   disabled,
 }: MissionCheckProps) => {
   const navigate = useNavigate();
+  const adventureId = useAdventureStore((state) => state.adventure.id);
 
   function goToNotebook() {
     console.log(mission);
-    navigate(`/notebook/${mission.id}`);
+    navigate(`/adventure/${adventureId}/notebook/${mission.id}`);
   }
 
   return (

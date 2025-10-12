@@ -38,7 +38,10 @@ function App() {
           }
         />
         <Route path="/create-character" element={<CreateCharacterPage />} />
-        <Route path="/notebook/:id" element={<NotebookPage></NotebookPage>} />
+        <Route
+          path="/adventure/:id/notebook/:missionId"
+          element={<NotebookPage></NotebookPage>}
+        />
       </Routes>
     </Providers>
   );

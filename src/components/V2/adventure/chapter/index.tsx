@@ -22,6 +22,7 @@ export const Chapter = ({ chapter, number }: ChapterProps) => {
 
   const [expanded, setExpanded] = useState(false);
   const [allMissionsCompleted, setAllMissionsCompleted] = useState(false);
+  const [challengeGenerated, setChallengeGenerated] = useState(false);
 
   function handleMissionsCompleted() {
     if (
@@ -36,9 +37,20 @@ export const Chapter = ({ chapter, number }: ChapterProps) => {
     }
   }
 
+  function handleChanllengeGenerated() {
+    if (
+      chapter.missions.find(
+        (mission) => mission.type === MISSION_TYPE.CHALLENGE,
+      )
+    ) {
+      setChallengeGenerated(true);
+    }
+  }
+
   useEffect(() => {
     if (chapter.missions) {
       handleMissionsCompleted();
+      handleChanllengeGenerated();
     }
   }, [chapter.missions]);
 
@@ -83,8 +95,8 @@ export const Chapter = ({ chapter, number }: ChapterProps) => {
               />
             ))}
             <div className="flex mt-5 gap-2">
-              <CreateMission />
-              {allMissionsCompleted && (
+              <CreateMission disabledCreate={challengeGenerated} />
+              {allMissionsCompleted && !challengeGenerated && (
                 <Button
                   onClick={() => mutateChallenge(chapter.id)}
                   variant={"challenge"}

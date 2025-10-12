@@ -21,7 +21,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-export const CreateMission = () => {
+interface CreateMissionProps {
+  disabledCreate?: boolean;
+}
+
+export const CreateMission = ({ disabledCreate }: CreateMissionProps) => {
   const {
     states: { open, form },
     actions: { setOpen, handleSubmit },
@@ -43,6 +47,7 @@ export const CreateMission = () => {
           type="button"
           variant={"secondary"}
           className="w-36 cursor-pointer"
+          disabled={disabledCreate}
         >
           <Plus /> Nova Missão
         </Button>
