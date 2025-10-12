@@ -23,13 +23,17 @@ import { Input } from "@/components/ui/input";
 
 interface CreateMissionProps {
   disabledCreate?: boolean;
+  chapterId: string;
 }
 
-export const CreateMission = ({ disabledCreate }: CreateMissionProps) => {
+export const CreateMission = ({
+  disabledCreate,
+  chapterId,
+}: CreateMissionProps) => {
   const {
-    states: { open, form },
+    states: { open, form, isPending },
     actions: { setOpen, handleSubmit },
-  } = useCreateMission();
+  } = useCreateMission({ chapterId });
 
   return (
     <Dialog
@@ -80,11 +84,11 @@ export const CreateMission = ({ disabledCreate }: CreateMissionProps) => {
 
             <DialogFooter>
               <DialogClose asChild>
-                <Button variant="outline" disabled={false}>
+                <Button variant="outline" disabled={isPending}>
                   Cancelar
                 </Button>
               </DialogClose>
-              <Button type="submit" isLoading={false}>
+              <Button type="submit" isLoading={isPending}>
                 Criar Missão
               </Button>
             </DialogFooter>

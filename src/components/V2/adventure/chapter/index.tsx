@@ -95,7 +95,10 @@ export const Chapter = ({ chapter, number }: ChapterProps) => {
               />
             ))}
             <div className="flex mt-5 gap-2">
-              <CreateMission disabledCreate={challengeGenerated} />
+              <CreateMission
+                chapterId={chapter.id}
+                disabledCreate={challengeGenerated}
+              />
               {allMissionsCompleted && !challengeGenerated && (
                 <Button
                   onClick={() => mutateChallenge(chapter.id)}
