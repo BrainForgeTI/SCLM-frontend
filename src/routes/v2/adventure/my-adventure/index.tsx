@@ -12,8 +12,14 @@ interface MyAdventurePageProps {
 
 export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
   const {
-    states: { adventure, allAdventureCompleted, isPendingFinalChallenge },
-    actions: { mutateFinalChallenge },
+    states: {
+      adventure,
+      allAdventureCompleted,
+      isPendingFinalChallenge,
+      search,
+      localChapters,
+    },
+    actions: { mutateFinalChallenge, handleSearchValue },
   } = useMyAdventure();
 
   return (
@@ -24,18 +30,17 @@ export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
           <div className="flex gap-4">
             <div className="flex-1">
               <Input
+                value={search}
+                onChange={handleSearchValue}
                 className="w-full sm:w-80"
                 placeholder="Pesquisar Capítulo"
               />
             </div>
-            <Button variant={"outline"} className="cursor-pointer">
-              <Search />
-            </Button>
           </div>
           <CreateChapter />
         </div>
         <div className="w-full mt-5 flex flex-col gap-3">
-          {adventure?.chapters?.map((chapter, index) => (
+          {localChapters?.map((chapter, index) => (
             <Chapter key={index} chapter={chapter} number={index + 1}></Chapter>
           ))}
 
