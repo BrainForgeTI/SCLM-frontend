@@ -20,7 +20,6 @@ export const MissionCheck = ({
   const adventureId = useAdventureStore((state) => state.adventure.id);
 
   function goToNotebook() {
-    console.log(mission);
     navigate(`/adventure/${adventureId}/notebook/${mission.id}`);
   }
 

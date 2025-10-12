@@ -22,8 +22,6 @@ export const AdventureWrapper = ({ children }: AdventureWrapperProps) => {
 
   useEffect(() => {
     if (data) {
-      console.log("wrapper");
-      console.log(data);
       setAdventure(data);
     }
   }, [data, setAdventure]);
