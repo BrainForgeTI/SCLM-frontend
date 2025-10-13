@@ -3,6 +3,7 @@ import {
   createAdventureSchema,
 } from "@/schemas/create-adventure-schema";
 import { createAdventureService } from "@/services/adventure/create-adventure-service";
+import { deleteAdventureService } from "@/services/adventure/delete-adventure-service";
 import { updateAdventureService } from "@/services/adventure/update-adventure-service";
 import { Adventure } from "@/types/adventure/adventure";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,6 +19,7 @@ export const useCreateAdventureDialog = ({
   adventure,
 }: UseCreateAdventureDialog) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalConfirmOpen, setModalConfirmOpen] = useState(false);
   const queryClient = useQueryClient();
 
   const forms = useForm({
@@ -50,6 +52,15 @@ export const useCreateAdventureDialog = ({
       },
     });
 
+  const { mutate: mutateDeleteAdventure, isPending: isPendingDeleteAdventure } =
+    useMutation({
+      mutationFn: (adventureId?: string) => deleteAdventureService(adventureId),
+      onSuccess: () => {
+        setModalConfirmOpen(false);
+        setModalOpen(false);
+      },
+    });
+
   const handleSubmit = forms.handleSubmit((data: CreateAdventureFormType) => {
     if (adventure?.id) {
       mutateUpdateAdventure(data);
@@ -57,6 +68,10 @@ export const useCreateAdventureDialog = ({
       mutateCreateAdventure(data);
     }
   });
+
+  const handleDeleteAdventure = () => {
+    mutateDeleteAdventure(adventure?.id);
+  };
 
   function handleModal(value: boolean) {
     if (value) {
@@ -72,10 +87,14 @@ export const useCreateAdventureDialog = ({
       forms,
       modalOpen,
       isPending,
+      modalConfirmOpen,
+      isPendingDeleteAdventure,
     },
     actions: {
       handleModal,
       handleSubmit,
+      setModalConfirmOpen,
+      handleDeleteAdventure,
     },
   };
 };
