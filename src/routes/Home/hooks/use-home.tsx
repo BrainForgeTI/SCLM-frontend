@@ -14,7 +14,7 @@ export const useHome = () => {
   };
 
   const { data: adventures } = useQuery({
-    queryKey: ["aaa"],
+    queryKey: ["QUERY_GET_ADVENTURES"],
     queryFn: getAllAdventure,
   });
 

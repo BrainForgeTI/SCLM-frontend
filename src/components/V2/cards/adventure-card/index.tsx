@@ -1,13 +1,20 @@
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import { Character } from "../../characters/character";
 import { CharacterClass } from "@/enums/class";
 import { CharacterGender } from "@/enums/character-gender";
 import { ColorPicker } from "../../inputs/color-picker";
 import { Controller, UseFormReturn } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { Play, RefreshCcw } from "lucide-react";
+import { Edit, Play, RefreshCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AdventureBackgroundImage from "@/assets/images/adventure-background.jpg";
+import { CreateAdventureDialog } from "../../dialogs/create-adventure-dialog";
+import { Adventure } from "@/types/adventure/adventure";
 
 const defaultColors = [
   {
@@ -34,24 +41,20 @@ const defaultColors = [
 
 interface AdventureCardProps {
   form?: UseFormReturn<any>;
-  bgPrimary?: string;
-  bgSecondary?: string;
-  nameAdventure?: string;
-  description?: string
+  adventure?: Adventure;
+  editable?: boolean;
   className?: string;
-  onPlayClick?: () => void
-  playDisabled?: boolean
+  onPlayClick?: () => void;
+  playDisabled?: boolean;
 }
 
 export const AdventureCard = ({
   form,
-  bgPrimary,
-  bgSecondary,
-  nameAdventure,
-  description,
+  adventure,
   className,
   onPlayClick,
-  playDisabled
+  playDisabled,
+  editable,
 }: AdventureCardProps) => {
   const randomColor = () => {
     const randomColor =
@@ -63,6 +66,18 @@ export const AdventureCard = ({
   return (
     <Card className={cn("relative w-70 p-0 bg-card gap-0", className)}>
       <CardHeader className="relative rounded-t-xl px-0 overflow-hidden">
+        {editable && (
+          <div className="absolute px-4 py-4">
+            <CreateAdventureDialog adventure={adventure}>
+              <Button
+                variant={"ghost"}
+                className="important z-90 cursor-pointer"
+              >
+                <Edit />
+              </Button>
+            </CreateAdventureDialog>
+          </div>
+        )}
         <div
           className="absolute w-60 h-60 -top-20 -right-20 bg-center rounded-full"
           style={{ backgroundImage: `url(${AdventureBackgroundImage})` }}
@@ -70,7 +85,7 @@ export const AdventureCard = ({
           <div
             className="w-full rounded-full h-full flex justify-center py-2 flex-col items-center gap-5"
             style={{
-              background: `linear-gradient(45deg, ${(bgPrimary ?? "#ffffff") + "E6"}, ${(bgSecondary ?? "#ffffff") + "E6"})`,
+              background: `linear-gradient(45deg, ${(adventure?.bgPrimaryColor ?? "#ffffff") + "E6"}, ${(adventure?.bgSecundaryColor ?? "#ffffff") + "E6"})`,
             }}
           ></div>
         </div>
@@ -95,20 +110,20 @@ export const AdventureCard = ({
               "px-3 line-clamp-2 text-center font-bold uppercase text-card-foreground min-h-[1.5rem]",
             )}
           >
-            {nameAdventure} {"\u00A0"}
+            {adventure?.nameAdventure} {"\u00A0"}
           </p>
-          {description?.trim() !== "" && (
+          {adventure?.description?.trim() !== "" && (
             <div
               className="w-30 h-[1px] bg-pink-600"
-              style={{ background: bgPrimary }}
+              style={{ background: adventure?.bgPrimaryColor }}
             ></div>
           )}
-          <p className="text-xs text-center">{description}</p>
+          <p className="text-xs text-center">{adventure?.description}</p>
         </div>
 
         <div className="absolute flex gap-2 flex-row top-[-50px] lg:top-0 lg:right-[-50px] lg:flex-col">
-          {
-            form && <>
+          {form && (
+            <>
               <Controller
                 control={form?.control}
                 name={"bgPrimaryColor"}
@@ -144,7 +159,7 @@ export const AdventureCard = ({
                 <RefreshCcw />
               </Button>
             </>
-          }
+          )}
         </div>
       </CardContent>
 
@@ -152,7 +167,7 @@ export const AdventureCard = ({
         <div
           className="w-full p-[2px] rounded-lg"
           style={{
-            background: `linear-gradient(45deg, ${(bgPrimary ?? "#ffffff") + "E6"}, ${(bgSecondary ?? "#ffffff") + "E6"})`,
+            background: `linear-gradient(45deg, ${(adventure?.bgPrimaryColor ?? "#ffffff") + "E6"}, ${(adventure?.bgSecundaryColor ?? "#ffffff") + "E6"})`,
           }}
         >
           <Button
@@ -166,8 +181,6 @@ export const AdventureCard = ({
           </Button>
         </div>
       </CardFooter>
-
-
     </Card>
   );
 };
