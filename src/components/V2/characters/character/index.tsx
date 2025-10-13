@@ -41,14 +41,16 @@ export const CharacterComponent = ({
   const debouncedEyeIrisColor = useDebounce(eyeIrisColor, 500);
 
   const CurrentCharacter = characters[debouncedCharacter];
-
+  function calculateLevel(level: number) {
+    return Math.floor(level / 5) * 5;
+  }
   return (
     <CurrentCharacter
       eyeIris={eyeIris}
       gender={gender}
       hair={debouncedHair}
       hairColor={debouncedHairColor}
-      level={level}
+      level={calculateLevel(level)}
       className={className}
       eyeIrisColor={debouncedEyeIrisColor}
     />

@@ -3,13 +3,17 @@ import CreateIcon from '../../assets/icons/create.svg'
 import ActionButton from "../../components/ActionButton/ActionButton"
 import { ButtonStyleType } from "../../components/ActionButton/enum/ButtonStyleType"
 import { CharacterCard } from "./components/CharacterCard"
+import { useListInfoCharacter } from "../v2/CreateCharacter/hooks/use-list-characters"
 import { useNavigate } from "react-router"
 
 export const CharacterPage = () => {
+    const {states: {characters}} = useListInfoCharacter()
+   
+
     const navigate = useNavigate()
     return (
         <PageLayout>
-            <div className="w-full">
+            <div className="flex flex-col w-full">
                 <PageTitle title="Meus personagens" />
                 <div className="w-full mt-10 flex justify-end">
                     <div className="w-[100px] md:min-w-[137px]">
@@ -17,8 +21,24 @@ export const CharacterPage = () => {
                     </div>
                 </div>
 
-                <div className="w-full flex justify-between mt-10">
-                    <CharacterCard />
+                <div className="grid  w-full justify-items-center gap-10 mt-10" style={{gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",}}>
+                    {characters?.map((character) => (
+                        <CharacterCard
+                            key={character.id}
+                            characterClass={character.characterClass}
+                            characterName={character.characterName}
+                            adventure={character.adventure}
+                            eyeIrisColor={character.eyeIrisColor}
+                            eyeIrisIndex={character.eyeIrisIndex}
+                            gender={character.gender}
+                            hairColor={character.hairColor}
+                            hairIndex={character.hairIndex}
+                            id={character.id}
+                            level={character.level}
+                            currentExperience={character.currentExperience}
+                            maxExperience={character.maxExperience}
+                        />
+                    ))}
                 </div>
             </div>
         </PageLayout>
