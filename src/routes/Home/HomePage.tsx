@@ -21,10 +21,8 @@ export const HomePage = () => {
               return (
                 <li key={adventure.id} className="">
                   <AdventureCard
-                    bgPrimary={adventure.bgPrimaryColor}
-                    bgSecondary={adventure.bgSecundaryColor}
-                    description={adventure.description}
-                    nameAdventure={adventure.nameAdventure}
+                    adventure={adventure}
+                    editable={true}
                     className="h-full w-full"
                     onPlayClick={() => startAdventure(adventure)}
                   />
