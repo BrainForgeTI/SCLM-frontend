@@ -8,24 +8,26 @@ import AdventureFullIcon from "../../assets/icons/adventure_full.svg";
 import { SideMenuRoutes } from "../../types/side_menu/SideMenuRoutes";
 
 export const sideMenuGlobalRoutes: SideMenuRoutes = {
-    label: 'Quadro das Atividades',
-    type: 'global',
-    routes:
-        [
-            { path: '/home', label: 'Minhas aventuras', icon: AdventureIcon },
-            { path: '/tasks', label: 'Missões diárias', icon: DailyTasksIcon },
-            { path: '/progress', label: 'Meu progresso', icon: ProgressIcon },
-            { path: '/methods', label: 'Métodos de estudo', icon: StudyIcon },
-            { path: '/character', label: 'Meus personagens', icon: CharacterIcon },
-        ]
-}
+  label: "Quadro das Atividades",
+  type: "global",
+  routes: [
+    { path: "/home", label: "Minhas aventuras", icon: AdventureIcon },
+    { path: "/tasks", label: "Missões diárias", icon: DailyTasksIcon },
+    { path: "/progress", label: "Meu progresso", icon: ProgressIcon },
+    { path: "/methods", label: "Métodos de estudo", icon: StudyIcon },
+    { path: "/character", label: "Meus personagens", icon: CharacterIcon },
+  ],
+};
 
 export const sideMenuAdventureRoutes: SideMenuRoutes = {
-    label: 'Esta Aventura',
-    type: 'adventure',
-    routes:
-        [
-            { path: '/adventure', label: 'Home', icon: HomeIcon },
-            { path: '/my_adventure', label: 'Aventura', icon: AdventureFullIcon },
-        ]
-}
+  label: "Esta Aventura",
+  type: "adventure",
+  routes: [
+    { path: "/adventure/:id/home", label: "Home", icon: HomeIcon },
+    {
+      path: "/adventure/:id/content",
+      label: "Aventura",
+      icon: AdventureFullIcon,
+    },
+  ],
+};

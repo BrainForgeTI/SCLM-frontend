@@ -5,7 +5,10 @@ import { AdventureCard } from "@/components/V2/cards/adventure-card";
 import { useHome } from "./hooks/use-home";
 
 export const HomePage = () => {
-  const { states: { adventures } } = useHome()
+  const {
+    states: { adventures },
+    actions: { startAdventure },
+  } = useHome();
 
   return (
     <PageLayout>
@@ -15,25 +18,25 @@ export const HomePage = () => {
           <ul className="lg:mt-5 w-full gap-5 grid gird-cols-1 sm:grid-cols-2 md:gap-15 xl:grid-cols-3 xl:gap-5 2xl:gap-15">
             {adventures?.map((adventure) => {
               return (
-                <li key={adventure._id} className="">
+                <li key={adventure.id} className="">
                   <AdventureCard
-                    bgPrimary={adventure.bgPrimaryColor}
-                    bgSecondary={adventure.bgSecondaryColo}
-                    description={adventure.description}
-                    nameAdventure={adventure.nameAdventure}
+                    adventure={adventure}
+                    editable={true}
                     className="h-full w-full"
+                    onPlayClick={() => startAdventure(adventure)}
                   />
                 </li>
-              )
+              );
             })}
 
             <CreateAdventureDialog>
-              <button type="button"><NewAdventureCard /></button>
+              <button type="button">
+                <NewAdventureCard />
+              </button>
             </CreateAdventureDialog>
-
           </ul>
         </div>
       </>
     </PageLayout>
-  )
-}
+  );
+};

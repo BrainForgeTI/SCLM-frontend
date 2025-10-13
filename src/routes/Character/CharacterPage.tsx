@@ -25,8 +25,10 @@ import { ColorPicker } from "@/components/V2/inputs/color-picker";
 import { Controller } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { CharacterDelete } from "@/types/character/character-delete";
+import { useNavigate } from "react-router";
 
 export const CharacterPage = () => {
+  const navigate = useNavigate()
   const {
     states: {
       characters,
@@ -73,7 +75,7 @@ export const CharacterPage = () => {
             <ActionButton
               Icon={CreateIcon}
               buttonStyle={ButtonStyleType.NORMAL}
-              action={() => {}}
+              action={() => navigate("/characters/create-character")}
               label="Criar"
               style={`bg-primary gap-5 text-primary-content`}
             />
