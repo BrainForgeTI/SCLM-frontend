@@ -31,7 +31,14 @@ import { Controller, useWatch } from "react-hook-form";
 import { CharacterGender } from "@/enums/character-gender";
 import { CharacterClass } from "@/enums/class";
 import { Character } from "@/components/V2/characters/character";
-import { Dialog, DialogHeader, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogHeader,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Adventure } from "@/types/adventure/adventure";
 import { getAllAdventure } from "@/services/adventure/get-all-adventures-service";
 
@@ -131,13 +138,13 @@ const CarouselView = ({ children, onInView }: CarouselItemProps) => (
 
 export const CreateCharacterPage = () => {
   const {
-    states: { control, errors, isPending, open, adventures},
+    states: { control, errors, isPending, open, adventures },
     actions: { register, watch, handleSubmitForm, setValue, setOpen },
   } = useCreateCharacter();
 
   const gender = watch("gender") || CharacterGender.MALE;
   const characterClass = watch("characterClass") || CharacterClass.WARRIOR;
-  const listAdventure: Adventure[] = []
+  const listAdventure: Adventure[] = [];
 
   const hairColor = watch("hairColor");
   const currentCharacter = character.find(
@@ -145,11 +152,11 @@ export const CreateCharacterPage = () => {
   );
   const availableHair = currentCharacter?.genders[gender]?.hair || [];
   const hairIndex = useWatch({
-    control: control, 
-    name: "hairIndex"
-  })
-  const characterHair =  availableHair.length < hairIndex ? 0 : hairIndex;
-  console.log(characterHair)
+    control: control,
+    name: "hairIndex",
+  });
+  const characterHair = availableHair.length < hairIndex ? 0 : hairIndex;
+  console.log(characterHair);
   const eyeIris = watch("eyeIrisIndex");
   const eyeIrisColor = watch("eyeIrisColor");
   useEffect(() => {
@@ -215,10 +222,15 @@ export const CreateCharacterPage = () => {
                         <SelectValue placeholder="Selecione uma Aventura"></SelectValue>
                       </SelectTrigger>
                       <SelectContent>
-                        {adventures?.map((adventure:Adventure, index:number) => {
-                          return <SelectItem value={adventure.id} key={index}>{adventure.nameAdventure}</SelectItem>
-                        })}
-                        
+                        {adventures?.map(
+                          (adventure: Adventure, index: number) => {
+                            return (
+                              <SelectItem value={adventure.id} key={index}>
+                                {adventure.nameAdventure}
+                              </SelectItem>
+                            );
+                          },
+                        )}
                       </SelectContent>
                     </Select>
                   )}
@@ -228,7 +240,13 @@ export const CreateCharacterPage = () => {
                   name="gender"
                   control={control}
                   render={({ field }) => (
-                    <Select onValueChange={(value) => {field.onChange(value); setValue("hairIndex", 0); }} value={field.value}>
+                    <Select
+                      onValueChange={(value) => {
+                        field.onChange(value);
+                        setValue("hairIndex", 0);
+                      }}
+                      value={field.value}
+                    >
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Selecione um Estilo"></SelectValue>
                       </SelectTrigger>
@@ -242,7 +260,11 @@ export const CreateCharacterPage = () => {
               </div>
 
               <div className="w-full flex flex-col gap-3">
-                <Button type="submit" className="cursor-pointer" isLoading={isPending}>
+                <Button
+                  type="submit"
+                  className="cursor-pointer"
+                  isLoading={isPending}
+                >
                   Criar
                 </Button>
                 <Button
@@ -266,7 +288,7 @@ export const CreateCharacterPage = () => {
                         name="hairIndex"
                         control={control}
                         render={({ field }) => (
-                          <Carousel  key={gender}>
+                          <Carousel key={gender}>
                             <CarouselContent>
                               {availableHair.map((current, index) => {
                                 const HairImage = current.image;
@@ -325,7 +347,7 @@ export const CreateCharacterPage = () => {
                   <Character
                     character={characterClass}
                     gender={gender}
-                    hair={availableHair[characterHair].id }
+                    hair={availableHair[characterHair].id}
                     hairColor={hairColor}
                     eyeIris={eyeIris}
                     level={0}
@@ -346,9 +368,7 @@ export const CreateCharacterPage = () => {
           <DialogContent>
             <DialogHeader>
               <DialogTitle>Não foi possivel concluir.</DialogTitle>
-              <DialogDescription>
-                Algo inesperado aconteceu.
-              </DialogDescription>
+              <DialogDescription>Algo inesperado aconteceu.</DialogDescription>
             </DialogHeader>
           </DialogContent>
         </Dialog>

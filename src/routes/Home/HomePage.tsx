@@ -17,7 +17,6 @@ export const HomePage = () => {
         <div className="w-full mt-10">
           <ul className="lg:mt-5 w-full gap-5 grid gird-cols-1 sm:grid-cols-2 md:gap-15 xl:grid-cols-3 xl:gap-5 2xl:gap-15">
             {adventures?.map((adventure) => {
-              console.log(adventure);
               return (
                 <li key={adventure.id} className="">
                   <AdventureCard
