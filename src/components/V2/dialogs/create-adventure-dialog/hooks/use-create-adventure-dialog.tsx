@@ -56,6 +56,7 @@ export const useCreateAdventureDialog = ({
     useMutation({
       mutationFn: (adventureId?: string) => deleteAdventureService(adventureId),
       onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ["QUERY_GET_ADVENTURES"] });
         setModalConfirmOpen(false);
         setModalOpen(false);
       },
