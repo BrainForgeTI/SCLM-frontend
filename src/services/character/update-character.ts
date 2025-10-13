@@ -12,4 +12,3 @@ export async function updateCharacter (data: CharacterInfoUptade){
     })) 
    
 }
-  

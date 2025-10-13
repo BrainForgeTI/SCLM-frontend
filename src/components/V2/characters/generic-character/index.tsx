@@ -11,6 +11,10 @@ interface GenericCharacterProps {
   eyeIrisColor: string;
 }
 
+function calculateLevel(level: number) {
+  return Math.floor(level / 5) * 5;
+}
+
 export const GenericCharacter = ({
   sprites,
   characterLevel,
@@ -20,7 +24,7 @@ export const GenericCharacter = ({
   eyeIris,
   eyeIrisColor,
 }: GenericCharacterProps) => {
-  const sprite = sprites.evolutions[characterLevel];
+  const sprite = sprites.evolutions[calculateLevel(characterLevel)];
   const Hair = sprites.hair[hair];
   const EyeIris = sprites.eyeIris[eyeIris];
 
