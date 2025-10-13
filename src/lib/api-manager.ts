@@ -9,13 +9,9 @@ function addAccessTokenInterceptorToInstance(
   const interceptTokenHeader = api.interceptors.request.use(async (config) => {
     const { accessToken } = useSessionStore.getState()
 
-    console.log(accessToken)
-
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`
     }
-
-    console.log(config)
 
     return config
   })
