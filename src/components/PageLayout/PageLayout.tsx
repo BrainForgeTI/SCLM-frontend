@@ -1,16 +1,14 @@
-import { JSX, PropsWithChildren, useContext, useEffect } from "react";
+import { JSX, PropsWithChildren } from "react";
 import { SideMenu } from "../SideMenu";
 import { LayoutHeader, MainContent } from "../PageLayout";
-import { AdventureContext } from "../../context/adventure/AdventureContext";
+import { LoaderCircle } from "lucide-react";
 
 interface Props extends PropsWithChildren {
   children: JSX.Element;
-  awaitAdventureLoad?: boolean;
+  isLoadingContent?: boolean;
 }
 
 const PageLayout = (props: Props) => {
-  const adventureContext = useContext(AdventureContext);
-
   return (
     <div className="md:h-screen w-screen min-h-dvh font-poppins bg-base100 flex">
       <div className="h-full">
@@ -20,11 +18,17 @@ const PageLayout = (props: Props) => {
         <div className="w-full absolute">
           <LayoutHeader />
         </div>
-        <div className="h-[63px]"></div>
+        <div className="h-[60px]"></div>
 
         <MainContent>
-          {props.awaitAdventureLoad && !adventureContext.adventure ? (
-            <div>Esperando carregar aventura</div>
+          {props.isLoadingContent ? (
+            <div className="w-full min-h-[calc(100dvh-120px)] flex justify-center items-center">
+              <LoaderCircle
+                className="text-primary animate-spin duration-300"
+                size={50}
+                strokeWidth={1}
+              />
+            </div>
           ) : (
             props.children
           )}

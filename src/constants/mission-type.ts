@@ -1,0 +1,5 @@
+export const MISSION_TYPE = {
+  NOTEBOOK: "NOTEBOOK",
+  MISSION: "MISSION",
+  CHALLENGE: "CHALLENGE",
+};
