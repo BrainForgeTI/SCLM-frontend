@@ -47,6 +47,7 @@ export const CreateAdventureDialog = ({
       isPending,
       modalConfirmOpen,
       isPendingDeleteAdventure,
+      allFreeCharacters,
     },
     actions: {
       handleModal,
@@ -132,8 +133,18 @@ export const CreateAdventureDialog = ({
                               <SelectTrigger className="w-full">
                                 <SelectValue placeholder="Selecione"></SelectValue>
                               </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="oi">Teste</SelectItem>
+                              <SelectContent className="z-[9999]">
+                                {allFreeCharacters?.map((character) => {
+                                  console.log(character);
+                                  return (
+                                    <SelectItem
+                                      key={character.id}
+                                      value={character.id}
+                                    >
+                                      {character.characterName}
+                                    </SelectItem>
+                                  );
+                                })}
                               </SelectContent>
                             </Select>
                           </FormControl>

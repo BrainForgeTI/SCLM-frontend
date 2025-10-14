@@ -5,10 +5,11 @@ import {
 import { createAdventureService } from "@/services/adventure/create-adventure-service";
 import { deleteAdventureService } from "@/services/adventure/delete-adventure-service";
 import { updateAdventureService } from "@/services/adventure/update-adventure-service";
+import { getAllFreeCharacters } from "@/services/character/get-all-free-characters";
 import { Adventure } from "@/types/adventure/adventure";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 interface UseCreateAdventureDialog {
@@ -31,6 +32,11 @@ export const useCreateAdventureDialog = ({
       nameAdventure: adventure?.nameAdventure ?? "Nova Aventura",
     },
     resolver: zodResolver(createAdventureSchema),
+  });
+
+  const { data: allFreeCharacters } = useQuery({
+    queryKey: ["QUERY_GET_FREE_CHARACTERS"],
+    queryFn: getAllFreeCharacters,
   });
 
   const { mutate: mutateCreateAdventure, isPending: isPendingCreateAdventure } =
@@ -90,6 +96,7 @@ export const useCreateAdventureDialog = ({
       isPending,
       modalConfirmOpen,
       isPendingDeleteAdventure,
+      allFreeCharacters,
     },
     actions: {
       handleModal,
