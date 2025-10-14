@@ -13,7 +13,7 @@ export const useHome = () => {
     navigate(`/adventure/${adventure.id}/home`);
   };
 
-  const { data: adventures } = useQuery({
+  const { data: adventures, isPending: isPendingAdventures } = useQuery({
     queryKey: ["QUERY_GET_ADVENTURES"],
     queryFn: getAllAdventure,
   });
@@ -21,6 +21,7 @@ export const useHome = () => {
   return {
     states: {
       adventures,
+      isPendingAdventures,
     },
     actions: {
       startAdventure,

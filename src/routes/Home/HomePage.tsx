@@ -6,12 +6,12 @@ import { useHome } from "./hooks/use-home";
 
 export const HomePage = () => {
   const {
-    states: { adventures },
+    states: { adventures, isPendingAdventures },
     actions: { startAdventure },
   } = useHome();
 
   return (
-    <PageLayout>
+    <PageLayout isLoadingContent={isPendingAdventures}>
       <>
         <PageTitle title="Minhas Aventuras" />
         <div className="w-full mt-10">
