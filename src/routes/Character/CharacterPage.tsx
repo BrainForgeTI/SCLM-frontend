@@ -75,7 +75,7 @@ export const CharacterPage = () => {
             <ActionButton
               Icon={CreateIcon}
               buttonStyle={ButtonStyleType.NORMAL}
-              action={() => navigate("create-character")}
+              action={() => navigate("/create-character")}
               label="Criar"
               style={`bg-primary gap-5 text-primary-content`}
             />
