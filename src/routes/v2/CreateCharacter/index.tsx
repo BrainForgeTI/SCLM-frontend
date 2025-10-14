@@ -142,6 +142,8 @@ export const CreateCharacterPage = () => {
     actions: { register, watch, handleSubmitForm, setValue, setOpen },
   } = useCreateCharacter();
 
+  const [api, setApi] = useState<any>(null);
+
   const gender = watch("gender") || CharacterGender.MALE;
   const characterClass = watch("characterClass") || CharacterClass.WARRIOR;
   const listAdventure: Adventure[] = [];
@@ -159,9 +161,6 @@ export const CreateCharacterPage = () => {
   console.log(characterHair);
   const eyeIris = watch("eyeIrisIndex");
   const eyeIrisColor = watch("eyeIrisColor");
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
 
   return (
     <PageLayout>
@@ -242,8 +241,8 @@ export const CreateCharacterPage = () => {
                   render={({ field }) => (
                     <Select
                       onValueChange={(value) => {
-                        field.onChange(value);
                         setValue("hairIndex", 0);
+                        field.onChange(value);
                       }}
                       value={field.value}
                     >
@@ -288,7 +287,7 @@ export const CreateCharacterPage = () => {
                         name="hairIndex"
                         control={control}
                         render={({ field }) => (
-                          <Carousel key={gender}>
+                          <Carousel key={gender} setApi={setApi}>
                             <CarouselContent>
                               {availableHair.map((current, index) => {
                                 const HairImage = current.image;

@@ -25,7 +25,7 @@ export const GenericCharacter = ({
   eyeIrisColor,
 }: GenericCharacterProps) => {
   const sprite = sprites.evolutions[calculateLevel(characterLevel)];
-  const Hair = sprites.hair[hair];
+  const Hair = sprites.hair[hair] ?? sprites.hair[0];
   const EyeIris = sprites.eyeIris[eyeIris];
 
   return (
