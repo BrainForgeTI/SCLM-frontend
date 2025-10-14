@@ -9,6 +9,7 @@ import WarriorClassImg from "@/assets/images/warrior.png"
 import WizzardClassImg from "@/assets/images/wizard.png"
 import MartialClassImg from "@/assets/images/martial-artist.png"
 import KnifeImg from "@/assets/images/knife.png"
+
 interface Props {
         id: string,
         characterName: string,
@@ -21,7 +22,9 @@ interface Props {
         adventure?: string,
         level: number,
         currentExperience?: number,
-        maxExperience?:number
+        maxExperience?:number,
+        onEdit: () => void;
+        onDelete: () => void;
 }
 
 export const CharacterCard = (props: Props) => {
@@ -30,10 +33,8 @@ export const CharacterCard = (props: Props) => {
     const atualExp = props.currentExperience ?? 0
     const percent = (atualExp / maxExp) * 100
 
-    
-
     return (
-        <div className="grid grid-rows-2 w-[350px] max-w-[400px] h-[450px] bg-neutral/5 rounded-xl   border border-white/15 items-center relative font-poppis">
+        <div className="grid grid-rows-2 w-[350px] max-w-[375px] h-[450px] bg-neutral/5 rounded-xl   border border-white/15 items-center relative font-poppis">
             <div className="flex flex-col  w-full h-full items-center justify-center gap-3 ">
                 <div className="flex text-center text-[20px] text-white w-[150px] justify-center font-medium">{props.characterName ?? "-"}</div>
                 <div className="flex items-center justify-center w-[150px]">
@@ -89,8 +90,8 @@ export const CharacterCard = (props: Props) => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-2 absolute top-3 right-3">
-                <button className="flex w-[30px] h-[30px] rounded-[5px] bg-primary border rounded-sm border-white/20 justify-center items-center hover:bg-background cursor-pointer" ><EditIcon></EditIcon></button>
-                <button className="flex w-[30px] h-[30px] rounded-[5px] bg-background border rounded-sm border-white/20 justify-center items-center hover:bg-red-500 cursor-pointer"><TrashIcon></TrashIcon></button>
+                <button className="flex w-[30px] h-[30px] rounded-[5px] bg-primary border rounded-sm border-white/20 justify-center items-center hover:bg-background cursor-pointer" onClick={() => props.onEdit()}><EditIcon></EditIcon></button>
+                <button className="flex w-[30px] h-[30px] rounded-[5px] bg-background border rounded-sm border-white/20 justify-center items-center hover:bg-red-500 cursor-pointer" onClick={() => props.onDelete()}><TrashIcon></TrashIcon></button>
             </div>
             </div>
         </div>
