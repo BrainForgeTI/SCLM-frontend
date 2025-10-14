@@ -30,26 +30,29 @@ export const GenericCharacter = ({
 
   return (
     <div className={cn("w-[320px] h-[320px] relative", className)}>
-      <div className="absolute w-full h-full z-50" style={{ color: hairColor }}>
+      <div
+        className="will-change-transform absolute w-full h-full z-50"
+        style={{ color: hairColor }}
+      >
         <Hair />
       </div>
 
-      <div className="absolute w-full h-full">
+      <div className="will-change-transform absolute w-full h-full">
         <img src={sprites.base} />
       </div>
 
       <div
-        className="absolute w-full h-full z-40"
+        className="will-change-transform absolute w-full h-full z-40"
         style={{ color: eyeIrisColor }}
       >
         <EyeIris />
       </div>
 
-      <div className="absolute w-full h-full z-30">
+      <div className="will-change-transform absolute w-full h-full z-30">
         <img src={sprites.eyes[0]} />
       </div>
 
-      <div className="absolute w-full h-full z-60">
+      <div className="will-change-transform absolute w-full h-full z-60">
         <img src={sprite.clothe} />
       </div>
     </div>
