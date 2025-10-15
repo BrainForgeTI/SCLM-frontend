@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 const Menu = () => {
   return (
-    <div className="flex items-center justify-between py-[15px] px-5 lg:px-[80px] 2xl:px-[150px] text-foreground absolute w-full">
+    <div className="flex w-full h-[100px] items-center justify-between py-[15px] px-5 lg:px-[80px] 2xl:px-[150px] text-foreground w-full">
       <div className="flex items-center justify-around gap-[10px]">
         <img src={LogoSm} alt="logo pequena Scholarium" />
         <p>Scholarium</p>
