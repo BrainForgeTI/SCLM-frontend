@@ -10,6 +10,7 @@ import { CreateCharacterPage } from "./routes/v2/CreateCharacter";
 import { NotebookPage } from "./routes/Notebook/NotebookPage";
 import { MyAdventurePage } from "./routes/v2/adventure/my-adventure";
 import { AdventureWrapper } from "./components/V2/adventure/adventure-wrapper";
+import { LandingPage } from "./routes/Landing/LandingPage";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           path="/adventure/:id/notebook/:missionId"
           element={<NotebookPage></NotebookPage>}
         />
+        <Route path="/landing" element={<LandingPage />} />
       </Routes>
     </Providers>
   );
