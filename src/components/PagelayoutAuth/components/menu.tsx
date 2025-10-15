@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import LogoSm from "../../../assets/images/logo_sm.png";
+import { NavLink } from "react-router";
 
 const Menu = () => {
   return (
@@ -8,11 +10,11 @@ const Menu = () => {
         <p>Scholarium</p>
       </div>
       <div className="hidden lg:flex gap-[10px]">
-        <a href="" target="_blank" rel="noopener noreferrer">Por que nós?</a>
-        <a href="" target="_blank" rel="noopener noreferrer">Gamificação</a>
-        <a href="" target="_blank" rel="noopener noreferrer">Planos</a>
+        <NavLink className="" to="/landing">Por que nós?</NavLink>
+        <NavLink className="" to="/landing">Gamificação</NavLink>
+        <NavLink className="" to="/landing">Planos</NavLink>
       </div>
-      <button className="p-[10px] rounded-[15px] w-[150px]">Cadastrar</button>
+      <NavLink className="p-[10px] border border-primary rounded-[15px] w-[150px] text-center" to="/signup">Cadastrar</NavLink>
     </div>
   );
 }
