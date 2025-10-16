@@ -1,6 +1,6 @@
 export const BannerComponent = () => {
     return (
-        <div className="flex flex-col w-full justify-center items-center w-[375px] md:[800px] h-[470px] gap-8 mt-2">
+        <div className="flex flex-col w-full justify-center items-center w-[375px] md:[800px] h-[470px] gap-8 mt-2 p-3">
             <div className="flex w-[300px] bg-gradient-to-r from-[#E39EF7]/80 to-[#776EE8]/80 rounded-xl justify-center items-center p-0.5 shadow shadow-lg">
                 <div className="flex w-[300px] bg-background justify-between items-center p-2 rounded-xl gap-2 text-[14px]">
                     <div className="flex bg-[#343D48] rounded-lg p-1 pr-3 pl-3">NOVO</div>
