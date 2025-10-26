@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router"
+
 export const BannerComponent = () => {
+
+    const navigate = useNavigate()
+
     return (
-        <div className="flex flex-col w-full justify-center items-center w-[375px] md:[800px] h-[470px] gap-8 mt-2 p-3">
+        <div className="flex flex-col justify-center items-center gap-8 mt-40 p-3" >
             <div className="flex w-[300px] bg-gradient-to-r from-[#E39EF7]/80 to-[#776EE8]/80 rounded-xl justify-center items-center p-0.5 shadow shadow-lg">
                 <div className="flex w-[300px] bg-background justify-between items-center p-2 rounded-xl gap-2 text-[14px]">
                     <div className="flex bg-[#343D48] rounded-lg p-1 pr-3 pl-3">NOVO</div>
@@ -14,7 +19,7 @@ export const BannerComponent = () => {
             </div>
             <div className="w-[375px] md:w-[800px] text-[#838190] text-[14px] text-center">Com nosso sistema gamificado, você transforma cada sessão de aprendizado em uma jornada cheia de desafios, recompensas e conquistas. Acompanhe seu progresso, suba de nível e mantenha-se motivado como nunca antes. Está pronto para vencer?</div>
             <div className="flex flex-col md:flex-row w-[375px] md:w-[800px] justify-center items-center gap-2">
-                <div className="flex w-[250px] h-[50px] bg-gradient-to-r from-[#E39EF7]/80 to-[#776EE8]/80 rounded-xl justify-center items-center p-0.5 shadow shadow-lg">
+                <div className="flex w-[250px] h-[50px] bg-gradient-to-r from-[#E39EF7]/80 to-[#776EE8]/80 rounded-xl justify-center items-center p-0.5 shadow shadow-lg" onClick={() => navigate("/signup")}>
                     <div className="flex w-[250px] h-[45px] bg-background hover:bg-transparent justify-center items-center rounded-xl cursor-pointer">
                         Cadastrar
                     </div>

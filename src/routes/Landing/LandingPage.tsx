@@ -1,8 +1,10 @@
 import { Menu } from "../../components/PagelayoutAuth";
 import { BannerComponent } from "./components/BannerComponent";
+import { BannerFeedback } from "./components/BannerFeedback";
 import { BannerFuncComponent } from "./components/BannerFuncComponent";
 import { BannerPlansComponent } from "./components/BannerPlansComponent";
 import { BannerWhyGameComponent } from "./components/BannerWhyGameComponent";
+import { FooterComponent } from "./components/Footercomponent";
 
 export const LandingPage = () => {
     return (
@@ -12,6 +14,8 @@ export const LandingPage = () => {
              <BannerFuncComponent></BannerFuncComponent>
              <BannerWhyGameComponent></BannerWhyGameComponent>
              <BannerPlansComponent></BannerPlansComponent>
+             {/* <BannerFeedback></BannerFeedback> */}
+             <FooterComponent></FooterComponent>
         </div>
     )
 }

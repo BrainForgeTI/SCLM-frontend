@@ -43,7 +43,7 @@ function App() {
           path="/adventure/:id/notebook/:missionId"
           element={<NotebookPage></NotebookPage>}
         />
-        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
       </Routes>
     </Providers>
   );

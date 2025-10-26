@@ -4,7 +4,7 @@ import { useNavigate } from "react-router"
 export const BannerPlansComponent = () => {
     const navigate = useNavigate()
     return (
-        <div className="flex flex-col justify-center items-center p-3 gap-10">
+        <section className="flex flex-col justify-center items-center p-3 gap-10" id="planos">
             <div className="flex flex-col md:text-[48px] text-[20px] text-center gap-2 w-[850px] justify-center items-center">
                 <div>Dê o próximo passo</div>
                 <div className="flex gap-2">
@@ -154,6 +154,6 @@ export const BannerPlansComponent = () => {
 
             
             
-        </div>
+        </section>
     )
 }
