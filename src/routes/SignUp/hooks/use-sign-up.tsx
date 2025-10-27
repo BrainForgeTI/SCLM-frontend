@@ -4,14 +4,15 @@ import { validateEmail } from "@/services/validate-email";
 import { validateSignUpToken } from "@/services/validate-sign-up-token";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { usePostHog } from "posthog-js/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import posthog from "posthog-js";
 
 export const useSignUp = () => {
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
+  const posthog = usePostHog();
 
   const handleBackStep = () => {
     if (step < 4 && step > 1) {
