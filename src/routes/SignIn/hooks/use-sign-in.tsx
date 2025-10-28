@@ -6,10 +6,11 @@ import { signInService } from "@/services/sign-in-service";
 import { QUERIES } from "@/constants/queries";
 import { useNavigate } from "react-router";
 import { useSessionStore } from "@/store/session-store";
-import posthog from "posthog-js";
+import { usePostHog } from "posthog-js/react";
 
 export const useSignIn = () => {
   const navigate = useNavigate();
+  const posthog = usePostHog();
 
   const {
     register,
@@ -31,6 +32,7 @@ export const useSignIn = () => {
   const handleSuccessSignIn = (data: any) => {
     const { setSession } = useSessionStore.getState();
     setSession(data.first_name, data.access_token, data.slug);
+    posthog.identify(data.slug, { first_name: data.first_name });
     posthog.capture("usuario_login_sucesso", {
       usuario_id: data.slug,
       metodo: "email",
