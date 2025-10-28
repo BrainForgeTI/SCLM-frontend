@@ -39,7 +39,7 @@ export const MissionCard = (props: Props) => {
   }
   return (
     <div
-      className={`w-[300px] h-[300px] [perspective:1000px] cursor-pointer `}
+      className={`w-[350px] h-[450px] [perspective:1000px] cursor-pointer`}
       onClick={() => setReveal(!reveal)}
     >
       <div
