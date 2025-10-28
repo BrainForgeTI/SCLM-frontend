@@ -16,7 +16,12 @@ export const useMyAdventure = () => {
 
   const { mutate: mutateFinalChallenge, isPending: isPendingFinalChallenge } =
     useMutation({
-      mutationFn: () => generateFinalChallenge(adventure.id),
+      mutationFn: () => {
+        trackEvent("ia_geracao_projeto_final_iniciada", {
+          aventura_id: adventure.id,
+        });
+        return generateFinalChallenge(adventure.id);
+      },
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["QUERY_GET_CHAPTERS"] });
       },

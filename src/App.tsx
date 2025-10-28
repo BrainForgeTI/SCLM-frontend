@@ -40,7 +40,11 @@ function App() {
         <Route path="/create-character" element={<CreateCharacterPage />} />
         <Route
           path="/adventure/:id/notebook/:missionId"
-          element={<NotebookPage></NotebookPage>}
+          element={
+            <AdventureWrapper>
+              <NotebookPage />
+            </AdventureWrapper>
+          }
         />
       </Routes>
     </Providers>
