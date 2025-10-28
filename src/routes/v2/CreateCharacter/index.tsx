@@ -41,6 +41,7 @@ import {
 } from "@/components/ui/dialog";
 import { Adventure } from "@/types/adventure/adventure";
 import { getAllAdventure } from "@/services/adventure/get-all-adventures-service";
+import { trackEvent } from "@/utils/track-event";
 
 interface CharacterClasses {
   characterId: CharacterClass;
@@ -161,6 +162,10 @@ export const CreateCharacterPage = () => {
   console.log(characterHair);
   const eyeIris = watch("eyeIrisIndex");
   const eyeIrisColor = watch("eyeIrisColor");
+
+  useEffect(() => {
+    trackEvent("personagem_criacao_iniciada");
+  }, []);
 
   return (
     <PageLayout>
