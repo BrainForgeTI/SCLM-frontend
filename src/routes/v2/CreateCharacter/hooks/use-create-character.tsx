@@ -6,6 +6,7 @@ import {
 } from "@/schemas/create-character-schema";
 import { getAllAdventure } from "@/services/adventure/get-all-adventures-service";
 import { createCharacter } from "@/services/character/create-character";
+import { trackEvent } from "@/utils/track-event";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
@@ -38,7 +39,12 @@ export const useCreateCharacter = () => {
 
   const { mutate, isPending } = useMutation({
     mutationFn: (data: CreateCharacterFormType) => createCharacter(data),
-    onSuccess: () => {
+    onSuccess: (data) => {
+      trackEvent("personagem_criado_sucesso", {
+        personagem_id: data.data.data.id,
+        classe: data.data.data.characterClass,
+        genero: data.data.data.gender,
+      });
       navigate("/character");
     },
     onError: () => {
