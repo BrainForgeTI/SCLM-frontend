@@ -10,7 +10,7 @@ import { Adventure } from "@/types/adventure/adventure";
 import { trackEvent } from "@/utils/track-event";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 interface UseCreateAdventureDialog {

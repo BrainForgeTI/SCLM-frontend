@@ -4,7 +4,7 @@ import {
   PagelayoutAuth,
 } from "../../components/PagelayoutAuth";
 import Castle from "../../assets/images/castle.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ChangeEvent } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { useApi } from "../../hooks/useApi";

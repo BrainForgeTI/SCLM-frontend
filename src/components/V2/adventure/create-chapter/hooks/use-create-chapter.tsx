@@ -3,9 +3,8 @@ import {
   CreateChapterType,
 } from "@/schemas/create-chapter-schema";
 import { createChapterService } from "@/services/adventure/create-chapter-service";
-import { getAdventureById } from "@/services/adventure/get-adventure-by-id-service";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { useParams } from "react-router";

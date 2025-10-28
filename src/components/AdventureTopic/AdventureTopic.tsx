@@ -3,15 +3,12 @@ import { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { DeleteButton } from "../DeleteButton";
 import ConfirmButton from "../ConfirmButton/ConfirmButton";
-import { Validator } from "../../utils/validator";
 import { useNavigate } from "react-router";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { useApi } from "@/hooks/useApi";
 interface Props {
@@ -36,8 +33,6 @@ interface Props {
 const AdventureTopic = (props: Props) => {
   const adventureContext = useContext(AdventureContext);
   const [originalText, setOriginalText] = useState<string | null>(null);
-  const validator = new Validator();
-
   const nameRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const [openDialog, setOpenDialog] = useState(false);
@@ -101,10 +96,9 @@ const AdventureTopic = (props: Props) => {
     console.log(missionId);
     //chama a api caso a geração do caderno for um sucesso redireciona ele apara a pagina
     setOpenDialog(true);
-    const resultadoApi = await api.generateNotebook(missionId)
+    const resultadoApi = await api.generateNotebook(missionId);
     setTimeout(() => {
       if (resultadoApi) {
-    
         setOpenDialog(false);
         navigate(`/notebook/${missionId}`);
       } else {

@@ -4,33 +4,32 @@ import { useNavigate, useParams } from "react-router";
 import { useApi } from "../../hooks/useApi";
 
 export const AdventureAuth = ({ children }: { children: JSX.Element }) => {
-    const adventureContext = useContext(AdventureContext);
-    const { id } = useParams<{ id: string }>();
-    const navigation = useNavigate();
-    const api = useApi();
+  const adventureContext = useContext(AdventureContext);
+  const { id } = useParams<{ id: string }>();
+  const navigation = useNavigate();
+  const api = useApi();
 
-    async function authenticateAdventure() {
-        if (!id) {
-            navigation('/home')
-            return
+  async function authenticateAdventure() {
+    if (!id) {
+      navigation("/home");
+      return;
+    } else {
+      if (!adventureContext.adventure) {
+        const adventure = await api.getAdventure();
+        if (adventure) {
+          setTimeout(() => {
+            adventureContext.setAdventure(adventure);
+          }, 1000);
         } else {
-            if (!adventureContext.adventure) {
-                const adventure = await api.getAdventure(id)
-                if (adventure) {
-                    setTimeout(() => {
-                        adventureContext.setAdventure(adventure);
-                    }, 1000)
-                } else {
-                    navigation("/home");
-                }
-            }
+          navigation("/home");
         }
+      }
     }
+  }
 
-    useEffect(() => {
-        authenticateAdventure()
-    }, [])
+  useEffect(() => {
+    authenticateAdventure();
+  }, []);
 
-
-    return children;
-}
+  return children;
+};
