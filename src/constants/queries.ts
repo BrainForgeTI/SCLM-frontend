@@ -1,0 +1,3 @@
+export const QUERIES = {
+  QUERY_POST_SIGN_IN: 'QUERY_POST_SIGN_IN',
+}

@@ -1,0 +1,51 @@
+import { PageLayout, PageTitle } from "../../components/PageLayout";
+import { NewAdventureCard } from "../../components/NewAdventureCard";
+import { CreateAdventureDialog } from "@/components/V2/dialogs/create-adventure-dialog";
+import { AdventureCard } from "@/components/V2/cards/adventure-card";
+import { useHome } from "./hooks/use-home";
+import { trackEvent } from "@/utils/track-event";
+
+export const HomePage = () => {
+  const {
+    states: { adventures, isPendingAdventures },
+    actions: { startAdventure },
+  } = useHome();
+
+  return (
+    <PageLayout isLoadingContent={isPendingAdventures}>
+      <>
+        <PageTitle title="Minhas Aventuras" />
+        <div className="w-full mt-10">
+          <ul className="lg:mt-5 w-full gap-5 grid gird-cols-1 sm:grid-cols-2 md:gap-15 xl:grid-cols-3 xl:gap-5 2xl:gap-15">
+            {adventures?.map((adventure) => {
+              return (
+                <li key={adventure.id} className="">
+                  <AdventureCard
+                    adventure={adventure}
+                    editable={true}
+                    className="h-full w-full"
+                    onPlayClick={() => startAdventure(adventure)}
+                  />
+                </li>
+              );
+            })}
+
+            <CreateAdventureDialog>
+              <button
+                onClick={() => {
+                  trackEvent("aventura_criacao_iniciada", {
+                    origem: "botao",
+                    com_ia: false,
+                  });
+                }}
+                type="button"
+              >
+                <NewAdventureCard />
+              </button>
+            </CreateAdventureDialog>
+          </ul>
+        </div>
+      </>
+    </PageLayout>
+  );
+};
