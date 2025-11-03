@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { SelectValue } from "@radix-ui/react-select";
-import { PropsWithChildren, useEffect, useState } from "react";
+import { PropsWithChildren, useEffect } from "react";
 import { ColorPicker } from "@/components/V2/inputs/color-picker";
 import { InView } from "react-intersection-observer";
 import { femaleHair } from "@/components/V2/characters/generic-character/config/female";
@@ -37,10 +37,8 @@ import {
   DialogContent,
   DialogDescription,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Adventure } from "@/types/adventure/adventure";
-import { getAllAdventure } from "@/services/adventure/get-all-adventures-service";
 import { trackEvent } from "@/utils/track-event";
 
 interface CharacterClasses {
@@ -139,15 +137,12 @@ const CarouselView = ({ children, onInView }: CarouselItemProps) => (
 
 export const CreateCharacterPage = () => {
   const {
-    states: { control, errors, isPending, open, adventures },
+    states: { control, isPending, open, adventures },
     actions: { register, watch, handleSubmitForm, setValue, setOpen },
   } = useCreateCharacter();
 
-  const [api, setApi] = useState<any>(null);
-
   const gender = watch("gender") || CharacterGender.MALE;
   const characterClass = watch("characterClass") || CharacterClass.WARRIOR;
-  const listAdventure: Adventure[] = [];
 
   const hairColor = watch("hairColor");
   const currentCharacter = character.find(
@@ -292,7 +287,7 @@ export const CreateCharacterPage = () => {
                         name="hairIndex"
                         control={control}
                         render={({ field }) => (
-                          <Carousel key={gender} setApi={setApi}>
+                          <Carousel key={gender}>
                             <CarouselContent>
                               {availableHair.map((current, index) => {
                                 const HairImage = current.image;

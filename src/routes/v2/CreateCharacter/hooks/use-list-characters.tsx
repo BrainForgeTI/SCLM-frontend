@@ -17,16 +17,7 @@ export const useListInfoCharacter = () => {
   const [selectedCharacterDelete, setSelectedCharacterDelete] =
     useState<CharacterInfo>();
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    control,
-    watch,
-    reset,
-    formState: { errors },
-    trigger,
-  } = useForm({
+  const { register, handleSubmit, setValue, control, watch, reset } = useForm({
     resolver: zodResolver(updateCharacterSchema),
     defaultValues: {
       eyeIrisIndex: 0,

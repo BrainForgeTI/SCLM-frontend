@@ -8,7 +8,6 @@ import { usePostHog } from "posthog-js/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import posthog from "posthog-js";
 
 export const useSignUp = () => {
   const [step, setStep] = useState(1);
