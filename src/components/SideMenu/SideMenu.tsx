@@ -98,7 +98,7 @@ export const SideMenu = () => {
         <div className="md:w-[320px] bg-sidebar border-r w-[300px] h-full flex p-4 flex-col items-center border-e border-base-content/20 overflow-y-auto">
           <div className="flex gap-3 text-base-content/80 font-bold text-[20px] items-center h-[45px]">
             <img src={LogoSM}></img>
-            <span className="uppercase">Scholarium</span>
+            <span className="uppercase">Athenium</span>
           </div>
 
           <div className="w-full flex flex-col items-center mt-10 gap-2">

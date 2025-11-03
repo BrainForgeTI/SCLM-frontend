@@ -79,7 +79,7 @@ export const SignInPage = () => {
         <div className="w-full flex justify-center lg:justify-end">
           <div className="w-[320px] lg:w-[384px] lg:block justify-center">
             <p className="flex justify-center w-full p-[20px] text-white text-[20px]">
-              Entre no Scholarium
+              Entre no Athenium
             </p>
             <AuthFormsBox>
               <div className="w-full flex flex-col gap-5">
