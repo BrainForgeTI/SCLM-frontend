@@ -18,7 +18,7 @@ export const BannerPlansComponent = () => {
                 <div className="flex flex-col bg-primary/15 w-[350px] h-[600px] p-5 rounded-xl border-white/15 justify-between content-between">
                     <div>
                         <div className="flex flex-col gap-5">
-                            <div className="text-[24px]">Plano Gratuito</div>
+                            <div className="text-[24px]">Plano Explorador</div>
                             <div className="text-[12px] text-white/50">Experimente o Atenium Gratuitamente e Descubra o Poder da IA na Educação!</div>
                         </div>
                         <div className="flex gap-3">
@@ -44,13 +44,13 @@ export const BannerPlansComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="bg-primary/15 border rounded-xl w-full p-2 hover:bg-primary cursor-pointer" onClick={() => navigate("/signin")}>Começar</button>
+                    <button className="bg-primary/15 border rounded-xl w-full p-2 hover:bg-primary cursor-pointer" onClick={() => navigate("/signin?plano=explorador")}>Começar</button>
                 </div>
 
                 <div className="flex flex-col bg-white w-[350px] h-[600px] p-5 rounded-xl border-white/15 justify-between content-between text-primary">
                     <div>
                         <div className="flex flex-col gap-5">
-                            <div className="text-[24px]">Plano Plus</div>
+                            <div className="text-[24px]">Plano Estudioso</div>
                             <div className="text-[12px] text-primary">Aprofunde sua jornada com IA na educação!</div>
                         </div>
                         <div className="flex gap-3">
@@ -80,13 +80,13 @@ export const BannerPlansComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="bg-primary border rounded-xl w-full p-2 text-white hover:bg-primary/80 cursor-pointer" onClick={() => navigate("/signin")}>Começar</button>
+                    <button className="bg-primary border rounded-xl w-full p-2 text-white hover:bg-primary/80 cursor-pointer" onClick={() => navigate("/signin?plano=estudioso")}>Começar</button>
                 </div>
 
                 <div className="flex flex-col bg-primary/15 w-[350px] h-[600px] p-5 rounded-xl border-white/15 justify-between content-between">
                     <div>
                         <div className="flex flex-col gap-5">
-                            <div className="text-[24px]">Plano Pro</div>
+                            <div className="text-[24px]">Plano Sábio</div>
                             <div className="text-[12px] text-white/50">Domine o Atenium com IA avançada.</div>
                         </div>
                         <div className="flex gap-3">
@@ -116,13 +116,13 @@ export const BannerPlansComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="bg-primary/15 border rounded-xl w-full p-2 hover:bg-primary cursor-pointer" onClick={() => navigate("/signin")}>Começar</button>
+                    <button className="bg-primary/15 border rounded-xl w-full p-2 hover:bg-primary cursor-pointer" onClick={() => navigate("/signin?plano=sabio")}>Começar</button>
                 </div>
 
                 <div className="flex flex-col bg-primary/15 w-[350px] h-[600px] p-5 rounded-xl border-white/15 justify-between content-between">
                     <div>
                         <div className="flex flex-col gap-5">
-                            <div className="text-[24px]">Plano Ultra</div>
+                            <div className="text-[24px]">Plano Luminar</div>
                             <div className="text-[12px] text-white/50">Evolua com IA de ponta.</div>
                         </div>
                         <div className="flex gap-3">
@@ -148,7 +148,7 @@ export const BannerPlansComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="bg-primary/15 border rounded-xl w-full p-2 hover:bg-primary cursor-pointer" onClick={() => navigate("/signin")}>Começar</button>
+                    <button className="bg-primary/15 border rounded-xl w-full p-2 hover:bg-primary cursor-pointer" onClick={() => navigate("/signin?plano=luminar")}>Começar</button>
                 </div>
             </div>
 
