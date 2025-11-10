@@ -1,9 +1,9 @@
 import BaseMaleImage from "@/assets/characters/generics/male/base/sprite_masculino_base.png";
-import Clothe0Male from "@/assets/characters/Warrior/male/evolution/sprite_masculino_warrior_class_base.png";
-import Clothe5Male from "@/assets/characters/Warrior/male/evolution/sprite_masculino_warrior_class_lvl5.png";
-import Clothe10Male from "@/assets/characters/Warrior/male/evolution/sprite_masculino_warrior_class_lvl10.png";
-import Clothe15Male from "@/assets/characters/Warrior/male/evolution/sprite_masculino_warrior_class_lvl15.png";
-import Clothe20Male from "@/assets/characters/Warrior/male/evolution/sprite_masculino_warrior_class_lvl20.png";
+import Clothe0Male from "@/assets/characters/warrior/male/evolution/sprite_masculino_warrior_class_base.png";
+import Clothe5Male from "@/assets/characters/warrior/male/evolution/sprite_masculino_warrior_class_lvl5.png";
+import Clothe10Male from "@/assets/characters/warrior/male/evolution/sprite_masculino_warrior_class_lvl10.png";
+import Clothe15Male from "@/assets/characters/warrior/male/evolution/sprite_masculino_warrior_class_lvl15.png";
+import Clothe20Male from "@/assets/characters/warrior/male/evolution/sprite_masculino_warrior_class_lvl20.png";
 import Eye0Male from "@/assets/characters/generics/male/eye/sprite_masculino_eyes.png";
 import { CharacterSprite } from "@/types/character/character-sprite";
 import { Hair0 } from "@/assets/characters/generics/male/hair/tsx/hair0";

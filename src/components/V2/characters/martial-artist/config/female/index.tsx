@@ -1,4 +1,4 @@
-import BaseImage from "@/assets/characters/generics/female/base/sprite_feminino_base.png";
+import BaseImage from "@/assets/characters/generics/female/base/Sprite_Feminino_Base.png";
 import Clothe0 from "@/assets/characters/Martial-Artist/female/evolution/sprite_feminino_martial-artist_class_base.png";
 import Clothe5 from "@/assets/characters/Martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl5.png";
 import Clothe10 from "@/assets/characters/Martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl10.png";
