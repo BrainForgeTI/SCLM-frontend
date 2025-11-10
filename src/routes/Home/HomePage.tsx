@@ -3,6 +3,7 @@ import { NewAdventureCard } from "../../components/NewAdventureCard";
 import { CreateAdventureDialog } from "@/components/V2/dialogs/create-adventure-dialog";
 import { AdventureCard } from "@/components/V2/cards/adventure-card";
 import { useHome } from "./hooks/use-home";
+import { trackEvent } from "@/utils/track-event";
 
 export const HomePage = () => {
   const {
@@ -30,7 +31,15 @@ export const HomePage = () => {
             })}
 
             <CreateAdventureDialog>
-              <button type="button">
+              <button
+                onClick={() => {
+                  trackEvent("aventura_criacao_iniciada", {
+                    origem: "botao",
+                    com_ia: false,
+                  });
+                }}
+                type="button"
+              >
                 <NewAdventureCard />
               </button>
             </CreateAdventureDialog>

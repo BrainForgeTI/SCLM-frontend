@@ -1,8 +1,9 @@
 import useDebounce from "@/hooks/use-debounce";
 import { generateFinalChallenge } from "@/services/adventure/generate-final-challenge-service";
 import { useAdventureStore } from "@/store/adventure-store";
+import { trackEvent } from "@/utils/track-event";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 export const useMyAdventure = () => {
   const [allAdventureCompleted, setAllAdventureCompleted] = useState(false);
@@ -11,10 +12,16 @@ export const useMyAdventure = () => {
   const [localChapters, setLocalChapters] = useState(adventure.chapters);
   const searchDebounce = useDebounce(search, 300);
   const queryClient = useQueryClient();
+  const viewdRef = useRef(false);
 
   const { mutate: mutateFinalChallenge, isPending: isPendingFinalChallenge } =
     useMutation({
-      mutationFn: () => generateFinalChallenge(adventure.id),
+      mutationFn: () => {
+        trackEvent("ia_geracao_projeto_final_iniciada", {
+          aventura_id: adventure.id,
+        });
+        return generateFinalChallenge(adventure.id);
+      },
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["QUERY_GET_CHAPTERS"] });
       },
@@ -41,6 +48,20 @@ export const useMyAdventure = () => {
     if (adventure.chapters) {
       setLocalChapters(adventure.chapters);
     }
+
+    if (adventure) {
+      if (!viewdRef.current) {
+        trackEvent("aventura_visualizada", {
+          aventura_id: adventure.id,
+        });
+
+        viewdRef.current = true;
+      }
+    }
+
+    return () => {
+      viewdRef.current = false;
+    };
   }, [adventure]);
 
   useEffect(() => {

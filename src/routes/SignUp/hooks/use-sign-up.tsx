@@ -4,6 +4,7 @@ import { validateEmail } from "@/services/validate-email";
 import { validateSignUpToken } from "@/services/validate-sign-up-token";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { usePostHog } from "posthog-js/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
@@ -11,6 +12,7 @@ import { useNavigate } from "react-router";
 export const useSignUp = () => {
   const [step, setStep] = useState(1);
   const navigate = useNavigate();
+  const posthog = usePostHog();
 
   const handleBackStep = () => {
     if (step < 4 && step > 1) {
@@ -99,7 +101,15 @@ export const useSignUp = () => {
 
   const { mutate: mutateCreateUser } = useMutation({
     mutationFn: (data: SignUpType) => signUp(data),
-    onSuccess: () => goToSignin(),
+    onSuccess: (data) => {
+      posthog.capture("usuario_cadastrado", {
+        usuario_id: data.data.slug,
+        metodo: "email",
+        origem: "signup",
+        email_confirmado: true,
+      });
+      goToSignin();
+    },
   });
 
   return {

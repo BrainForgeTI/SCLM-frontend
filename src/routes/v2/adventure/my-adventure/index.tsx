@@ -1,7 +1,6 @@
 import { PageLayout, PageTitle } from "@/components/PageLayout";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
 import { Chapter } from "@/components/V2/adventure/chapter";
 import { CreateChapter } from "@/components/V2/adventure/create-chapter";
 import { useMyAdventure } from "./hooks/use-my-adventure";
