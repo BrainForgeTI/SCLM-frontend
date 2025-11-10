@@ -39,3 +39,9 @@ export const apiCharacter = axios.create({
   timeout: 30000,
 })
 addAccessTokenInterceptorToInstance(apiCharacter)
+
+export const apiGamification = axios.create({
+  baseURL: import.meta.env.VITE_GAMIFICATION_SERVICE,
+  timeout: 30000,
+})
+addAccessTokenInterceptorToInstance(apiGamification)
