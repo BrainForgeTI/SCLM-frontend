@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import "highlight.js/styles/github-dark.css"; // ou outro tema escuro que curtir
+import "highlight.js/styles/github-dark.css";
 
 import { useNotebook } from "./hooks/use-notebook";
 import { PageLayout } from "@/components/PageLayout";
