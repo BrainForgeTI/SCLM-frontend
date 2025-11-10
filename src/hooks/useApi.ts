@@ -1,11 +1,9 @@
 import axios from "axios";
 import { AdventureCardType } from "../types/AdventureCardType";
 import { SignUpFormType } from "../types/auth_types/SignUpFormType";
-import { CreateTopicType } from "../types/adventure/CreateTopicType";
-import { CreateChapter } from "../types/adventure/CreateChapter";
 
 export const useApi = () => ({
-  getUserAdventures: async (userId: string): Promise<AdventureCardType[]> => {
+  getUserAdventures: async (): Promise<AdventureCardType[]> => {
     // chamada mockada
     const response: AdventureCardType[] = [
       {
@@ -126,7 +124,7 @@ export const useApi = () => ({
     return response;
   },
 
-  createAdventure: async (userId: string, adventure: AdventureCardType) => {
+  createAdventure: async () => {
     //mock
     const random = Math.floor(Math.random() * 10);
     let response;
@@ -143,7 +141,7 @@ export const useApi = () => ({
     return response;
   },
 
-  createChapterTopic: async (createTopic: CreateTopicType) => {
+  createChapterTopic: async () => {
     const random = Math.floor(Math.random() * 10);
     let response;
 
@@ -156,7 +154,7 @@ export const useApi = () => ({
     return response;
   },
 
-  createChapter: async (createChapter: CreateChapter) => {
+  createChapter: async () => {
     const random = Math.floor(Math.random() * 10);
     let response;
 
@@ -169,7 +167,7 @@ export const useApi = () => ({
     return response;
   },
 
-  getAdventure: async (adventureId: string) => {
+  getAdventure: async () => {
     //mock
     return {
       // id: 'idno2hgkgr84553h43',
@@ -335,11 +333,7 @@ export const useApi = () => ({
     return true;
   },
 
-  saveDescription: async (
-    adventureId: string,
-    chapterId: string,
-    description: string,
-  ): Promise<any> => {
+  saveDescription: async (): Promise<any> => {
     const random = Math.floor(Math.random() * 10);
     let response;
 
@@ -389,7 +383,9 @@ export const useApi = () => ({
   },
 
   generateNotebook: async (missionId: string) => {
-    return await axios.post(`http://127.0.0.1:3000/adventure/gen-notebook/${missionId}`);
+    return await axios.post(
+      `http://127.0.0.1:3000/adventure/gen-notebook/${missionId}`,
+    );
     // return {data: {
     // status: 200,
     // message: "Operation carried out successfully",

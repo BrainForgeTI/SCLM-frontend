@@ -7,9 +7,10 @@ import { deleteAdventureService } from "@/services/adventure/delete-adventure-se
 import { updateAdventureService } from "@/services/adventure/update-adventure-service";
 import { getAllFreeCharacters } from "@/services/character/get-all-free-characters";
 import { Adventure } from "@/types/adventure/adventure";
+import { trackEvent } from "@/utils/track-event";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 interface UseCreateAdventureDialog {
@@ -42,9 +43,14 @@ export const useCreateAdventureDialog = ({
   const { mutate: mutateCreateAdventure, isPending: isPendingCreateAdventure } =
     useMutation({
       mutationFn: createAdventureService,
-      onSuccess: () => {
+      onSuccess: (data) => {
+        console.log(data);
         setModalOpen(false);
         queryClient.invalidateQueries({ queryKey: ["QUERY_GET_ADVENTURES"] });
+        trackEvent("aventura_criada_sucesso", {
+          aventura_id: data.data.data.id,
+          com_ia: false,
+        });
       },
     });
 

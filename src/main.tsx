@@ -4,13 +4,26 @@ import "./index.css";
 import App from "./App.tsx";
 import { BrowserRouter } from "react-router";
 import { AdventureProvider } from "./context/adventure/AdventureProvider.tsx";
+import { PostHogProvider } from "posthog-js/react";
+import { PostHogConfig } from "posthog-js";
+
+const options: Partial<PostHogConfig> = {
+  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+  persistence: "localStorage",
+  capture_pageview: true,
+};
 
 createRoot(document.getElementById("root")!).render(
-  // <StrictMode>
-  <BrowserRouter>
-    <AdventureProvider>
-      <App />
-    </AdventureProvider>
-  </BrowserRouter>,
-  // </StrictMode>,
+  <StrictMode>
+    <PostHogProvider
+      apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY}
+      options={options}
+    >
+      <BrowserRouter>
+        <AdventureProvider>
+          <App />
+        </AdventureProvider>
+      </BrowserRouter>
+    </PostHogProvider>
+  </StrictMode>,
 );

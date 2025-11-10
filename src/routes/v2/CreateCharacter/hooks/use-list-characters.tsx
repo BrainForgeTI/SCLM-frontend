@@ -5,6 +5,7 @@ import { updateCharacter } from "@/services/character/update-character";
 import { CharacterDelete } from "@/types/character/character-delete";
 import { CharacterInfo } from "@/types/character/character-info";
 import { CharacterInfoUptade } from "@/types/character/character-update";
+import { trackEvent } from "@/utils/track-event";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
@@ -16,16 +17,7 @@ export const useListInfoCharacter = () => {
   const [selectedCharacterDelete, setSelectedCharacterDelete] =
     useState<CharacterInfo>();
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    control,
-    watch,
-    reset,
-    formState: { errors },
-    trigger,
-  } = useForm({
+  const { register, handleSubmit, setValue, control, watch, reset } = useForm({
     resolver: zodResolver(updateCharacterSchema),
     defaultValues: {
       eyeIrisIndex: 0,
@@ -65,6 +57,11 @@ export const useListInfoCharacter = () => {
 
   const handleSubmitForm = handleSubmit((data) => {
     mutate(data);
+    if (data.id) {
+      trackEvent("personagem_editado", {
+        personagem_id: data.id,
+      });
+    }
   });
   return {
     states: {

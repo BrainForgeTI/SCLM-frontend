@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { LineChart, Plus, Trash } from "lucide-react";
+import { Plus, Trash } from "lucide-react";
 import { useCreateChapter } from "./hooks/use-create-chapter";
 import {
   Form,

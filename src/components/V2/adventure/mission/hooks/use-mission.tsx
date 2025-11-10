@@ -1,6 +1,7 @@
 import { changeMissionStatusService } from "@/services/adventure/change-mission-status-service";
 import { useAdventureStore } from "@/store/adventure-store";
 import { MissionType } from "@/types/adventure/mission";
+import { trackEvent } from "@/utils/track-event";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 
@@ -22,6 +23,10 @@ export const useMission = ({ chapterId, mission }: UseMissionProps) => {
       },
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["QUERY_GET_CHAPTERS"] });
+        trackEvent("aventura_missao_finalizada", {
+          aventura_id: adventure.id,
+          missao_id: mission.id,
+        });
       },
       onError: () => {
         setChecked(!checked);

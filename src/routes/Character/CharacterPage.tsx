@@ -4,8 +4,7 @@ import ActionButton from "../../components/ActionButton/ActionButton";
 import { ButtonStyleType } from "../../components/ActionButton/enum/ButtonStyleType";
 import { CharacterCard } from "./components/CharacterCard";
 import { useListInfoCharacter } from "../v2/CreateCharacter/hooks/use-list-characters";
-import { useState, useEffect } from "react";
-import { CharacterInfo } from "@/types/character/character-info";
+import { useEffect } from "react";
 import {
   Dialog,
   DialogClose,
@@ -28,12 +27,11 @@ import { CharacterDelete } from "@/types/character/character-delete";
 import { useNavigate } from "react-router";
 
 export const CharacterPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     states: {
       characters,
       isLoading,
-      isError,
       control,
       selectedCharacter,
       selectedCharacterDelete,
@@ -41,7 +39,6 @@ export const CharacterPage = () => {
     actions: {
       register,
       handleSubmitForm,
-      setValue,
       watch,
       reset,
       deleteCharacterMutate,
@@ -168,8 +165,8 @@ export const CharacterPage = () => {
                             <button
                               type="button"
                               key={index}
-                              className={`flex w-[40px] h-[40px] rounded-sm border 
-                                                        ${field.value === index ? "border-blue-500" : "border-white/20"} 
+                              className={`flex w-[40px] h-[40px] rounded-sm border
+                                                        ${field.value === index ? "border-blue-500" : "border-white/20"}
                                                         items-center justify-center cursor-pointer`}
                               onClick={() => field.onChange(index)}
                             >

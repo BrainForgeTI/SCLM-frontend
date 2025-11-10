@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import LogoSm from "../../../assets/images/logo_sm.png";
+import LogoSm from "@/assets/images/logo_sm.png";
 
 const Menu = () => {
   const navigate = useNavigate()
@@ -7,7 +7,7 @@ const Menu = () => {
     <div className="flex items-center justify-between py-[15px] px-5 lg:px-[80px] 2xl:px-[150px] text-foreground absolute w-full">
       <div className="flex items-center justify-around gap-[10px] cursor-pointer" onClick={() => {navigate("/signin")}}>
         <img src={LogoSm} alt="logo pequena Scholarium" />
-        <p className="font-normal">Scholarium</p>
+        <p className="font-normal">Atenium</p>
       </div>
       <div className="hidden lg:flex gap-[70px]">
         <button className="cursor-pointer hover:text-white/80 font-normal" onClick={() => navigate("/")}>Por que nós?</button>
@@ -21,6 +21,6 @@ const Menu = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Menu;
