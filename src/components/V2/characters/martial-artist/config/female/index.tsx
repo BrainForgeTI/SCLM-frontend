@@ -1,9 +1,9 @@
-import BaseImage from "@/assets/characters/generics/female/base/Sprite_Feminino_Base.png";
-import Clothe0 from "@/assets/characters/Martial-Artist/female/evolution/sprite_feminino_martial-artist_class_base.png";
-import Clothe5 from "@/assets/characters/Martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl5.png";
-import Clothe10 from "@/assets/characters/Martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl10.png";
-import Clothe15 from "@/assets/characters/Martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl15.png";
-import Clothe20 from "@/assets/characters/Martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl20.png";
+import BaseImage from "@/assets/characters/generics/female/base/sprite_feminino_base.png";
+import Clothe0 from "@/assets/characters/martial-Artist/female/evolution/sprite_feminino_martial-artist_class_base.png";
+import Clothe5 from "@/assets/characters/martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl5.png";
+import Clothe10 from "@/assets/characters/martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl10.png";
+import Clothe15 from "@/assets/characters/martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl15.png";
+import Clothe20 from "@/assets/characters/martial-Artist/female/evolution/sprite_feminino_martial-artist_class_lvl20.png";
 import Eye0 from "@/assets/characters/generics/male/eye/sprite_masculino_eyes.png";
 import { EyeIris0 } from "@/assets/characters/generics/female/eye/EyeIris0";
 import { CharacterSprite } from "@/types/character/character-sprite";
