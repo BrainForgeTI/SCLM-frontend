@@ -6,8 +6,6 @@ import {
   ItemDescription,
   ItemFooter,
   ItemHeader,
-  ItemMedia,
-  ItemTitle,
 } from "@/components/ui/item"
 import { useBillingSession } from "@/routes/v2/Billing/hooks/get-billing-sessions";
 
@@ -20,7 +18,7 @@ interface Props {
 }
 export const  PlanComponent = (props:Props) => {
 
-    const {states: { },actions: {useCheckoutSession }} = useBillingSession();
+    const {states: {},actions: {useCheckoutSession }} = useBillingSession();
 
     return (
         <div className="flex gap-2"> 
