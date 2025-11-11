@@ -6,7 +6,7 @@ import {
 import Castle from "../../assets/images/castle.png";
 import { useState } from "react";
 import { ChangeEvent } from "react";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import { useApi } from "../../hooks/useApi";
 import { useSessionStore } from "../../store/session-store";
 
@@ -51,11 +51,19 @@ export const SignInPage = () => {
   };
 
   const handleLogin = async () => {
+    const location = useLocation()
     const result = await api.signIn(loginForm.email, loginForm.password);
     if (result.status === 200) {
       const firstName = result.data.first_name;
       sessionStore.setSession(firstName, "", "");
-      navigate("/home");
+      const params = new URLSearchParams(location.search)
+      const plano = params.get("plano")
+      if(plano){
+        navigate("/plans")
+      }else{
+        navigate("/home");
+      }
+      
     }
   };
 
