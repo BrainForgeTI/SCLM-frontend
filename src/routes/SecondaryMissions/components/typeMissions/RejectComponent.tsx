@@ -1,4 +1,4 @@
-import { CircleX, X } from "lucide-react"
+import { CircleX } from "lucide-react"
 
 export const RejectComponent = () => {
     return (

@@ -12,12 +12,11 @@ import { useGamificationMissionSecondary } from "../v2/Gamification/hooks/get-mi
 import { MissionSecondaryStatus } from "@/enums/missions-secondary-status";
 //CoinsConquest
 export const SecondaryMissionsPage = () => {
-    
+
     const {
         states: {
             missionsSecondary,
             isLoading,
-            isError
         },
         actions: {
          acceptMission,
@@ -45,14 +44,14 @@ export const SecondaryMissionsPage = () => {
                             <MissionCard id={missionsSecondary &&  missionsSecondary[1] ? missionsSecondary[1].id : "-"} image={CoatArmsTwoIcon} imageIcon={ExclamtionOrange} bgColor="#b26e0f" textColor="text-[#FF9701]" textMission={missionsSecondary &&  missionsSecondary[1] ? missionsSecondary[1].title : "-"} coinMission={missionsSecondary &&  missionsSecondary[1] ? missionsSecondary[1].reward : 0} stateMission={missionsSecondary && missionsSecondary[1] ? missionsSecondary[1].status : MissionSecondaryStatus.PENDING} progress={missionsSecondary && missionsSecondary[1] ? Object.values(missionsSecondary[1].progress)[0] : 0} target={missionsSecondary && missionsSecondary[1] ? Object.values(missionsSecondary[1].target)[0] : 0} acceptMission={acceptMission} rejectMission={rejectMission}></MissionCard>
                             <MissionCard id={missionsSecondary &&  missionsSecondary[2] ? missionsSecondary[2].id : "-"} image={CoatArmsThreeIcon} imageIcon={ExclamtionPurple} bgColor="#4f1a63" textColor="text-[#C56EE3]" textMission={missionsSecondary &&  missionsSecondary[2] ? missionsSecondary[2].title : "-"} coinMission={missionsSecondary &&  missionsSecondary[2] ? missionsSecondary[2].reward : 0} stateMission={missionsSecondary && missionsSecondary[2] ? missionsSecondary[2].status : MissionSecondaryStatus.PENDING} progress={missionsSecondary && missionsSecondary[2] ? Object.values(missionsSecondary[2].progress)[0] : 0} target={missionsSecondary && missionsSecondary[2] ? Object.values(missionsSecondary[2].target)[0] : 0} acceptMission={acceptMission} rejectMission={rejectMission}></MissionCard>
                         </div>
-                    ) 
+                    )
                     }
-                    
-                    
+
+
                 </div>
-            
+
             </div>
-            
+
         </PageLayout>
     );
 }

@@ -1,6 +1,5 @@
 import { Menu } from "../../components/PagelayoutAuth";
 import { BannerComponent } from "./components/BannerComponent";
-import { BannerFeedback } from "./components/BannerFeedback";
 import { BannerFuncComponent } from "./components/BannerFuncComponent";
 import { BannerPlansComponent } from "./components/BannerPlansComponent";
 import { BannerWhyGameComponent } from "./components/BannerWhyGameComponent";
