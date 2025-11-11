@@ -15,11 +15,10 @@ export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
       adventure,
       allAdventureCompleted,
       isPendingFinalChallenge,
-      isPendingFinalProject,
       search,
       localChapters,
     },
-    actions: { mutateFinalChallenge, mutateFinalProject, handleSearchValue },
+    actions: { mutateFinalProject, handleSearchValue },
   } = useMyAdventure();
 
   return (
