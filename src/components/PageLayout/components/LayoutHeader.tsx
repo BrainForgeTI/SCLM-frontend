@@ -1,7 +1,29 @@
 import BellIcon from '../../../assets/icons/bell.svg';
 import GoldImg from '../../../assets/images/gold.png';
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { LogOut, WalletMinimal } from 'lucide-react';
+import { useNavigate } from "react-router";
+          
+
+
 
 const LayoutHeader = () => {
+
+  const navigate = useNavigate()
   return (
     <div className="h-[60px] w-full bg-card border-b border-neutral/20">
       <div className='w-full h-full flex justify-end px-8'>
@@ -20,9 +42,26 @@ const LayoutHeader = () => {
               <span className='text-end text-[10px]'>Bem-vindo</span>
               <span className='font-semibold text-[13px]'>Emerson Tanno</span>
             </div>
-            <div className='w-[43px] h-[43px] bg-neutral/20 rounded-[10px] bg-cover bg-center' style={{ backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3UJfPCCe0kUhLbGxfOhzwHpPspsSnvALTA&s")' }}>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button className='w-[43px] h-[43px] bg-neutral/20 rounded-[10px] bg-cover bg-center' style={{ backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3UJfPCCe0kUhLbGxfOhzwHpPspsSnvALTA&s")' }}>
 
-            </div>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className='w-56' align='end'>
+                <DropdownMenuGroup>
+                  <DropdownMenuItem  onClick={() =>{navigate("/plans")}}>
+                    <WalletMinimal></WalletMinimal>
+                    Planos
+                  </DropdownMenuItem>
+                  <DropdownMenuItem  onClick={() =>{navigate("/signin")}}>
+                    <LogOut></LogOut>
+                    Sair
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
           </li>
 
           <li className='lg:block hidden'>
