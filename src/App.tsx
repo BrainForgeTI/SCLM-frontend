@@ -11,6 +11,7 @@ import { NotebookPage } from "./routes/Notebook/NotebookPage";
 import { MyAdventurePage } from "./routes/v2/adventure/my-adventure";
 import { AdventureWrapper } from "./components/V2/adventure/adventure-wrapper";
 import { LandingPage } from "./routes/Landing/LandingPage";
+import { GenPlansPage } from "./routes/GenPlans/GenPlansPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/character" element={<CharacterPage />}></Route>
+        <Route path="/plans" element={<GenPlansPage/>}></Route>
         <Route
           path="/adventure/:id/home"
           element={
