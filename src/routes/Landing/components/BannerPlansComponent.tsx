@@ -55,7 +55,7 @@ export const BannerPlansComponent = () => {
                         </div>
                         <div className="flex gap-3">
                             <div className="flex text-[24px] text-primary items-center">R$</div>
-                            <div className="text-[64px]">29,90</div>
+                            <div className="text-[64px]">29,00</div>
                         </div>
                         <div>
                             <div className="flex gap-2 items-center text-[12px] h-[50px]  border-b border-b-primary">
@@ -127,7 +127,7 @@ export const BannerPlansComponent = () => {
                         </div>
                         <div className="flex gap-3">
                             <div className="flex text-[24px] text-primary items-center">R$</div>
-                            <div className="text-[64px]">189,90</div>
+                            <div className="text-[64px]">256,90</div>
                         </div>
                         <div>
                             <div className="flex gap-2 items-center text-[12px] h-[50px]  border-b border-b-white/15">
