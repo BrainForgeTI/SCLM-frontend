@@ -1,13 +1,9 @@
-"use client"
-
-import { TrendingUp } from "lucide-react"
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
 
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -17,8 +13,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-
-export const description = "A line chart with a label"
+import { ChartDataType } from "@/types/metrics/chart-data-type"
 
 const chartConfig = {
   'domingo': { label: "Domingo", color: "var(--chart-1)" },
@@ -31,7 +26,7 @@ const chartConfig = {
 } satisfies ChartConfig
 
 interface LineChartComponentProps {
-  data?: any
+  data?: ChartDataType
 }
 
 export function LineChartComponent({ data }: LineChartComponentProps) {

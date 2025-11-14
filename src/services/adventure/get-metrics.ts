@@ -1,8 +1,4 @@
-import { apiAuth } from "@/lib/api-manager";
-import { useSessionStore } from "@/store/session-store";
-
 export async function getMetrics() {
-  const user = useSessionStore.getState().id;
   // return (await apiAuth.get(`/users/insights/${user}`)).data
   return {
   "insights": [

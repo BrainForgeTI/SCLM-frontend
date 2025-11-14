@@ -98,7 +98,7 @@ export const BarChartComponent = ({ data }: BarChartComponentProps) => {
               }
             />
 
-            {data?.datasets?.map((dataset, i) => (
+            {data?.datasets?.map((dataset) => (
               <Bar
                 key={dataset.label}
                 dataKey={dataset.label}
