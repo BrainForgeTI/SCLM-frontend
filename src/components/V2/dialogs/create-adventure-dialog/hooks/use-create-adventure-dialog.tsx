@@ -21,6 +21,7 @@ export const useCreateAdventureDialog = ({
   adventure,
 }: UseCreateAdventureDialog) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [cantOpen, setCantOpen] = useState(false)
   const [modalConfirmOpen, setModalConfirmOpen] = useState(false);
   const queryClient = useQueryClient();
 
@@ -111,12 +112,14 @@ export const useCreateAdventureDialog = ({
       modalConfirmOpen,
       isPendingDeleteAdventure,
       allFreeCharacters,
+      cantOpen
     },
     actions: {
       handleModal,
       handleSubmit,
       setModalConfirmOpen,
       handleDeleteAdventure,
+      setCantOpen
     },
   };
 };

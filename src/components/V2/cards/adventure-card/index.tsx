@@ -5,8 +5,6 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Character } from "../../characters/character";
-import { CharacterClass } from "@/enums/class";
-import { CharacterGender } from "@/enums/character-gender";
 import { ColorPicker } from "../../inputs/color-picker";
 import { Controller, UseFormReturn } from "react-hook-form";
 import { Button } from "@/components/ui/button";
