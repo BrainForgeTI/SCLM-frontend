@@ -10,6 +10,7 @@ export const useNotebook = () => {
   const [notebookData, setNotebookData] = useState("");
   const adventureId = useAdventureStore((state) => state.adventure.id);
   const viewdRef = useRef(false);
+  const generatedRef = useRef(false)
 
   useNotebookLog();
 
@@ -29,8 +30,9 @@ export const useNotebook = () => {
   });
 
   useEffect(() => {
-    if (missionId) {
+    if (missionId && !generatedRef.current) {
       mutate(missionId);
+      generatedRef.current = true;
     }
 
     if (!viewdRef.current && missionId && adventureId) {
@@ -40,10 +42,6 @@ export const useNotebook = () => {
       });
       viewdRef.current = true;
     }
-
-    return () => {
-      viewdRef.current = false;
-    };
   }, [missionId, mutate, adventureId]);
 
   return {
