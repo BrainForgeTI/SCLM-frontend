@@ -8,6 +8,7 @@ import { useNotebookLog } from "./use-notebook-log";
 
 export const useNotebook = () => {
   const [notebookData, setNotebookData] = useState("");
+  const [pageLoaded, setPageLoaded] = useState(false);
   const adventureId = useAdventureStore((state) => state.adventure.id);
   const viewdRef = useRef(false);
   const generatedRef = useRef(false)
@@ -26,8 +27,14 @@ export const useNotebook = () => {
     },
     onSuccess: (data) => {
       setNotebookData(data.content);
+      setPageLoaded(true);
+    },
+    onError() {
+      setPageLoaded(true);
     },
   });
+
+  console.log(pageLoaded)
 
   useEffect(() => {
     if (missionId && !generatedRef.current) {
@@ -47,6 +54,7 @@ export const useNotebook = () => {
   return {
     states: {
       notebookData,
+      pageLoaded
     },
   };
 };

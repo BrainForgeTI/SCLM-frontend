@@ -4,11 +4,11 @@ import { useNotebook } from "./hooks/use-notebook";
 
 export const NotebookPage = () => {
   const {
-    states: { notebookData },
+    states: { notebookData, pageLoaded },
   } = useNotebook();
 
   return (
-    <PageLayout>
+    <PageLayout isLoadingContent={!pageLoaded}>
       <ReactMarkdown
         components={{
           h1: ({ ...props }) => (
