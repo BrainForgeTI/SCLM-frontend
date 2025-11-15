@@ -1,9 +1,11 @@
 import useDebounce from "@/hooks/use-debounce";
 import { generateFinalChallenge } from "@/services/adventure/generate-final-challenge-service";
+import { generateProjectService } from "@/services/adventure/generate-project-service";
 import { useAdventureStore } from "@/store/adventure-store";
 import { trackEvent } from "@/utils/track-event";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router";
 
 export const useMyAdventure = () => {
   const [allAdventureCompleted, setAllAdventureCompleted] = useState(false);
@@ -13,17 +15,31 @@ export const useMyAdventure = () => {
   const searchDebounce = useDebounce(search, 300);
   const queryClient = useQueryClient();
   const viewdRef = useRef(false);
+  const navigate = useNavigate();
 
   const { mutate: mutateFinalChallenge, isPending: isPendingFinalChallenge } =
     useMutation({
       mutationFn: () => {
-        trackEvent("ia_geracao_projeto_final_iniciada", {
+        trackEvent("ia_geracao_desafio_final_iniciada", {
           aventura_id: adventure.id,
         });
         return generateFinalChallenge(adventure.id);
       },
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["QUERY_GET_CHAPTERS"] });
+      },
+    });
+
+  const { mutate: mutateFinalProject, isPending: isPendingFinalProject } =
+    useMutation({
+      mutationFn: () => {
+        trackEvent("ia_geracao_projeto_final_iniciada", {
+          aventura_id: adventure.id,
+        });
+        return generateProjectService(adventure.id!);
+      },
+      onSuccess: () => {
+        navigate(`/adventure/${adventure.id}/notebook/final-project`);
       },
     });
 
@@ -73,9 +89,10 @@ export const useMyAdventure = () => {
       adventure,
       allAdventureCompleted,
       isPendingFinalChallenge,
+      isPendingFinalProject,
       search,
       localChapters,
     },
-    actions: { mutateFinalChallenge, handleSearchValue },
+    actions: { mutateFinalChallenge, mutateFinalProject, handleSearchValue },
   };
 };
