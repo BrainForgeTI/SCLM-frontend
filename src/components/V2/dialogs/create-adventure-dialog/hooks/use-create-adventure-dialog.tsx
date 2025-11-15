@@ -10,7 +10,7 @@ import { Adventure } from "@/types/adventure/adventure";
 import { trackEvent } from "@/utils/track-event";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 interface UseCreateAdventureDialog {
@@ -35,9 +35,11 @@ export const useCreateAdventureDialog = ({
     resolver: zodResolver(createAdventureSchema),
   });
 
-  const { data: allFreeCharacters } = useQuery({
+  const { data: allFreeCharacters, refetch: refetchFreeCharacters } = useQuery({
     queryKey: ["QUERY_GET_FREE_CHARACTERS"],
     queryFn: getAllFreeCharacters,
+    retry: false,
+    enabled: false
   });
 
   const { mutate: mutateCreateAdventure, isPending: isPendingCreateAdventure } =
@@ -94,6 +96,12 @@ export const useCreateAdventureDialog = ({
   }
 
   const isPending = isPendingCreateAdventure || isPendingUpdateAdventure;
+
+  useEffect(() => {
+    if (modalOpen) {
+      refetchFreeCharacters()
+    }
+  }, [modalOpen])
 
   return {
     states: {

@@ -135,7 +135,6 @@ export const CreateAdventureDialog = ({
                               </SelectTrigger>
                               <SelectContent className="z-[9999]">
                                 {allFreeCharacters?.map((character) => {
-                                  console.log(character);
                                   return (
                                     <SelectItem
                                       key={character.id}

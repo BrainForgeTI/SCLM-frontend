@@ -91,16 +91,23 @@ export const AdventureCard = ({
         </div>
 
         <div className="w-full h-full py-5 flex justify-center items-center">
-          <Character
-            character={CharacterClass.MARTIAL_ARTIST}
-            gender={CharacterGender.MALE}
-            hair={0}
-            hairColor={"#ffffff"}
-            eyeIris={0}
-            level={0}
-            eyeIrisColor={"#000000"}
-            className="w-30 h-30"
-          />
+          {adventure?.character && (
+            <Character
+              character={adventure.character.characterClass}
+              gender={adventure.character.gender}
+              hair={adventure.character.hairIndex}
+              hairColor={adventure.character.hairColor}
+              eyeIris={adventure.character.eyeIrisIndex}
+              level={adventure.character.level}
+              eyeIrisColor={adventure.character.eyeIrisColor}
+              className="w-30 h-30"
+            />
+          )}
+
+          {!adventure?.character && (
+            <div className="w-30 h-30 text-[40px]">
+            </div>
+          )}
         </div>
       </CardHeader>
       <CardContent className="py-6 mx-2 flex flex-col items-center justify-center gap-10">
