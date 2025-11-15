@@ -4,7 +4,7 @@ import {
   CreateCharacterFormType,
   createCharacterSchema,
 } from "@/schemas/create-character-schema";
-import { getAllAdventure } from "@/services/adventure/get-all-adventures-service";
+import { getNotAssociatedAdventures } from "@/services/adventure/get-not-associated-adventures";
 import { createCharacter } from "@/services/character/create-character";
 import { trackEvent } from "@/utils/track-event";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -52,8 +52,8 @@ export const useCreateCharacter = () => {
     },
   });
   const { data: adventures } = useQuery({
-    queryKey: ["aaa"],
-    queryFn: getAllAdventure,
+    queryKey: ["het-not-associated-adventures"],
+    queryFn: getNotAssociatedAdventures,
   });
   const handleSubmitForm = handleSubmit((data) => mutate(data));
 
