@@ -93,7 +93,7 @@ export const SideMenu = () => {
   return (
     <>
       <aside
-        className={`fixed lg:static h-full flex gap-[15px] z-50 transition-all duration-350 ${menuActive ? "left-[0px]" : "md:left-[-350px] left-[-300px]"}`}
+        className={`fixed lg:static h-full flex gap-[15px] z-90 transition-all duration-350 ${menuActive ? "left-[0px]" : "md:left-[-350px] left-[-300px]"}`}
       >
         <div className="md:w-[320px] bg-sidebar border-r w-[300px] h-full flex p-4 flex-col items-center border-e border-base-content/20 overflow-y-auto">
           <div className="flex gap-3 text-base-content/80 font-bold text-[20px] items-center h-[45px]">
