@@ -31,6 +31,7 @@ import { PropsWithChildren } from "react";
 import { useWatch } from "react-hook-form";
 import { Adventure } from "@/types/adventure/adventure";
 import { DeleteAdventureConfirmDialog } from "../delete-adventure-confirm";
+import { CantDeleteAdventureWithCharacter } from "../cant-delete-adventure-with-character";
 
 interface CreateAdventureDialogProps extends PropsWithChildren {
   adventure?: Adventure;
@@ -48,12 +49,14 @@ export const CreateAdventureDialog = ({
       modalConfirmOpen,
       isPendingDeleteAdventure,
       allFreeCharacters,
+      cantOpen
     },
     actions: {
       handleModal,
       handleSubmit,
       setModalConfirmOpen,
       handleDeleteAdventure,
+      setCantOpen
     },
   } = useCreateAdventureDialog({ adventure });
 
@@ -135,7 +138,6 @@ export const CreateAdventureDialog = ({
                               </SelectTrigger>
                               <SelectContent className="z-[9999]">
                                 {allFreeCharacters?.map((character) => {
-                                  console.log(character);
                                   return (
                                     <SelectItem
                                       key={character.id}
@@ -180,7 +182,14 @@ export const CreateAdventureDialog = ({
                   <Button
                     type="button"
                     variant={"destructive"}
-                    onClick={() => setModalConfirmOpen(true)}
+                    onClick={() => {
+                      if (adventure.characterId) {
+                        setCantOpen(true);
+                        return;
+                      } else {
+                        setModalConfirmOpen(true);
+                      }
+                    }}
                   >
                     Excluir
                   </Button>
@@ -198,6 +207,10 @@ export const CreateAdventureDialog = ({
           </DialogContent>
         </Form>
       </Dialog>
+      <CantDeleteAdventureWithCharacter
+        open={cantOpen}
+        setOpen={setCantOpen}
+      />
       <DeleteAdventureConfirmDialog
         open={modalConfirmOpen}
         isPendingDelete={isPendingDeleteAdventure}
