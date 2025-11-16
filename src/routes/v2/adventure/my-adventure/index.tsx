@@ -18,7 +18,7 @@ export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
       search,
       localChapters,
     },
-    actions: { mutateFinalChallenge, handleSearchValue },
+    actions: { mutateFinalProject, handleSearchValue },
   } = useMyAdventure();
 
   return (
@@ -44,14 +44,16 @@ export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
           ))}
 
           {allAdventureCompleted && (
-            <Button
-              onClick={() => mutateFinalChallenge()}
-              variant={"challenge"}
-              className="cursor-pointer"
-              isLoading={isPendingFinalChallenge}
-            >
-              Desafio Final
-            </Button>
+            <div className="flex gap-2 flex-col sm:flex-row">
+              <Button
+                onClick={() => mutateFinalProject()}
+                variant={"challenge"}
+                className="cursor-pointer flex-1"
+                isLoading={isPendingFinalChallenge}
+              >
+                Desafio Final
+              </Button>
+            </div>
           )}
         </div>
       </div>

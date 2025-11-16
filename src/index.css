@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -232,4 +233,46 @@
   .scrollbar-none::-webkit-scrollbar {
     display: block;
   }
+}
+
+.markdown-body {
+  @apply prose prose-invert max-w-none 
+    prose-headings:font-semibold
+    prose-h1:text-4xl prose-h1:mb-4
+    prose-h2:text-3xl prose-h2:mt-6 prose-h2:mb-3
+    prose-h3:text-2xl prose-h3:mt-5 prose-h3:mb-2
+    prose-p:text-base prose-p:leading-relaxed
+    prose-ul:list-disc prose-ol:list-decimal
+    prose-code:text-sm
+    prose-a:text-sky-400 prose-a:no-underline hover:prose-a:underline
+    prose-strong:text-zinc-50
+    prose-blockquote:border-l-sky-500 prose-blockquote:text-zinc-200
+    bg-[#020817] text-zinc-200
+    rounded-2xl border border-zinc-800
+    px-6 py-6 shadow-[0_18px_60px_rgba(0,0,0,0.65)];
+}
+
+.markdown-body pre {
+  @apply bg-slate-900 rounded-xl p-4 text-sm overflow-x-auto 
+    border border-purple-950;
+}
+
+.markdown-body :not(pre) > code {
+  @apply bg-zinc-900/70 px-1.5 py-0.5 rounded-md text-[0.85em] 
+    border border-purple-950;
+}
+
+.markdown-body table {
+  @apply w-full border-collapse text-sm overflow-x-auto;
+}
+.markdown-body th,
+.markdown-body td {
+  @apply border border-zinc-800 px-3 py-2;
+}
+.markdown-body th {
+  @apply bg-zinc-900 font-semibold;
+}
+
+.markdown-body hr {
+  @apply border-zinc-800 my-6;
 }

@@ -1,4 +1,5 @@
 import { createNotebook } from "@/services/adventure/create-notebook";
+import { generateProjectService } from "@/services/adventure/generate-project-service";
 import { useAdventureStore } from "@/store/adventure-store";
 import { trackEvent } from "@/utils/track-event";
 import { useMutation } from "@tanstack/react-query";
@@ -17,7 +18,7 @@ export const useNotebook = () => {
 
   const { missionId } = useParams();
 
-  const { mutate } = useMutation({
+  const { mutate: mutateMission } = useMutation({
     mutationFn: (missionId: string) => {
       trackEvent("ia_geracao_material_iniciada", {
         aventura_id: adventureId,
@@ -34,11 +35,28 @@ export const useNotebook = () => {
     },
   });
 
-  console.log(pageLoaded)
+  const { mutate: mutateFinalProject } = useMutation({
+    mutationFn: (adventureId: string) => {
+      trackEvent("ia_geracao_projeto_final_material_iniciada", {
+        aventura_id: adventureId,
+      });
+      return generateProjectService(adventureId);
+    },
+    onSuccess: (data) => {
+      setNotebookData(data.content);
+      setPageLoaded(true);
+    },
+  });
 
   useEffect(() => {
     if (missionId && !generatedRef.current) {
-      mutate(missionId);
+      if (missionId === "final-project") {
+        if (adventureId) {
+          mutateFinalProject(adventureId);
+        }
+      } else {
+        mutateMission(missionId);
+      }
       generatedRef.current = true;
     }
 
@@ -49,7 +67,7 @@ export const useNotebook = () => {
       });
       viewdRef.current = true;
     }
-  }, [missionId, mutate, adventureId]);
+  }, [missionId, mutateMission, mutateFinalProject, adventureId]);
 
   return {
     states: {
