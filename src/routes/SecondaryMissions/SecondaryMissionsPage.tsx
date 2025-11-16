@@ -26,7 +26,7 @@ export const SecondaryMissionsPage = () => {
 
 
     return (
-        <PageLayout>
+        <PageLayout isLoadingContent={isLoading}>
             <div className="flex flex-col gap-[50px]">
                 <div className="text-white">
                     <h1 className="text-[36px]">Missões secundárias</h1>
@@ -38,16 +38,11 @@ export const SecondaryMissionsPage = () => {
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    {isLoading ? ("carregando..") : (
                         <div className="grid grid-cols-1 gap-10 xl:grid-cols-3 2xl:gap-10 justify-items-center items-center">
                             <MissionCard id={missionsSecondary &&  missionsSecondary[0] ? missionsSecondary[0].id : "-"} image={CoatArmsOneIcon} imageIcon={ExclamtionBlue} bgColor="#082349" textColor="text-[#0097E0]" textMission={missionsSecondary &&  missionsSecondary[0] ? missionsSecondary[0].title : "-"} coinMission={missionsSecondary &&  missionsSecondary[0] ? missionsSecondary[0].reward : 0} stateMission={missionsSecondary && missionsSecondary[0] ? missionsSecondary[0].status : MissionSecondaryStatus.PENDING} progress={missionsSecondary && missionsSecondary[0] ? Object.values(missionsSecondary[0].progress)[0] : 0} target={missionsSecondary && missionsSecondary[0] ? Object.values(missionsSecondary[0].target)[0] : 0} acceptMission={acceptMission} rejectMission={rejectMission}></MissionCard>
                             <MissionCard id={missionsSecondary &&  missionsSecondary[1] ? missionsSecondary[1].id : "-"} image={CoatArmsTwoIcon} imageIcon={ExclamtionOrange} bgColor="#b26e0f" textColor="text-[#FF9701]" textMission={missionsSecondary &&  missionsSecondary[1] ? missionsSecondary[1].title : "-"} coinMission={missionsSecondary &&  missionsSecondary[1] ? missionsSecondary[1].reward : 0} stateMission={missionsSecondary && missionsSecondary[1] ? missionsSecondary[1].status : MissionSecondaryStatus.PENDING} progress={missionsSecondary && missionsSecondary[1] ? Object.values(missionsSecondary[1].progress)[0] : 0} target={missionsSecondary && missionsSecondary[1] ? Object.values(missionsSecondary[1].target)[0] : 0} acceptMission={acceptMission} rejectMission={rejectMission}></MissionCard>
                             <MissionCard id={missionsSecondary &&  missionsSecondary[2] ? missionsSecondary[2].id : "-"} image={CoatArmsThreeIcon} imageIcon={ExclamtionPurple} bgColor="#4f1a63" textColor="text-[#C56EE3]" textMission={missionsSecondary &&  missionsSecondary[2] ? missionsSecondary[2].title : "-"} coinMission={missionsSecondary &&  missionsSecondary[2] ? missionsSecondary[2].reward : 0} stateMission={missionsSecondary && missionsSecondary[2] ? missionsSecondary[2].status : MissionSecondaryStatus.PENDING} progress={missionsSecondary && missionsSecondary[2] ? Object.values(missionsSecondary[2].progress)[0] : 0} target={missionsSecondary && missionsSecondary[2] ? Object.values(missionsSecondary[2].target)[0] : 0} acceptMission={acceptMission} rejectMission={rejectMission}></MissionCard>
                         </div>
-                    )
-                    }
-
-
                 </div>
 
             </div>

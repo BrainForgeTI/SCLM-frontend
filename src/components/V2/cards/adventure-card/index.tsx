@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import AdventureBackgroundImage from "@/assets/images/adventure-background.jpg";
 import { CreateAdventureDialog } from "../../dialogs/create-adventure-dialog";
 import { Adventure } from "@/types/adventure/adventure";
+import MysteryImage from "@/assets/characters/generics/mystery.png";
 
 const defaultColors = [
   {
@@ -103,7 +104,8 @@ export const AdventureCard = ({
           )}
 
           {!adventure?.character && (
-            <div className="w-30 h-30 text-[40px]">
+            <div className="w-30 h-30 text-[40px] z-20">
+              <img src={MysteryImage}></img>
             </div>
           )}
         </div>
