@@ -1,6 +1,6 @@
-export enum TypePlans  {
-    FREE = 'FREE',
-    ESTUDIOSO = 'ESTUDIOSO',
-    PRO = 'PRO',
-    LUMINAR = 'LUMINAR',
+export enum TypePlans {
+  EXPLORER = "EXPLORER",
+  SCHOLAR = "SCHOLAR",
+  WISE = "WISE",
+  LUMINAR = "LUMINAR",
 }
