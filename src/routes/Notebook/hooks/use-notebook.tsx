@@ -9,8 +9,10 @@ import { useNotebookLog } from "./use-notebook-log";
 
 export const useNotebook = () => {
   const [notebookData, setNotebookData] = useState("");
+  const [pageLoaded, setPageLoaded] = useState(false);
   const adventureId = useAdventureStore((state) => state.adventure.id);
   const viewdRef = useRef(false);
+  const generatedRef = useRef(false)
 
   useNotebookLog();
 
@@ -26,6 +28,10 @@ export const useNotebook = () => {
     },
     onSuccess: (data) => {
       setNotebookData(data.content);
+      setPageLoaded(true);
+    },
+    onError() {
+      setPageLoaded(true);
     },
   });
 
@@ -38,11 +44,12 @@ export const useNotebook = () => {
     },
     onSuccess: (data) => {
       setNotebookData(data.content);
+      setPageLoaded(true);
     },
   });
 
   useEffect(() => {
-    if (missionId) {
+    if (missionId && !generatedRef.current) {
       if (missionId === "final-project") {
         if (adventureId) {
           mutateFinalProject(adventureId);
@@ -50,6 +57,7 @@ export const useNotebook = () => {
       } else {
         mutateMission(missionId);
       }
+      generatedRef.current = true;
     }
 
     if (!viewdRef.current && missionId && adventureId) {
@@ -59,15 +67,12 @@ export const useNotebook = () => {
       });
       viewdRef.current = true;
     }
-
-    return () => {
-      viewdRef.current = false;
-    };
   }, [missionId, mutateMission, mutateFinalProject, adventureId]);
 
   return {
     states: {
       notebookData,
+      pageLoaded
     },
   };
 };

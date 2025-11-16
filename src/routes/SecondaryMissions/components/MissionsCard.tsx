@@ -39,11 +39,11 @@ export const MissionCard = (props: Props) => {
   }
   return (
     <div
-      className={`w-[350px] h-[450px] [perspective:1000px] cursor-pointer`}
+      className={`w-[280px] h-[280px] 2xl:w-[300px] 2xl:h-[300px] [perspective:1000px] cursor-pointer`}
       onClick={() => setReveal(!reveal)}
     >
       <div
-        className={`relative max-w-[320px] h-full transition-transform duration-1000 rounded-[40px] ${
+        className={`relative w-full h-full transition-transform duration-1000 rounded-[30px] ${
           reveal ? "rotate-y-180" : ""
         }`}
         style={{ transformStyle: "preserve-3d" ,backgroundColor: props.bgColor}}
@@ -55,7 +55,7 @@ export const MissionCard = (props: Props) => {
             backfaceVisibility: "hidden",
           }}
         >
-          <img className="w-[200px] min-w-[150px]" src={props.image} alt="" />
+          <img className="md:w-[150px] md:min-w-[100px] 2xl:w-[200px] 2xl:min-w-[150px]" src={props.image} alt="" />
           <button className="text-white mt-2">Clique para revelar</button>
         </div>
 
@@ -73,7 +73,7 @@ export const MissionCard = (props: Props) => {
               <img className="w-[50px]" src={CoinsConquest} alt="coin" />
             </div>
           </div>
-          
+
           <p>{props.textMission}</p>
           <div className="flex justify-center gap-[10px]">
             <p>{stateStatus[props.stateMission] ? stateStatus[props.stateMission] : "-"}</p>

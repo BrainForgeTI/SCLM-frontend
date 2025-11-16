@@ -8,11 +8,11 @@ import { PageLayout } from "@/components/PageLayout";
 
 export const NotebookPage = () => {
   const {
-    states: { notebookData },
+    states: { notebookData, pageLoaded },
   } = useNotebook();
 
   return (
-    <PageLayout>
+    <PageLayout isLoadingContent={!pageLoaded}>
       <div className="markdown-body">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
