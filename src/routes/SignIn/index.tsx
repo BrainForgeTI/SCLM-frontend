@@ -36,7 +36,7 @@ export const SignInPage = () => {
         >
           <div className="w-[320px] lg:w-[384px] lg:block justify-center">
             <p className="flex justify-center w-full p-[20px] text-foreground text-[20px]">
-              Entre no Athenium
+              Entre no Atenium
             </p>
             <Card>
               <CardContent className="py-5 px-7 lg:px-10">

@@ -33,25 +33,23 @@ export const useSignIn = () => {
   const handleSuccessSignIn = (data: any) => {
 
     const { setSession } = useSessionStore.getState();
-    setSession(data.first_name, data.access_token, data.slug);
-    console.log("tudo 35");
+    setSession(data.first_name, data.access_token, data.slug, data.gold, data.profilePicUrl);
     posthog.identify(data.slug, { first_name: data.first_name });
     posthog.capture("usuario_login_sucesso", {
       usuario_id: data.slug,
       metodo: "email",
     });
-    console.log("tudo bem");
     const params = new URLSearchParams(location.search)
     const plano = params.get("plano")
-    
+
     if(!!plano){
-    
+
       navigateToPlans()
     }else{
-      
+
       navigateToHome();
     }
-    
+
   };
 
   const navigateToHome = () => {

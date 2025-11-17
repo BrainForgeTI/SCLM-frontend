@@ -9,6 +9,7 @@ import WarriorClassImg from "@/assets/images/warrior.png"
 import WizzardClassImg from "@/assets/images/wizard.png"
 import MartialClassImg from "@/assets/images/martial-artist.png"
 import KnifeImg from "@/assets/images/knife.png"
+import { getCharacterClassLabel } from "@/utils/get-character-class-label";
 
 interface Props {
         id: string,
@@ -64,7 +65,7 @@ export const CharacterCard = (props: Props) => {
                             ) : null}
                         </div>
                         <div className="flex text-[18px] font-bold">
-                            {props.characterClass ?? "- -"}
+                            {getCharacterClassLabel(props.characterClass)}
                         </div>
                     </div>
                     <div className="flex ">
@@ -76,7 +77,7 @@ export const CharacterCard = (props: Props) => {
                             <img src={KnifeImg} alt="knife adventure" />
                         </div>
                         <div className="flex text-[18px]">
-                            {props.adventure ?? "- -"}
+                            {props.adventure ? "Em uma aventura" : "- -"}
                         </div>
                 </div>
                 <div className="w-[300px]">

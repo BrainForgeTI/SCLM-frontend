@@ -1,4 +1,4 @@
-import BellIcon from '../../../assets/icons/bell.svg';
+
 import GoldImg from '../../../assets/images/gold.png';
 import { Button } from "@/components/ui/button"
 import {
@@ -8,13 +8,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useSessionStore } from '@/store/session-store';
 import { LogOut, WalletMinimal } from 'lucide-react';
 import { useNavigate } from "react-router";
-          
+import DefaultUserImage from "@/assets/images/default-user.webp"
 
 
 
 const LayoutHeader = () => {
+  const user = useSessionStore()
 
   const navigate = useNavigate()
   return (
@@ -22,7 +24,7 @@ const LayoutHeader = () => {
       <div className='w-full h-full flex justify-end px-8'>
         <ul className='flex items-center gap-10'>
           <li className='lg:flex hidden items-center gap-4'>
-            <span className='font-semibold text-[16px] text-base-content'>500</span>
+            <span className='font-semibold text-[16px] text-base-content'>{user.money}</span>
             <img src={GoldImg}></img>
           </li>
 
@@ -30,15 +32,15 @@ const LayoutHeader = () => {
             <div className='w-[2px] h-[21px] rounded-full bg-neutral/50'></div>
           </li>
 
-          <li className='lg:flex gap-4 hidden'>
+          <li className='lg:flex gap-10 hidden'>
             <div className='flex flex-col text-base-content justify-between'>
-              <span className='text-end text-[10px]'>Bem-vindo</span>
-              <span className='font-semibold text-[13px]'>Emerson Tanno</span>
+              <span className='text-end text-sm'>Bem-vindo</span>
+              <span className='font-semibold text-md'>{user.firstName}</span>
             </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className='w-[43px] h-[43px] bg-neutral/20 rounded-[10px] bg-cover bg-center' style={{ backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3UJfPCCe0kUhLbGxfOhzwHpPspsSnvALTA&s")' }}>
-
+                <Button className='w-[43px] h-[43px] bg-neutral/20 rounded-[10px] bg-cover bg-center' style={{ backgroundImage: `url('${DefaultUserImage}')` }}>
+                  <img className='w-ful h-full' src={user.profilePic || ''} />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className='w-56' align='end'>
@@ -54,17 +56,7 @@ const LayoutHeader = () => {
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-            
-          </li>
 
-          <li className='lg:block hidden'>
-            <div className='w-[2px] h-[21px] rounded-full bg-neutral/50'></div>
-          </li>
-
-          <li>
-            <button className="w-[37px] h-[37px] cursor-pointer hover:border-neutral border border-transparent rounded-[10px] bg-neutral/30 flex justify-center items-center text-neutral">
-              <BellIcon />
-            </button>
           </li>
 
         </ul>

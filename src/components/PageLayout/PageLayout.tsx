@@ -32,6 +32,7 @@ const PageLayout = (props: Props) => {
   const [textIndex, setTextIndex] = useState(generatRandomTextIndex())
   const [kaiserIndex] = useState(Math.floor(Math.random()*3))
 
+
   function generatRandomTextIndex() {
     return Math.floor(Math.random()*loadingTexts.length)
   }

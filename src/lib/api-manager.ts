@@ -25,23 +25,27 @@ function addAccessTokenInterceptorToInstance(
 export const apiAuth = axios.create({
   baseURL: import.meta.env.VITE_AUTH_SERVICE,
   timeout: 30000,
+  withCredentials: true
 })
 addAccessTokenInterceptorToInstance(apiAuth)
 
 export const apiAdventure = axios.create({
   baseURL: import.meta.env.VITE_ADVENTURE_SERVICE,
   timeout: 30000,
+    withCredentials: true
 })
 addAccessTokenInterceptorToInstance(apiAdventure)
 
 export const apiCharacter = axios.create({
   baseURL: import.meta.env.VITE_CHARACTER_SERVICE,
   timeout: 30000,
+    withCredentials: true
 })
 addAccessTokenInterceptorToInstance(apiCharacter)
 
 export const apiGamification = axios.create({
   baseURL: import.meta.env.VITE_GAMIFICATION_SERVICE,
   timeout: 30000,
+    withCredentials: true
 })
 addAccessTokenInterceptorToInstance(apiGamification)
