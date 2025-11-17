@@ -10,42 +10,53 @@ import { CreateCharacterPage } from "./routes/v2/CreateCharacter";
 import { NotebookPage } from "./routes/Notebook/NotebookPage";
 import { MyAdventurePage } from "./routes/v2/adventure/my-adventure";
 import { AdventureWrapper } from "./components/V2/adventure/adventure-wrapper";
+import { LandingPage } from "./routes/Landing/LandingPage";
+import { GenPlansPage } from "./routes/GenPlans/GenPlansPage";
+import { UserWrapper } from "./components/user-wrapper";
 
 function App() {
   return (
     <Providers>
       <Routes>
-        <Route path="/home" element={<HomePage />} />,
+        <Route path="/home" element={<UserWrapper><HomePage /></UserWrapper>} />,
         <Route path="/signin" element={<SignInPage />} />,
-        <Route path="/tasks" element={<SecondaryMissionsPage />} />,
+        <Route path="/tasks" element={<UserWrapper><SecondaryMissionsPage /></UserWrapper>} />,
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/character" element={<CharacterPage />}></Route>
+        <Route path="/plans" element={<GenPlansPage/>}></Route>
         <Route
           path="/adventure/:id/home"
           element={
-            <AdventureWrapper>
-              <AdventurePage />
-            </AdventureWrapper>
+            <UserWrapper>
+              <AdventureWrapper>
+                <AdventurePage />
+              </AdventureWrapper>
+            </UserWrapper>
           }
         />
         <Route
           path="/adventure/:id/content"
           element={
-            <AdventureWrapper>
-              <MyAdventurePage />
-            </AdventureWrapper>
+            <UserWrapper>
+              <AdventureWrapper>
+                <MyAdventurePage />
+              </AdventureWrapper>
+            </UserWrapper>
           }
         />
         <Route path="/create-character" element={<CreateCharacterPage />} />
         <Route
           path="/adventure/:id/notebook/:missionId"
           element={
-            <AdventureWrapper>
-              <NotebookPage />
-            </AdventureWrapper>
+            <UserWrapper>
+              <AdventureWrapper>
+                <NotebookPage />
+              </AdventureWrapper>
+            </UserWrapper>
           }
         />
+        <Route path="/" element={<LandingPage />} />
       </Routes>
     </Providers>
   );

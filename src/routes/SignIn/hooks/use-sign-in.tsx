@@ -4,13 +4,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { signInService } from "@/services/sign-in-service";
 import { QUERIES } from "@/constants/queries";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { useSessionStore } from "@/store/session-store";
 import { usePostHog } from "posthog-js/react";
 
 export const useSignIn = () => {
   const navigate = useNavigate();
   const posthog = usePostHog();
+  const location = useLocation()
 
   const {
     register,
@@ -30,19 +31,33 @@ export const useSignIn = () => {
   });
 
   const handleSuccessSignIn = (data: any) => {
+
     const { setSession } = useSessionStore.getState();
-    setSession(data.first_name, data.access_token, data.slug);
+    setSession(data.first_name, data.access_token, data.slug, data.gold, data.profilePicUrl);
     posthog.identify(data.slug, { first_name: data.first_name });
     posthog.capture("usuario_login_sucesso", {
       usuario_id: data.slug,
       metodo: "email",
     });
-    console.log("oi");
-    navigateToHome();
+    const params = new URLSearchParams(location.search)
+    const plano = params.get("plano")
+
+    if(!!plano){
+
+      navigateToPlans()
+    }else{
+
+      navigateToHome();
+    }
+
   };
 
   const navigateToHome = () => {
     navigate("/home");
+  };
+
+  const navigateToPlans = () => {
+    navigate("/plans");
   };
 
   const { isPending, mutate } = useMutation({

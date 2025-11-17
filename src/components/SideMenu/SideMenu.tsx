@@ -18,6 +18,10 @@ import { AdventureContext } from "../../context/adventure/AdventureContext";
 import { SideMenuRoutes } from "../../types/side_menu/SideMenuRoutes";
 import AdventureProgress from "../AdventureProgress/AdventureProgress";
 import FireIcon from "../../assets/icons/fire.svg";
+import { useSessionStore } from "@/store/session-store";
+import DefaultUserImage from "@/assets/images/default-user.webp"
+import { Button } from "../ui/button";
+import { LogOut, WalletMinimal } from "lucide-react";
 
 export const SideMenu = () => {
   const globalRoutes = sideMenuGlobalRoutes;
@@ -28,6 +32,9 @@ export const SideMenu = () => {
 
   const adventureContext = useContext(AdventureContext);
   const [menuActive, setMenuActive] = useState(false);
+  const navigate = useNavigate()
+
+  const user = useSessionStore()
 
   function toggleMenu() {
     setMenuActive(!menuActive);
@@ -93,12 +100,12 @@ export const SideMenu = () => {
   return (
     <>
       <aside
-        className={`fixed lg:static h-full flex gap-[15px] z-50 transition-all duration-350 ${menuActive ? "left-[0px]" : "md:left-[-350px] left-[-300px]"}`}
+        className={`fixed lg:static h-full flex gap-[15px] z-90 transition-all duration-350 ${menuActive ? "left-[0px]" : "md:left-[-350px] left-[-300px]"}`}
       >
         <div className="md:w-[320px] bg-sidebar border-r w-[300px] h-full flex p-4 flex-col items-center border-e border-base-content/20 overflow-y-auto">
           <div className="flex gap-3 text-base-content/80 font-bold text-[20px] items-center h-[45px]">
             <img src={LogoSM}></img>
-            <span className="uppercase">Athenium</span>
+            <span className="uppercase">Atenium</span>
           </div>
 
           <div className="w-full flex flex-col items-center mt-10 gap-2">
@@ -153,25 +160,38 @@ export const SideMenu = () => {
           </nav>
 
           <div className="lg:hidden w-full border border-base-content/20 rounded-[15px] p-2 mt-10 ">
-            <div className="flex gap-5 items-center">
-              <div className="w-[70px] h-[70px] rounded-[15px] bg-white"></div>
+            <div className="flex gap-5 items-center px-2 py-2">
+              <div className="w-[70px] h-[70px] rounded-[15px] bg-white bg-cover overflow-hidden" style={{ backgroundImage: `url("${DefaultUserImage}")` }}>
+                <img src={user.profilePic || ""} className="w-full h-full object-cover flex items-center justify-center"></img>
+              </div>
               <div className="flex flex-col text-base-content">
-                <span className="text-[12px]">Bem vindo</span>
-                <span className="font-medium">Emerson Tanno</span>
+                <span className="text-[12px]">Olá</span>
+                <span className="font-medium">{user.firstName}</span>
               </div>
             </div>
-            <div className="flex gap-2 items-center mt-4">
-              <img src={GoldImg}></img>
+            <div className="flex gap-2 items-center mt-4 px-2">
+              <img src={GoldImg} className="w-6 h-6"></img>
               <span className="font-semibold text-[20px] text-base-content">
-                500
+                {user.money}
               </span>
+            </div>
+            <div className="mt-5 flex gap-2 justify-between">
+              <Button variant={"ghost"} onClick={() => navigate("/plans")}>
+                <WalletMinimal/>
+                Planos
+              </Button>
+
+              <Button variant={"ghost"} onClick={() => navigate("/signin")}>
+                <LogOut />
+                Sair
+              </Button>
             </div>
           </div>
         </div>
       </aside>
       <button
         onClick={toggleMenu}
-        className={`fixed z-40 lg:hidden w-[40px] h-[40px] mt-[10px] bg-base200 border transition-all duration-350 border-base-content/40 rounded-[10px] flex justify-center items-center text-base-content/30 ${menuActive ? "left-[320px]" : "md:left-[15px] left-[15px]"}`}
+        className={`fixed z-40 lg:hidden w-[40px] h-[40px] mt-[10px] bg-background border transition-all duration-350 border-base-content/40 rounded-[10px] flex justify-center items-center text-base-content/30 ${menuActive ? "left-[320px]" : "md:left-[15px] left-[15px]"}`}
       >
         <MenuIcon />
       </button>

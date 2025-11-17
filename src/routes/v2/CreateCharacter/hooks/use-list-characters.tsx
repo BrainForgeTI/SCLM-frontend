@@ -35,6 +35,7 @@ export const useListInfoCharacter = () => {
   } = useQuery({
     queryKey: ["characters"],
     queryFn: getAllCharactersInfo,
+    retry: false
   });
 
   const { mutate } = useMutation({

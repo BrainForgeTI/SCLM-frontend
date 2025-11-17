@@ -31,6 +31,7 @@ import { PropsWithChildren } from "react";
 import { useWatch } from "react-hook-form";
 import { Adventure } from "@/types/adventure/adventure";
 import { DeleteAdventureConfirmDialog } from "../delete-adventure-confirm";
+import { CantDeleteAdventureWithCharacter } from "../cant-delete-adventure-with-character";
 
 interface CreateAdventureDialogProps extends PropsWithChildren {
   adventure?: Adventure;
@@ -48,12 +49,14 @@ export const CreateAdventureDialog = ({
       modalConfirmOpen,
       isPendingDeleteAdventure,
       allFreeCharacters,
+      cantOpen
     },
     actions: {
       handleModal,
       handleSubmit,
       setModalConfirmOpen,
       handleDeleteAdventure,
+      setCantOpen
     },
   } = useCreateAdventureDialog({ adventure });
 
@@ -135,7 +138,6 @@ export const CreateAdventureDialog = ({
                               </SelectTrigger>
                               <SelectContent className="z-[9999]">
                                 {allFreeCharacters?.map((character) => {
-                                  console.log(character);
                                   return (
                                     <SelectItem
                                       key={character.id}
@@ -176,15 +178,22 @@ export const CreateAdventureDialog = ({
                 </div>
               </div>
               <DialogFooter className="pb-5 px-8 flex justify-between">
-                {adventure?.id && (
+                {/* {adventure?.id && (
                   <Button
                     type="button"
                     variant={"destructive"}
-                    onClick={() => setModalConfirmOpen(true)}
+                    onClick={() => {
+                      if (adventure.characterId) {
+                        setCantOpen(true);
+                        return;
+                      } else {
+                        setModalConfirmOpen(true);
+                      }
+                    }}
                   >
                     Excluir
                   </Button>
-                )}
+                )} */}
                 <div className="w-full flex-1 flex justify-end gap-5">
                   <DialogClose asChild>
                     <Button variant="outline">Cancelar</Button>
@@ -198,6 +207,10 @@ export const CreateAdventureDialog = ({
           </DialogContent>
         </Form>
       </Dialog>
+      <CantDeleteAdventureWithCharacter
+        open={cantOpen}
+        setOpen={setCantOpen}
+      />
       <DeleteAdventureConfirmDialog
         open={modalConfirmOpen}
         isPendingDelete={isPendingDeleteAdventure}

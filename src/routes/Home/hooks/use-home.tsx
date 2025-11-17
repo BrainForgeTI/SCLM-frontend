@@ -16,6 +16,7 @@ export const useHome = () => {
   const { data: adventures, isPending: isPendingAdventures } = useQuery({
     queryKey: ["QUERY_GET_ADVENTURES"],
     queryFn: getAllAdventure,
+    retry: false
   });
 
   return {

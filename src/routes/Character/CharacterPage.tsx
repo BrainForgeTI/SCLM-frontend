@@ -64,7 +64,7 @@ export const CharacterPage = () => {
   }, [selectedCharacter, reset]);
 
   return (
-    <PageLayout>
+    <PageLayout isLoadingContent={isLoading}>
       <div className="flex flex-col w-full font-poppis justify-center">
         <PageTitle title="Meus personagens" />
         <div className="w-full mt-10 flex justify-end">
