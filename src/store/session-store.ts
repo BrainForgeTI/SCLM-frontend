@@ -5,10 +5,14 @@ type TypeSessionStore = {
   id: string | null
   accessToken: string | null
   firstName: string | null
+  money: number | null,
+  profilePic: string | null
   setSession: (
     firstName: string,
     accessToken: string,
     id: string,
+    money: number,
+    profilePic: string
   ) => void
   clearSession: () => void
 }
@@ -19,8 +23,10 @@ export const useSessionStore = create<TypeSessionStore>()(
       id: null,
       accessToken: null,
       firstName: null,
-      setSession: (firstName, accessToken, id) =>
-        set({ firstName, accessToken, id }),
+      money: null,
+      profilePic: null,
+      setSession: (firstName, accessToken, id, money, profilePic) =>
+        set({ firstName, accessToken, id, money, profilePic }),
       clearSession: () =>
         set({
           firstName: null,
@@ -29,8 +35,8 @@ export const useSessionStore = create<TypeSessionStore>()(
         }),
     }),
     {
-      name: 'athenium-user-auth-session',
-      partialize: (state) => ({ id: state.id, firstName: state.firstName, accessToken: state.accessToken })
+      name: 'Atenium-user-auth-session',
+      partialize: (state) => ({ id: state.id, firstName: state.firstName, accessToken: state.accessToken, money: state.money, profilePic: state.profilePic })
     },
   ),
 )

@@ -178,7 +178,7 @@ export const CreateAdventureDialog = ({
                 </div>
               </div>
               <DialogFooter className="pb-5 px-8 flex justify-between">
-                {adventure?.id && (
+                {/* {adventure?.id && (
                   <Button
                     type="button"
                     variant={"destructive"}
@@ -193,7 +193,7 @@ export const CreateAdventureDialog = ({
                   >
                     Excluir
                   </Button>
-                )}
+                )} */}
                 <div className="w-full flex-1 flex justify-end gap-5">
                   <DialogClose asChild>
                     <Button variant="outline">Cancelar</Button>
