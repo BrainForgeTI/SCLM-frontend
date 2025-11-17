@@ -14,9 +14,9 @@ export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
     states: {
       adventure,
       allAdventureCompleted,
-      isPendingFinalChallenge,
       search,
       localChapters,
+      isPendingFinalProject
     },
     actions: { mutateFinalProject, handleSearchValue },
   } = useMyAdventure();
@@ -49,7 +49,7 @@ export const MyAdventurePage = ({ isLoading }: MyAdventurePageProps) => {
                 onClick={() => mutateFinalProject()}
                 variant={"challenge"}
                 className="cursor-pointer flex-1"
-                isLoading={isPendingFinalChallenge}
+                isLoading={isPendingFinalProject}
               >
                 Desafio Final
               </Button>
